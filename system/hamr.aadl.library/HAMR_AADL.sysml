@@ -1,6 +1,5 @@
 package HAMR_AADL {
   private import AADL::*;
-  private import HAMR;
 
   part def Processor :> AADL::Processor {
     attribute Frame_Period: Timing_Properties::Frame_Period;
@@ -14,6 +13,8 @@ package HAMR_AADL {
   part def Thread :> AADL::Thread {
     attribute Implementation_Language: HAMR::Implementation_Language;
   }
+
+  part def Struct :> Data;
 
   part def Array :> Data {
     part Base_Type : Data;
