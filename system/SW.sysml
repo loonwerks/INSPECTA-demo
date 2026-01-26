@@ -5,8 +5,6 @@ package SW {
 	private import ControlFunctions::*;
 	private import ScalarValues::*;
 
-	
-	/*
 	part def u16Array :> Array {
 		part :>> Base_Type : Base_Types::Unsigned_16;
 		attribute :>> Dimensions = 1;
@@ -44,28 +42,13 @@ package SW {
 		part amessage : RawEthernetMessage;
 		part sz : Base_Types::Unsigned_16;
 	}
-	*/
-	 part def MyStruct2_i :> Struct {
-        part fieldSInt32: Base_Types::Integer_32;
-    }
 
-    part def MyArrayStruct :> Array {
-        part :>> Base_Type : MyStruct2_i;
-
-        attribute :>> Dimensions = 10;
-        
-        attribute :>> Array_Size_Kind = Array_Size_Kinds::Fixed;
-
-        attribute :>> Data_Size = 40[byte];
-    }
-
-	part def LowLevelEthernetDriver_i :> Thread {
+	part def LowLevelEthernetDriver :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms]; 
 		attribute :>> Implementation_Language = Implementation_Languages::Rust;
 
-		out port EthernetFramesRx0: EventDataPort { :>> type : MyArrayStruct; }
-/*
+		out port EthernetFramesRx0: EventDataPort {out :>> type : RawEthernetMessage; }
 		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
@@ -73,17 +56,15 @@ package SW {
 		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage; }
 		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage; }
 		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage; }
-		*/
 	}
 	
-	part def LowLevelEthernetDriver_seL4_i :> Process {
+	part def LowLevelEthernetDriver_seL4 :> Process {
 		attribute :>> Domain = 4; 
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 
-		part lowLevelEthernetDriver : LowLevelEthernetDriver_i; 
+		part lowLevelEthernetDriver : LowLevelEthernetDriver; 
 
-		out port EthernetFramesRx0: EventDataPort { :>> type : MyArrayStruct; }
-/*
+		out port EthernetFramesRx0: EventDataPort {out :>> type : RawEthernetMessage; }
 		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
@@ -103,16 +84,13 @@ package SW {
 			
 		connection c5 : PortConnection
 			connect lowLevelEthernetDriver.EthernetFramesRx0 to EthernetFramesRx0;
-			/*
 		connection c6 : PortConnection
 			connect lowLevelEthernetDriver.EthernetFramesRx1 to EthernetFramesRx1;
 		connection c7 : PortConnection
 			connect lowLevelEthernetDriver.EthernetFramesRx2 to EthernetFramesRx2;
 		connection c8 : PortConnection
 			connect lowLevelEthernetDriver.EthernetFramesRx3 to EthernetFramesRx3;
-			*/
 	}
-	/*
 	
 	part def RxFirewall :> Thread {
 		in port EthernetFramesRxIn0 : EventDataPort { in :>> type : RawEthernetMessage; }
@@ -335,7 +313,7 @@ package SW {
 		        guarantee hlr_17_rx3_no_input:
 		           (not HasEvent(EthernetFramesRxIn3) implies (NoSend(VmmOut3) & NoSend(MavlinkOut3)));
 		 }*/
-	/*}
+	}
 	
 	part def RxFirewall_seL4 :> Process {
 		in port EthernetFramesRxIn0 : EventDataPort { in :> type : RawEthernetMessage; }
@@ -377,7 +355,7 @@ package SW {
 		connection c12 : PortConnection
 			connect firewall.MavlinkOut3 to MavlinkOut3;
 			
-		:>> Domain : CASE_Scheduling::Domain = 5;	
+		:>> Domain = 5;	
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 	}
 	
@@ -471,9 +449,9 @@ package SW {
 		      def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
 			      valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
 	            
-//	          --------------------------------------------------------------------------
-	//          -- TX Firewall
-	 //         --------------------------------------------------------------------------
+	//        --------------------------------------------------------------------------
+	//        -- TX Firewall
+	//        --------------------------------------------------------------------------
 	          
 	          def valid_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	            frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe);
@@ -545,8 +523,7 @@ package SW {
 	           (not HasEvent(EthernetFramesTxIn3) implies NoSend(EthernetFramesTxOut3));
 	           	  
 		}*/
-/*	}
-	
+	}
 	
 	part def TxFirewall_seL4 :> Process {
 		in port EthernetFramesTxIn0 : EventDataPort { in :>> type : RawEthernetMessage; }
@@ -602,7 +579,6 @@ package SW {
 		:>> Source_Text  = "src/MavlinkFirewall.c";
 		attribute Initialize_Entrypoint_Source_Text : ScalarValues::String = "init";
 		attribute Compute_Entrypoint_Source_Text : ScalarValues::String = "compute";
-		*/
 		
 		language "fake" /*
 		
@@ -680,9 +656,9 @@ package SW {
 				   (HasEvent(In0) & not msg_is_blacklisted(In0.payload)) implies 
 				     (HasEvent(Out0) & mav_input_eq_output(In0, Out0));
 		}*/			
-	//}
+	}
 	
-	/*part def MavlinkFirewall_seL4 :> Process {
+	part def MavlinkFirewall_seL4 :> Process {
 		in port In0 : EventDataPort { in :>> type : UdpFrame; }
 		in port In1 : EventDataPort { in :>> type : UdpFrame; }
 		in port In2 : EventDataPort { in :>> type : UdpFrame; }
@@ -784,15 +760,15 @@ package SW {
 			
 		:>> Domain = 2;
 		attribute SMC : ScalarValues::Boolean = true;
-	} */
+	} 
 
 	part def seL4 :> System {
-		//part arduPilot : ArduPilot_seL4;
-		//part mavlinkFirewall : MavlinkFirewall_seL4;
-		//part rxFirewall : RxFirewall_seL4;
-		//part txFirewall : TxFirewall_seL4;
-		part lowLevelEthernetDriversel4 : LowLevelEthernetDriver_seL4_i;
-	/*	
+		part arduPilot : ArduPilot_seL4;
+		part mavlinkFirewall : MavlinkFirewall_seL4;
+		part rxFirewall : RxFirewall_seL4;
+		part txFirewall : TxFirewall_seL4;
+		part lowLevelEthernetDriver : LowLevelEthernetDriver_seL4;
+
 		connection c1 : PortConnection
 			connect lowLevelEthernetDriver.EthernetFramesRx0 to rxFirewall.EthernetFramesRxIn0;
 		connection c2 : PortConnection
@@ -846,6 +822,5 @@ package SW {
 			connect txFirewall.EthernetFramesTxOut2 to lowLevelEthernetDriver.EthernetFramesTx2;
 		connection c24 : PortConnection
 			connect txFirewall.EthernetFramesTxOut3 to lowLevelEthernetDriver.EthernetFramesTx3;
-		*/
 	}	
 }
