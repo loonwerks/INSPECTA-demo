@@ -57,7 +57,7 @@ var codegenArgs = ISZ(
   "--verbose",
   "--workspace-root-dir", sysmlDir.string,
   "--sourcepath", sysmlDir.value,
-  "--system-name", "SW::ZCU102",
+  "--system-name", "Platform::ZCU102",
 )
 
 if (platform == "JVM") {
@@ -74,7 +74,7 @@ if (excludeComponentImpl) {
 
 codegenArgs = codegenArgs :+ "--no-proyek-ive"
 
-codegenArgs = codegenArgs :+ (sysmlDir / "SW.sysml").value
+codegenArgs = codegenArgs :+ (sysmlDir / "Platform.sysml").value
 
 val results = Os.proc(codegenArgs).echo.console.run()
 
