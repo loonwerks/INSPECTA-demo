@@ -48,14 +48,14 @@ package SW {
 		attribute :>> Period = 1000 [ms]; 
 		attribute :>> Implementation_Language = Implementation_Languages::Rust;
 
-		out port EthernetFramesRx0: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesRx1: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesRx2: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; } 
-		out port EthernetFramesRx3: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTx0: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx1: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx2: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx3: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
+		out port EthernetFramesRx0: EventDataPort {out :>> type : RawEthernetMessage; }
+		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; }
+		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
+		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
+		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage; }
 	}
 	
 	part def LowLevelEthernetDriver_seL4 :> Process {
@@ -64,14 +64,14 @@ package SW {
 
 		part lowLevelEthernetDriver : LowLevelEthernetDriver; 
 
-		out port EthernetFramesRx0: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesRx1: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesRx2: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; } 
-		out port EthernetFramesRx3: EventDataPort {out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTx0: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx1: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx2: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		in port EthernetFramesTx3: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
+		out port EthernetFramesRx0: EventDataPort {out :>> type : RawEthernetMessage; }
+		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; }
+		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
+		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
+		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage; }
 
 		connection c1 : PortConnection 
 			connect EthernetFramesTx0 to lowLevelEthernetDriver.EthernetFramesTx0;
@@ -93,18 +93,18 @@ package SW {
 	}
 	
 	part def RxFirewall :> Thread {
-		in port EthernetFramesRxIn0: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesRxIn1: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesRxIn2: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; } 
-		in port EthernetFramesRxIn3: EventDataPort {in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkOut0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
+		in port EthernetFramesRxIn0: EventDataPort {in :>> type : RawEthernetMessage; }
+		in port EthernetFramesRxIn1: EventDataPort {in :>> type : RawEthernetMessage; }
+		in port EthernetFramesRxIn2: EventDataPort {in :>> type : RawEthernetMessage; } 
+		in port EthernetFramesRxIn3: EventDataPort {in :>> type : RawEthernetMessage; }
+		out port VmmOut0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port VmmOut1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port VmmOut2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port VmmOut3 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkOut0 : EventDataPort { out :>> type : UdpFrame; }
+		out port MavlinkOut1 : EventDataPort { out :>> type : UdpFrame; }
+		out port MavlinkOut2 : EventDataPort { out :>> type : UdpFrame; }
+		out port MavlinkOut3 : EventDataPort { out :>> type : UdpFrame; }
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000[ms]; 
 		//:>> Compute_Execution_Time : Time_Range {
@@ -316,18 +316,18 @@ package SW {
 	}
 	
 	part def RxFirewall_seL4 :> Process {
-		in port EthernetFramesRxIn0 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesRxIn1 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesRxIn2 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesRxIn3 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut0 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut1 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut2 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port VmmOut3 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkOut0 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut1 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut2 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port MavlinkOut3 : EventDataPort { out :> type : Base_Types::Unsigned_8; }// UdpFrame; }
+		in port EthernetFramesRxIn0 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesRxIn1 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesRxIn2 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesRxIn3 : EventDataPort { in :> type : RawEthernetMessage; }
+		out port VmmOut0 : EventDataPort { out :> type : RawEthernetMessage; }
+		out port VmmOut1 : EventDataPort { out :> type : RawEthernetMessage; }
+		out port VmmOut2 : EventDataPort { out :> type : RawEthernetMessage; }
+		out port VmmOut3 : EventDataPort { out :> type : RawEthernetMessage; }
+		out port MavlinkOut0 : EventDataPort { out :> type : UdpFrame; }
+		out port MavlinkOut1 : EventDataPort { out :> type : UdpFrame; }
+		out port MavlinkOut2 : EventDataPort { out :> type : UdpFrame; }
+		out port MavlinkOut3 : EventDataPort { out :> type : UdpFrame; }
 
 		part firewall : RxFirewall;
 		connection c1 : PortConnection 
@@ -360,14 +360,14 @@ package SW {
 	}
 	
 	part def TxFirewall :> Thread {
-		in port EthernetFramesTxIn0 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn1 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn2 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn3 : EventDataPort { in :> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTxOut0 : EventDataPort { out :> type : Base_Types::Unsigned_8; }//SizedEthernetMessage; }
-		out port EthernetFramesTxOut1 : EventDataPort { out :> type : Base_Types::Unsigned_8; }//SizedEthernetMessage; }
-		out port EthernetFramesTxOut2 : EventDataPort { out :> type : Base_Types::Unsigned_8; }//SizedEthernetMessage; }
-		out port EthernetFramesTxOut3 : EventDataPort { out :> type : Base_Types::Unsigned_8; }//SizedEthernetMessage; }
+		in port EthernetFramesTxIn0 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn1 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn2 : EventDataPort { in :> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn3 : EventDataPort { in :> type : RawEthernetMessage; }
+		out port EthernetFramesTxOut0 : EventDataPort { out :> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut1 : EventDataPort { out :> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut2 : EventDataPort { out :> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut3 : EventDataPort { out :> type : SizedEthernetMessage; }
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
@@ -526,14 +526,14 @@ package SW {
 	}
 	
 	part def TxFirewall_seL4 :> Process {
-		in port EthernetFramesTxIn0 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn1 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn2 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port EthernetFramesTxIn3 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTxOut0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		out port EthernetFramesTxOut1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		out port EthernetFramesTxOut2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
-		out port EthernetFramesTxOut3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// SizedEthernetMessage; }
+		in port EthernetFramesTxIn0 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn1 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn2 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port EthernetFramesTxIn3 : EventDataPort { in :>> type : RawEthernetMessage; }
+		out port EthernetFramesTxOut0 : EventDataPort { out :>> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut1 : EventDataPort { out :>> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut2 : EventDataPort { out :>> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut3 : EventDataPort { out :>> type : SizedEthernetMessage; }
 	
 		part firewall : TxFirewall;
 		
@@ -559,14 +559,14 @@ package SW {
 	}
 	
 	part def MavlinkFirewall :> Thread {
-		in port In0 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In1 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In2 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In3 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port Out0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
+		in port In0 : EventDataPort { in :>> type : UdpFrame; }
+		in port In1 : EventDataPort { in :>> type : UdpFrame; }
+		in port In2 : EventDataPort { in :>> type : UdpFrame; }
+		in port In3 : EventDataPort { in :>> type : UdpFrame; }
+		out port Out0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out3 : EventDataPort { out :>> type : RawEthernetMessage; }
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000[ms]; 
@@ -659,14 +659,14 @@ package SW {
 	}
 	
 	part def MavlinkFirewall_seL4 :> Process {
-		in port In0 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In1 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In2 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		in port In3 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// UdpFrame; }
-		out port Out0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port Out3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
+		in port In0 : EventDataPort { in :>> type : UdpFrame; }
+		in port In1 : EventDataPort { in :>> type : UdpFrame; }
+		in port In2 : EventDataPort { in :>> type : UdpFrame; }
+		in port In3 : EventDataPort { in :>> type : UdpFrame; }
+		out port Out0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port Out3 : EventDataPort { out :>> type : RawEthernetMessage; }
 		
 		part mavlinkFirewall : MavlinkFirewall;
 		
@@ -692,18 +692,18 @@ package SW {
 	}
 	
 	part def ArduPilot :> Thread {
-		in port FirewallRx0 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx1 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx2 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx3 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkRx0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkRx1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkRx2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkRx3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
+		in port FirewallRx0 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
+		out port MavlinkRx0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx3 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx3 : EventDataPort { out :>> type : RawEthernetMessage; }
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms]; 
@@ -718,18 +718,18 @@ package SW {
 	}
 	
 	part def ArduPilot_seL4 :> Process {
-		in port FirewallRx0 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx1 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx2 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		in port FirewallRx3 : EventDataPort { in :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port MavlinkRx0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }//RawEthernetMessage; }
-		out port MavlinkRx1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }//RawEthernetMessage; }
-		out port MavlinkRx2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }//RawEthernetMessage; }
-		out port MavlinkRx3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }//RawEthernetMessage; }
-		out port EthernetFramesTx0 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx1 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx2 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
-		out port EthernetFramesTx3 : EventDataPort { out :>> type : Base_Types::Unsigned_8; }// RawEthernetMessage; }
+		in port FirewallRx0 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port FirewallRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
+		out port MavlinkRx0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port MavlinkRx3 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx0 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx1 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx2 : EventDataPort { out :>> type : RawEthernetMessage; }
+		out port EthernetFramesTx3 : EventDataPort { out :>> type : RawEthernetMessage; }
 	
 		part arduPilot : ArduPilot;
 		
