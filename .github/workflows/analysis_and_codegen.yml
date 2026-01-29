@@ -1,0 +1,106 @@
+name: Model Analysis and Code Generation
+
+on:
+  push:
+    branches: ["feb-2026"]
+    paths:
+      - '**.sysml'
+  pull_request:
+    types: ["opened", "reopened", "edited"]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    if: false
+    continue-on-error: true
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Resolint Analysis Action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/Resolint-CI-Action
+        path: Resolint-CI-Action
+    - name: Resolint Analysis
+      id : resolint
+      uses: ./Resolint-CI-Action
+      with:
+        project-path: isolate-ethernet-simple
+        component-to-analyze: platform::ZCU102.Impl
+    - name: Get analysis timestamp
+      run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
+    - name: Get analysis status
+      run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
+    - name: Get analysis status-messages
+      run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
+    - name: Archive analysis results
+      uses: actions/upload-artifact@v4
+      with:
+        name: resolint-analysis-report
+        path: Resolint_output.json
+        retention-days: 30
+
+  verification:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Logika Analysis Action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Logika-CI-Action
+        path: INSPECTA-Logika-CI-Action
+        #ref: v1.2.0
+    - name: Logika Analysis
+      id : logika
+      uses: ./INSPECTA-Logika-CI-Action
+      with:
+        sysmlv2-files: "[\"system/Platform.sysml\", \"system/SW.sysml\"]"
+        parseable-messages: true
+    - name: Get analysis timestamp
+      run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
+    - name: Get analysis status
+      run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
+    - name: Get analysis status-messages
+      run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
+    - name: Archive analysis results
+      uses: actions/upload-artifact@v4
+      with:
+        name: logika-analysis-report
+        path: Logika_output.json
+        retention-days: 30
