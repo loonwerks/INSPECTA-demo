@@ -79,6 +79,13 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Setup APE binfmt
+      run: |
+        sudo wget -O /usr/bin/ape https://cosmo.zip/pub/cosmos/bin/ape$(uname -m).elf
+        sudo chmod +x /usr/bin/ape
+        sudo sh -c "echo ':APE:M::MZqFpD::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register' || true
+        sudo sh -c "echo ':APE-jart:M:jartsr::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register" || true
+
     - uses: actions/checkout@v4
     - name: Copy Logika Analysis Action
       uses: actions/checkout@v4
@@ -93,10 +100,13 @@ jobs:
         sysmlv2-files: "[\"system/Platform.sysml\", \"system/SW.sysml\"]"
         parseable-messages: true
     - name: Get analysis timestamp
+      if: {{ always() }}
       run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
     - name: Get analysis status
+      if: {{ always() }}
       run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
     - name: Get analysis status-messages
+      if: {{ always() }}
       run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
