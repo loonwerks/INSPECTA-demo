@@ -100,17 +100,17 @@ jobs:
         sysmlv2-files: "[\"system/Platform.sysml\", \"system/SW.sysml\"]"
         parseable-messages: true
     - name: Get analysis timestamp
-      if: {{ always() }}
+      if: ${{ always() }}
       run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
     - name: Get analysis status
-      if: {{ always() }}
+      if: ${{ always() }}
       run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
     - name: Get analysis status-messages
-      if: {{ always() }}
+      if: ${{ always() }}
       run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
-      if: {{ always() }}
+      if: ${{ always() }}
       with:
         name: logika-analysis-report
         path: Logika.out
