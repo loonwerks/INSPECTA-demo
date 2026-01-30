@@ -113,5 +113,5 @@ jobs:
       if: ${{ always() }}
       with:
         name: logika-analysis-report
-        path: Logika.out
+        path: logika.out
         retention-days: 30
