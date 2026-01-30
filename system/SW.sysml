@@ -113,14 +113,17 @@ package SW {
 		//}
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language = Implementation_Languages::Rust;			
-			
-		language "Fake" /* 
+
+		language "GUMBO" /*{
 			functions
-				def TCP_ALLOWED_PORTS(): u16Array := (5760[u16]);
+				//def TCP_ALLOWED_PORTS(): u16Array := (5760[u16],);
+				def TCP_ALLOWED_PORTS(): Base_Types::Unsigned_16 := 5760[u16];
           
-          		def UDP_ALLOWED_PORTS(): u16Array := (68[u16]);
+          		//def UDP_ALLOWED_PORTS(): u16Array := (68[u16],);
+          		def UDP_ALLOWED_PORTS(): Base_Types::Unsigned_16 := 68[u16];
           
-          
+				// def toU16(byte: Base_Types::Unsigned_8): Base_Types::Unsigned_16 := 0[u16] + byte  ;
+
 		        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
 		            toU16(byte0) * 256[u16] + toU16(byte1); 
 		             
@@ -193,10 +196,10 @@ package SW {
 					aframe#(23) == 17[u8];
 					
 				def tcp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0);
+					two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS();//#(0);
 
 				def udp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0);
+					two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS();//#(0);
 
   				def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	  				two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550;
@@ -209,11 +212,15 @@ package SW {
 
   				def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
 					true;
+    				//exists(0 .. 1), {in i;
+        			//		TCP_ALLOWED_PORTS() == two_bytes_to_u16(aframe#(36), aframe#(37))});
     				//exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
         			//		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
 				
   				def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
     				true;
+					//exists(0  .. 1), {in i;
+      				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
 					//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
       				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
        		
@@ -241,11 +248,11 @@ package SW {
 	            	valid_ipv4_udp_port(aframe);      
 			  
 			  	def input_eq_mav_output_headers(aframe: RawEthernetMessage, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-	            	true;
+					(0 .. size(headers)) -> forAll {in i;  headers#(i) == aframe#(i)};
 					//forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
 	
 			 	def input_eq_mav_output_payload(aframe: RawEthernetMessage, payload: UdpPayload, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-					true;
+					(0 .. size(payload)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)};
 					//forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
 	
 			  	def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame): Base_Types::Boolean :=
@@ -378,9 +385,11 @@ package SW {
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 		
-		language "Fake" /* 
+		language "GUMBO" /*{
 			 functions
-	          
+	        //   def toU16(byte: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
+			// 	byte[u16];
+
 	          def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
 	              toU16(byte0) * 256[u16] + toU16(byte1); 
 	          
@@ -580,14 +589,16 @@ package SW {
 		attribute Initialize_Entrypoint_Source_Text : ScalarValues::String = "init";
 		attribute Compute_Entrypoint_Source_Text : ScalarValues::String = "compute";
 		
-		language "fake" /*
+		language "GUMBO" /*{
 		
 			functions
 		      def three_bytes_to_u32(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8, byte2: Base_Types::Unsigned_8): Base_Types::Unsigned_32 :=
-	            toU32(byte2) * 65536[u32] + toU32(byte1) * 256[u32] + toU32(byte0);
+			  	32[u32];
+	          //  toU32(byte2) * 65536[u32] + toU32(byte1) * 256[u32] + toU32(byte0);
 	
 	          def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-	            toU16(byte1) * 256[u16] + toU16(byte0);
+			  	32[u16];
+	          //  toU16(byte1) * 256[u16] + toU16(byte0);
 	
 			  def msg_v1_is_command_int(msg: UdpPayload): Base_Types::Boolean :=
 				msg#(5) == 75[u8];
@@ -742,13 +753,21 @@ package SW {
 		connection c4 : PortConnection 
 			connect FirewallRx3 to arduPilot.FirewallRx3;
 		connection c5 : PortConnection
-			connect MavlinkRx0 to arduPilot.MavlinkRx0;
+			connect arduPilot.MavlinkRx0 to MavlinkRx0;
 		connection c6 : PortConnection
-			connect MavlinkRx1 to arduPilot.MavlinkRx1;
+			connect arduPilot.MavlinkRx1 to MavlinkRx1;
 		connection c7 : PortConnection
-			connect MavlinkRx2 to arduPilot.MavlinkRx2;
+			connect arduPilot.MavlinkRx2 to MavlinkRx2;
 		connection c8 : PortConnection
-			connect MavlinkRx3 to arduPilot.MavlinkRx3;
+			connect arduPilot.MavlinkRx3 to MavlinkRx3;
+		// connection c5 : PortConnection
+		// 	connect MavlinkRx0 to arduPilot.MavlinkRx0;
+		// connection c6 : PortConnection
+		// 	connect MavlinkRx1 to arduPilot.MavlinkRx1;
+		// connection c7 : PortConnection
+		// 	connect MavlinkRx2 to arduPilot.MavlinkRx2;
+		// connection c8 : PortConnection
+		// 	connect MavlinkRx3 to arduPilot.MavlinkRx3;
 		connection c9 : PortConnection
 			connect arduPilot.EthernetFramesTx0 to EthernetFramesTx0;
 		connection c10 : PortConnection
