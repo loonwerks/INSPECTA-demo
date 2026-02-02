@@ -157,7 +157,7 @@ jobs:
       id : logika
       uses: ./INSPECTA-Codegen-CI-Action
       with:
-        sysmlv2-files: "[\"system/Platform.sysml\""]"
+        sysmlv2-files: "[\"system/Platform.sysml\"]"
         parseable-messages: true
     - name: Get codegen timestamp
       if: ${{ always() }}
