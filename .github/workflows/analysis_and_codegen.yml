@@ -154,7 +154,7 @@ jobs:
         path: INSPECTA-Codegen-CI-Action
         #ref: v1.2.0
     - name: HAMR Codegen
-      id : logika
+      id : hamr
       uses: ./INSPECTA-Codegen-CI-Action
       with:
         sysmlv2-files: "[\"system/Platform.sysml\"]"
@@ -175,3 +175,7 @@ jobs:
         name: codegen-report
         path: codegen.out
         retention-days: 30
+    - name: Commit/push generated code
+      uses: stefanzweifel/git-auto-commit-action@v7
+      with:
+        commit_message: Generate code with INSPECTA-Codegen-CI-Action
