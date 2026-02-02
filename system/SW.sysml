@@ -7,8 +7,8 @@ package SW {
 
 	part def u16Array :> Array {
 		part :>> Base_Type : Base_Types::Unsigned_16;
-		attribute :>> Dimensions = 1;
-		attribute :>> Data_Size = 2 [byte];
+		attribute :>> Dimensions = 4;
+		attribute :>> Data_Size = 8 [byte];
 		attribute :>> Array_Size_Kind = Array_Size_Kinds::Fixed;
 	}
 
@@ -116,16 +116,14 @@ package SW {
 
 		language "GUMBO" /*{
 			functions
-				//def TCP_ALLOWED_PORTS(): u16Array := (5760[u16],);
-				def TCP_ALLOWED_PORTS(): Base_Types::Unsigned_16 := 5760[u16];
+				def TCP_ALLOWED_PORTS(): u16Array := SW::u16Array(5760[u16], 0[u16], 0[u16], 0[u16]);
           
-          		//def UDP_ALLOWED_PORTS(): u16Array := (68[u16],);
-          		def UDP_ALLOWED_PORTS(): Base_Types::Unsigned_16 := 68[u16];
+          		def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16], 0[u16], 0[u16], 0[u16]);
           
 				// def toU16(byte: Base_Types::Unsigned_8): Base_Types::Unsigned_16 := 0[u16] + byte  ;
 
 		        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-		            toU16(byte0) * 256[u16] + toU16(byte1); 
+		            byte0.toU16 * 256[u16] + byte1.toU16;
 		             
 		        def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
            			valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe);
@@ -208,7 +206,7 @@ package SW {
 					two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562;
 				
 				def udp_is_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					udp_is_mavlink_src_port(aframe) & udp_is_Mavlink_dst_port(aframe);
+					udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
 
   				def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
 					true;
@@ -391,7 +389,7 @@ package SW {
 			// 	byte[u16];
 
 	          def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-	              toU16(byte0) * 256[u16] + toU16(byte1); 
+	              byte0.toU16 * 256[u16] + byte1.toU16; 
 	          
 	          def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	            valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe);
