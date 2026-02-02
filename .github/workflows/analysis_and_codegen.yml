@@ -151,7 +151,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         repository: loonwerks/INSPECTA-Codegen-CI-Action
-        path: INSPECTA-Logika-CI-Action
+        path: INSPECTA-Codegen-CI-Action
         #ref: v1.2.0
     - name: HAMR Codegen
       id : logika
