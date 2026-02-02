@@ -101,17 +101,77 @@ jobs:
         parseable-messages: true
     - name: Get analysis timestamp
       if: ${{ always() }}
-      run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
+      run: echo "Analysis timestamp is ${{ steps.verification.outputs.timestamp }}"
     - name: Get analysis status
       if: ${{ always() }}
-      run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
+      run: echo "Analysis status is ${{ steps.verification.outputs.status }}"
     - name: Get analysis status-messages
       if: ${{ always() }}
-      run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
+      run: echo "Analysis status messages are ${{ steps.verification.outputs.status-messages }}"
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: logika-analysis-report
         path: logika.out
+        retention-days: 30
+
+  codegen:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+
+    permissions:
+      contents: write
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      with:
+        persist-credentials: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@v3
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup APE binfmt
+      run: |
+        sudo wget -O /usr/bin/ape https://cosmo.zip/pub/cosmos/bin/ape-$(uname -m).elf
+        sudo chmod +x /usr/bin/ape
+        sudo sh -c "echo ':APE:M::MZqFpD::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register" || true
+        sudo sh -c "echo ':APE-jart:M:jartsr::/usr/bin/ape:' >/proc/sys/fs/binfmt_misc/register" || true
+
+    - uses: actions/checkout@v4
+    - name: Copy Code Generation Action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Codegen-CI-Action
+        path: INSPECTA-Logika-CI-Action
+        #ref: v1.2.0
+    - name: HAMR Codegen
+      id : logika
+      uses: ./INSPECTA-Codegen-CI-Action
+      with:
+        sysmlv2-files: "[\"system/Platform.sysml\""]"
+        parseable-messages: true
+    - name: Get codegen timestamp
+      if: ${{ always() }}
+      run: echo "Codegen timestamp is ${{ steps.codegen.outputs.timestamp }}"
+    - name: Get codegen status
+      if: ${{ always() }}
+      run: echo "Codegen status is ${{ steps.codegen.outputs.status }}"
+    - name: Get codegen status-messages
+      if: ${{ always() }}
+      run: echo "Codegen status messages are ${{ steps.codegen.outputs.status-messages }}"
+    - name: Archive codegen results
+      uses: actions/upload-artifact@v4
+      if: ${{ always() }}
+      with:
+        name: codegen-report
+        path: codegen.out
         retention-days: 30
