@@ -173,9 +173,9 @@ jobs:
         transpiler-options: |
           {
           "run-transpiler" : true,
-          "output-c-dir" : "./hamr/cache"
-          "bit-width" : 32
-          "max-string-size" : 256
+          "output-c-dir" : "./hamr/cache",
+          "bit-width" : 32,
+          "max-string-size" : 256,
           "max-array-size" : 1
           }
         camkes-microkit-options: |
