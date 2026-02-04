@@ -107,10 +107,11 @@ package SW {
 		out port MavlinkOut3 : EventDataPort { out :>> type : UdpFrame; }
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000[ms]; 
-		//:>> Compute_Execution_Time : Time_Range {
-		//	:>> minimum : Time { :>> num = 300[ms]; }
-		//	:>> maximum : Time { :>> num = 300[ms]; }
-		//}
+		//attribute :>> Compute_Execution_Time = 300 [ms];
+		// attribute :>> Compute_Execution_Time : Time_Range {
+		// 	attribute :>> minimum : Time { :>> num = 300[ms] }; 
+		// 	attribute :>> maximum : Time { :>> num = 300[ms] }; 
+		// }
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language = Implementation_Languages::Rust;			
 
@@ -376,18 +377,12 @@ package SW {
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
-		//:>> Compute_Execution_Time : Time_Range {
-		//	:>> minimum : Time { :>> num = 300[ms]; }
-		//	:>> maximum : Time { :>> num = 300[ms]; }
-		//}
+		// attribute :>> Compute_Execution_Time = 300[ms];
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 		
 		language "GUMBO" /*{
 			 functions
-	        //   def toU16(byte: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-			// 	byte[u16];
-
 	          def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
 	              byte0.toU16 * 256[u16] + byte1.toU16; 
 	          
@@ -577,10 +572,11 @@ package SW {
 		
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000[ms]; 
-		//:>> Compute_Execution_Time : Time_Range {
-		//	:>> minimum : Time { :>> num = 300[ms]; }
-		//	:>> maximum : Time { :>> num = 300[ms]; }
-		//}
+		// attribute :>> Compute_Execution_Time = 300 [ms];
+		// attribute :>> Compute_Execution_Time : Time_Range {
+		// 	attribute :>> minimum : Time { attribute :>> num = 300[ms]; }
+		// 	attribute :>> maximum : Time { attribute :>> num = 300[ms]; }
+		// }
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 		attribute :>> Source_Text  = "src/MavlinkFirewall.c";
@@ -716,10 +712,11 @@ package SW {
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms]; 
-		//:>> Compute_Execution_Time : Time_Range {
-		//	:>> minimum : Time { :>> num = 600[ms]; }
-		//	:>> maximum : Time { :>> num = 600[ms]; }
-		//}
+		attribute :>> Compute_Execution_Time = 600 [ms];
+		// attribute :>> Compute_Execution_Time : Time_Range { 
+		// 	attribute :>> minimum = 600[ms]; 
+		// 	attribute :>> maximum = 600[ms]; 
+		// }
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Source_Text = "src/Ardupilot.c";
 		attribute Initialize_Entrypoint_Source_Text : ScalarValues::String = "init";
