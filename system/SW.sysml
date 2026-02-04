@@ -712,7 +712,7 @@ package SW {
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms]; 
-		attribute :>> Compute_Execution_Time = 600 [ms];
+		// attribute :>> Compute_Execution_Time = 600 [ms];
 		// attribute :>> Compute_Execution_Time : Time_Range { 
 		// 	attribute :>> minimum = 600[ms]; 
 		// 	attribute :>> maximum = 600[ms]; 
