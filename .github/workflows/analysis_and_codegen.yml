@@ -183,7 +183,7 @@ jobs:
         path: codegen.out
         retention-days: 30
     - name: Make output files readable
-      run: chmod -R +r system/hamr/*
+      run: sudo chmod -R +r system/hamr/*
     - name: Commit/push generated code
       uses: stefanzweifel/git-auto-commit-action@v7
       with:
