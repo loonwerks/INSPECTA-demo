@@ -98,6 +98,7 @@ jobs:
       uses: ./INSPECTA-Logika-CI-Action
       with:
         sysmlv2-files: "[\"system/Platform.sysml\", \"system/SW.sysml\"]"
+        sourcepaths: "[ \"system\" ]"
         parseable-messages: true
     - name: Get analysis timestamp
       if: ${{ always() }}
