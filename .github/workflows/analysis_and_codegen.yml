@@ -163,8 +163,8 @@ jobs:
         parseable-messages: true
         platform: Microkit
         system-name: Platform::ZCU102
-        slang-options: "{ \"slang-output-dir\" : \"./hamr\", \"package-name\" : \"firewall\", \"no-proyek-ive\" : true }"
-        transpiler-options: "{ \"run-transpiler\" : true, \"exclude-component-impl\" : true, \"output-c-dir\" : \"./hamr/cache\", \"bit-width\" : 32, \"max-string-size\" : 256, \"max-array-size\" : 1 }"
+        slang-options: "{ \"slang-output-dir\" : \"hamr\", \"package-name\" : \"firewall\", \"no-proyek-ive\" : true }"
+        transpiler-options: "{ \"run-transpiler\" : true, \"exclude-component-impl\" : true, \"output-c-dir\" : \"hamr/cache\", \"bit-width\" : 32, \"max-string-size\" : 256, \"max-array-size\" : 1 }"
         camkes-microkit-options: "{ \"workspace-root-dir\" : \"system\" }"
     - name: Get codegen timestamp
       if: ${{ always() }}
@@ -185,4 +185,5 @@ jobs:
     - name: Commit/push generated code
       uses: stefanzweifel/git-auto-commit-action@v7
       with:
+        file_pattern: system/hamr/*
         commit_message: Generate code with INSPECTA-Codegen-CI-Action
