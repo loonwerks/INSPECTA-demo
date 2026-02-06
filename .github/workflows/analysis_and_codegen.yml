@@ -102,13 +102,13 @@ jobs:
         parseable-messages: true
     - name: Get analysis timestamp
       if: ${{ always() }}
-      run: echo "Analysis timestamp is ${{ steps.verification.outputs.timestamp }}"
+      run: echo "Analysis timestamp is ${{ steps.logika.outputs.timestamp }}"
     - name: Get analysis status
       if: ${{ always() }}
-      run: echo "Analysis status is ${{ steps.verification.outputs.status }}"
+      run: echo "Analysis status is ${{ steps.logika.outputs.status }}"
     - name: Get analysis status-messages
       if: ${{ always() }}
-      run: echo "Analysis status messages are ${{ steps.verification.outputs.status-messages }}"
+      run: echo "Analysis status messages are ${{ steps.logika.outputs.status-messages }}"
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
@@ -169,13 +169,13 @@ jobs:
         camkes-microkit-options: "{ \"workspace-root-dir\" : \"system\" }"
     - name: Get codegen timestamp
       if: ${{ always() }}
-      run: echo "Codegen timestamp is ${{ steps.codegen.outputs.timestamp }}"
+      run: echo "Codegen timestamp is ${{ steps.hamr.outputs.timestamp }}"
     - name: Get codegen status
       if: ${{ always() }}
-      run: echo "Codegen status is ${{ steps.codegen.outputs.status }}"
+      run: echo "Codegen status is ${{ steps.hamr.outputs.status }}"
     - name: Get codegen status-messages
       if: ${{ always() }}
-      run: echo "Codegen status messages are ${{ steps.codegen.outputs.status-messages }}"
+      run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
     - name: Archive codegen results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
