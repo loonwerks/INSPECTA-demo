@@ -1,0 +1,519 @@
+{
+    "TYPE": "RESPONSE",
+    "ACTION": "APPSUMM",
+    "SUCCESS": true,
+    "APPRAISAL_RESULT": true,
+    "PAYLOAD": [
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lower_is_lower_temp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::56-57",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Figure_A_7",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::450-454",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "REQ_MA_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::434-434",
+            "meta": "Touched GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_LowerAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::12-12",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mri::mri",
+            "contract_id": "RegulatorStatusIsInitiallyInit",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::219-220",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/operator_interface_oip_oit/src/bridge/operator_interface_oip_oit_api.rs::138-143",
+            "meta": "Verus realization of GUMBO integration constraint 'Allowed_LowerAlarmTempWstatus' on touched outgoing port lower_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Operator_Interface.aadl::135-138",
+            "meta": "GUMBO general guarantees contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::25-26",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_UpperAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_LowerAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::11-11",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "REQ_MA_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_ma_ma/src/component/thermostat_mt_ma_ma_app.rs::12-12",
+            "meta": "Touched Rust realization of GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::17-17",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::34-35",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_UpperAlarmTempWStatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_LowerAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::456-458",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "REQ_MA_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::441-445",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "initlastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::513-513",
+            "meta": "Touched GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "REQ_MHS_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::35-39",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::16-16",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Operator_Interface.aadl::113-114",
+            "meta": "Invoked GUMBO Subclause Method: Allowed_UpperAlarmTempWStatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_LowerAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_ma_ma/src/component/thermostat_mt_ma_ma_app.rs::56-59",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::11-11",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_mmi_mmi/src/component/thermostat_mt_mmi_mmi_app.rs::58-61",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/operator_interface_oip_oit/src/component/operator_interface_oip_oit_app.rs::46-49",
+            "meta": "Verus realization of GUMBO general guarantees contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_UpperAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::25-26",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_UpperAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_UpperAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::460-462",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Figure_A_7",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_ma_ma/src/component/thermostat_mt_ma_ma_app.rs::50-55",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::51-52",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::isValidTempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mrm::mrm",
+            "contract_id": "REQ_MRM_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mrm_mrm/src/component/thermostat_rt_mrm_mrm_app.rs::31-34",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::21-22",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_LowerAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::51-52",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::isValidTempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::513-513",
+            "meta": "Touched GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::12-12",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_LowerAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::21-22",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_LowerAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_UpperAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::17-17",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::39-42",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_AlarmTemp_Ranges",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "initlastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::33-34",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "REQ_MHS_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::519-522",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mrm::mrm",
+            "contract_id": "REQ_MRM_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::371-373",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::17-17",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::14-14",
+            "meta": "Touched Rust realization of GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::25-26",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_UpperAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Operator_Interface.aadl::128-132",
+            "meta": "GUMBO integration constraint 'Allowed_UpperAlarmTempWstatus' on touched outgoing port upper_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::186-187",
+            "meta": "GUMBO integration constraint 'Allowed_LowerAlarmTemp' on touched incoming port lower_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "initlastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::14-14",
+            "meta": "Touched Rust realization of GUMBO state variable: lastCmd",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/operator_interface_oip_oit/src/component/operator_interface_oip_oit_app.rs::85-88",
+            "meta": "Invoked Verus Method: Allowed_UpperAlarmTempWStatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::189-190",
+            "meta": "GUMBO integration constraint 'Allowed_UpperAlarmTemp' on touched incoming port upper_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::21-22",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_LowerAlarmTemp",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::45-48",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_AlarmTempWStatus_Ranges",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::530-531",
+            "meta": "GUMBO general guarantees contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mri::mri",
+            "contract_id": "lower_is_not_higher_than_upper",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mri_mri/src/component/thermostat_rt_mri_mri_app.rs::54-55",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::11-11",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::16-16",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mhs_mhs/src/component/thermostat_rt_mhs_mhs_app.rs::61-63",
+            "meta": "Verus realization of GUMBO general guarantees contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmm::mmm",
+            "contract_id": "REQ_MMM_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::332-334",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mri::mri",
+            "contract_id": "RegulatorStatusIsInitiallyInit",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_rt_mri_mri/src/component/thermostat_rt_mri_mri_app.rs::25-26",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_mmi_mmi/src/bridge/thermostat_mt_mmi_mmi_api.rs::184-185",
+            "meta": "Verus realization of GUMBO integration constraint 'Allowed_UpperAlarmTemp' on touched incoming port upper_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_mmi_mmi/src/bridge/thermostat_mt_mmi_mmi_api.rs::200-201",
+            "meta": "Verus realization of GUMBO integration constraint 'Allowed_LowerAlarmTemp' on touched incoming port lower_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::30-31",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_LowerAlarmTempWStatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "monitorStatusInitiallyInit",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::194-195",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmm::mmm",
+            "contract_id": "REQ_MMM_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_mmm_mmm/src/component/thermostat_mt_mmm_mmm_app.rs::31-34",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "REQ_MA_1",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_ma_ma/src/component/thermostat_mt_ma_ma_app.rs::31-36",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "initlastCmd",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::517-518",
+            "meta": "GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::39-42",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_AlarmTemp_Ranges",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::34-35",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_UpperAlarmTempWStatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Monitor.aadl::200-204",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "Allowed_AlarmTempWstatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::12-12",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::LowerAlarmTemp_upper",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::45-48",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::Allowed_AlarmTempWStatus_Ranges",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mhs::mhs",
+            "contract_id": "lower_is_lower_temp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::527-527",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::mmi::mmi",
+            "contract_id": "monitorStatusInitiallyInit",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_mmi_mmi/src/component/thermostat_mt_mmi_mmi_app.rs::31-32",
+            "meta": "Verus realization of GUMBO initializes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Operator_Interface.aadl::121-126",
+            "meta": "GUMBO integration constraint 'Allowed_LowerAlarmTempWstatus' on touched outgoing port lower_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_UpperAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/thermostat_mt_ma_ma/src/component/thermostat_mt_ma_ma_app.rs::60-63",
+            "meta": "Verus realization of GUMBO general assumes contract",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::mt::ma::ma",
+            "contract_id": "Table_A_12_UpperAlarmTemp",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/GUMBO_Library.aadl::16-16",
+            "meta": "Invoked GUMBO Annex Library Method: GUMBO_Library::UpperAlarmTemp_lower",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::operator_interface::oip::oit",
+            "contract_id": "Allowed_AlarmTempWStatus_Ranges",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/hamr/microkit/crates/operator_interface_oip_oit/src/bridge/operator_interface_oip_oit_api.rs::161-164",
+            "meta": "Verus realization of GUMBO integration constraint 'Allowed_UpperAlarmTempWstatus' on touched outgoing port upper_alarm_tempWstatus",
+            "result": true
+        },
+        {
+            "component": "Isolette_Single_Sensor_Instance::thermostat::rt::mri::mri",
+            "contract_id": "lower_is_not_higher_than_upper",
+            "location": "/Users/adampetz/Documents/Summer_2025/INSPECTA-models/isolette/aadl/aadl/packages/Regulate.aadl::225-226",
+            "meta": "GUMBO general assumes contract",
+            "result": true
+        }
+    ]
+}
