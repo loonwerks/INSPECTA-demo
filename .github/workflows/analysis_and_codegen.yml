@@ -176,11 +176,13 @@ jobs:
     - name: Get codegen status-messages
       if: ${{ always() }}
       run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
-    - name: Collect codegen report
+    - name: Count Lines of Code (cloc)
+      uses: djdefi/cloc-action@main
+      with:
+        options: "--exclude-lang=YAML --json --report-file=cloc-report.json"
       if: ${{ always() }}
       run: |
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
-        cloc --json . | jq '{"cloc" : .}' >> cloc-report.json
         jq -s 'add' codegen-messages.json cloc-report.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
           > codegen-report.json
