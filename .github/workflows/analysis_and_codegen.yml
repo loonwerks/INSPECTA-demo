@@ -177,7 +177,7 @@ jobs:
       if: ${{ always() }}
       run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
     - name: Collect codegen report
-      if: ${{ always }}
+      if: ${{ always() }}
       run: |
         cat codegen.out | jq --raw-input , | jq --slurp '{"messages" " ."}' > codegen-messages.json
         cloc --json . | jq '{"cloc" : .}' >> cloc-report.json
