@@ -116,7 +116,7 @@ jobs:
       run: |
         mkdir -p public
         echo ${{ steps.logika.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
-          | jq --arg timestamp ${{ steps.logika.outputs.timestamp }} \
+          | jq --arg timestamp "${{ steps.logika.outputs.timestamp }}" \
           --arg exitcode ${{ steps.logika.outputs.status }} \
           '. += $ARGS.named' \
           logika-messages.json \
