@@ -108,7 +108,16 @@ jobs:
       run: echo "Analysis status is ${{ steps.logika.outputs.status }}"
     - name: Get analysis status-messages
       if: ${{ always() }}
-      run: echo "Analysis status messages are ${{ steps.logika.outputs.status-messages }}"
+      run: echo "Analysis status messages are ${{ steps.logika.outputs.status-messages }}" 
+    - name: Collect analysis results report
+      if: ${{ always() }}
+      run: |
+        echo ${{ steps.logika.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
+          | jq --arg timestamp ${{ steps.logika.outputs.timestamp }} \
+          --arg exitcode ${{ steps.logika.outputs.status }} \
+          '. += $ARGS.named' \
+          logika-messages.json \
+          > public/logika-report.json
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
@@ -116,6 +125,14 @@ jobs:
         name: logika-analysis-report
         path: logika.out
         retention-days: 30
+    - name: Upload report to Pages
+      if: ${{ always() }}
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+    - name: Deploy to GitHub Pages
+      if: ${{ always() }}
+      uses: actions/deploy-pages@v4
 
   codegen:
     runs-on: ubuntu-latest
