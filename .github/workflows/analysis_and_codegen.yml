@@ -176,12 +176,20 @@ jobs:
     - name: Get codegen status-messages
       if: ${{ always() }}
       run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
+    - name: Collect codegen report
+      if: ${{ always }}
+      run: |
+        cat codegen.out | jq --raw-input , | jq --slurp '{"messages" " ."}' > codegen-messages.json
+        cloc --json . | jq '{"cloc" : .}' >> cloc-report.json
+        jq -s 'add' codegen-messages.json cloc-report.json \
+          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
+          > codegen-report.json
     - name: Archive codegen results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: codegen-report
-        path: codegen.out
+        path: codegen-report.json
         retention-days: 30
     - name: Make output files readable
       run: sudo chmod -R +r system/hamr/*
