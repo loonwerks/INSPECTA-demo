@@ -185,16 +185,25 @@ jobs:
       if: ${{ always() }}
       run: |
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
+        mkdir -p public
         jq -s 'add' codegen-messages.json cloc-report.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
-          > codegen-report.json
+          > public/codegen-report.json
     - name: Archive codegen results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: codegen-report
-        path: codegen-report.json
+        path: public/codegen-report.json
         retention-days: 30
+    - name: Upload report to Pages
+      if: ${{ always() }}
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+    - name: Deploy to GitHub Pages
+      if: ${{ always() }}
+      uses: actions/deploy-pages@v4
     - name: Make output files readable
       run: sudo chmod -R +r system/hamr/*
     - name: Commit/push generated code
@@ -202,3 +211,4 @@ jobs:
       with:
         file_pattern: system/hamr/*
         commit_message: Generate code with INSPECTA-Codegen-CI-Action
+
