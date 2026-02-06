@@ -125,6 +125,8 @@ jobs:
       contents: write
       packages: read
       attestations: read
+      pages: write
+      id-token: write
 
     steps:
     - name: Checkout repository
