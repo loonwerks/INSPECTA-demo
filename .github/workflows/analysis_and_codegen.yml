@@ -112,12 +112,11 @@ jobs:
     - name: Collect analysis results report
       if: ${{ always() }}
       run: |
-        mkdir -p public
         echo ${{ steps.logika.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
           | jq --arg timestamp "${{ steps.logika.outputs.timestamp }}" \
           --arg exitcode ${{ steps.logika.outputs.status }} \
           '. += $ARGS.named' \
-          > public/logika-report.json
+          > logika-report.json
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
@@ -195,16 +194,15 @@ jobs:
       run: |
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
         jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
-        mkdir -p public
         jq -s 'add' codegen-messages.json cloc-report-sub.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
-          > public/codegen-report.json
+          > codegen-report.json
     - name: Archive codegen results
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
         name: codegen-report
-        path: public/codegen-report.json
+        path: codegen-report.json
         retention-days: 30
     - name: Make output files readable
       run: sudo chmod -R +r system/hamr/*
