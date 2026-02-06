@@ -112,6 +112,7 @@ jobs:
     - name: Collect analysis results report
       if: ${{ always() }}
       run: |
+        mkdir -p public
         echo ${{ steps.logika.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
           | jq --arg timestamp ${{ steps.logika.outputs.timestamp }} \
           --arg exitcode ${{ steps.logika.outputs.status }} \
