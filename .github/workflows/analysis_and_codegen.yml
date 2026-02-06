@@ -187,8 +187,9 @@ jobs:
       if: ${{ always() }}
       run: |
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
+        jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
         mkdir -p public
-        jq -s 'add' codegen-messages.json cloc-report.json \
+        jq -s 'add' codegen-messages.json cloc-report-sub.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
           > public/codegen-report.json
     - name: Archive codegen results
