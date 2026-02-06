@@ -179,7 +179,7 @@ jobs:
     - name: Collect codegen report
       if: ${{ always() }}
       run: |
-        cat codegen.out | jq --raw-input , | jq --slurp '{"messages" " ."}' > codegen-messages.json
+        cat codegen.out | jq --raw-input , | jq --slurp '{"messages" : .}' > codegen-messages.json
         cloc --json . | jq '{"cloc" : .}' >> cloc-report.json
         jq -s 'add' codegen-messages.json cloc-report.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
