@@ -177,9 +177,11 @@ jobs:
       if: ${{ always() }}
       run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
     - name: Count Lines of Code (cloc)
+      if: ${{ always() }}
       uses: djdefi/cloc-action@main
       with:
         options: "--exclude-lang=YAML --json --report-file=cloc-report.json"
+    - name: Collect codegen report
       if: ${{ always() }}
       run: |
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
