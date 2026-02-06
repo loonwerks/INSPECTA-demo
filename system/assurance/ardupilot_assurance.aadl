@@ -1,0 +1,80 @@
+package ardupilot_assurance
+public
+	
+	system ArduPilot
+
+	end ArduPilot;
+	
+	system implementation ArduPilot.i
+		annex resolute {**
+			argue component_contracts_satisfied()
+		**};
+	end ArduPilot.i;
+	
+	annex resolute {**
+		
+		
+		goal component_contracts_satisfied() <=
+			** "Component Contracts are satisfied" **
+			strategy S1: "Argue over each component";
+			let appraisal_summary : Json.Json_Object = get_appraisal_summary(); 
+			let components : {string} = get_components(appraisal_summary);
+			-- Argue over each component's contracts
+			forall (comp : components) . contracts_satisfied(appraisal_summary, comp)
+			
+		goal contracts_satisfied(appraisal_summary : Json.Json_Object, comp : string) <=
+			** comp " contracts satisfied" **
+			let contracts : {Json.Json_Object} = get_contracts(appraisal_summary, comp);
+			forall (contract : contracts) .
+				if StringLib.contains(Json.getString(contract, "location"), ".sysml") then
+					-- Architecture contract has not been altered
+					architecture_contract_not_altered(Json.getString(contract, "contract_id"), contract) and
+					-- Logika was run and passes
+					architecture_contract_verified(Json.getString(contract, "contract_id"), contract)
+				else if StringLib.contains(Json.getString(contract, "location"), ".rs") then
+					-- Verus contract was generated 
+					software_contract_generated(Json.getString(contract, "contract_id")) and
+					-- Verus contract has not been altered
+					software_contract_not_altered(Json.getString(contract, "contract_id"), contract) and
+					-- Verus was run and passes
+					software_contract_verified(Json.getString(contract, "contract_id"), contract)
+				else true
+			
+		goal architecture_contract_not_altered(id : string, contract : Json.Json_Object) <=
+			** "Model contract " id " not altered" **
+			attest(contract, "Model")
+		
+		goal architecture_contract_verified(id : string, contract : Json.Json_Object) <=
+			** "Model contract " id " verified" **
+			true
+			
+		goal software_contract_generated(id : string) <=
+			** "Software contract " id " was generated" **
+			true
+			
+		goal software_contract_not_altered(id : string, contract : Json.Json_Object) <=
+			** "Software contract " id " not altered" **
+			attest(contract, "Verus")
+			
+		goal software_contract_verified(id : string, contract : Json.Json_Object) <=
+			** "Software contract " id " verified" **
+			true
+			
+		attest(contract : Json.Json_Object, kind : string) : bool =
+			Json.getBoolean(contract, "result")
+			
+		get_appraisal_summary() : Json.Json_Object =
+			let contents : string = FileAccess.getContents("appsumm_response.json");
+			Json.toObject(Json.parse(contents))
+			
+		get_components(appraisal_summary : Json.Json_Object) : {string} =
+			let payload : Json.Json_Array = Json.getArray(appraisal_summary, "PAYLOAD");
+			{Json.getString(Json.toObject(c), "component") for (c : payload)}
+			
+		get_contracts(appraisal_summary : Json.Json_Object, comp : string) : {Json.Json_Object} = 
+			let payload : Json.Json_Array = Json.getArray(appraisal_summary, "PAYLOAD");
+			{Json.toObject(c) for (c : payload) | Json.getString(Json.toObject(c), "component") = comp}
+			
+	**};
+	
+end ardupilot_assurance;
