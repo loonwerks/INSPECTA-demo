@@ -67,8 +67,6 @@ jobs:
       contents: read
       packages: read
       attestations: read
-      pages: write
-      id-token: write
 
     steps:
     - name: Checkout repository
@@ -126,27 +124,17 @@ jobs:
       if: ${{ always() }}
       with:
         name: logika-analysis-report
-        path: logika.out
+        path: logika-report.json
         retention-days: 30
-    - name: Upload report to Pages
-      if: ${{ always() }}
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: public
-    - name: Deploy to GitHub Pages
-      if: ${{ always() }}
-      uses: actions/deploy-pages@v4
 
   codegen:
     runs-on: ubuntu-latest
-    continue-on-error: false
+    continue-on-error: true
 
     permissions:
       contents: write
       packages: read
       attestations: read
-      pages: write
-      id-token: write
 
     steps:
     - name: Checkout repository
@@ -219,14 +207,6 @@ jobs:
         name: codegen-report
         path: public/codegen-report.json
         retention-days: 30
-    - name: Upload report to Pages
-      if: ${{ always() }}
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: public
-    - name: Deploy to GitHub Pages
-      if: ${{ always() }}
-      uses: actions/deploy-pages@v4
     - name: Make output files readable
       run: sudo chmod -R +r system/hamr/*
     - name: Commit/push generated code
@@ -235,3 +215,34 @@ jobs:
         file_pattern: system/hamr/*
         commit_message: Generate code with INSPECTA-Codegen-CI-Action
 
+  reports:
+    runs-on: ubuntu-latest
+    needs: [verification, codegen]
+    continue-on-error: false
+
+    permissions:
+      contents: write
+      packages: read
+      attestations: read
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Download verfication report artifact
+      uses: actions/download-artifact@v5
+      with:
+        name: logika-analysis-report
+        path: public
+    - name: Download codegen report artifact
+      uses: actions/download-artifact@v5
+      with:
+        name: codegen-report
+        path: public
+    - name: Upload report to Pages
+      if: ${{ always() }}
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+    - name: Deploy to GitHub Pages
+      if: ${{ always() }}
+      uses: actions/deploy-pages@v4
