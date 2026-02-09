@@ -1,0 +1,62 @@
+name: Model Analysis and Code Generation
+
+on:
+  push:
+    branches: ["feb-2026"]
+    paths:
+      - '**.rs'
+      - '**/Cargo**'
+  pull_request:
+    types: ["opened", "reopened", "edited"]
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    if: false
+    continue-on-error: true
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Verus action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Verus-CI-Action
+        path: INSPECTA-Verus-CI-Action
+    - name: Verus Analysis
+      id : verus
+      uses: ./INSPECTA-Verus-CI-Action
+      with:
+        project-path: isolate-ethernet-simple
+        component-to-analyze: platform::ZCU102.Impl
+    - name: Get analysis timestamp
+      run: echo "Analysis timestamp is ${{ steps.verus.outputs.timestamp }}"
+    - name: Get analysis status
+      run: echo "Analysis status is ${{ steps.verus.outputs.status }}"
+    - name: Get analysis status-messages
+      run: echo "Analysis status messages are ${{ steps.verus.outputs.status-messages }}"
+    - name: Archive analysis results
+      uses: actions/upload-artifact@v4
+      with:
+        name: verus-analysis-report
+        path: verus-output.json
+        retention-days: 30
+
