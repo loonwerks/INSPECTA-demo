@@ -41,7 +41,7 @@ val sel4_output_dir =
   if (platform == "Microkit") "microkit"
   else "sysml"
 
-val hamrDir = sysmlDir.up / "hamr"
+val hamrDir = sysmlDir / "hamr"
 
 var codegenArgs = ISZ(
   sireum.value, "hamr", "sysml", "codegen",
@@ -57,7 +57,7 @@ var codegenArgs = ISZ(
   "--verbose",
   "--workspace-root-dir", sysmlDir.string,
   "--sourcepath", sysmlDir.value,
-  "--system-name", "Platform::ZCU102",
+  "--system-name", "Platform::ZCU102_Impl",
 )
 
 if (platform == "JVM") {

@@ -10,7 +10,7 @@ package Platform {
 		attribute Schedule_Source_Text : ScalarValues::String = "domain_schedule.c";
 	}
 	
-	part def ZCU102 :> System {
+	part def ZCU102_Impl :> System {
 		part proc : Proc;
 		part seL4 : SW::seL4;
 		

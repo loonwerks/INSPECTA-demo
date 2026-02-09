@@ -7,8 +7,8 @@ package SW {
 
 	part def u16Array :> Array {
 		part :>> Base_Type : Base_Types::Unsigned_16;
-		attribute :>> Dimensions = 4;
-		attribute :>> Data_Size = 8 [byte];
+		attribute :>> Dimensions = 1;
+		attribute :>> Data_Size = 2 [byte];
 		attribute :>> Array_Size_Kind = Array_Size_Kinds::Fixed;
 	}
 
@@ -33,12 +33,12 @@ package SW {
 		attribute :>> Array_Size_Kind = Array_Size_Kinds::Fixed;
 	}
 	
-	part def UdpFrame :> Struct {
+	part def UdpFrame_Impl :> Struct {
 		part headers : EthIpUdpHeaders;
 		part payload : UdpPayload;
 	}
 	
-	part def SizedEthernetMessage :> Struct {
+	part def SizedEthernetMessage_Impl :> Struct {
 		part amessage : RawEthernetMessage;
 		part sz : Base_Types::Unsigned_16;
 	}
@@ -52,44 +52,44 @@ package SW {
 		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; }
 		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
-		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
 	}
 	
 	part def LowLevelEthernetDriver_seL4 :> Process {
 		attribute :>> Domain = 4; 
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 
-		part lowLevelEthernetDriver : LowLevelEthernetDriver; 
+		part LowLevelEthernetDriver : SW::LowLevelEthernetDriver; 
 
 		out port EthernetFramesRx0: EventDataPort {out :>> type : RawEthernetMessage; }
 		out port EthernetFramesRx1: EventDataPort {out :>> type : RawEthernetMessage; }
 		out port EthernetFramesRx2: EventDataPort {out :>> type : RawEthernetMessage; } 
 		out port EthernetFramesRx3: EventDataPort {out :>> type : RawEthernetMessage; }
-		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage; }
-		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage; }
+		in port EthernetFramesTx0: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
 
 		connection c1 : PortConnection 
-			connect EthernetFramesTx0 to lowLevelEthernetDriver.EthernetFramesTx0;
+			connect EthernetFramesTx0 to LowLevelEthernetDriver.EthernetFramesTx0;
 		connection c2 : PortConnection 
-			connect EthernetFramesTx1 to lowLevelEthernetDriver.EthernetFramesTx1;
+			connect EthernetFramesTx1 to LowLevelEthernetDriver.EthernetFramesTx1;
 		connection c3 : PortConnection 
-			connect EthernetFramesTx2 to lowLevelEthernetDriver.EthernetFramesTx2;
+			connect EthernetFramesTx2 to LowLevelEthernetDriver.EthernetFramesTx2;
 		connection c4 : PortConnection 
-			connect EthernetFramesTx3 to lowLevelEthernetDriver.EthernetFramesTx3;
+			connect EthernetFramesTx3 to LowLevelEthernetDriver.EthernetFramesTx3;
 			
 		connection c5 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx0 to EthernetFramesRx0;
+			connect LowLevelEthernetDriver.EthernetFramesRx0 to EthernetFramesRx0;
 		connection c6 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx1 to EthernetFramesRx1;
+			connect LowLevelEthernetDriver.EthernetFramesRx1 to EthernetFramesRx1;
 		connection c7 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx2 to EthernetFramesRx2;
+			connect LowLevelEthernetDriver.EthernetFramesRx2 to EthernetFramesRx2;
 		connection c8 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx3 to EthernetFramesRx3;
+			connect LowLevelEthernetDriver.EthernetFramesRx3 to EthernetFramesRx3;
 	}
 	
 	part def RxFirewall :> Thread {
@@ -101,10 +101,10 @@ package SW {
 		out port VmmOut1 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port VmmOut2 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port VmmOut3 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkOut0 : EventDataPort { out :>> type : UdpFrame; }
-		out port MavlinkOut1 : EventDataPort { out :>> type : UdpFrame; }
-		out port MavlinkOut2 : EventDataPort { out :>> type : UdpFrame; }
-		out port MavlinkOut3 : EventDataPort { out :>> type : UdpFrame; }
+		out port MavlinkOut0 : EventDataPort { out :>> type : UdpFrame_Impl; }
+		out port MavlinkOut1 : EventDataPort { out :>> type : UdpFrame_Impl; }
+		out port MavlinkOut2 : EventDataPort { out :>> type : UdpFrame_Impl; }
+		out port MavlinkOut3 : EventDataPort { out :>> type : UdpFrame_Impl; }
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000[ms]; 
 		//attribute :>> Compute_Execution_Time = 300 [ms];
@@ -117,12 +117,10 @@ package SW {
 
 		language "GUMBO" /*{
 			functions
-				def TCP_ALLOWED_PORTS(): u16Array := SW::u16Array(5760[u16], 0[u16], 0[u16], 0[u16]);
+				def TCP_ALLOWED_PORTS(): u16Array := SW::u16Array(5760[u16]);
           
-          		def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16], 0[u16], 0[u16], 0[u16]);
+          		def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16]);
           
-				// def toU16(byte: Base_Types::Unsigned_8): Base_Types::Unsigned_16 := 0[u16] + byte  ;
-
 		        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
 		            byte0.toU16 * 256[u16] + byte1.toU16;
 		             
@@ -195,10 +193,10 @@ package SW {
 					aframe#(23) == 17[u8];
 					
 				def tcp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS();//#(0);
+					two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0);
 
 				def udp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS();//#(0);
+					two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0);
 
   				def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	  				two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550;
@@ -210,16 +208,14 @@ package SW {
 					udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
 
   				def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					true;
-    				//exists(0 .. 1), {in i;
-        			//		TCP_ALLOWED_PORTS() == two_bytes_to_u16(aframe#(36), aframe#(37))});
+    				(0 .. size(TCP_ALLOWED_PORTS())) -> exists {in i;
+        					TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))};
     				//exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
         			//		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
 				
   				def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-    				true;
-					//exists(0  .. 1), {in i;
-      				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
+					(0 .. size(UDP_ALLOWED_PORTS())) -> exists {in i;
+     					UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))};    
 					//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
       				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
        		
@@ -254,7 +250,7 @@ package SW {
 					(0 .. size(payload)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)};
 					//forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
 	
-			  	def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame): Base_Types::Boolean :=
+			  	def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame_Impl): Base_Types::Boolean :=
 			  		input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
 	            
 	      compute
@@ -330,36 +326,36 @@ package SW {
 		out port VmmOut1 : EventDataPort { out :> type : RawEthernetMessage; }
 		out port VmmOut2 : EventDataPort { out :> type : RawEthernetMessage; }
 		out port VmmOut3 : EventDataPort { out :> type : RawEthernetMessage; }
-		out port MavlinkOut0 : EventDataPort { out :> type : UdpFrame; }
-		out port MavlinkOut1 : EventDataPort { out :> type : UdpFrame; }
-		out port MavlinkOut2 : EventDataPort { out :> type : UdpFrame; }
-		out port MavlinkOut3 : EventDataPort { out :> type : UdpFrame; }
+		out port MavlinkOut0 : EventDataPort { out :> type : UdpFrame_Impl; }
+		out port MavlinkOut1 : EventDataPort { out :> type : UdpFrame_Impl; }
+		out port MavlinkOut2 : EventDataPort { out :> type : UdpFrame_Impl; }
+		out port MavlinkOut3 : EventDataPort { out :> type : UdpFrame_Impl; }
 
-		part firewall : RxFirewall;
+		part RxFirewall : SW::RxFirewall;
 		connection c1 : PortConnection 
-			connect EthernetFramesRxIn0 to firewall.EthernetFramesRxIn0;
+			connect EthernetFramesRxIn0 to RxFirewall.EthernetFramesRxIn0;
 		connection c2 : PortConnection 
-			connect EthernetFramesRxIn1 to firewall.EthernetFramesRxIn1;
+			connect EthernetFramesRxIn1 to RxFirewall.EthernetFramesRxIn1;
 		connection c3 : PortConnection 
-			connect EthernetFramesRxIn2 to firewall.EthernetFramesRxIn2;
+			connect EthernetFramesRxIn2 to RxFirewall.EthernetFramesRxIn2;
 		connection c4 : PortConnection 
-			connect EthernetFramesRxIn3 to firewall.EthernetFramesRxIn3;	
+			connect EthernetFramesRxIn3 to RxFirewall.EthernetFramesRxIn3;	
 		connection c5 : PortConnection
-			connect firewall.VmmOut0 to VmmOut0;
+			connect RxFirewall.VmmOut0 to VmmOut0;
 		connection c6 : PortConnection
-			connect firewall.VmmOut1 to VmmOut1;
+			connect RxFirewall.VmmOut1 to VmmOut1;
 		connection c7 : PortConnection
-			connect firewall.VmmOut2 to VmmOut2;
+			connect RxFirewall.VmmOut2 to VmmOut2;
 		connection c8 : PortConnection
-			connect firewall.VmmOut3 to VmmOut3;
+			connect RxFirewall.VmmOut3 to VmmOut3;
 		connection c9 : PortConnection
-			connect firewall.MavlinkOut0 to MavlinkOut0;
+			connect RxFirewall.MavlinkOut0 to MavlinkOut0;
 		connection c10 : PortConnection
-			connect firewall.MavlinkOut1 to MavlinkOut1;
+			connect RxFirewall.MavlinkOut1 to MavlinkOut1;
 		connection c11 : PortConnection
-			connect firewall.MavlinkOut2 to MavlinkOut2;
+			connect RxFirewall.MavlinkOut2 to MavlinkOut2;
 		connection c12 : PortConnection
-			connect firewall.MavlinkOut3 to MavlinkOut3;
+			connect RxFirewall.MavlinkOut3 to MavlinkOut3;
 			
 		attribute :>> Domain = 5;	
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
@@ -370,10 +366,10 @@ package SW {
 		in port EthernetFramesTxIn1 : EventDataPort { in :> type : RawEthernetMessage; }
 		in port EthernetFramesTxIn2 : EventDataPort { in :> type : RawEthernetMessage; }
 		in port EthernetFramesTxIn3 : EventDataPort { in :> type : RawEthernetMessage; }
-		out port EthernetFramesTxOut0 : EventDataPort { out :> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut1 : EventDataPort { out :> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut2 : EventDataPort { out :> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut3 : EventDataPort { out :> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut0 : EventDataPort { out :> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut1 : EventDataPort { out :> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut2 : EventDataPort { out :> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut3 : EventDataPort { out :> type : SizedEthernetMessage_Impl; }
 	
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
@@ -464,10 +460,10 @@ package SW {
 	          def valid_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	            frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
 	
-	          def valid_output_arp_size(output: SizedEthernetMessage): Base_Types::Boolean :=
+	          def valid_output_arp_size(output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
 	            output.sz == 64[u16];
 	
-	          def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage): Base_Types::Boolean :=
+	          def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
 	            output.sz == (ipv4_length(input)+14[u16]);
 	
 	          def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
@@ -532,39 +528,39 @@ package SW {
 		in port EthernetFramesTxIn1 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port EthernetFramesTxIn2 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port EthernetFramesTxIn3 : EventDataPort { in :>> type : RawEthernetMessage; }
-		out port EthernetFramesTxOut0 : EventDataPort { out :>> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut1 : EventDataPort { out :>> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut2 : EventDataPort { out :>> type : SizedEthernetMessage; }
-		out port EthernetFramesTxOut3 : EventDataPort { out :>> type : SizedEthernetMessage; }
+		out port EthernetFramesTxOut0 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut1 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut2 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
+		out port EthernetFramesTxOut3 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
 	
-		part firewall : TxFirewall;
+		part TxFirewall : SW::TxFirewall;
 		
 		connection c1 : PortConnection 
-			connect EthernetFramesTxIn0 to firewall.EthernetFramesTxIn0;
+			connect EthernetFramesTxIn0 to TxFirewall.EthernetFramesTxIn0;
 		connection c2 : PortConnection 
-			connect EthernetFramesTxIn1 to firewall.EthernetFramesTxIn1;
+			connect EthernetFramesTxIn1 to TxFirewall.EthernetFramesTxIn1;
 		connection c3 : PortConnection 
-			connect EthernetFramesTxIn2 to firewall.EthernetFramesTxIn2;
+			connect EthernetFramesTxIn2 to TxFirewall.EthernetFramesTxIn2;
 		connection c4 : PortConnection 
-			connect EthernetFramesTxIn3 to firewall.EthernetFramesTxIn3;	
+			connect EthernetFramesTxIn3 to TxFirewall.EthernetFramesTxIn3;	
 		connection c5 : PortConnection
-			connect firewall.EthernetFramesTxOut0 to EthernetFramesTxOut0;
+			connect TxFirewall.EthernetFramesTxOut0 to EthernetFramesTxOut0;
 		connection c6 : PortConnection
-			connect firewall.EthernetFramesTxOut1 to EthernetFramesTxOut1;
+			connect TxFirewall.EthernetFramesTxOut1 to EthernetFramesTxOut1;
 		connection c7 : PortConnection
-			connect firewall.EthernetFramesTxOut2 to EthernetFramesTxOut2;
+			connect TxFirewall.EthernetFramesTxOut2 to EthernetFramesTxOut2;
 		connection c8 : PortConnection
-			connect firewall.EthernetFramesTxOut3 to EthernetFramesTxOut3;
+			connect TxFirewall.EthernetFramesTxOut3 to EthernetFramesTxOut3;
 			
 		attribute :>> Domain : CASE_Scheduling::Domain = 3; 
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 	}
 	
 	part def MavlinkFirewall :> Thread {
-		in port In0 : EventDataPort { in :>> type : UdpFrame; }
-		in port In1 : EventDataPort { in :>> type : UdpFrame; }
-		in port In2 : EventDataPort { in :>> type : UdpFrame; }
-		in port In3 : EventDataPort { in :>> type : UdpFrame; }
+		in port In0 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In1 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In2 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In3 : EventDataPort { in :>> type : UdpFrame_Impl; }
 		out port Out0 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port Out1 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port Out2 : EventDataPort { out :>> type : RawEthernetMessage; }
@@ -587,12 +583,10 @@ package SW {
 		
 			functions
 		      def three_bytes_to_u32(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8, byte2: Base_Types::Unsigned_8): Base_Types::Unsigned_32 :=
-			  	32[u32];
-	          //  toU32(byte2) * 65536[u32] + toU32(byte1) * 256[u32] + toU32(byte0);
+	            byte2.toU32 * 65536[u32] + byte1.toU32 * 256[u32] + byte0.toU32;
 	
 	          def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-			  	32[u16];
-	          //  toU16(byte1) * 256[u16] + toU16(byte0);
+	            byte1.toU16 * 256[u16] + byte0.toU16;
 	
 			  def msg_v1_is_command_int(msg: UdpPayload): Base_Types::Boolean :=
 				msg#(5) == 75[u8];
@@ -637,14 +631,14 @@ package SW {
 				msg_is_mav_v2_cmd_flash_bootloader(msg) | msg_is_mav_v1_cmd_flash_bootloader(msg);
 	
 			  def mav_input_headers_eq_output(headers: EthIpUdpHeaders, aframe: RawEthernetMessage): Base_Types::Boolean :=
-	            	true; 
+					(0 .. size(headers)) -> forAll{in i; headers#(i) == aframe#(i)};
 					//(forAll(0 .. size(headers), {in i; headers#(i) == aframe#(i)}));
 	
 			  def mav_input_payload_eq_output(payload: UdpPayload, headers: EthIpUdpHeaders, aframe: RawEthernetMessage): Base_Types::Boolean :=
-					true;
+					(0 .. size(payload)) -> forAll{in i; aframe#(i + size(headers)) == payload#(i)};
 					//(forAll(0 .. size(payload), {in i; aframe#(i + size(headers)) == payload#(i)}));
 	
-			  def mav_input_eq_output(input: UdpFrame, aframe: RawEthernetMessage): Base_Types::Boolean :=
+			  def mav_input_eq_output(input: UdpFrame_Impl, aframe: RawEthernetMessage): Base_Types::Boolean :=
 			  		mav_input_headers_eq_output(input.headers, aframe) & mav_input_payload_eq_output(input.payload, input.headers, aframe);
 	
 			  def msg_is_blacklisted(msg: UdpPayload): Base_Types::Boolean :=
@@ -664,33 +658,33 @@ package SW {
 	}
 	
 	part def MavlinkFirewall_seL4 :> Process {
-		in port In0 : EventDataPort { in :>> type : UdpFrame; }
-		in port In1 : EventDataPort { in :>> type : UdpFrame; }
-		in port In2 : EventDataPort { in :>> type : UdpFrame; }
-		in port In3 : EventDataPort { in :>> type : UdpFrame; }
+		in port In0 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In1 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In2 : EventDataPort { in :>> type : UdpFrame_Impl; }
+		in port In3 : EventDataPort { in :>> type : UdpFrame_Impl; }
 		out port Out0 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port Out1 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port Out2 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port Out3 : EventDataPort { out :>> type : RawEthernetMessage; }
 		
-		part mavlinkFirewall : MavlinkFirewall;
+		part MavlinkFirewall : SW::MavlinkFirewall;
 		
 		connection c1 : PortConnection
-			connect In0 to mavlinkFirewall.In0;
+			connect In0 to MavlinkFirewall.In0;
 		connection c2 : PortConnection
-			connect In1 to mavlinkFirewall.In1;
+			connect In1 to MavlinkFirewall.In1;
 		connection c3 : PortConnection
-			connect In2 to mavlinkFirewall.In2;
+			connect In2 to MavlinkFirewall.In2;
 		connection c4 : PortConnection
-			connect In3 to mavlinkFirewall.In3;
+			connect In3 to MavlinkFirewall.In3;
 		connection c5 : PortConnection
-			connect mavlinkFirewall.Out0 to Out0;
+			connect MavlinkFirewall.Out0 to Out0;
 		connection c6 : PortConnection
-			connect mavlinkFirewall.Out1 to Out1;
+			connect MavlinkFirewall.Out1 to Out1;
 		connection c7 : PortConnection
-			connect mavlinkFirewall.Out2 to Out2;
+			connect MavlinkFirewall.Out2 to Out2;
 		connection c8 : PortConnection
-			connect mavlinkFirewall.Out3 to Out3;
+			connect MavlinkFirewall.Out3 to Out3;
 			
 		attribute :>> Domain = 6;
 		attribute Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
@@ -701,10 +695,10 @@ package SW {
 		in port FirewallRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port FirewallRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port FirewallRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
-		out port MavlinkRx0 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx1 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx2 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx3 : EventDataPort { out :>> type : RawEthernetMessage; }
+		in port MavlinkRx0 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx0 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx1 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx2 : EventDataPort { out :>> type : RawEthernetMessage; }
@@ -728,114 +722,106 @@ package SW {
 		in port FirewallRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port FirewallRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
 		in port FirewallRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
-		out port MavlinkRx0 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx1 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx2 : EventDataPort { out :>> type : RawEthernetMessage; }
-		out port MavlinkRx3 : EventDataPort { out :>> type : RawEthernetMessage; }
+		in port MavlinkRx0 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx1 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx2 : EventDataPort { in :>> type : RawEthernetMessage; }
+		in port MavlinkRx3 : EventDataPort { in :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx0 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx1 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx2 : EventDataPort { out :>> type : RawEthernetMessage; }
 		out port EthernetFramesTx3 : EventDataPort { out :>> type : RawEthernetMessage; }
 	
-		part arduPilot : ArduPilot;
+		part ArduPilot : SW::ArduPilot;
 		
 		connection c1 : PortConnection 
-			connect FirewallRx0 to arduPilot.FirewallRx0;
+			connect FirewallRx0 to ArduPilot.FirewallRx0;
 		connection c2 : PortConnection 
-			connect FirewallRx1 to arduPilot.FirewallRx1;
+			connect FirewallRx1 to ArduPilot.FirewallRx1;
 		connection c3 : PortConnection 
-			connect FirewallRx2 to arduPilot.FirewallRx2;
+			connect FirewallRx2 to ArduPilot.FirewallRx2;
 		connection c4 : PortConnection 
-			connect FirewallRx3 to arduPilot.FirewallRx3;
+			connect FirewallRx3 to ArduPilot.FirewallRx3;
 		connection c5 : PortConnection
-			connect arduPilot.MavlinkRx0 to MavlinkRx0;
+			connect MavlinkRx0 to ArduPilot.MavlinkRx0;
 		connection c6 : PortConnection
-			connect arduPilot.MavlinkRx1 to MavlinkRx1;
+			connect MavlinkRx1 to ArduPilot.MavlinkRx1;
 		connection c7 : PortConnection
-			connect arduPilot.MavlinkRx2 to MavlinkRx2;
+			connect MavlinkRx2 to ArduPilot.MavlinkRx2;
 		connection c8 : PortConnection
-			connect arduPilot.MavlinkRx3 to MavlinkRx3;
-		// connection c5 : PortConnection
-		// 	connect MavlinkRx0 to arduPilot.MavlinkRx0;
-		// connection c6 : PortConnection
-		// 	connect MavlinkRx1 to arduPilot.MavlinkRx1;
-		// connection c7 : PortConnection
-		// 	connect MavlinkRx2 to arduPilot.MavlinkRx2;
-		// connection c8 : PortConnection
-		// 	connect MavlinkRx3 to arduPilot.MavlinkRx3;
+			connect MavlinkRx3 to ArduPilot.MavlinkRx3;
 		connection c9 : PortConnection
-			connect arduPilot.EthernetFramesTx0 to EthernetFramesTx0;
+			connect ArduPilot.EthernetFramesTx0 to EthernetFramesTx0;
 		connection c10 : PortConnection
-			connect arduPilot.EthernetFramesTx1 to EthernetFramesTx1;
+			connect ArduPilot.EthernetFramesTx1 to EthernetFramesTx1;
 		connection c11 : PortConnection
-			connect arduPilot.EthernetFramesTx2 to EthernetFramesTx2;
+			connect ArduPilot.EthernetFramesTx2 to EthernetFramesTx2;
 		connection c12 : PortConnection
-			connect arduPilot.EthernetFramesTx3 to EthernetFramesTx3;
+			connect ArduPilot.EthernetFramesTx3 to EthernetFramesTx3;
 			
 		attribute :>> Domain = 2;
 		attribute SMC : ScalarValues::Boolean = true;
 	} 
 
 	part def seL4 :> System {
-		part arduPilot : ArduPilot_seL4;
-		part mavlinkFirewall : MavlinkFirewall_seL4;
-		part rxFirewall : RxFirewall_seL4;
-		part txFirewall : TxFirewall_seL4;
-		part lowLevelEthernetDriver : LowLevelEthernetDriver_seL4;
+		part ArduPilot : ArduPilot_seL4;
+		part MavlinkFirewall : MavlinkFirewall_seL4;
+		part RxFirewall : RxFirewall_seL4;
+		part TxFirewall : TxFirewall_seL4;
+		part LowLevelEthernetDriver : LowLevelEthernetDriver_seL4;
 
 		attribute Domain : CASE_Scheduling::Domain = 2;
 		connection c1 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx0 to rxFirewall.EthernetFramesRxIn0;
+			connect LowLevelEthernetDriver.EthernetFramesRx0 to RxFirewall.EthernetFramesRxIn0;
 		connection c2 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx1 to rxFirewall.EthernetFramesRxIn1;
+			connect LowLevelEthernetDriver.EthernetFramesRx1 to RxFirewall.EthernetFramesRxIn1;
 		connection c3 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx2 to rxFirewall.EthernetFramesRxIn2;
+			connect LowLevelEthernetDriver.EthernetFramesRx2 to RxFirewall.EthernetFramesRxIn2;
 		connection c4 : PortConnection
-			connect lowLevelEthernetDriver.EthernetFramesRx3 to rxFirewall.EthernetFramesRxIn3;
+			connect LowLevelEthernetDriver.EthernetFramesRx3 to RxFirewall.EthernetFramesRxIn3;
 		
 		connection c5 : PortConnection
-			connect rxFirewall.VmmOut0 to arduPilot.FirewallRx0;
+			connect RxFirewall.VmmOut0 to ArduPilot.FirewallRx0;
 		connection c6 : PortConnection
-			connect rxFirewall.VmmOut1 to arduPilot.FirewallRx1;
+			connect RxFirewall.VmmOut1 to ArduPilot.FirewallRx1;
 		connection c7 : PortConnection
-			connect rxFirewall.VmmOut2 to arduPilot.FirewallRx2;
+			connect RxFirewall.VmmOut2 to ArduPilot.FirewallRx2;
 		connection c8 : PortConnection
-			connect rxFirewall.VmmOut3 to arduPilot.FirewallRx3;
+			connect RxFirewall.VmmOut3 to ArduPilot.FirewallRx3;
 			
 		connection c9 : PortConnection
-			connect rxFirewall.MavlinkOut0 to mavlinkFirewall.In0;
+			connect RxFirewall.MavlinkOut0 to MavlinkFirewall.In0;
 		connection c10 : PortConnection
-			connect rxFirewall.MavlinkOut1 to mavlinkFirewall.In1;
+			connect RxFirewall.MavlinkOut1 to MavlinkFirewall.In1;
 		connection c11 : PortConnection
-			connect rxFirewall.MavlinkOut2 to mavlinkFirewall.In2;
+			connect RxFirewall.MavlinkOut2 to MavlinkFirewall.In2;
 		connection c12 : PortConnection
-			connect rxFirewall.MavlinkOut3 to mavlinkFirewall.In3;
+			connect RxFirewall.MavlinkOut3 to MavlinkFirewall.In3;
 		
 		connection c13 : PortConnection
-			connect mavlinkFirewall.Out0 to arduPilot.MavlinkRx0;
+			connect MavlinkFirewall.Out0 to ArduPilot.MavlinkRx0;
 		connection c14 : PortConnection
-			connect mavlinkFirewall.Out1 to arduPilot.MavlinkRx1;
+			connect MavlinkFirewall.Out1 to ArduPilot.MavlinkRx1;
 		connection c15 : PortConnection
-			connect mavlinkFirewall.Out2 to arduPilot.MavlinkRx2;
+			connect MavlinkFirewall.Out2 to ArduPilot.MavlinkRx2;
 		connection c16 : PortConnection
-			connect mavlinkFirewall.Out3 to arduPilot.MavlinkRx3;
+			connect MavlinkFirewall.Out3 to ArduPilot.MavlinkRx3;
 		
 		connection c17 : PortConnection
-			connect arduPilot.EthernetFramesTx0 to txFirewall.EthernetFramesTxOut0;
+			connect ArduPilot.EthernetFramesTx0 to TxFirewall.EthernetFramesTxIn0;
 		connection c18 : PortConnection
-			connect arduPilot.EthernetFramesTx1 to txFirewall.EthernetFramesTxOut1;
+			connect ArduPilot.EthernetFramesTx1 to TxFirewall.EthernetFramesTxIn1;
 		connection c19 : PortConnection
-			connect arduPilot.EthernetFramesTx2 to txFirewall.EthernetFramesTxOut2;
+			connect ArduPilot.EthernetFramesTx2 to TxFirewall.EthernetFramesTxIn2;
 		connection c20 : PortConnection
-			connect arduPilot.EthernetFramesTx3 to txFirewall.EthernetFramesTxOut3;
+			connect ArduPilot.EthernetFramesTx3 to TxFirewall.EthernetFramesTxIn3;
 		
 		connection c21 : PortConnection
-			connect txFirewall.EthernetFramesTxOut0 to lowLevelEthernetDriver.EthernetFramesTx0;
+			connect TxFirewall.EthernetFramesTxOut0 to LowLevelEthernetDriver.EthernetFramesTx0;
 		connection c22 : PortConnection
-			connect txFirewall.EthernetFramesTxOut1 to lowLevelEthernetDriver.EthernetFramesTx1;
+			connect TxFirewall.EthernetFramesTxOut1 to LowLevelEthernetDriver.EthernetFramesTx1;
 		connection c23 : PortConnection
-			connect txFirewall.EthernetFramesTxOut2 to lowLevelEthernetDriver.EthernetFramesTx2;
+			connect TxFirewall.EthernetFramesTxOut2 to LowLevelEthernetDriver.EthernetFramesTx2;
 		connection c24 : PortConnection
-			connect txFirewall.EthernetFramesTxOut3 to lowLevelEthernetDriver.EthernetFramesTx3;
+			connect TxFirewall.EthernetFramesTxOut3 to LowLevelEthernetDriver.EthernetFramesTx3;
 	}	
 }
