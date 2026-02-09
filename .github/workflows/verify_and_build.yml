@@ -1,4 +1,4 @@
-name: Model Analysis and Code Generation
+name: Verification and Build
 
 on:
   push:
