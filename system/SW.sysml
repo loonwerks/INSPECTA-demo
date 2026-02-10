@@ -824,4 +824,5 @@ package SW {
 		connection c24 : PortConnection
 			connect TxFirewall.EthernetFramesTxOut3 to LowLevelEthernetDriver.EthernetFramesTx3;
 	}	
+
 }
