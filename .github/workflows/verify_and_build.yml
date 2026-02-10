@@ -58,3 +58,58 @@ jobs:
         path: verus-output.json
         retention-days: 30
 
+  codebuild:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Codebuild action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Codebuild-CI-Action
+        path: INSPECTA-Codebuild-CI-Action
+    - name: Code Build
+      id : codebuild
+      uses: ./INSPECTA-Codebuild-CI-Action
+      with:
+        sourcepath: system/hamr/microkit
+    - name: Get codebuild timestamp
+      run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
+    - name: Get codebuild status
+      run: echo "Codebuild status is ${{ steps.build.codeoutputs.status }}"
+    - name: Get codebuild status-messages
+      run: echo "Codebuild status messages are ${{ steps.codebuild.outputs.status-messages }}"
+    - name: Archive built artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: codebuild-built-artifacts
+        path: |
+          system/hamr/microkit/build/
+          system/hamr/microkit/crates/seL4_lowLevelEthernetDriver_lowLevelEthernetDriver/target/
+          system/hamr/microkit/crates/seL4_mavlinkFirewall_mavlinkFirewall/target/
+          system/hamr/microkit/crates/seL4_rxFirewall_firewall/target/
+          system/hamr/microkit/crates/seL4_txFirewall_firewall/target/
+          system/hamr/microkit/microkit.system.merged
+        retention-days: 30
+    - name: Archive codebuild results
+      uses: actions/upload-artifact@v4
+      with:
+        name: codebuild-report
+        path: codebuild-output.json
+        retention-days: 30
+
