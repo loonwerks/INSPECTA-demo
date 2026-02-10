@@ -1,3 +1,6 @@
-[submodule "system/hamr/microkit/vmm/deps/libvmm"]
-	path = system/hamr/microkit/vmm/deps/libvmm
+[submodule "software/hamr/microkit/vmm/deps/libvmm"]
+	path = software/hamr/microkit/vmm/deps/libvmm
 	url = https://github.com/au-ts/libvmm.git
+[submodule "software/hamr/microkit/vmm/dep/libvmm"]
+	path = software/hamr/microkit/vmm/deps/libvmm
+	url = https://github.com/au-ts/libvmm
