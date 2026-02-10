@@ -17,5 +17,4 @@ package Platform {
 		allocation allo :  Deployment_Properties::Actual_Processor_Binding
 			allocate seL4 to proc; // (reference (proc)) applies to seL4
 	}
-	
 }
