@@ -168,7 +168,7 @@ verus! {
     headers: SW::EthIpUdpHeaders,
     aframe: SW::RawEthernetMessage) -> bool
   {
-    forall|i:int| 0 <= i <= headers.len() ==> #[trigger] headers[i] == aframe[i]
+    forall|i:int| 0 <= i <= headers.len() - 1 ==> #[trigger] headers[i] == aframe[i]
   }
 
   pub open spec fn mav_input_payload_eq_output(
@@ -176,7 +176,7 @@ verus! {
     headers: SW::EthIpUdpHeaders,
     aframe: SW::RawEthernetMessage) -> bool
   {
-    forall|i:int| 0 <= i <= payload.len() ==> #[trigger] aframe[i + headers.len()] == payload[i]
+    forall|i:int| 0 <= i <= payload.len() - 1 ==> #[trigger] aframe[i + headers.len()] == payload[i]
   }
 
   pub open spec fn mav_input_eq_output(
