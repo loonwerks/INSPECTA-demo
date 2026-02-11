@@ -211,7 +211,7 @@ jobs:
 
   reports:
     runs-on: ubuntu-latest
-    needs: [verify, codebuild]
+    needs: [verify, codetest]
     continue-on-error: false
 
     permissions:
@@ -248,6 +248,11 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: codebuild-report
+        path: public
+    - name: Download codetest report artifact
+      uses: actions/download-artifact@v5
+      with:
+        name: codetest-report
         path: public
     - name: Upload report to Pages
       if: ${{ always() }}
