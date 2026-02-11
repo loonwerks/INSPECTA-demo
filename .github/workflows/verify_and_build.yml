@@ -57,6 +57,21 @@ jobs:
         name: verus-analysis-report
         path: verus-output.json
         retention-days: 30
+    - name: Collect analysis results report
+      if: ${{ always() }}
+      run: |
+        echo ${{ steps.verus.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
+          | jq --arg timestamp "${{ steps.verus.outputs.timestamp }}" \
+          --arg exitcode ${{ steps.verus.outputs.status }} \
+          '. += $ARGS.named' \
+          > verus-report.json
+    - name: Archive analysis results
+      uses: actions/upload-artifact@v4
+      if: ${{ always() }}
+      with:
+        name: verus-analysis-report
+        path: verus-report.json
+        retention-days: 30
 
   codebuild:
     runs-on: ubuntu-latest
@@ -91,7 +106,7 @@ jobs:
     - name: Get codebuild timestamp
       run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
     - name: Get codebuild status
-      run: echo "Codebuild status is ${{ steps.build.codeoutputs.status }}"
+      run: echo "Codebuild status is ${{ steps.build.codebuild.outputs.status }}"
     - name: Get codebuild status-messages
       run: echo "Codebuild status messages are ${{ steps.codebuild.outputs.status-messages }}"
     - name: Archive built artifacts
@@ -100,16 +115,76 @@ jobs:
         name: codebuild-built-artifacts
         path: |
           system/hamr/microkit/build/
-          system/hamr/microkit/crates/seL4_lowLevelEthernetDriver_lowLevelEthernetDriver/target/
-          system/hamr/microkit/crates/seL4_mavlinkFirewall_mavlinkFirewall/target/
-          system/hamr/microkit/crates/seL4_rxFirewall_firewall/target/
-          system/hamr/microkit/crates/seL4_txFirewall_firewall/target/
+          system/hamr/microkit/crates/seL4_ArduPilot_ArduPilot/target/
+          system/hamr/microkit/crates/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver/target/
+          system/hamr/microkit/crates/seL4_RxFirewall_RxFirewall/target/
+          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
+          system/hamr/microkit/crates/seL4_TxFirewall_TxFirewall/target/
           system/hamr/microkit/microkit.system.merged
         retention-days: 30
+    - name: Count Lines of Code (cloc)
+      if: ${{ always() }}
+      uses: djdefi/cloc-action@main
+      with:
+        options: "--exclude-lang=YAML --json --report-file=cloc-report.json"
+    - name: Collect codegen report
+      if: ${{ always() }}
+      run: |
+        cat codebuild.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codebuild-messages.json
+        jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
+        jq -s 'add' codebuild-messages.json cloc-report-sub.json \
+          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codebuild.outputs.status }} '. += $ARGS.named' \
+          > codebuild-report.json
     - name: Archive codebuild results
+      if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
         name: codebuild-report
         path: codebuild-output.json
         retention-days: 30
 
+  reports:
+    runs-on: ubuntu-latest
+    needs: [verify, codebuild]
+    continue-on-error: false
+
+    permissions:
+      artifact-metadata: read
+      contents: write
+      packages: read
+      attestations: read
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Download artifact
+      uses: dawidd6/action-download-artifact@v3 # Use this community action
+      with:
+        workflow: analysis_and_codegen.yml # The filename of the workflow that uploaded the artifact
+        name: logika-analysis-report
+        branch: feb-2026 # Specify the branch of the run, if needed
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        path: public
+    - name: Download existing GitHub Pages
+      uses: iamazy/download-action@v2 # Check the marketplace for the latest version
+      with:
+        url: 'http://loonwerks.com/INSPECTA-demo/codegen-report.json'
+        path: 'public' # The directory where the file will be saved
+    - name: Download verification report artifact
+      uses: actions/download-artifact@v5
+      with:
+        name: verus-analysis-report
+        path: public
+    - name: Download codebuild report artifact
+      uses: actions/download-artifact@v5
+      with:
+        name: codebuild-report
+        path: public
+#    - name: Upload report to Pages
+#      if: ${{ always() }}
+#      uses: actions/upload-pages-artifact@v3
+#      with:
+#        path: public
+#    - name: Deploy to GitHub Pages
+#      if: ${{ always() }}
+#      uses: actions/deploy-pages@v4
