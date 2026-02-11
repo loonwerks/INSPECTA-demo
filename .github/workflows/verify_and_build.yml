@@ -140,7 +140,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: codebuild-report
-        path: codebuild-output.json
+        path: codebuild-report.json
         retention-days: 30
 
   reports:
