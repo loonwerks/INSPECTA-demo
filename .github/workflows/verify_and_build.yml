@@ -44,7 +44,7 @@ jobs:
       id : verus
       uses: ./INSPECTA-Verus-CI-Action
       with:
-        sourcepath: system/hamr/microkit
+        sourcepath: software/hamr/microkit
     - name: Get analysis timestamp
       run: echo "Analysis timestamp is ${{ steps.verus.outputs.timestamp }}"
     - name: Get analysis status
@@ -102,7 +102,7 @@ jobs:
       id : codebuild
       uses: ./INSPECTA-Codebuild-CI-Action
       with:
-        sourcepath: system/hamr/microkit
+        sourcepath: software/hamr/microkit
     - name: Get codebuild timestamp
       run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
     - name: Get codebuild status
@@ -114,13 +114,13 @@ jobs:
       with:
         name: codebuild-built-artifacts
         path: |
-          system/hamr/microkit/build/
-          system/hamr/microkit/crates/seL4_ArduPilot_ArduPilot/target/
-          system/hamr/microkit/crates/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver/target/
-          system/hamr/microkit/crates/seL4_RxFirewall_RxFirewall/target/
-          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
-          system/hamr/microkit/crates/seL4_TxFirewall_TxFirewall/target/
-          system/hamr/microkit/microkit.system.merged
+          software/hamr/microkit/build/
+          software/hamr/microkit/crates/seL4_ArduPilot_ArduPilot/target/
+          software/hamr/microkit/crates/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver/target/
+          software/hamr/microkit/crates/seL4_RxFirewall_RxFirewall/target/
+          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
+          software/hamr/microkit/crates/seL4_TxFirewall_TxFirewall/target/
+          software/hamr/microkit/microkit.system.merged
         retention-days: 30
     - name: Count Lines of Code (cloc)
       if: ${{ always() }}
@@ -178,7 +178,7 @@ jobs:
       id : codetest
       uses: ./INSPECTA-Codetest-CI-Action
       with:
-        sourcepath: system/hamr/microkit
+        sourcepath: software/hamr/microkit
     - name: Get codetest timestamp
       run: echo "Codetest timestamp is ${{ steps.codetest.outputs.timestamp }}"
     - name: Get codetest status
@@ -190,9 +190,9 @@ jobs:
       with:
         name: codetest-built-artifacts
         path: |
-          system/hamr/microkit/build/
-          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/proptest-regressions/
-          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
+          software/hamr/microkit/build/
+          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/proptest-regressions/
+          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
         retention-days: 30
     - name: Collect codegen report
       if: ${{ always() }}
