@@ -209,13 +209,13 @@ package SW {
 					udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
 
   				def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
-    				(0 .. size(TCP_ALLOWED_PORTS())) -> exists {in i;
+    				(0 .. (size(TCP_ALLOWED_PORTS()) - 1)) -> exists {in i;
         					TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))};
     				//exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
         			//		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
 				
   				def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-					(0 .. size(UDP_ALLOWED_PORTS())) -> exists {in i;
+					(0 .. (size(UDP_ALLOWED_PORTS()) - 1)) -> exists {in i;
      					UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))};    
 					//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
       				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
@@ -244,11 +244,11 @@ package SW {
 	            	valid_ipv4_udp_port(aframe);      
 			  
 			  	def input_eq_mav_output_headers(aframe: RawEthernetMessage, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-					(0 .. size(headers)) -> forAll {in i;  headers#(i) == aframe#(i)};
+					(0 .. (size(headers) - 1)) -> forAll {in i;  headers#(i) == aframe#(i)};
 					//forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
 	
 			 	def input_eq_mav_output_payload(aframe: RawEthernetMessage, payload: UdpPayload, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-					(0 .. size(payload)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)};
+					(0 .. (size(payload) - 1)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)};
 					//forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
 	
 			  	def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame_Impl): Base_Types::Boolean :=
@@ -632,11 +632,11 @@ package SW {
 				msg_is_mav_v2_cmd_flash_bootloader(msg) | msg_is_mav_v1_cmd_flash_bootloader(msg);
 	
 			  def mav_input_headers_eq_output(headers: EthIpUdpHeaders, aframe: RawEthernetMessage): Base_Types::Boolean :=
-					(0 .. size(headers)) -> forAll{in i; headers#(i) == aframe#(i)};
+					(0 .. (size(headers) - 1)) -> forAll{in i; headers#(i) == aframe#(i)};
 					//(forAll(0 .. size(headers), {in i; headers#(i) == aframe#(i)}));
 	
 			  def mav_input_payload_eq_output(payload: UdpPayload, headers: EthIpUdpHeaders, aframe: RawEthernetMessage): Base_Types::Boolean :=
-					(0 .. size(payload)) -> forAll{in i; aframe#(i + size(headers)) == payload#(i)};
+					(0 .. (size(payload) - 1)) -> forAll{in i; aframe#(i + size(headers)) == payload#(i)};
 					//(forAll(0 .. size(payload), {in i; aframe#(i + size(headers)) == payload#(i)}));
 	
 			  def mav_input_eq_output(input: UdpFrame_Impl, aframe: RawEthernetMessage): Base_Types::Boolean :=
