@@ -166,7 +166,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         path: public
     - name: Download existing GitHub Pages
-      uses: iamazy/download-action@v2 # Check the marketplace for the latest version
+      uses: iamazy/download-action # Check the marketplace for the latest version
       with:
         url: 'http://loonwerks.com/INSPECTA-demo/codegen-report.json'
         path: 'public' # The directory where the file will be saved
@@ -180,6 +180,7 @@ jobs:
       with:
         name: codebuild-report
         path: public
+
 #    - name: Upload report to Pages
 #      if: ${{ always() }}
 #      uses: actions/upload-pages-artifact@v3
