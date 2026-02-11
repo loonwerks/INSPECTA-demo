@@ -143,6 +143,72 @@ jobs:
         path: codebuild-report.json
         retention-days: 30
 
+  codetest:
+    runs-on: ubuntu-latest
+    needs: codebuild
+    continue-on-error: false
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Codetest action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Codetest-CI-Action
+        path: INSPECTA-Codetest-CI-Action
+    - name: Download built artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: codebuild-built-artifacts
+    - name: Code Test
+      id : codetest
+      uses: ./INSPECTA-Codetest-CI-Action
+      with:
+        sourcepath: system/hamr/microkit
+    - name: Get codetest timestamp
+      run: echo "Codetest timestamp is ${{ steps.codetest.outputs.timestamp }}"
+    - name: Get codetest status
+      run: echo "Codetest status is ${{ steps.build.codetest.outputs.status }}"
+    - name: Get codetest status-messages
+      run: echo "Codetest status messages are ${{ steps.codetest.outputs.status-messages }}"
+    - name: Archive built artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: codetest-built-artifacts
+        path: |
+          system/hamr/microkit/build/
+          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/proptest-regressions/
+          system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
+        retention-days: 30
+    - name: Collect codegen report
+      if: ${{ always() }}
+      run: |
+        cat codetest.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codetest-messages.json
+        cat codetest-messages.json \
+          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codetest.outputs.status }} '. += $ARGS.named' \
+          > codetest-report.json
+    - name: Archive codebuild results
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: codetest-report
+        path: codetest-report.json
+        retention-days: 30
+
   reports:
     runs-on: ubuntu-latest
     needs: [verify, codebuild]
