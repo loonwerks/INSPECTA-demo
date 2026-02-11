@@ -183,12 +183,11 @@ jobs:
       with:
         name: codebuild-report
         path: public
-
-#    - name: Upload report to Pages
-#      if: ${{ always() }}
-#      uses: actions/upload-pages-artifact@v3
-#      with:
-#        path: public
-#    - name: Deploy to GitHub Pages
-#      if: ${{ always() }}
-#      uses: actions/deploy-pages@v4
+    - name: Upload report to Pages
+      if: ${{ always() }}
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: public
+    - name: Deploy to GitHub Pages
+      if: ${{ always() }}
+      uses: actions/deploy-pages@v4
