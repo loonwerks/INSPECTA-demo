@@ -54,7 +54,7 @@ jobs:
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       with:
-        name: verus-analysis-report
+        name: verus-analysis-output
         path: verus.out
         retention-days: 30
     - name: Collect analysis results report
@@ -65,7 +65,7 @@ jobs:
           --arg exitcode ${{ steps.verus.outputs.status }} \
           '. += $ARGS.named' \
           > verus-report.json
-    - name: Archive analysis results
+    - name: Archive analysis report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
@@ -137,7 +137,7 @@ jobs:
         jq -s 'add' codebuild-messages.json cloc-report-sub.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codebuild.outputs.status }} '. += $ARGS.named' \
           > codebuild-report.json
-    - name: Archive codebuild results
+    - name: Archive codebuild report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
@@ -203,7 +203,7 @@ jobs:
         cat codetest-messages.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codetest.outputs.status }} '. += $ARGS.named' \
           > codetest-report.json
-    - name: Archive codetest results
+    - name: Archive codetest report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:

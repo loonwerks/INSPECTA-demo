@@ -117,7 +117,7 @@ jobs:
           --arg exitcode ${{ steps.logika.outputs.status }} \
           '. += $ARGS.named' \
           > logika-report.json
-    - name: Archive analysis results
+    - name: Archive analysis report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
@@ -197,7 +197,7 @@ jobs:
         jq -s 'add' codegen-messages.json cloc-report-sub.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
           > codegen-report.json
-    - name: Archive codegen results
+    - name: Archive codegen report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
       with:
