@@ -212,6 +212,7 @@ jobs:
         retention-days: 30
 
   reports:
+    if: {{ always() }}
     runs-on: ubuntu-latest
     needs: [verify, codetest]
     continue-on-error: false

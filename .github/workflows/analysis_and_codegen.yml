@@ -213,7 +213,7 @@ jobs:
         commit_message: Generate code with INSPECTA-Codegen-CI-Action
 
   reports:
-    if: {{ always() }}
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: [verification, codegen]
     continue-on-error: false
