@@ -227,7 +227,7 @@ jobs:
 
     steps:
     - name: Download logika report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: dawidd6/action-download-artifact@v3 # Use this community action
       with:
         workflow: analysis_and_codegen.yml # The filename of the workflow that uploaded the artifact
@@ -236,7 +236,7 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         path: public
     - name: Download codegen report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: dawidd6/action-download-artifact@v3 # Use this community action
       with:
         workflow: analysis_and_codegen.yml # The filename of the workflow that uploaded the artifact
@@ -245,19 +245,19 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         path: public
     - name: Download verification report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: actions/download-artifact@v5
       with:
         name: verus-analysis-report
         path: public
     - name: Download codebuild report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: actions/download-artifact@v5
       with:
         name: codebuild-report
         path: public
     - name: Download codetest report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: actions/download-artifact@v5
       with:
         name: codetest-report

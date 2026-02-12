@@ -228,13 +228,13 @@ jobs:
 
     steps:
     - name: Download verfication report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: actions/download-artifact@v5
       with:
         name: logika-analysis-report
         path: public
     - name: Download codegen report artifact
-      continue-in-error: true
+      continue-on-error: true
       uses: actions/download-artifact@v5
       with:
         name: codegen-report
