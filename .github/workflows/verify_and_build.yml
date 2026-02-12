@@ -55,7 +55,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: verus-analysis-report
-        path: verus-output.json
+        path: verus.out
         retention-days: 30
     - name: Collect analysis results report
       if: ${{ always() }}
