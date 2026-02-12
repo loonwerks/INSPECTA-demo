@@ -194,14 +194,14 @@ jobs:
           system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/proptest-regressions/
           system/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
         retention-days: 30
-    - name: Collect codegen report
+    - name: Collect codetest report
       if: ${{ always() }}
       run: |
         cat codetest.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codetest-messages.json
         cat codetest-messages.json \
           | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codetest.outputs.status }} '. += $ARGS.named' \
           > codetest-report.json
-    - name: Archive codebuild results
+    - name: Archive codetest results
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
       with:
