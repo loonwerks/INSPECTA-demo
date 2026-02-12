@@ -173,12 +173,12 @@ pub fn udp_is_mavlink(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn frame_has_ipv4_tcp_on_allowed_port_quant(aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=TCP_ALLOWED_PORTS().len()).any(|i| TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
+  (0..=TCP_ALLOWED_PORTS().len() - 1).any(|i| TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
 }
 
 pub fn udp_is_valid_direct_dst_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=UDP_ALLOWED_PORTS().len()).any(|i| UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
+  (0..=UDP_ALLOWED_PORTS().len() - 1).any(|i| UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
 }
 
 pub fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
@@ -227,7 +227,7 @@ pub fn input_eq_mav_output_headers(
   aframe: SW::RawEthernetMessage,
   headers: SW::EthIpUdpHeaders) -> bool
 {
-  (0..=headers.len()).all(|i| headers[i] == aframe[i])
+  (0..=headers.len() - 1).all(|i| headers[i] == aframe[i])
 }
 
 pub fn input_eq_mav_output_payload(
@@ -235,7 +235,7 @@ pub fn input_eq_mav_output_payload(
   payload: SW::UdpPayload,
   headers: SW::EthIpUdpHeaders) -> bool
 {
-  (0..=payload.len()).all(|i| aframe[i + headers.len()] == payload[i])
+  (0..=payload.len() - 1).all(|i| aframe[i + headers.len()] == payload[i])
 }
 
 pub fn input_eq_mav_output(

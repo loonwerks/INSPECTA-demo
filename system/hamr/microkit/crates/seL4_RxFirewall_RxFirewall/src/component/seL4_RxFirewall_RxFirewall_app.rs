@@ -315,12 +315,12 @@ verus! {
 
   pub open spec fn frame_has_ipv4_tcp_on_allowed_port_quant(aframe: SW::RawEthernetMessage) -> bool
   {
-    exists|i:int| 0 <= i <= TCP_ALLOWED_PORTS().len() && #[trigger] TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37])
+    exists|i:int| 0 <= i <= TCP_ALLOWED_PORTS().len() - 1 && #[trigger] TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37])
   }
 
   pub open spec fn udp_is_valid_direct_dst_port(aframe: SW::RawEthernetMessage) -> bool
   {
-    exists|i:int| 0 <= i <= UDP_ALLOWED_PORTS().len() && #[trigger] UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37])
+    exists|i:int| 0 <= i <= UDP_ALLOWED_PORTS().len() - 1 && #[trigger] UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37])
   }
 
   pub open spec fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
@@ -369,7 +369,7 @@ verus! {
     aframe: SW::RawEthernetMessage,
     headers: SW::EthIpUdpHeaders) -> bool
   {
-    forall|i:int| 0 <= i <= headers.len() ==> #[trigger] headers[i] == aframe[i]
+    forall|i:int| 0 <= i <= headers.len() - 1 ==> #[trigger] headers[i] == aframe[i]
   }
 
   pub open spec fn input_eq_mav_output_payload(
@@ -377,7 +377,7 @@ verus! {
     payload: SW::UdpPayload,
     headers: SW::EthIpUdpHeaders) -> bool
   {
-    forall|i:int| 0 <= i <= payload.len() ==> #[trigger] aframe[i + headers.len()] == payload[i]
+    forall|i:int| 0 <= i <= payload.len() - 1 ==> #[trigger] aframe[i + headers.len()] == payload[i]
   }
 
   pub open spec fn input_eq_mav_output(

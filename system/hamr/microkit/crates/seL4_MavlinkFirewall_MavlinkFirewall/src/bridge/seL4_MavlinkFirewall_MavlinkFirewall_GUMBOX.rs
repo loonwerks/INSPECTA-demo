@@ -102,7 +102,7 @@ pub fn mav_input_headers_eq_output(
   headers: SW::EthIpUdpHeaders,
   aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=headers.len()).all(|i| headers[i] == aframe[i])
+  (0..=headers.len() - 1).all(|i| headers[i] == aframe[i])
 }
 
 pub fn mav_input_payload_eq_output(
@@ -110,7 +110,7 @@ pub fn mav_input_payload_eq_output(
   headers: SW::EthIpUdpHeaders,
   aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=payload.len()).all(|i| aframe[i + headers.len()] == payload[i])
+  (0..=payload.len() - 1).all(|i| aframe[i + headers.len()] == payload[i])
 }
 
 pub fn mav_input_eq_output(
