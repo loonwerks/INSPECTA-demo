@@ -60,12 +60,34 @@ package SW {
 
 		language "GUMBO" /*{
 			integration
-				guarantee valid_message "Only ARP messages being sent to the RxFirewall":
+				guarantee valid_message_port0 "Only ARP messages being sent to the RxFirewall Port 0":
 					RxFirewall::valid_arp(EthernetFramesRx0)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx0)
 					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx0)
 					| not RxFirewall::allow_outbound_frame(EthernetFramesRx0)
           ;
+
+				guarantee valid_message_port1 "Only ARP messages being sent to the RxFirewall Port 1":
+					RxFirewall::valid_arp(EthernetFramesRx1)
+					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx1)
+					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx1)
+					| not RxFirewall::allow_outbound_frame(EthernetFramesRx1)
+          ;
+
+				guarantee valid_message_port2 "Only ARP messages being sent to the RxFirewall Port 2":
+					RxFirewall::valid_arp(EthernetFramesRx2)
+					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx2)
+					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx2)
+					| not RxFirewall::allow_outbound_frame(EthernetFramesRx2)
+          ;
+
+				guarantee valid_message_port3 "Only ARP messages being sent to the RxFirewall Port 3":
+					RxFirewall::valid_arp(EthernetFramesRx3)
+					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx3)
+					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx3)
+					| not RxFirewall::allow_outbound_frame(EthernetFramesRx3)
+          ;
+
 		}*/
 	}
 	
@@ -271,11 +293,32 @@ package SW {
             input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
       
 			  integration
-			  	assume valid_message "Only ARP messages being sent to the RxFirewall":
+			  	assume valid_message_port0 "Only ARP messages being sent to the RxFirewall Port 0":
 			  		valid_arp(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn0)
 			  		| not allow_outbound_frame(EthernetFramesRxIn0)
+            ;
+
+			  	assume valid_message_port1 "Only ARP messages being sent to the RxFirewall Port 1":
+			  		valid_arp(EthernetFramesRxIn1)
+			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn1)
+			  		| valid_ipv4_udp_port(EthernetFramesRxIn1)
+			  		| not allow_outbound_frame(EthernetFramesRxIn1)
+            ;
+
+			  	assume valid_message_port2  "Only ARP messages being sent to the RxFirewall Port 2":
+			  		valid_arp(EthernetFramesRxIn2)
+			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn2)
+			  		| valid_ipv4_udp_port(EthernetFramesRxIn2)
+			  		| not allow_outbound_frame(EthernetFramesRxIn2)
+            ;
+
+			  	assume valid_message_port3 "Only ARP messages being sent to the RxFirewall Port 3":
+			  		valid_arp(EthernetFramesRxIn3)
+			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn3)
+			  		| valid_ipv4_udp_port(EthernetFramesRxIn3)
+			  		| not allow_outbound_frame(EthernetFramesRxIn3)
             ;
           
 	      compute
