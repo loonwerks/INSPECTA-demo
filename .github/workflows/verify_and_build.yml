@@ -45,26 +45,11 @@ jobs:
       uses: ./INSPECTA-Verus-CI-Action
       with:
         sourcepath: software/hamr/microkit
+        outputfile: verus-report.json
     - name: Get analysis timestamp
       run: echo "Analysis timestamp is ${{ steps.verus.outputs.timestamp }}"
     - name: Get analysis status
       run: echo "Analysis status is ${{ steps.verus.outputs.status }}"
-    - name: Get analysis status-messages
-      run: echo "Analysis status messages are ${{ steps.verus.outputs.status-messages }}"
-    - name: Archive analysis results
-      uses: actions/upload-artifact@v4
-      with:
-        name: verus-analysis-output
-        path: verus.out
-        retention-days: 30
-    - name: Collect analysis results report
-      if: ${{ always() }}
-      run: |
-        echo ${{ steps.verus.outputs.status-messages }} | jq --raw-input . | jq --slurp '{"messages" : .}' \
-          | jq --arg timestamp "${{ steps.verus.outputs.timestamp }}" \
-          --arg exitcode ${{ steps.verus.outputs.status }} \
-          '. += $ARGS.named' \
-          > verus-report.json
     - name: Archive analysis report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
