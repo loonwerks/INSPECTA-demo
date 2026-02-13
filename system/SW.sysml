@@ -62,7 +62,7 @@ package SW {
 			integration
 				guarantee valid_message "Only ARP messages being sent to the RxFirewall":
 					RxFirewall::valid_arp(EthernetFramesRx0)
-					// | RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx0)
+					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx0)
 					// | RxFirewall::valid_ipv4_udp_port(EthernetFramesRx0)
 					// | not RxFirewall::allow_outbound_frame(EthernetFramesRx0)
           ;
@@ -216,10 +216,10 @@ package SW {
             size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0));
       
           def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550);
+            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550[u16]);
       
           def udp_is_mavlink_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562);
+            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562[u16]);
       
           def udp_is_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
             udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
@@ -273,7 +273,7 @@ package SW {
 			  integration
 			  	assume valid_message "Only ARP messages being sent to the RxFirewall":
 			  		valid_arp(EthernetFramesRxIn0)
-			  		// | valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
+			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
 			  		// | valid_ipv4_udp_port(EthernetFramesRxIn0)
 			  		// | not allow_outbound_frame(EthernetFramesRxIn0)
             ;
