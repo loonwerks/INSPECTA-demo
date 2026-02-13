@@ -63,8 +63,8 @@ package SW {
 				guarantee valid_message "Only ARP messages being sent to the RxFirewall":
 					RxFirewall::valid_arp(EthernetFramesRx0)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx0)
-					// | RxFirewall::valid_ipv4_udp_port(EthernetFramesRx0)
-					// | not RxFirewall::allow_outbound_frame(EthernetFramesRx0)
+					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx0)
+					| not RxFirewall::allow_outbound_frame(EthernetFramesRx0)
           ;
 		}*/
 	}
@@ -274,8 +274,8 @@ package SW {
 			  	assume valid_message "Only ARP messages being sent to the RxFirewall":
 			  		valid_arp(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
-			  		// | valid_ipv4_udp_port(EthernetFramesRxIn0)
-			  		// | not allow_outbound_frame(EthernetFramesRxIn0)
+			  		| valid_ipv4_udp_port(EthernetFramesRxIn0)
+			  		| not allow_outbound_frame(EthernetFramesRxIn0)
             ;
           
 	      compute
