@@ -5,7 +5,8 @@ microkit_sdk_config_dir := $(MICROKIT_SDK)/board/$(MICROKIT_BOARD)/$(MICROKIT_CO
 sel4_include_dirs := $(firstword $(wildcard $(microkit_sdk_config_dir)/include \
                                             $(microkit_sdk_config_dir)/debug/include))
 
-ENV_VARS = RUSTC_BOOTSTRAP=1
+ENV_VARS = RUSTC_BOOTSTRAP=1 \
+    	   SEL4_INCLUDE_DIRS=$(abspath $(sel4_include_dirs))
 
 BUILD_ENV_VARS = $(ENV_VARS) \
                  SEL4_INCLUDE_DIRS=$(abspath $(sel4_include_dirs))
@@ -29,10 +30,10 @@ build:
 	$(BUILD_ENV_VARS) cargo build --features sel4 $(CARGO_FLAGS)
 
 verus:
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS)
+	$(ENV_VARS) cargo-verus verify --features sel4 $(CARGO_FLAGS)
 
 verus-json:
-	$(ENV_VARS) cargo-verus verify $(CARGO_FLAGS) -- --output-json --time > verus_results.json
+	$(ENV_VARS) cargo-verus verify --features sel4 $(CARGO_FLAGS) -- --output-json --time > verus_results.json
 
 # Test Example:
 #   Run all unit tests
