@@ -156,9 +156,6 @@ jobs:
     - name: Get analysis status
       if: ${{ always() }}
       run: echo "Analysis status is ${{ steps.logika.outputs.status }}"
-    - name: Get analysis status-messages
-      if: ${{ always() }}
-      run: echo "Analysis status messages are ${{ steps.logika.outputs.status-messages }}" 
     - name: Collect analysis results report
       if: ${{ always() }}
       run: |
