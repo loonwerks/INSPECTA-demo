@@ -331,6 +331,9 @@ jobs:
     steps:
     - name: check-exit-codetest
       run: |
+        echo "needs.tipe.outputs.status-code: ${{ needs.tipe.outputs.status-code }}"
+        echo "needs.verification.outputs.status-code: ${{ needs.verification.outputs.status-code }}"
+        echo "needs.codegen.outputs.status-code: ${{ needs.codegen.outputs.status-code }}"
         test ${{ needs.tipe.outputs.status-code }} -eq 0 \
           && test ${{ needs.verification.outputs.status-code }} -eq 0 \
           && test ${{ needs.coegen.outputs.status-code }} -eq 0
