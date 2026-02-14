@@ -239,9 +239,6 @@ jobs:
     - name: Get codegen status
       if: ${{ always() }}
       run: echo "Codegen status is ${{ steps.hamr.outputs.status }}"
-    - name: Get codegen status-messages
-      if: ${{ always() }}
-      run: echo "Codegen status messages are ${{ steps.hamr.outputs.status-messages }}"
     - name: Count Lines of Code (cloc)
       if: ${{ always() }}
       uses: djdefi/cloc-action@main
