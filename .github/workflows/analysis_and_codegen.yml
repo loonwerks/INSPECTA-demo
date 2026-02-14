@@ -22,6 +22,9 @@ jobs:
       packages: read
       attestations: read
 
+    outputs:
+      status-code: ${{ steps.tipe.outputs.status }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -71,6 +74,9 @@ jobs:
       packages: read
       attestations: read
 
+    outputs:
+      status-code: ${{ steps.resolint.outputs.status }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -116,6 +122,9 @@ jobs:
       contents: read
       packages: read
       attestations: read
+
+    outputs:
+      status-code: ${{ steps.logika.outputs.status }}
 
     steps:
     - name: Checkout repository
@@ -188,6 +197,9 @@ jobs:
       contents: write
       packages: read
       attestations: read
+
+    outputs:
+      status-code: ${{ steps.hamr.outputs.status }}
 
     steps:
     - name: Checkout repository
@@ -319,6 +331,6 @@ jobs:
     steps:
     - name: check-exit-codetest
       run: |
-        test ${{ steps.tipe.outputs.status }} -eq 0 \
-          && test ${{ steps.logika.outputs.status }} -eq 0 \
-          && test ${{ steps.hamr.outputs.status }} -eq 0
+        test ${{ needs.tipe.outputs.status-code }} -eq 0 \
+          && test ${{ needs.logika.outputs.status-code }} -eq 0 \
+          && test ${{ needs.hamr.outputs.status-code }} -eq 0
