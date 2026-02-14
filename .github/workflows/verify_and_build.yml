@@ -23,6 +23,9 @@ jobs:
       packages: read
       attestations: read
 
+    outputs:
+      status-code: ${{ steps.verify.outputs.status }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -66,6 +69,9 @@ jobs:
       packages: read
       attestations: read
 
+    outputs:
+      status-code: ${{ steps.codebuild.outputs.status }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -94,8 +100,8 @@ jobs:
       run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
     - name: Get codebuild status
       run: echo "Codebuild status is ${{ steps.build.codebuild.outputs.status }}"
-    - name: Get codebuild status-messages
-      run: echo "Codebuild status messages are ${{ steps.codebuild.outputs.status-messages }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.codebuild.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive built artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -133,6 +139,9 @@ jobs:
       packages: read
       attestations: read
 
+    outputs:
+      status-code: ${{ steps.codetest.outputs.status }}
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
@@ -163,8 +172,8 @@ jobs:
       run: echo "Codetest timestamp is ${{ steps.codetest.outputs.timestamp }}"
     - name: Get codetest status
       run: echo "Codetest status is ${{ steps.build.codetest.outputs.status }}"
-    - name: Get codetest status-messages
-      run: echo "Codetest status messages are ${{ steps.codetest.outputs.status-messages }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.codetest.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive built artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -243,3 +252,23 @@ jobs:
         path: public
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v4
+
+  status-check:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs: [verify, codebuild, codetest, reports]
+    continue-on-error: false
+
+    steps:
+    - name: check-exit-codetest
+      env:
+        VERIFY_STATUS: ${{ needs.verify.outputs.status-code }}
+        CODEBUILD_STATUS: ${{ needs.codebuild.outputs.status-code }}
+        CODETEST_STATUS: ${{ needs.codetest.outputs.status-code }}
+      run: |
+        echo "needs.verify.outputs.status-code: $VERIFY_STATUS"
+        echo "needs.codebuild.outputs.status-code: $CODEBUILD_STATUS"
+        echo "needs.codetest.outputs.status-code: $CODETEST_STATUS"
+        test $VERIFY_STATUS -eq 0 \
+          && test $CODEBUILD_STATUS -eq 0 \
+          && test $CODETEST_STATUS -eq 0
