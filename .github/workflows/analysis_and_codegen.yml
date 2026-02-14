@@ -56,6 +56,8 @@ jobs:
       run: echo "Tipe-check status is ${{ steps.tipe.outputs.status }}"
     - name: Get tipe-check status-messages
       run: echo "Tipe-check status messages are ${{ steps.tipe.outputs.status-messages }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.tipe.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive tipe-check results
       uses: actions/upload-artifact@v4
       with:
@@ -106,6 +108,8 @@ jobs:
       run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
     - name: Get analysis status-messages
       run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.resolint.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive analysis results
       uses: actions/upload-artifact@v4
       with:
@@ -165,6 +169,8 @@ jobs:
     - name: Get analysis status
       if: ${{ always() }}
       run: echo "Analysis status is ${{ steps.logika.outputs.status }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.logika.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Collect analysis results report
       if: ${{ always() }}
       run: |
@@ -248,6 +254,8 @@ jobs:
     - name: Get codegen status
       if: ${{ always() }}
       run: echo "Codegen status is ${{ steps.hamr.outputs.status }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.hamr.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Count Lines of Code (cloc)
       if: ${{ always() }}
       uses: djdefi/cloc-action@main
