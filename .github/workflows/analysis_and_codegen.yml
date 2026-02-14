@@ -309,3 +309,16 @@ jobs:
         path: public
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v4
+
+  status-check:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    needs: reports
+    continue-on-error: false
+
+    steps:
+    - name: check-exit-codetest
+      run: |
+        test ${{ steps.tipe.outputs.status }} -eq 0 \
+          && test ${{ steps.logika.outputs.status }} -eq 0 \
+          && test ${{ steps.hamr.outputs.status }} -eq 0
