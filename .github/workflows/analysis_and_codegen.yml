@@ -253,7 +253,7 @@ jobs:
         cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
         jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
         jq -s 'add' codegen-messages.json cloc-report-sub.json \
-          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
+          | jq --arg timestamp ${{ steps.hamr.outputs.timestamp }} --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
           > codegen-report.json
     - name: Archive codegen report
       uses: actions/upload-artifact@v4
