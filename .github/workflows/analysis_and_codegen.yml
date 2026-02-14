@@ -338,10 +338,14 @@ jobs:
 
     steps:
     - name: check-exit-codetest
+      env:
+        TIPE_STATUS: ${{ needs.tipe.outputs.status-code }}
+        VERIFICATION_STATUS: ${{ needs.verification.outputs.status-code }}
+        CODEGEN_STATUS: ${{ needs.codegen.outputs.status-code }}
       run: |
-        echo "needs.tipe.outputs.status-code: ${{ needs.tipe.outputs.status-code }}"
-        echo "needs.verification.outputs.status-code: ${{ needs.verification.outputs.status-code }}"
-        echo "needs.codegen.outputs.status-code: ${{ needs.codegen.outputs.status-code }}"
-        test ${{ needs.tipe.outputs.status-code }} -eq 0 \
-          && test ${{ needs.verification.outputs.status-code }} -eq 0 \
-          && test ${{ needs.coegen.outputs.status-code }} -eq 0
+        echo "needs.tipe.outputs.status-code: $TIPE_STATUS"
+        echo "needs.verification.outputs.status-code: $VERIFICATION_STATUS"
+        echo "needs.codegen.outputs.status-code: $CODEGEN_STATUS"
+        test $TIPE_STATUS -eq 0 \
+          && test $VERIFICATION_STATUS -eq 0 \
+          && test $CODEGEN_STATUS -eq 0
