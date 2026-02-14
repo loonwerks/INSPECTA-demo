@@ -13,7 +13,7 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  tipe`:
+  tipe:
     runs-on: ubuntu-latest
     continue-on-error: true
 
