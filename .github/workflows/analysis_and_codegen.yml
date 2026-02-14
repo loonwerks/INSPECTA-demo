@@ -332,5 +332,5 @@ jobs:
     - name: check-exit-codetest
       run: |
         test ${{ needs.tipe.outputs.status-code }} -eq 0 \
-          && test ${{ needs.logika.outputs.status-code }} -eq 0 \
-          && test ${{ needs.hamr.outputs.status-code }} -eq 0
+          && test ${{ needs.verification.outputs.status-code }} -eq 0 \
+          && test ${{ needs.coegen.outputs.status-code }} -eq 0
