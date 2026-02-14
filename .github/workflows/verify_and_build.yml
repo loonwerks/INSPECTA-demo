@@ -53,6 +53,8 @@ jobs:
       run: echo "Analysis timestamp is ${{ steps.verus.outputs.timestamp }}"
     - name: Get analysis status
       run: echo "Analysis status is ${{ steps.verus.outputs.status }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.verus.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive analysis report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
