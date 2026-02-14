@@ -100,14 +100,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: codebuild-built-artifacts
-        path: |
-          software/hamr/microkit/build/
-          software/hamr/microkit/crates/seL4_ArduPilot_ArduPilot/target/
-          software/hamr/microkit/crates/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver/target/
-          software/hamr/microkit/crates/seL4_RxFirewall_RxFirewall/target/
-          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
-          software/hamr/microkit/crates/seL4_TxFirewall_TxFirewall/target/
-          software/hamr/microkit/microkit.system.merged
+        path: software/hamr/microkit/
         retention-days: 30
     - name: Count Lines of Code (cloc)
       if: ${{ always() }}
@@ -176,10 +169,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: codetest-built-artifacts
-        path: |
-          software/hamr/microkit/build/
-          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/proptest-regressions/
-          software/hamr/microkit/crates/seL4_MavlinkFirewall_MavlinkFirewall/target/
+        path: software/hamr/microkit
         retention-days: 30
     - name: Collect codetest report
       if: ${{ always() }}
