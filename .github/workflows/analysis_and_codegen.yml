@@ -159,7 +159,6 @@ jobs:
       id : logika
       uses: ./INSPECTA-Logika-CI-Action
       with:
-        sysmlv2-files: "[\"system/Platform.sysml\", \"system/SW.sysml\"]"
         sourcepaths: "[ \"system\" ]"
         feedback: logika-feedback
         parseable-messages: true
