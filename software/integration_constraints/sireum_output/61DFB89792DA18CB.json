@@ -1,0 +1,1 @@
+{  "type" : "Analysis.Coverage","id" : [],"setCache" : false,"cached" : 0,"pos" : { "type" : "Position","uriOpt" : { "type" : "Some","value" : "file:\/\/\/Users\/junaid\/CA\/git\/INSPECTA-models\/isolette\/sysml\/Operator_Interface.sysml"},"beginLine" : 116,"beginColumn" : 86,"endLine" : 116,"endColumn" : 104,"offset" : 6109,"length" : 19}}
