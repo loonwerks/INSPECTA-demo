@@ -1,0 +1,1 @@
+{  "type" : "Analysis.Coverage","id" : [],"setCache" : false,"cached" : 0,"pos" : { "type" : "Position","uriOpt" : { "type" : "Some","value" : "file:\/\/\/Users\/junaid\/CA\/git\/INSPECTA-models\/isolette\/sysml\/GUMBO_Library.sysml"},"beginLine" : 21,"beginColumn" : 69,"endLine" : 21,"endColumn" : 87,"offset" : 1055,"length" : 19}}
