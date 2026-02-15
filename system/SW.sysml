@@ -60,34 +60,55 @@ package SW {
 
 		language "GUMBO" /*{
 			integration
-				guarantee valid_message_port0 "Only ARP messages being sent to the RxFirewall Port 0":
+
+        assume valid_tx_message_port0 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0":
+          TxFirewall::valid_arp(EthernetFramesTx0.amessage) & TxFirewall::valid_output_arp_size(EthernetFramesTx0)
+          | TxFirewall::valid_ipv4(EthernetFramesTx0.amessage) & TxFirewall::valid_output_ipv4_size(EthernetFramesTx0.amessage,EthernetFramesTx0)
+          ;
+
+        assume valid_tx_message_port1 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1":
+          TxFirewall::valid_arp(EthernetFramesTx1.amessage) & TxFirewall::valid_output_arp_size(EthernetFramesTx1)
+          | TxFirewall::valid_ipv4(EthernetFramesTx1.amessage) & TxFirewall::valid_output_ipv4_size(EthernetFramesTx1.amessage,EthernetFramesTx1)
+          ;
+
+        assume valid_tx_message_port2 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2":
+          TxFirewall::valid_arp(EthernetFramesTx2.amessage) & TxFirewall::valid_output_arp_size(EthernetFramesTx2)
+          | TxFirewall::valid_ipv4(EthernetFramesTx2.amessage) & TxFirewall::valid_output_ipv4_size(EthernetFramesTx2.amessage,EthernetFramesTx2)
+          ;
+
+        assume valid_tx_message_port3 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3":
+          TxFirewall::valid_arp(EthernetFramesTx3.amessage) & TxFirewall::valid_output_arp_size(EthernetFramesTx3)
+          | TxFirewall::valid_ipv4(EthernetFramesTx3.amessage) & TxFirewall::valid_output_ipv4_size(EthernetFramesTx3.amessage,EthernetFramesTx3)
+          ;
+
+				guarantee valid_message_port0 "Only valid messages being sent to the RxFirewall Port 0":
 					RxFirewall::valid_arp(EthernetFramesRx0)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx0)
 					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx0)
 					| not RxFirewall::allow_outbound_frame(EthernetFramesRx0)
           ;
 
-				guarantee valid_message_port1 "Only ARP messages being sent to the RxFirewall Port 1":
+				guarantee valid_message_port1 "Only valid messages being sent to the RxFirewall Port 1":
 					RxFirewall::valid_arp(EthernetFramesRx1)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx1)
 					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx1)
 					| not RxFirewall::allow_outbound_frame(EthernetFramesRx1)
           ;
 
-				guarantee valid_message_port2 "Only ARP messages being sent to the RxFirewall Port 2":
+				guarantee valid_message_port2 "Only valid messages being sent to the RxFirewall Port 2":
 					RxFirewall::valid_arp(EthernetFramesRx2)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx2)
 					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx2)
 					| not RxFirewall::allow_outbound_frame(EthernetFramesRx2)
           ;
 
-				guarantee valid_message_port3 "Only ARP messages being sent to the RxFirewall Port 3":
+				guarantee valid_message_port3 "Only valid messages being sent to the RxFirewall Port 3":
 					RxFirewall::valid_arp(EthernetFramesRx3)
 					| RxFirewall::valid_ipv4_udp_mavlink(EthernetFramesRx3)
 					| RxFirewall::valid_ipv4_udp_port(EthernetFramesRx3)
 					| not RxFirewall::allow_outbound_frame(EthernetFramesRx3)
           ;
-
+          
 		}*/
 	}
 	
@@ -293,28 +314,29 @@ package SW {
             input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
       
 			  integration
-			  	assume valid_message_port0 "Only ARP messages being sent to the RxFirewall Port 0":
+
+			  	assume valid_message_port0 "Only valid messages being sent to the RxFirewall Port 0":
 			  		valid_arp(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn0)
 			  		| not allow_outbound_frame(EthernetFramesRxIn0)
             ;
 
-			  	assume valid_message_port1 "Only ARP messages being sent to the RxFirewall Port 1":
+			  	assume valid_message_port1 "Only valid messages being sent to the RxFirewall Port 1":
 			  		valid_arp(EthernetFramesRxIn1)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn1)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn1)
 			  		| not allow_outbound_frame(EthernetFramesRxIn1)
             ;
 
-			  	assume valid_message_port2  "Only ARP messages being sent to the RxFirewall Port 2":
+			  	assume valid_message_port2  "Only valid messages being sent to the RxFirewall Port 2":
 			  		valid_arp(EthernetFramesRxIn2)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn2)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn2)
 			  		| not allow_outbound_frame(EthernetFramesRxIn2)
             ;
 
-			  	assume valid_message_port3 "Only ARP messages being sent to the RxFirewall Port 3":
+			  	assume valid_message_port3 "Only valid messages being sent to the RxFirewall Port 3":
 			  		valid_arp(EthernetFramesRxIn3)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn3)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn3)
@@ -532,22 +554,42 @@ package SW {
 	        def valid_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	          frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
 
-          def ipv4_length(aframe: RawEthernetMessage): Base_Types::Unsigned_16 :=
-            two_bytes_to_u16(aframe#(16),aframe#(17));
-
-          def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            ipv4_length(aframe) <= 9000[u16];
+	        def ipv4_length(aframe: RawEthernetMessage): Base_Types::Unsigned_16 :=
+			  two_bytes_to_u16(aframe#(16),aframe#(17));
 
 	        def valid_output_arp_size(output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
 	          output.sz == 64[u16];
 	
 	        def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
-	          output.sz == (ipv4_length(input)+14[u16]);
+	          //output.sz == (ipv4_length(input)+14[u16]);
+	          (size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
 	
 	        def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
 	          valid_arp(aframe) |
 	          valid_ipv4(aframe);
 	       
+			  integration
+
+			  	guarantee valid_tx_out_message_port0 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0":
+			  		valid_arp(EthernetFramesTxOut0.amessage) & valid_output_arp_size(EthernetFramesTxOut0)
+			  		| valid_ipv4(EthernetFramesTxOut0.amessage) & valid_output_ipv4_size(EthernetFramesTxOut0.amessage,EthernetFramesTxOut0)
+            ;
+
+			  	guarantee valid_tx_out_message_port1 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1":
+			  		valid_arp(EthernetFramesTxOut1.amessage) & valid_output_arp_size(EthernetFramesTxOut1)
+			  		| valid_ipv4(EthernetFramesTxOut1.amessage) & valid_output_ipv4_size(EthernetFramesTxOut1.amessage,EthernetFramesTxOut1)
+            ;
+
+			  	guarantee valid_tx_out_message_port2 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2":
+			  		valid_arp(EthernetFramesTxOut2.amessage) & valid_output_arp_size(EthernetFramesTxOut2)
+			  		| valid_ipv4(EthernetFramesTxOut2.amessage) & valid_output_ipv4_size(EthernetFramesTxOut2.amessage,EthernetFramesTxOut2)
+            ;
+
+			  	guarantee valid_tx_out_message_port3 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3":
+			  		valid_arp(EthernetFramesTxOut3.amessage) & valid_output_arp_size(EthernetFramesTxOut3)
+			  		| valid_ipv4(EthernetFramesTxOut3.amessage) & valid_output_ipv4_size(EthernetFramesTxOut3.amessage,EthernetFramesTxOut3)
+            ;
+          
 	      compute
 	
 	      	guarantee hlr_07_tx0_can_send_valid_arp:
