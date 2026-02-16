@@ -230,10 +230,10 @@ jobs:
       id : resolute
       uses: ./INSPECTA-Resolute-CI-Action
       with:
-        workspace_location: software/assurance
-        output_path: software/assurance/resolute.json
-        component_to_analyze: ardupilot_assurance::ArduPilot.i
-        attestation_path: software/hamr/microkit/attestation
+        workspace-location: software/assurance
+        output-path: software/assurance/resolute.json
+        component-to-analyze: ardupilot_assurance::ArduPilot.i
+        attestation-path: software/hamr/microkit/attestation
     - name: Get analysis timestamp
       run: echo "Resolute timestamp is ${{ steps.resolute.outputs.timestamp }}"
     - name: Get analysis status
