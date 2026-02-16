@@ -276,7 +276,6 @@ verus! {
     msg_is_mav_v2_cmd_flash_bootloader(msg) || msg_is_mav_v1_cmd_flash_bootloader(msg)
   }
 
-  // inclusive range : might not be expresable in current kerml
   pub open spec fn mav_input_headers_eq_output(
     headers: SW::EthIpUdpHeaders,
     aframe: SW::RawEthernetMessage) -> bool
@@ -284,7 +283,6 @@ verus! {
     forall|i:int| 0 <= i <= headers.len() - 1 ==> #[trigger] headers[i] == aframe[i]
   }
 
-  // inclusive range : might not be expresable in current kerml
   pub open spec fn mav_input_payload_eq_output(
     payload: SW::UdpPayload,
     headers: SW::EthIpUdpHeaders,

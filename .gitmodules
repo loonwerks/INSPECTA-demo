@@ -1,6 +1,4 @@
 [submodule "software/hamr/microkit/vmm/deps/libvmm"]
 	path = software/hamr/microkit/vmm/deps/libvmm
 	url = https://github.com/au-ts/libvmm.git
-[submodule "software/hamr/microkit/vmm/dep/libvmm"]
-	path = software/hamr/microkit/vmm/deps/libvmm
-	url = https://github.com/au-ts/libvmm
+	branch = ef493a6

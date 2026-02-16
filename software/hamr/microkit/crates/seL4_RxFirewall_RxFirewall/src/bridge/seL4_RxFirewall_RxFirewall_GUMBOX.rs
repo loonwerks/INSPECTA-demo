@@ -33,53 +33,61 @@ pub fn two_bytes_to_u16(
 
 pub fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
+  (aframe.len() == 1600) &&
+    valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
 }
 
 pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_has_ipv4(aframe) |
-    (frame_has_arp(aframe) | frame_has_ipv6(aframe))
+  (aframe.len() == 1600) &&
+    frame_has_ipv4(aframe) |
+      (frame_has_arp(aframe) | frame_has_ipv6(aframe))
 }
 
 pub fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
 {
-  !((aframe[0] == 0u8) &
-    ((aframe[1] == 0u8) &
-      ((aframe[2] == 0u8) &
-        ((aframe[3] == 0u8) &
-          ((aframe[4] == 0u8) &
-            (aframe[5] == 0u8))))))
+  (aframe.len() == 1600) &&
+    !((aframe[0] == 0u8) &
+      ((aframe[1] == 0u8) &
+        ((aframe[2] == 0u8) &
+          ((aframe[3] == 0u8) &
+            ((aframe[4] == 0u8) &
+              (aframe[5] == 0u8))))))
 }
 
 pub fn frame_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 8u8) &
-    (aframe[13] == 0u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 8u8) &
+      (aframe[13] == 0u8)
 }
 
 pub fn frame_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 134u8) &
-    (aframe[13] == 221u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 134u8) &
+      (aframe[13] == 221u8)
 }
 
 pub fn frame_has_arp(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 8u8) &
-    (aframe[13] == 6u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 8u8) &
+      (aframe[13] == 6u8)
 }
 
 pub fn arp_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[16] == 8u8) &
-    (aframe[17] == 0u8)
+  (aframe.len() == 1600) &&
+    (aframe[16] == 8u8) &
+      (aframe[17] == 0u8)
 }
 
 pub fn arp_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[16] == 134u8) &
-    (aframe[17] == 221u8)
+  (aframe.len() == 1600) &&
+    (aframe[16] == 134u8) &
+      (aframe[17] == 221u8)
 }
 
 pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
@@ -89,15 +97,17 @@ pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn valid_arp_op(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[20] == 0u8) &
-    ((aframe[21] == 1u8) |
-      (aframe[21] == 2u8))
+  (aframe.len() == 1600) &&
+    (aframe[20] == 0u8) &
+      ((aframe[21] == 1u8) |
+        (aframe[21] == 2u8))
 }
 
 pub fn valid_arp_htype(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[14] == 0u8) &
-    (aframe[15] == 1u8)
+  (aframe.len() == 1600) &&
+    (aframe[14] == 0u8) &
+      (aframe[15] == 1u8)
 }
 
 pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
@@ -108,26 +118,29 @@ pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn valid_ipv4_length(aframe: SW::RawEthernetMessage) -> bool
 {
-  two_bytes_to_u16(aframe[16], aframe[17]) <= 9000u16
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[16], aframe[17]) <= 9000u16)
 }
 
 pub fn valid_ipv4_protocol(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[23] == 0u8) |
-    ((aframe[23] == 1u8) |
-      ((aframe[23] == 2u8) |
-        ((aframe[23] == 6u8) |
-          ((aframe[23] == 17u8) |
-            ((aframe[23] == 43u8) |
-              ((aframe[23] == 44u8) |
-                ((aframe[23] == 58u8) |
-                  ((aframe[23] == 59u8) |
-                    (aframe[23] == 60u8)))))))))
+  (aframe.len() == 1600) &&
+    (aframe[23] == 0u8) |
+      ((aframe[23] == 1u8) |
+        ((aframe[23] == 2u8) |
+          ((aframe[23] == 6u8) |
+            ((aframe[23] == 17u8) |
+              ((aframe[23] == 43u8) |
+                ((aframe[23] == 44u8) |
+                  ((aframe[23] == 58u8) |
+                    ((aframe[23] == 59u8) |
+                      (aframe[23] == 60u8)))))))))
 }
 
 pub fn valid_ipv4_vers_ihl(aframe: SW::RawEthernetMessage) -> bool
 {
-  aframe[14] == 69u8
+  (aframe.len() == 1600) &&
+    (aframe[14] == 69u8)
 }
 
 pub fn wellformed_ipv4_frame(aframe: SW::RawEthernetMessage) -> bool
@@ -138,32 +151,38 @@ pub fn wellformed_ipv4_frame(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn ipv4_is_tcp(aframe: SW::RawEthernetMessage) -> bool
 {
-  aframe[23] == 6u8
+  (aframe.len() == 1600) &&
+    (aframe[23] == 6u8)
 }
 
 pub fn ipv4_is_udp(aframe: SW::RawEthernetMessage) -> bool
 {
-  aframe[23] == 17u8
+  (aframe.len() == 1600) &&
+    (aframe[23] == 17u8)
 }
 
 pub fn tcp_is_valid_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  two_bytes_to_u16(aframe[36], aframe[37]) == TCP_ALLOWED_PORTS()[0]
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[36], aframe[37]) == TCP_ALLOWED_PORTS()[0])
 }
 
 pub fn udp_is_valid_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  two_bytes_to_u16(aframe[36], aframe[37]) == UDP_ALLOWED_PORTS()[0]
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[36], aframe[37]) == UDP_ALLOWED_PORTS()[0])
 }
 
 pub fn udp_is_mavlink_src_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  two_bytes_to_u16(aframe[34], aframe[35]) == 14550
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[34], aframe[35]) == 14550u16)
 }
 
 pub fn udp_is_mavlink_dst_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  two_bytes_to_u16(aframe[36], aframe[37]) == 14562
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[36], aframe[37]) == 14562u16)
 }
 
 pub fn udp_is_mavlink(aframe: SW::RawEthernetMessage) -> bool
@@ -173,12 +192,14 @@ pub fn udp_is_mavlink(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn frame_has_ipv4_tcp_on_allowed_port_quant(aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=TCP_ALLOWED_PORTS().len()).any(|i| TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
+  (aframe.len() == 1600) &&
+    (0..=TCP_ALLOWED_PORTS().len() - 1).any(|i| TCP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
 }
 
 pub fn udp_is_valid_direct_dst_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  (0..=UDP_ALLOWED_PORTS().len()).any(|i| UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
+  (aframe.len() == 1600) &&
+    (0..=UDP_ALLOWED_PORTS().len() - 1).any(|i| UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
 }
 
 pub fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
@@ -227,7 +248,8 @@ pub fn input_eq_mav_output_headers(
   aframe: SW::RawEthernetMessage,
   headers: SW::EthIpUdpHeaders) -> bool
 {
-  (0..=headers.len()).all(|i| headers[i] == aframe[i])
+  (aframe.len() == 1600) &&
+    (0..=headers.len() - 1).all(|i| headers[i] == aframe[i])
 }
 
 pub fn input_eq_mav_output_payload(
@@ -235,7 +257,9 @@ pub fn input_eq_mav_output_payload(
   payload: SW::UdpPayload,
   headers: SW::EthIpUdpHeaders) -> bool
 {
-  (0..=payload.len()).all(|i| aframe[i + headers.len()] == payload[i])
+  (aframe.len() == 1600) &&
+    ((payload.len() == 1558) &&
+      (0..=payload.len() - 1).all(|i| aframe[i + headers.len()] == payload[i]))
 }
 
 pub fn input_eq_mav_output(
@@ -243,6 +267,128 @@ pub fn input_eq_mav_output(
   output: SW::UdpFrame_Impl) -> bool
 {
   input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers)
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn0
+  *
+  * assume valid_message_port0
+  *   Only valid messages being sent to the RxFirewall Port 0
+  */
+pub fn I_Assm_EthernetFramesRxIn0(EthernetFramesRxIn0: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRxIn0) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRxIn0) |
+      (valid_ipv4_udp_port(EthernetFramesRxIn0) | !(allow_outbound_frame(EthernetFramesRxIn0))))
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn0
+  *
+  * assume valid_message_port0
+  *   Only valid messages being sent to the RxFirewall Port 0
+  */
+pub fn I_Assm_Guard_EthernetFramesRxIn0(EthernetFramesRxIn0: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRxIn0.is_some(),
+    I_Assm_EthernetFramesRxIn0(EthernetFramesRxIn0.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn1
+  *
+  * assume valid_message_port1
+  *   Only valid messages being sent to the RxFirewall Port 1
+  */
+pub fn I_Assm_EthernetFramesRxIn1(EthernetFramesRxIn1: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRxIn1) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRxIn1) |
+      (valid_ipv4_udp_port(EthernetFramesRxIn1) | !(allow_outbound_frame(EthernetFramesRxIn1))))
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn1
+  *
+  * assume valid_message_port1
+  *   Only valid messages being sent to the RxFirewall Port 1
+  */
+pub fn I_Assm_Guard_EthernetFramesRxIn1(EthernetFramesRxIn1: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRxIn1.is_some(),
+    I_Assm_EthernetFramesRxIn1(EthernetFramesRxIn1.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn2
+  *
+  * assume valid_message_port2
+  *   Only valid messages being sent to the RxFirewall Port 2
+  */
+pub fn I_Assm_EthernetFramesRxIn2(EthernetFramesRxIn2: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRxIn2) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRxIn2) |
+      (valid_ipv4_udp_port(EthernetFramesRxIn2) | !(allow_outbound_frame(EthernetFramesRxIn2))))
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn2
+  *
+  * assume valid_message_port2
+  *   Only valid messages being sent to the RxFirewall Port 2
+  */
+pub fn I_Assm_Guard_EthernetFramesRxIn2(EthernetFramesRxIn2: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRxIn2.is_some(),
+    I_Assm_EthernetFramesRxIn2(EthernetFramesRxIn2.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn3
+  *
+  * assume valid_message_port3
+  *   Only valid messages being sent to the RxFirewall Port 3
+  */
+pub fn I_Assm_EthernetFramesRxIn3(EthernetFramesRxIn3: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRxIn3) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRxIn3) |
+      (valid_ipv4_udp_port(EthernetFramesRxIn3) | !(allow_outbound_frame(EthernetFramesRxIn3))))
+}
+
+/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn3
+  *
+  * assume valid_message_port3
+  *   Only valid messages being sent to the RxFirewall Port 3
+  */
+pub fn I_Assm_Guard_EthernetFramesRxIn3(EthernetFramesRxIn3: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRxIn3.is_some(),
+    I_Assm_EthernetFramesRxIn3(EthernetFramesRxIn3.unwrap())
+  )
+}
+
+/** CEP-Pre: Compute Entrypoint Pre-Condition for RxFirewall
+  *
+  * @param api_EthernetFramesRxIn0 incoming event data port
+  * @param api_EthernetFramesRxIn1 incoming event data port
+  * @param api_EthernetFramesRxIn2 incoming event data port
+  * @param api_EthernetFramesRxIn3 incoming event data port
+  */
+pub fn compute_CEP_Pre(
+  api_EthernetFramesRxIn0: Option<SW::RawEthernetMessage>,
+  api_EthernetFramesRxIn1: Option<SW::RawEthernetMessage>,
+  api_EthernetFramesRxIn2: Option<SW::RawEthernetMessage>,
+  api_EthernetFramesRxIn3: Option<SW::RawEthernetMessage>) -> bool
+{
+  // I-Assm-Guard: Integration constraints for RxFirewall's incoming ports
+  let r0: bool = I_Assm_Guard_EthernetFramesRxIn0(api_EthernetFramesRxIn0);
+  let r1: bool = I_Assm_Guard_EthernetFramesRxIn1(api_EthernetFramesRxIn1);
+  let r2: bool = I_Assm_Guard_EthernetFramesRxIn2(api_EthernetFramesRxIn2);
+  let r3: bool = I_Assm_Guard_EthernetFramesRxIn3(api_EthernetFramesRxIn3);
+
+  return r0 && r1 && r2 && r3;
 }
 
 /** Compute Entrypoint Contract

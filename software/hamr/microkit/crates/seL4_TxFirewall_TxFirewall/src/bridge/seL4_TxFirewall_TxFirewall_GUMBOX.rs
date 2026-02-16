@@ -23,53 +23,61 @@ pub fn two_bytes_to_u16(
 
 pub fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
+  (aframe.len() == 1600) &&
+    valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
 }
 
 pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_has_ipv4(aframe) |
-    (frame_has_arp(aframe) | frame_has_ipv6(aframe))
+  (aframe.len() == 1600) &&
+    frame_has_ipv4(aframe) |
+      (frame_has_arp(aframe) | frame_has_ipv6(aframe))
 }
 
 pub fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
 {
-  !((aframe[0] == 0u8) &
-    ((aframe[1] == 0u8) &
-      ((aframe[2] == 0u8) &
-        ((aframe[3] == 0u8) &
-          ((aframe[4] == 0u8) &
-            (aframe[5] == 0u8))))))
+  (aframe.len() == 1600) &&
+    !((aframe[0] == 0u8) &
+      ((aframe[1] == 0u8) &
+        ((aframe[2] == 0u8) &
+          ((aframe[3] == 0u8) &
+            ((aframe[4] == 0u8) &
+              (aframe[5] == 0u8))))))
 }
 
 pub fn frame_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 8u8) &
-    (aframe[13] == 0u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 8u8) &
+      (aframe[13] == 0u8)
 }
 
 pub fn frame_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 134u8) &
-    (aframe[13] == 221u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 134u8) &
+      (aframe[13] == 221u8)
 }
 
 pub fn frame_has_arp(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[12] == 8u8) &
-    (aframe[13] == 6u8)
+  (aframe.len() == 1600) &&
+    (aframe[12] == 8u8) &
+      (aframe[13] == 6u8)
 }
 
 pub fn arp_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[16] == 8u8) &
-    (aframe[17] == 0u8)
+  (aframe.len() == 1600) &&
+    (aframe[16] == 8u8) &
+      (aframe[17] == 0u8)
 }
 
 pub fn arp_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[16] == 134u8) &
-    (aframe[17] == 221u8)
+  (aframe.len() == 1600) &&
+    (aframe[16] == 134u8) &
+      (aframe[17] == 221u8)
 }
 
 pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
@@ -79,15 +87,17 @@ pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn valid_arp_op(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[20] == 0u8) &
-    ((aframe[21] == 1u8) |
-      (aframe[21] == 2u8))
+  (aframe.len() == 1600) &&
+    (aframe[20] == 0u8) &
+      ((aframe[21] == 1u8) |
+        (aframe[21] == 2u8))
 }
 
 pub fn valid_arp_htype(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[14] == 0u8) &
-    (aframe[15] == 1u8)
+  (aframe.len() == 1600) &&
+    (aframe[14] == 0u8) &
+      (aframe[15] == 1u8)
 }
 
 pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
@@ -96,33 +106,31 @@ pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
     (valid_arp_htype(aframe) & valid_arp_ptype(aframe))
 }
 
-pub fn ipv4_length(aframe: SW::RawEthernetMessage) -> u16
-{
-  two_bytes_to_u16(aframe[16], aframe[17])
-}
-
 pub fn valid_ipv4_length(aframe: SW::RawEthernetMessage) -> bool
 {
-  ipv4_length(aframe) <= 9000u16
+  (aframe.len() == 1600) &&
+    (two_bytes_to_u16(aframe[16], aframe[17]) <= 9000u16)
 }
 
 pub fn valid_ipv4_protocol(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe[23] == 0u8) |
-    ((aframe[23] == 1u8) |
-      ((aframe[23] == 2u8) |
-        ((aframe[23] == 6u8) |
-          ((aframe[23] == 17u8) |
-            ((aframe[23] == 43u8) |
-              ((aframe[23] == 44u8) |
-                ((aframe[23] == 58u8) |
-                  ((aframe[23] == 59u8) |
-                    (aframe[23] == 60u8)))))))))
+  (aframe.len() == 1600) &&
+    (aframe[23] == 0u8) |
+      ((aframe[23] == 1u8) |
+        ((aframe[23] == 2u8) |
+          ((aframe[23] == 6u8) |
+            ((aframe[23] == 17u8) |
+              ((aframe[23] == 43u8) |
+                ((aframe[23] == 44u8) |
+                  ((aframe[23] == 58u8) |
+                    ((aframe[23] == 59u8) |
+                      (aframe[23] == 60u8)))))))))
 }
 
 pub fn valid_ipv4_vers_ihl(aframe: SW::RawEthernetMessage) -> bool
 {
-  aframe[14] == 69u8
+  (aframe.len() == 1600) &&
+    (aframe[14] == 69u8)
 }
 
 pub fn wellformed_ipv4_frame(aframe: SW::RawEthernetMessage) -> bool
@@ -148,6 +156,11 @@ pub fn valid_ipv4(aframe: SW::RawEthernetMessage) -> bool
     (frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe))
 }
 
+pub fn ipv4_length(aframe: SW::RawEthernetMessage) -> u16
+{
+  two_bytes_to_u16(aframe[16], aframe[17])
+}
+
 pub fn valid_output_arp_size(output: SW::SizedEthernetMessage_Impl) -> bool
 {
   output.sz == 64u16
@@ -157,12 +170,129 @@ pub fn valid_output_ipv4_size(
   input: SW::RawEthernetMessage,
   output: SW::SizedEthernetMessage_Impl) -> bool
 {
-  output.sz == ipv4_length(input) + 14u16
+  (input.len() == 1600) &&
+    (output.sz == two_bytes_to_u16(input[16], input[17]) + 14u16)
 }
 
 pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
 {
   valid_arp(aframe) | valid_ipv4(aframe)
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
+  *
+  * guarantee valid_tx_out_message_port0
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+  */
+pub fn I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTxOut0.amessage) & valid_output_arp_size(EthernetFramesTxOut0) |
+    valid_ipv4(EthernetFramesTxOut0.amessage) & valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
+  *
+  * guarantee valid_tx_out_message_port0
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+  */
+pub fn I_Guar_Guard_EthernetFramesTxOut0(EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTxOut0.is_some(),
+    I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
+  *
+  * guarantee valid_tx_out_message_port1
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+  */
+pub fn I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTxOut1.amessage) & valid_output_arp_size(EthernetFramesTxOut1) |
+    valid_ipv4(EthernetFramesTxOut1.amessage) & valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
+  *
+  * guarantee valid_tx_out_message_port1
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+  */
+pub fn I_Guar_Guard_EthernetFramesTxOut1(EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTxOut1.is_some(),
+    I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
+  *
+  * guarantee valid_tx_out_message_port2
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+  */
+pub fn I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTxOut2.amessage) & valid_output_arp_size(EthernetFramesTxOut2) |
+    valid_ipv4(EthernetFramesTxOut2.amessage) & valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
+  *
+  * guarantee valid_tx_out_message_port2
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+  */
+pub fn I_Guar_Guard_EthernetFramesTxOut2(EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTxOut2.is_some(),
+    I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
+  *
+  * guarantee valid_tx_out_message_port3
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+  */
+pub fn I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTxOut3.amessage) & valid_output_arp_size(EthernetFramesTxOut3) |
+    valid_ipv4(EthernetFramesTxOut3.amessage) & valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
+}
+
+/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
+  *
+  * guarantee valid_tx_out_message_port3
+  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+  */
+pub fn I_Guar_Guard_EthernetFramesTxOut3(EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTxOut3.is_some(),
+    I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3.unwrap())
+  )
+}
+
+/** IEP-Post: Initialize Entrypoint Post-Condition
+  *
+  * @param api_EthernetFramesTxOut0 outgoing event data port
+  * @param api_EthernetFramesTxOut1 outgoing event data port
+  * @param api_EthernetFramesTxOut2 outgoing event data port
+  * @param api_EthernetFramesTxOut3 outgoing event data port
+  */
+pub fn initialize_IEP_Post(
+  api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  // I-Guar-Guard: Integration constraints for TxFirewall's outgoing ports"
+  I_Guar_Guard_EthernetFramesTxOut0(api_EthernetFramesTxOut0) &
+  I_Guar_Guard_EthernetFramesTxOut1(api_EthernetFramesTxOut1) &
+  I_Guar_Guard_EthernetFramesTxOut2(api_EthernetFramesTxOut2) &
+  I_Guar_Guard_EthernetFramesTxOut3(api_EthernetFramesTxOut3)
 }
 
 /** Compute Entrypoint Contract
@@ -483,8 +613,14 @@ pub fn compute_CEP_Post(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>,
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
-  // CEP-Guar: guarantee clauses of TxFirewall's compute entrypoint
-  let r0: bool = compute_CEP_T_Guar(api_EthernetFramesTxIn0, api_EthernetFramesTxIn1, api_EthernetFramesTxIn2, api_EthernetFramesTxIn3, api_EthernetFramesTxOut0, api_EthernetFramesTxOut1, api_EthernetFramesTxOut2, api_EthernetFramesTxOut3);
+  // I-Guar-Guard: Integration constraints for TxFirewall's outgoing ports
+  let r0: bool = I_Guar_Guard_EthernetFramesTxOut0(api_EthernetFramesTxOut0);
+  let r1: bool = I_Guar_Guard_EthernetFramesTxOut1(api_EthernetFramesTxOut1);
+  let r2: bool = I_Guar_Guard_EthernetFramesTxOut2(api_EthernetFramesTxOut2);
+  let r3: bool = I_Guar_Guard_EthernetFramesTxOut3(api_EthernetFramesTxOut3);
 
-  return r0;
+  // CEP-Guar: guarantee clauses of TxFirewall's compute entrypoint
+  let r4: bool = compute_CEP_T_Guar(api_EthernetFramesTxIn0, api_EthernetFramesTxIn1, api_EthernetFramesTxIn2, api_EthernetFramesTxIn3, api_EthernetFramesTxOut0, api_EthernetFramesTxOut1, api_EthernetFramesTxOut2, api_EthernetFramesTxOut3);
+
+  return r0 && r1 && r2 && r3 && r4;
 }

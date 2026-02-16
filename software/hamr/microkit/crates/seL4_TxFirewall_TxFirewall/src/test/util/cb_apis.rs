@@ -21,6 +21,19 @@ pub fn testInitializeCB() -> HarnessResult
   // [InvokeEntryPoint]: Invoke the entry point
   crate::seL4_TxFirewall_TxFirewall_initialize();
 
+  // [RetrieveOutState]: retrieve values of the output ports via get operations and GUMBO declared local state variable
+  let api_EthernetFramesTxOut0 = get_EthernetFramesTxOut0();
+  let api_EthernetFramesTxOut1 = get_EthernetFramesTxOut1();
+  let api_EthernetFramesTxOut2 = get_EthernetFramesTxOut2();
+  let api_EthernetFramesTxOut3 = get_EthernetFramesTxOut3();
+
+  // [CheckPost]: invoke the oracle function
+  if !GUMBOX::initialize_IEP_Post (api_EthernetFramesTxOut0, api_EthernetFramesTxOut1, api_EthernetFramesTxOut2, api_EthernetFramesTxOut3) {
+    return HarnessResult::FailedPostcondition(
+      TestCaseError::Fail("Postcondition failed: incorrect output behavior".into())
+    );
+  }
+
   return HarnessResult::Passed
 }
 

@@ -158,7 +158,7 @@ package SW {
 		          //output.sz == (ipv4_length(input)+14[u16]);
 		          (size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
 
-		        def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        def tx_allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
 		          valid_arp(aframe) |
 		          valid_ipv4(aframe);
 
@@ -196,9 +196,6 @@ package SW {
                   //exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
                   //	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
       
-                def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
-      
                 def valid_ipv4_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
                   frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
       
@@ -214,7 +211,7 @@ package SW {
                 def valid_ipv4_udp_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
                   valid_ipv4_udp(aframe) & udp_is_mavlink(aframe);
       
-                def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+                def rx_allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
                   valid_arp(aframe)
                   | valid_ipv4_udp_mavlink(aframe)
                   | valid_ipv4_udp_port(aframe);      
@@ -256,28 +253,28 @@ package SW {
 					valid_arp(EthernetFramesRx0)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx0)
 					| valid_ipv4_udp_port(EthernetFramesRx0)
-					| not allow_outbound_frame(EthernetFramesRx0)
+					| not rx_allow_outbound_frame(EthernetFramesRx0)
           ;
 
 				guarantee valid_message_port1 "Only valid messages being sent to the RxFirewall Port 1":
 					valid_arp(EthernetFramesRx1)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx1)
 					| valid_ipv4_udp_port(EthernetFramesRx1)
-					| not allow_outbound_frame(EthernetFramesRx1)
+					| not rx_allow_outbound_frame(EthernetFramesRx1)
           ;
 
 				guarantee valid_message_port2 "Only valid messages being sent to the RxFirewall Port 2":
 					valid_arp(EthernetFramesRx2)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx2)
 					| valid_ipv4_udp_port(EthernetFramesRx2)
-					| not allow_outbound_frame(EthernetFramesRx2)
+					| not rx_allow_outbound_frame(EthernetFramesRx2)
           ;
 
 				guarantee valid_message_port3 "Only valid messages being sent to the RxFirewall Port 3":
 					valid_arp(EthernetFramesRx3)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx3)
 					| valid_ipv4_udp_port(EthernetFramesRx3)
-					| not allow_outbound_frame(EthernetFramesRx3)
+					| not rx_allow_outbound_frame(EthernetFramesRx3)
           ;
           
 		}*/

@@ -15,17 +15,16 @@ CARGO_FLAGS = -Z build-std=core,alloc,compiler_builtins \
               -Z build-std-features=compiler-builtins-mem \
               --target aarch64-unknown-none
 
-# all: build-verus-release
 all: build-release
 
 build-verus-release:
-	$(BUILD_ENV_VARS) cargo-verus build --features sel4 $(CARGO_FLAGS) --release
+	$(BUILD_ENV_VARS) cargo-verus build --features sel4 $(CARGO_FLAGS) --release -- --no-lifetime
 
 build-verus:
 	$(BUILD_ENV_VARS) cargo-verus build --features sel4 $(CARGO_FLAGS)
 
 build-release:
-	$(BUILD_ENV_VARS) cargo build --features sel4 $(CARGO_FLAGS) --release
+	$(BUILD_ENV_VARS) cargo build --features sel4 $(CARGO_FLAGS) --release -- 
 
 build:
 	$(BUILD_ENV_VARS) cargo build --features sel4 $(CARGO_FLAGS)
