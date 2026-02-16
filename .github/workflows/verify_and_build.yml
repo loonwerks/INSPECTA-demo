@@ -234,6 +234,7 @@ jobs:
         output-path: software/assurance/resolute.json
         component-to-analyze: ardupilot_assurance::ArduPilot.i
         attestation-path: software/hamr/microkit/attestation
+        project-path: software/assurance
     - name: Get analysis timestamp
       run: echo "Resolute timestamp is ${{ steps.resolute.outputs.timestamp }}"
     - name: Get analysis status
