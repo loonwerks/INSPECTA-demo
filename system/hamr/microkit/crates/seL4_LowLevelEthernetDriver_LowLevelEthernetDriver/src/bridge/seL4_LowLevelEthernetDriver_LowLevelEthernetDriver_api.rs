@@ -48,6 +48,11 @@ verus! {
       value: &Ghost<Option<SW::SizedEthernetMessage_Impl>>) -> (res : Option<SW::SizedEthernetMessage_Impl>)
       ensures
         res == value@,
+        (res.is_none() ||
+          // assume valid_tx_message_port0
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       return extern_api::unsafe_get_EthernetFramesTx0();
     }
@@ -58,6 +63,11 @@ verus! {
       value: &Ghost<Option<SW::SizedEthernetMessage_Impl>>) -> (res : Option<SW::SizedEthernetMessage_Impl>)
       ensures
         res == value@,
+        (res.is_none() ||
+          // assume valid_tx_message_port1
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       return extern_api::unsafe_get_EthernetFramesTx1();
     }
@@ -68,6 +78,11 @@ verus! {
       value: &Ghost<Option<SW::SizedEthernetMessage_Impl>>) -> (res : Option<SW::SizedEthernetMessage_Impl>)
       ensures
         res == value@,
+        (res.is_none() ||
+          // assume valid_tx_message_port2
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       return extern_api::unsafe_get_EthernetFramesTx2();
     }
@@ -78,6 +93,11 @@ verus! {
       value: &Ghost<Option<SW::SizedEthernetMessage_Impl>>) -> (res : Option<SW::SizedEthernetMessage_Impl>)
       ensures
         res == value@,
+        (res.is_none() ||
+          // assume valid_tx_message_port3
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       return extern_api::unsafe_get_EthernetFramesTx3();
     }
@@ -102,6 +122,12 @@ verus! {
     pub fn put_EthernetFramesRx0(
       &mut self,
       value: SW::RawEthernetMessage)
+      requires
+        // guarantee valid_message_port0
+        //   Only valid messages being sent to the RxFirewall Port 0
+        crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
       ensures
         self.EthernetFramesRx0 == Some(value),
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,
@@ -118,6 +144,12 @@ verus! {
     pub fn put_EthernetFramesRx1(
       &mut self,
       value: SW::RawEthernetMessage)
+      requires
+        // guarantee valid_message_port1
+        //   Only valid messages being sent to the RxFirewall Port 1
+        crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         self.EthernetFramesRx1 == Some(value),
@@ -134,6 +166,12 @@ verus! {
     pub fn put_EthernetFramesRx2(
       &mut self,
       value: SW::RawEthernetMessage)
+      requires
+        // guarantee valid_message_port2
+        //   Only valid messages being sent to the RxFirewall Port 2
+        crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,
@@ -150,6 +188,12 @@ verus! {
     pub fn put_EthernetFramesRx3(
       &mut self,
       value: SW::RawEthernetMessage)
+      requires
+        // guarantee valid_message_port3
+        //   Only valid messages being sent to the RxFirewall Port 3
+        crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,
@@ -177,6 +221,11 @@ verus! {
         old(self).EthernetFramesTx1 == self.EthernetFramesTx1,
         old(self).EthernetFramesTx2 == self.EthernetFramesTx2,
         old(self).EthernetFramesTx3 == self.EthernetFramesTx3,
+        (res.is_none() ||
+          // assume valid_tx_message_port0
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       self.api.unverified_get_EthernetFramesTx0(&Ghost(self.EthernetFramesTx0))
     }
@@ -191,6 +240,11 @@ verus! {
         res == self.EthernetFramesTx1,
         old(self).EthernetFramesTx2 == self.EthernetFramesTx2,
         old(self).EthernetFramesTx3 == self.EthernetFramesTx3,
+        (res.is_none() ||
+          // assume valid_tx_message_port1
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       self.api.unverified_get_EthernetFramesTx1(&Ghost(self.EthernetFramesTx1))
     }
@@ -205,6 +259,11 @@ verus! {
         old(self).EthernetFramesTx2 == self.EthernetFramesTx2,
         res == self.EthernetFramesTx2,
         old(self).EthernetFramesTx3 == self.EthernetFramesTx3,
+        (res.is_none() ||
+          // assume valid_tx_message_port2
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       self.api.unverified_get_EthernetFramesTx2(&Ghost(self.EthernetFramesTx2))
     }
@@ -219,6 +278,11 @@ verus! {
         old(self).EthernetFramesTx2 == self.EthernetFramesTx2,
         old(self).EthernetFramesTx3 == self.EthernetFramesTx3,
         res == self.EthernetFramesTx3,
+        (res.is_none() ||
+          // assume valid_tx_message_port3
+          //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
     {
       self.api.unverified_get_EthernetFramesTx3(&Ghost(self.EthernetFramesTx3))
     }
