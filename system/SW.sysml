@@ -196,9 +196,6 @@ package SW {
                 	//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
                 	//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
       
-                def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                	frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
-      
                 def valid_ipv4_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
                 	frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
       

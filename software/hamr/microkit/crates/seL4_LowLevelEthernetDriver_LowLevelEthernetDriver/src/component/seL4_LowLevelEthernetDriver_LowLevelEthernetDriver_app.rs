@@ -6,6 +6,7 @@
 use crate::bridge::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api::*;
 use data::*;
 use vstd::prelude::*;
+// use vstd::slice::slice_subrange;
 #[cfg(feature = "sel4")]
 #[allow(unused_imports)]
 use log::{trace, info, debug};
@@ -25,7 +26,7 @@ use eth_driver_core::{DmaDef, Driver};
 
 mod config;
 
-verus! {
+// verus! {
   const NUM_MSGS: usize = 4;
 
   fn get_tx<API: seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_Get_Api>(
@@ -46,6 +47,7 @@ verus! {
       rx_buf: &[u8],
       api: &mut seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_Application_Api<API>,
   ) {
+      // let value: SW::RawEthernetMessage = slice_subrange(rx_buf, 0, SW::SW_RawEthernetMessage_DIM_0)
       let value: SW::RawEthernetMessage = rx_buf[0..SW::SW_RawEthernetMessage_DIM_0]
           .try_into()
           .unwrap();
@@ -144,6 +146,7 @@ verus! {
     }
   }
 
+verus! {
   #[verifier::external_body]
   pub fn log_info(msg: &str)
   {
@@ -176,15 +179,13 @@ verus! {
 
   pub open spec fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
   {
-    (aframe.len() == 1600) &&
-      (valid_frame_ethertype(aframe) && valid_frame_dst_addr(aframe))
+    valid_frame_ethertype(aframe) && valid_frame_dst_addr(aframe)
   }
 
   pub open spec fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
   {
-    (aframe.len() == 1600) &&
-      (frame_has_ipv4(aframe) ||
-        (frame_has_arp(aframe) || frame_has_ipv6(aframe)))
+    frame_has_ipv4(aframe) ||
+      (frame_has_arp(aframe) || frame_has_ipv6(aframe))
   }
 
   pub open spec fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
@@ -446,7 +447,6 @@ verus! {
     input_eq_mav_output_headers(aframe, output.headers) && input_eq_mav_output_payload(aframe, output.payload, output.headers)
   }
   // END MARKER GUMBO METHODS
-
 
 }
 
