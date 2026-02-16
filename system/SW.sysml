@@ -67,215 +67,218 @@ package SW {
       		    def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16]);
 
                 def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-                  byte0.toU16 * 256[u16] + byte1.toU16;
+                	byte0.toU16 * 256[u16] + byte1.toU16;
         
                 def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe));
+                	valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe);
 
                 def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe));     
+                	frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe);     
 		             
 		    	def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and 
-				  (
-				  not ((aframe#(0) == 0[u8]) & 
-					   (aframe#(1) == 0[u8]) &
-					   (aframe#(2) == 0[u8]) &
-					   (aframe#(3) == 0[u8]) &
-					   (aframe#(4) == 0[u8]) &
-					   (aframe#(5) == 0[u8]))
-				  );
+                	size(aframe) == 1600 and 
+					( not ((aframe#(0) == 0[u8]) & 
+					(aframe#(1) == 0[u8]) &
+					(aframe#(2) == 0[u8]) &
+					(aframe#(3) == 0[u8]) &
+					(aframe#(4) == 0[u8]) &
+					(aframe#(5) == 0[u8])))
+					;
 	
                 def frame_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-                  size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
+                	size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
 
                 def frame_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
+                	size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
 
                 def frame_has_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
+                	size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
 
                 def arp_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-                  size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
+                	size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
 
                 def arp_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
+                	size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
 
                 def valid_arp_ptype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
+                	arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
 
                 def valid_arp_op(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
+                	size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
 
                 def valid_arp_htype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
+                	size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
 
                 def wellformed_arp_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
+                	valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
 
                 def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
+                	size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
 
                 def valid_ipv4_protocol(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and
-                  (
-                    (aframe#(23) == 0[u8])  |
-                    (aframe#(23) == 1[u8])  |
-                    (aframe#(23) == 2[u8])  |
-                    (aframe#(23) == 6[u8])  |
-                    (aframe#(23) == 17[u8]) |
-                    (aframe#(23) == 43[u8]) |
-                    (aframe#(23) == 44[u8]) |
-                    (aframe#(23) == 58[u8]) |
-                    (aframe#(23) == 59[u8]) |
-                    (aframe#(23) == 60[u8])
-                  );
+                	size(aframe) == 1600 and
+                	(
+                	  (aframe#(23) == 0[u8])  |
+                	  (aframe#(23) == 1[u8])  |
+                	  (aframe#(23) == 2[u8])  |
+                	  (aframe#(23) == 6[u8])  |
+                	  (aframe#(23) == 17[u8]) |
+                	  (aframe#(23) == 43[u8]) |
+                	  (aframe#(23) == 44[u8]) |
+                	  (aframe#(23) == 58[u8]) |
+                	  (aframe#(23) == 59[u8]) |
+                	  (aframe#(23) == 60[u8])
+                	);
 
                 def valid_ipv4_vers_ihl(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            	  size(aframe) == 1600 and (aframe#(14) == 69[u8]);
+            		size(aframe) == 1600 and (aframe#(14) == 69[u8]);
       
                 def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
+                	valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
 
 				// TxFirewall
 					
 	    	    def valid_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	    	      frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe);
+	    	    	frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe);
 
 	    	    def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	    	      frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
+	    	    	frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
 
 	    	    def valid_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	    	      frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
+	    	    	frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
 
 	    	    def ipv4_length(aframe: RawEthernetMessage): Base_Types::Unsigned_16 :=
-		   	   	  two_bytes_to_u16(aframe#(16),aframe#(17));
+		   	   		two_bytes_to_u16(aframe#(16),aframe#(17));
 
 		        def valid_output_arp_size(output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
-		          output.sz == 64[u16];
+		        	output.sz == 64[u16];
 
 		        def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
-		          //output.sz == (ipv4_length(input)+14[u16]);
-		          (size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
+		        	//output.sz == (ipv4_length(input)+14[u16]);
+		        	(size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
 
-		        def tx_allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-		          valid_arp(aframe) |
-		          valid_ipv4(aframe);
+		        def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	valid_arp(aframe) |
+		        	valid_ipv4(aframe);
 
 				// RxFirewall
                 def ipv4_is_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(23) == 6[u8]);
+                	size(aframe) == 1600 and (aframe#(23) == 6[u8]);
       
                 def ipv4_is_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (aframe#(23) == 17[u8]);
+                	size(aframe) == 1600 and (aframe#(23) == 17[u8]);
       
                 def tcp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0));
+                	size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0));
       
                 def udp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0));
+                	size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0));
       
                 def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550[u16]);
+                	size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550[u16]);
       
                 def udp_is_mavlink_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562[u16]);
+                	size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562[u16]);
       
                 def udp_is_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
+                	udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
       
                 def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and ((0 .. (size(TCP_ALLOWED_PORTS()) - 1)) -> exists {in i;
-                    TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
-                  //exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
-                  //		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+                	size(aframe) == 1600 and ((0 .. (size(TCP_ALLOWED_PORTS()) - 1)) -> exists {in i;
+                		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+                	//exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
+                	//		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
       
                 def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  size(aframe) == 1600 and ((0 .. (size(UDP_ALLOWED_PORTS()) - 1)) -> exists {in i;
-                    UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
-                  //exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
-                  //	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
+                	size(aframe) == 1600 and
+					((0 .. (size(UDP_ALLOWED_PORTS()) - 1))
+					-> exists {in i; UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+                	//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
+                	//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
+      
+                def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+                	frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
       
                 def valid_ipv4_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
+                	frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
       
                 def valid_ipv4_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_udp(aframe);
+                	frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_udp(aframe);
       
                 def valid_ipv4_tcp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_ipv4_tcp(aframe) & frame_has_ipv4_tcp_on_allowed_port_quant(aframe);
+                	valid_ipv4_tcp(aframe) & frame_has_ipv4_tcp_on_allowed_port_quant(aframe);
       
                 def valid_ipv4_udp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_ipv4_udp(aframe) & udp_is_valid_direct_dst_port(aframe) & not udp_is_mavlink(aframe);
+                	valid_ipv4_udp(aframe) & udp_is_valid_direct_dst_port(aframe) & not udp_is_mavlink(aframe);
       
                 def valid_ipv4_udp_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_ipv4_udp(aframe) & udp_is_mavlink(aframe);
+                	valid_ipv4_udp(aframe) & udp_is_mavlink(aframe);
       
-                def rx_allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-                  valid_arp(aframe)
-                  | valid_ipv4_udp_mavlink(aframe)
-                  | valid_ipv4_udp_port(aframe);      
+                def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_arp(aframe)
+					| valid_ipv4_udp_mavlink(aframe)
+					| valid_ipv4_udp_port(aframe);      
       
                 def input_eq_mav_output_headers(aframe: RawEthernetMessage, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-                  size(aframe) == 1600 and ((0 .. (size(headers) - 1)) -> forAll {in i;  headers#(i) == aframe#(i)});
-                  //forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
+                	size(aframe) == 1600 and ((0 .. (size(headers) - 1)) -> forAll {in i;  headers#(i) == aframe#(i)});
+                	//forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
       
                 def input_eq_mav_output_payload(aframe: RawEthernetMessage, payload: UdpPayload, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-                  size(aframe) == 1600 and size(payload) == 1558 and ((0 .. (size(payload)- 1)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)});
-                  //forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
+                	size(aframe) == 1600 and size(payload) == 1558 and ((0 .. (size(payload)- 1)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)});
+                	//forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
       
                 def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame_Impl): Base_Types::Boolean :=
-            input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
+        			input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
 
 			integration
 
-        assume valid_tx_message_port0 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0":
-          valid_arp(EthernetFramesTx0.amessage) & valid_output_arp_size(EthernetFramesTx0)
-          | valid_ipv4(EthernetFramesTx0.amessage) & valid_output_ipv4_size(EthernetFramesTx0.amessage,EthernetFramesTx0)
-          ;
+				assume valid_tx_message_port0 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0":
+					valid_arp(EthernetFramesTx0.amessage) & valid_output_arp_size(EthernetFramesTx0)
+					| valid_ipv4(EthernetFramesTx0.amessage) & valid_output_ipv4_size(EthernetFramesTx0.amessage,EthernetFramesTx0)
+					;
 
-        assume valid_tx_message_port1 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1":
-          valid_arp(EthernetFramesTx1.amessage) & valid_output_arp_size(EthernetFramesTx1)
-          | valid_ipv4(EthernetFramesTx1.amessage) & valid_output_ipv4_size(EthernetFramesTx1.amessage,EthernetFramesTx1)
-          ;
+				assume valid_tx_message_port1 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1":
+					valid_arp(EthernetFramesTx1.amessage) & valid_output_arp_size(EthernetFramesTx1)
+					| valid_ipv4(EthernetFramesTx1.amessage) & valid_output_ipv4_size(EthernetFramesTx1.amessage,EthernetFramesTx1)
+					;
 
-        assume valid_tx_message_port2 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2":
-          valid_arp(EthernetFramesTx2.amessage) & valid_output_arp_size(EthernetFramesTx2)
-          | valid_ipv4(EthernetFramesTx2.amessage) & valid_output_ipv4_size(EthernetFramesTx2.amessage,EthernetFramesTx2)
-          ;
+				assume valid_tx_message_port2 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2":
+					valid_arp(EthernetFramesTx2.amessage) & valid_output_arp_size(EthernetFramesTx2)
+					| valid_ipv4(EthernetFramesTx2.amessage) & valid_output_ipv4_size(EthernetFramesTx2.amessage,EthernetFramesTx2)
+					;
 
-        assume valid_tx_message_port3 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3":
-          valid_arp(EthernetFramesTx3.amessage) & valid_output_arp_size(EthernetFramesTx3)
-          | valid_ipv4(EthernetFramesTx3.amessage) & valid_output_ipv4_size(EthernetFramesTx3.amessage,EthernetFramesTx3)
-          ;
+				assume valid_tx_message_port3 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3":
+					valid_arp(EthernetFramesTx3.amessage) & valid_output_arp_size(EthernetFramesTx3)
+					| valid_ipv4(EthernetFramesTx3.amessage) & valid_output_ipv4_size(EthernetFramesTx3.amessage,EthernetFramesTx3)
+					;
 
 				guarantee valid_message_port0 "Only valid messages being sent to the RxFirewall Port 0":
 					valid_arp(EthernetFramesRx0)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx0)
 					| valid_ipv4_udp_port(EthernetFramesRx0)
-					| not rx_allow_outbound_frame(EthernetFramesRx0)
-          ;
+					| not allow_outbound_frame(EthernetFramesRx0)
+					;
 
 				guarantee valid_message_port1 "Only valid messages being sent to the RxFirewall Port 1":
 					valid_arp(EthernetFramesRx1)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx1)
 					| valid_ipv4_udp_port(EthernetFramesRx1)
-					| not rx_allow_outbound_frame(EthernetFramesRx1)
-          ;
+					| not allow_outbound_frame(EthernetFramesRx1)
+					;
 
 				guarantee valid_message_port2 "Only valid messages being sent to the RxFirewall Port 2":
 					valid_arp(EthernetFramesRx2)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx2)
 					| valid_ipv4_udp_port(EthernetFramesRx2)
-					| not rx_allow_outbound_frame(EthernetFramesRx2)
-          ;
+					| not allow_outbound_frame(EthernetFramesRx2)
+					;
 
 				guarantee valid_message_port3 "Only valid messages being sent to the RxFirewall Port 3":
 					valid_arp(EthernetFramesRx3)
 					| valid_ipv4_udp_mavlink(EthernetFramesRx3)
 					| valid_ipv4_udp_port(EthernetFramesRx3)
-					| not rx_allow_outbound_frame(EthernetFramesRx3)
-          ;
+					| not allow_outbound_frame(EthernetFramesRx3)
+					;
           
 		}*/
 	}
@@ -341,177 +344,178 @@ package SW {
 			functions
 				def TCP_ALLOWED_PORTS(): u16Array := SW::u16Array(5760[u16]);
 
-        def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16]);
+				def UDP_ALLOWED_PORTS(): u16Array := SW::u16Array(68[u16]);
 
-        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-          byte0.toU16 * 256[u16] + byte1.toU16;
+				def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
+					byte0.toU16 * 256[u16] + byte1.toU16;
         
-        def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and (valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe));
+				def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe);
 
-        def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and (frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe));     
+				def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe);     
 		             
-		    def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and 
-				  (
-				  not ((aframe#(0) == 0[u8]) & 
-					   (aframe#(1) == 0[u8]) &
-					   (aframe#(2) == 0[u8]) &
-					   (aframe#(3) == 0[u8]) &
-					   (aframe#(4) == 0[u8]) &
-					   (aframe#(5) == 0[u8]))
-				  );
-	
-          def frame_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-            size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
+				def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and 
+					(
+					not ((aframe#(0) == 0[u8]) & 
+						(aframe#(1) == 0[u8]) &
+						(aframe#(2) == 0[u8]) &
+						(aframe#(3) == 0[u8]) &
+						(aframe#(4) == 0[u8]) &
+						(aframe#(5) == 0[u8]))
+					);
 
-          def frame_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
+				def frame_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
+					size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
 
-          def frame_has_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
+				def frame_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
 
-          def arp_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-            size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
+				def frame_has_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
 
-          def arp_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
+				def arp_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
+					size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
 
-          def valid_arp_ptype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
+				def arp_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
 
-          def valid_arp_op(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
+				def valid_arp_ptype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
 
-          def valid_arp_htype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
+				def valid_arp_op(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
 
-          def wellformed_arp_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
+				def valid_arp_htype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
 
-          def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
+				def wellformed_arp_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
 
-          def valid_ipv4_protocol(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and
-            (
-              (aframe#(23) == 0[u8])  |
-              (aframe#(23) == 1[u8])  |
-              (aframe#(23) == 2[u8])  |
-              (aframe#(23) == 6[u8])  |
-              (aframe#(23) == 17[u8]) |
-              (aframe#(23) == 43[u8]) |
-              (aframe#(23) == 44[u8]) |
-              (aframe#(23) == 58[u8]) |
-              (aframe#(23) == 59[u8]) |
-              (aframe#(23) == 60[u8])
-            );
+				def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
 
-          def valid_ipv4_vers_ihl(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(14) == 69[u8]);
+				def valid_ipv4_protocol(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and
+					(
+						(aframe#(23) == 0[u8])  |
+						(aframe#(23) == 1[u8])  |
+						(aframe#(23) == 2[u8])  |
+						(aframe#(23) == 6[u8])  |
+						(aframe#(23) == 17[u8]) |
+						(aframe#(23) == 43[u8]) |
+						(aframe#(23) == 44[u8]) |
+						(aframe#(23) == 58[u8]) |
+						(aframe#(23) == 59[u8]) |
+						(aframe#(23) == 60[u8])
+					);
+
+				def valid_ipv4_vers_ihl(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(14) == 69[u8]);
+
+				def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
+
+				def ipv4_is_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(23) == 6[u8]);
+
+				def ipv4_is_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (aframe#(23) == 17[u8]);
+
+				def tcp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0));
+
+				def udp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0));
+
+				def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550[u16]);
+
+				def udp_is_mavlink_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562[u16]);
+
+				def udp_is_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
+
+				def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and
+					((0 .. (size(TCP_ALLOWED_PORTS()) - 1)) ->
+						exists {in i; TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+					//exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
+					//		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+
+				def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					size(aframe) == 1600 and ((0 .. (size(UDP_ALLOWED_PORTS()) - 1)) ->
+						exists {in i; UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
+				//exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
+				//	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
+
+				def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
+
+				def valid_ipv4_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
+
+				def valid_ipv4_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_udp(aframe);
+
+				def valid_ipv4_tcp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_ipv4_tcp(aframe) & frame_has_ipv4_tcp_on_allowed_port_quant(aframe);
+
+				def valid_ipv4_udp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_ipv4_udp(aframe) & udp_is_valid_direct_dst_port(aframe) & not udp_is_mavlink(aframe);
+
+				def valid_ipv4_udp_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_ipv4_udp(aframe) & udp_is_mavlink(aframe);
+
+				def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+					valid_arp(aframe)
+					| valid_ipv4_udp_mavlink(aframe)
+					| valid_ipv4_udp_port(aframe);      
+
+				def input_eq_mav_output_headers(aframe: RawEthernetMessage, headers: EthIpUdpHeaders): Base_Types::Boolean :=
+					size(aframe) == 1600 and ((0 .. (size(headers) - 1)) -> forAll {in i;  headers#(i) == aframe#(i)});
+					//forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
+
+				def input_eq_mav_output_payload(aframe: RawEthernetMessage, payload: UdpPayload, headers: EthIpUdpHeaders): Base_Types::Boolean :=
+					size(aframe) == 1600 and size(payload) == 1558 and ((0 .. (size(payload)- 1)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)});
+					//forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
+
+				def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame_Impl): Base_Types::Boolean :=
+					input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
       
-          def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
-      
-          def ipv4_is_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(23) == 6[u8]);
-      
-          def ipv4_is_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(23) == 17[u8]);
-      
-          def tcp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == TCP_ALLOWED_PORTS()#(0));
-      
-          def udp_is_valid_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36),aframe#(37)) == UDP_ALLOWED_PORTS()#(0));
-      
-          def udp_is_mavlink_src_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(34),aframe#(35)) == 14550[u16]);
-      
-          def udp_is_mavlink_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(36), aframe#(37)) == 14562[u16]);
-      
-          def udp_is_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe);
-      
-          def frame_has_ipv4_tcp_on_allowed_port_quant(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and ((0 .. (size(TCP_ALLOWED_PORTS()) - 1)) -> exists {in i;
-              TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
-            //exists(0 .. size(TCP_ALLOWED_PORTS()), {in i;
-            //		TCP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
-      
-          def udp_is_valid_direct_dst_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and ((0 .. (size(UDP_ALLOWED_PORTS()) - 1)) -> exists {in i;
-              UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});
-            //exists(0  .. size(UDP_ALLOWED_PORTS()), {in i;
-            //	UDP_ALLOWED_PORTS()#(i) == two_bytes_to_u16(aframe#(36), aframe#(37))});    
-      
-          def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
-      
-          def valid_ipv4_tcp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe);
-      
-          def valid_ipv4_udp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe) & ipv4_is_udp(aframe);
-      
-          def valid_ipv4_tcp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_ipv4_tcp(aframe) & frame_has_ipv4_tcp_on_allowed_port_quant(aframe);
-      
-          def valid_ipv4_udp_port(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_ipv4_udp(aframe) & udp_is_valid_direct_dst_port(aframe) & not udp_is_mavlink(aframe);
-      
-          def valid_ipv4_udp_mavlink(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_ipv4_udp(aframe) & udp_is_mavlink(aframe);
-      
-          def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_arp(aframe)
-            | valid_ipv4_udp_mavlink(aframe)
-            | valid_ipv4_udp_port(aframe);      
-      
-          def input_eq_mav_output_headers(aframe: RawEthernetMessage, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-            size(aframe) == 1600 and ((0 .. (size(headers) - 1)) -> forAll {in i;  headers#(i) == aframe#(i)});
-            //forAll(0 .. size(headers), {in i;  headers#(i) == aframe#(i)});
-      
-          def input_eq_mav_output_payload(aframe: RawEthernetMessage, payload: UdpPayload, headers: EthIpUdpHeaders): Base_Types::Boolean :=
-            size(aframe) == 1600 and size(payload) == 1558 and ((0 .. (size(payload)- 1)) -> forAll {in i;  aframe#(i + size(headers)) == payload#(i)});
-            //forAll(0 .. size(payload), {in i;  aframe#(i + size(headers)) == payload#(i)});
-      
-          def input_eq_mav_output(aframe: RawEthernetMessage, output: UdpFrame_Impl): Base_Types::Boolean :=
-            input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers);
-      
-			  integration
+			integration
 
 			  	assume valid_message_port0 "Only valid messages being sent to the RxFirewall Port 0":
 			  		valid_arp(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn0)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn0)
 			  		| not allow_outbound_frame(EthernetFramesRxIn0)
-            ;
+					;
 
 			  	assume valid_message_port1 "Only valid messages being sent to the RxFirewall Port 1":
 			  		valid_arp(EthernetFramesRxIn1)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn1)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn1)
 			  		| not allow_outbound_frame(EthernetFramesRxIn1)
-            ;
+					;
 
 			  	assume valid_message_port2  "Only valid messages being sent to the RxFirewall Port 2":
 			  		valid_arp(EthernetFramesRxIn2)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn2)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn2)
 			  		| not allow_outbound_frame(EthernetFramesRxIn2)
-            ;
+					;
 
 			  	assume valid_message_port3 "Only valid messages being sent to the RxFirewall Port 3":
 			  		valid_arp(EthernetFramesRxIn3)
 			  		| valid_ipv4_udp_mavlink(EthernetFramesRxIn3)
 			  		| valid_ipv4_udp_port(EthernetFramesRxIn3)
 			  		| not allow_outbound_frame(EthernetFramesRxIn3)
-            ;
+					;
           
-	      compute
+			compute
 	
 		        guarantee hlr_05_rx0_can_send_arp_to_vmm:
 		          ((HasEvent(EthernetFramesRxIn0) & valid_arp(EthernetFramesRxIn0)) implies 
@@ -636,129 +640,129 @@ package SW {
 		attribute :>> Implementation_Language : HAMR::Implementation_Language = Implementation_Languages::Rust;
 		
 		language "GUMBO" /*{
-			 functions
+			functions
 
-        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
-          byte0.toU16 * 256[u16] + byte1.toU16;
-        
-        def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and (valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe));
+		        def two_bytes_to_u16(byte0: Base_Types::Unsigned_8, byte1: Base_Types::Unsigned_8): Base_Types::Unsigned_16 :=
+		        	byte0.toU16 * 256[u16] + byte1.toU16;
 
-        def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and (frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe));     
-		             
-		    def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
-          size(aframe) == 1600 and 
-				  (
-				  not ((aframe#(0) == 0[u8]) & 
-					   (aframe#(1) == 0[u8]) &
-					   (aframe#(2) == 0[u8]) &
-					   (aframe#(3) == 0[u8]) &
-					   (aframe#(4) == 0[u8]) &
-					   (aframe#(5) == 0[u8]))
-				  );
-	
-          def frame_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-            size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
+		        def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	size(aframe) == 1600 and (valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe));
 
-          def frame_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
+		        def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	size(aframe) == 1600 and (frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe));     
 
-          def frame_has_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
+				def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	size(aframe) == 1600 and 
+					(
+					not ((aframe#(0) == 0[u8]) & 
+						(aframe#(1) == 0[u8]) &
+						(aframe#(2) == 0[u8]) &
+						(aframe#(3) == 0[u8]) &
+						(aframe#(4) == 0[u8]) &
+						(aframe#(5) == 0[u8]))
+					);
 
-          def arp_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
-            size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
+		        def frame_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
+		        	size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 0[u8]);
 
-          def arp_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
+		        def frame_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(12) == 134[u8] & aframe#(13) == 221[u8]);
 
-          def valid_arp_ptype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
+		        def frame_has_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(12) == 8[u8] & aframe#(13) == 6[u8]);
 
-          def valid_arp_op(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
+		        def arp_has_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean := 
+		            size(aframe) == 1600 and (aframe#(16) == 8[u8] & aframe#(17) == 0[u8]);
 
-          def valid_arp_htype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
+		        def arp_has_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(16) == 134[u8] & aframe#(17) == 221[u8]);
 
-          def wellformed_arp_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
+		        def valid_arp_ptype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            arp_has_ipv4(aframe) | arp_has_ipv6(aframe);
 
-          def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
+		        def valid_arp_op(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(20) == 0[u8] & (aframe#(21) == 1[u8] | aframe#(21) == 2[u8]));
 
-          def valid_ipv4_protocol(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and
-            (
-              (aframe#(23) == 0[u8])  |
-              (aframe#(23) == 1[u8])  |
-              (aframe#(23) == 2[u8])  |
-              (aframe#(23) == 6[u8])  |
-              (aframe#(23) == 17[u8]) |
-              (aframe#(23) == 43[u8]) |
-              (aframe#(23) == 44[u8]) |
-              (aframe#(23) == 58[u8]) |
-              (aframe#(23) == 59[u8]) |
-              (aframe#(23) == 60[u8])
-            );
+		        def valid_arp_htype(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(14) == 0[u8] & aframe#(15) == 1[u8]);
 
-          def valid_ipv4_vers_ihl(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            size(aframe) == 1600 and (aframe#(14) == 69[u8]);
-      
-          def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-            valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
+		        def wellformed_arp_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            valid_arp_op(aframe) & valid_arp_htype(aframe) & valid_arp_ptype(aframe);
+
+		        def valid_ipv4_length(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (two_bytes_to_u16(aframe#(16), aframe#(17)) <= 9000[u16]);   
+
+		        def valid_ipv4_protocol(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and
+		            (
+		            	(aframe#(23) == 0[u8])  |
+		            	(aframe#(23) == 1[u8])  |
+		            	(aframe#(23) == 2[u8])  |
+		            	(aframe#(23) == 6[u8])  |
+		            	(aframe#(23) == 17[u8]) |
+		            	(aframe#(23) == 43[u8]) |
+		            	(aframe#(23) == 44[u8]) |
+		            	(aframe#(23) == 58[u8]) |
+		            	(aframe#(23) == 59[u8]) |
+		            	(aframe#(23) == 60[u8])
+		            );
+
+		        def valid_ipv4_vers_ihl(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            size(aframe) == 1600 and (aframe#(14) == 69[u8]);
+
+		        def wellformed_ipv4_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		            valid_ipv4_protocol(aframe) & valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe);
       
 	//        --------------------------------------------------------------------------
 	//        -- TX Firewall
 	//        --------------------------------------------------------------------------
 	          
-	        def valid_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	          frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe);
-	          
-	        def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	          frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
-	          
-	        def valid_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	          frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
+		        def valid_ipv6(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe);
 
-	        def ipv4_length(aframe: RawEthernetMessage): Base_Types::Unsigned_16 :=
-			  two_bytes_to_u16(aframe#(16),aframe#(17));
+		        def valid_arp(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	frame_is_wellformed_eth2(aframe) & frame_has_arp(aframe) & wellformed_arp_frame(aframe);
 
-	        def valid_output_arp_size(output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
-	          output.sz == 64[u16];
-	
-	        def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
-	          //output.sz == (ipv4_length(input)+14[u16]);
-	          (size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
-	
-	        def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
-	          valid_arp(aframe) |
-	          valid_ipv4(aframe);
+		        def valid_ipv4(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	frame_is_wellformed_eth2(aframe) & frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe);
+
+		        def ipv4_length(aframe: RawEthernetMessage): Base_Types::Unsigned_16 :=
+					two_bytes_to_u16(aframe#(16),aframe#(17));
+
+		        def valid_output_arp_size(output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
+		        	output.sz == 64[u16];
+
+		        def valid_output_ipv4_size(input: RawEthernetMessage, output: SizedEthernetMessage_Impl): Base_Types::Boolean :=
+		    		//output.sz == (ipv4_length(input)+14[u16]);
+		    		(size(input) == 1600) and (output.sz == (two_bytes_to_u16(input#(16),input#(17))+14[u16]));
+
+		        def allow_outbound_frame(aframe: RawEthernetMessage): Base_Types::Boolean :=
+		        	valid_arp(aframe) |
+		        	valid_ipv4(aframe);
 	       
-			  integration
+			integration
 
 			  	guarantee valid_tx_out_message_port0 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0":
 			  		valid_arp(EthernetFramesTxOut0.amessage) & valid_output_arp_size(EthernetFramesTxOut0)
 			  		| valid_ipv4(EthernetFramesTxOut0.amessage) & valid_output_ipv4_size(EthernetFramesTxOut0.amessage,EthernetFramesTxOut0)
-            ;
+            		;
 
 			  	guarantee valid_tx_out_message_port1 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1":
 			  		valid_arp(EthernetFramesTxOut1.amessage) & valid_output_arp_size(EthernetFramesTxOut1)
 			  		| valid_ipv4(EthernetFramesTxOut1.amessage) & valid_output_ipv4_size(EthernetFramesTxOut1.amessage,EthernetFramesTxOut1)
-            ;
+            		;
 
 			  	guarantee valid_tx_out_message_port2 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2":
 			  		valid_arp(EthernetFramesTxOut2.amessage) & valid_output_arp_size(EthernetFramesTxOut2)
 			  		| valid_ipv4(EthernetFramesTxOut2.amessage) & valid_output_ipv4_size(EthernetFramesTxOut2.amessage,EthernetFramesTxOut2)
-            ;
+            		;
 
 			  	guarantee valid_tx_out_message_port3 "Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3":
 			  		valid_arp(EthernetFramesTxOut3.amessage) & valid_output_arp_size(EthernetFramesTxOut3)
 			  		| valid_ipv4(EthernetFramesTxOut3.amessage) & valid_output_ipv4_size(EthernetFramesTxOut3.amessage,EthernetFramesTxOut3)
-            ;
+            		;
           
-	      compute
+	    compute
 	
 	      	guarantee hlr_07_tx0_can_send_valid_arp:
 	          ((HasEvent(EthernetFramesTxIn0) & valid_arp(EthernetFramesTxIn0)) implies 
