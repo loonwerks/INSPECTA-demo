@@ -24,7 +24,7 @@
                   "beginCol": 4,
                   "endLine": 940,
                   "endCol": 23,
-                  "offset": 50581,
+                  "offset": 50525,
                   "length": 156
                 }
             },
@@ -40,7 +40,7 @@
                   "beginCol": 5,
                   "endLine": 920,
                   "endCol": 84,
-                  "offset": 49457,
+                  "offset": 49401,
                   "length": 161
                 }
             },
@@ -56,7 +56,7 @@
                   "beginCol": 5,
                   "endLine": 913,
                   "endCol": 82,
-                  "offset": 48893,
+                  "offset": 48837,
                   "length": 272
                 }
             },
@@ -72,7 +72,7 @@
                   "beginCol": 5,
                   "endLine": 917,
                   "endCol": 82,
-                  "offset": 49175,
+                  "offset": 49119,
                   "length": 272
                 }
             },
@@ -88,7 +88,7 @@
                   "beginCol": 5,
                   "endLine": 908,
                   "endCol": 24,
-                  "offset": 48786,
+                  "offset": 48730,
                   "length": 86
                 }
             },
@@ -104,7 +104,7 @@
                   "beginCol": 5,
                   "endLine": 896,
                   "endCol": 59,
-                  "offset": 48206,
+                  "offset": 48150,
                   "length": 126
                 }
             },
@@ -120,7 +120,7 @@
                   "beginCol": 5,
                   "endLine": 899,
                   "endCol": 53,
-                  "offset": 48342,
+                  "offset": 48286,
                   "length": 137
                 }
             },
@@ -136,7 +136,7 @@
                   "beginCol": 5,
                   "endLine": 902,
                   "endCol": 59,
-                  "offset": 48499,
+                  "offset": 48443,
                   "length": 127
                 }
             },
@@ -152,7 +152,7 @@
                   "beginCol": 5,
                   "endLine": 905,
                   "endCol": 53,
-                  "offset": 48638,
+                  "offset": 48582,
                   "length": 138
                 }
             },
@@ -168,7 +168,7 @@
                   "beginCol": 5,
                   "endLine": 893,
                   "endCol": 24,
-                  "offset": 48101,
+                  "offset": 48045,
                   "length": 86
                 }
             },
@@ -184,7 +184,7 @@
                   "beginCol": 5,
                   "endLine": 881,
                   "endCol": 20,
-                  "offset": 47599,
+                  "offset": 47543,
                   "length": 87
                 }
             },
@@ -200,7 +200,7 @@
                   "beginCol": 5,
                   "endLine": 884,
                   "endCol": 53,
-                  "offset": 47696,
+                  "offset": 47640,
                   "length": 137
                 }
             },
@@ -216,7 +216,7 @@
                   "beginCol": 5,
                   "endLine": 887,
                   "endCol": 20,
-                  "offset": 47853,
+                  "offset": 47797,
                   "length": 88
                 }
             },
@@ -232,7 +232,7 @@
                   "beginCol": 5,
                   "endLine": 890,
                   "endCol": 53,
-                  "offset": 47953,
+                  "offset": 47897,
                   "length": 138
                 }
             },
@@ -248,7 +248,7 @@
                   "beginCol": 8,
                   "endLine": 875,
                   "endCol": 71,
-                  "offset": 47195,
+                  "offset": 47139,
                   "length": 215
                 }
             },
@@ -264,7 +264,7 @@
                   "beginCol": 11,
                   "endLine": 878,
                   "endCol": 44,
-                  "offset": 47430,
+                  "offset": 47374,
                   "length": 155
                 }
             },
@@ -544,7 +544,7 @@
                   "beginCol": 4,
                   "endLine": 942,
                   "endCol": 49,
-                  "offset": 50743,
+                  "offset": 50687,
                   "length": 81
                 }
             },
@@ -584,7 +584,7 @@
                   "beginCol": 4,
                   "endLine": 945,
                   "endCol": 60,
-                  "offset": 50830,
+                  "offset": 50774,
                   "length": 161
                 }
             },
@@ -600,7 +600,7 @@
                   "beginCol": 5,
                   "endLine": 934,
                   "endCol": 41,
-                  "offset": 50445,
+                  "offset": 50389,
                   "length": 105
                 }
             },
@@ -616,7 +616,7 @@
                   "beginCol": 5,
                   "endLine": 931,
                   "endCol": 126,
-                  "offset": 50211,
+                  "offset": 50155,
                   "length": 224
                 }
             },
@@ -632,7 +632,7 @@
                   "beginCol": 5,
                   "endLine": 920,
                   "endCol": 84,
-                  "offset": 49457,
+                  "offset": 49401,
                   "length": 161
                 }
             },
@@ -648,7 +648,7 @@
                   "beginCol": 5,
                   "endLine": 923,
                   "endCol": 73,
-                  "offset": 49628,
+                  "offset": 49572,
                   "length": 183
                 }
             },
@@ -664,7 +664,7 @@
                   "beginCol": 5,
                   "endLine": 927,
                   "endCol": 89,
-                  "offset": 49893,
+                  "offset": 49837,
                   "length": 220
                 }
             },
@@ -680,7 +680,7 @@
                   "beginCol": 5,
                   "endLine": 913,
                   "endCol": 82,
-                  "offset": 48893,
+                  "offset": 48837,
                   "length": 272
                 }
             },
@@ -696,7 +696,7 @@
                   "beginCol": 5,
                   "endLine": 917,
                   "endCol": 82,
-                  "offset": 49175,
+                  "offset": 49119,
                   "length": 272
                 }
             },
@@ -712,7 +712,7 @@
                   "beginCol": 5,
                   "endLine": 908,
                   "endCol": 24,
-                  "offset": 48786,
+                  "offset": 48730,
                   "length": 86
                 }
             },
@@ -728,7 +728,7 @@
                   "beginCol": 5,
                   "endLine": 896,
                   "endCol": 59,
-                  "offset": 48206,
+                  "offset": 48150,
                   "length": 126
                 }
             },
@@ -744,7 +744,7 @@
                   "beginCol": 5,
                   "endLine": 899,
                   "endCol": 53,
-                  "offset": 48342,
+                  "offset": 48286,
                   "length": 137
                 }
             },
@@ -760,7 +760,7 @@
                   "beginCol": 5,
                   "endLine": 902,
                   "endCol": 59,
-                  "offset": 48499,
+                  "offset": 48443,
                   "length": 127
                 }
             },
@@ -776,7 +776,7 @@
                   "beginCol": 5,
                   "endLine": 905,
                   "endCol": 53,
-                  "offset": 48638,
+                  "offset": 48582,
                   "length": 138
                 }
             },
@@ -792,7 +792,7 @@
                   "beginCol": 5,
                   "endLine": 893,
                   "endCol": 24,
-                  "offset": 48101,
+                  "offset": 48045,
                   "length": 86
                 }
             },
@@ -808,7 +808,7 @@
                   "beginCol": 5,
                   "endLine": 881,
                   "endCol": 20,
-                  "offset": 47599,
+                  "offset": 47543,
                   "length": 87
                 }
             },
@@ -824,7 +824,7 @@
                   "beginCol": 5,
                   "endLine": 884,
                   "endCol": 53,
-                  "offset": 47696,
+                  "offset": 47640,
                   "length": 137
                 }
             },
@@ -840,7 +840,7 @@
                   "beginCol": 5,
                   "endLine": 887,
                   "endCol": 20,
-                  "offset": 47853,
+                  "offset": 47797,
                   "length": 88
                 }
             },
@@ -856,7 +856,7 @@
                   "beginCol": 5,
                   "endLine": 890,
                   "endCol": 53,
-                  "offset": 47953,
+                  "offset": 47897,
                   "length": 138
                 }
             },
@@ -872,7 +872,7 @@
                   "beginCol": 8,
                   "endLine": 875,
                   "endCol": 71,
-                  "offset": 47195,
+                  "offset": 47139,
                   "length": 215
                 }
             },
@@ -888,7 +888,7 @@
                   "beginCol": 11,
                   "endLine": 878,
                   "endCol": 44,
-                  "offset": 47430,
+                  "offset": 47374,
                   "length": 155
                 }
             },
@@ -12286,7 +12286,7 @@
                   "beginCol": 8,
                   "endLine": 766,
                   "endCol": 153,
-                  "offset": 40332,
+                  "offset": 40276,
                   "length": 282
                 }
             },
@@ -12302,7 +12302,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -12318,7 +12318,7 @@
                   "beginCol": 10,
                   "endLine": 730,
                   "endCol": 30,
-                  "offset": 38289,
+                  "offset": 38233,
                   "length": 115
                 }
             },
@@ -12333,9 +12333,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -12350,7 +12350,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -12366,7 +12366,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -12381,9 +12381,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -12398,7 +12398,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -12414,7 +12414,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -12430,7 +12430,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -12446,7 +12446,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -12462,7 +12462,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -12478,7 +12478,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -12494,7 +12494,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -12510,7 +12510,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -12538,11 +12538,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -12554,11 +12554,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 282,
+                  "beginLine": 280,
                   "beginCol": 3,
-                  "endLine": 285,
+                  "endLine": 283,
                   "endCol": 3,
-                  "offset": 10292,
+                  "offset": 10222,
                   "length": 115
                 }
             },
@@ -12572,10 +12572,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -12586,11 +12586,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -12602,11 +12602,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -12618,12 +12618,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -12634,11 +12634,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -12650,11 +12650,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -12666,11 +12666,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -12682,11 +12682,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -12698,11 +12698,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -12714,11 +12714,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -12730,11 +12730,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -12746,11 +12746,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             }
@@ -12774,7 +12774,7 @@
                   "beginCol": 9,
                   "endLine": 769,
                   "endCol": 176,
-                  "offset": 40625,
+                  "offset": 40569,
                   "length": 307
                 }
             },
@@ -12790,7 +12790,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -12806,7 +12806,7 @@
                   "beginCol": 10,
                   "endLine": 734,
                   "endCol": 97,
-                  "offset": 38418,
+                  "offset": 38362,
                   "length": 263
                 }
             },
@@ -12821,9 +12821,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -12838,7 +12838,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -12854,7 +12854,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -12885,9 +12885,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -12902,7 +12902,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -12918,7 +12918,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -12934,7 +12934,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -12950,7 +12950,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -12966,7 +12966,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -12982,7 +12982,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -13010,11 +13010,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -13026,11 +13026,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 287,
+                  "beginLine": 285,
                   "beginCol": 3,
-                  "endLine": 293,
+                  "endLine": 291,
                   "endCol": 3,
-                  "offset": 10412,
+                  "offset": 10342,
                   "length": 230
                 }
             },
@@ -13044,10 +13044,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -13058,11 +13058,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -13074,11 +13074,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -13106,12 +13106,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -13122,11 +13122,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -13138,11 +13138,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -13154,11 +13154,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -13170,11 +13170,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -13186,11 +13186,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -13202,11 +13202,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             }
@@ -13230,7 +13230,7 @@
                   "beginCol": 9,
                   "endLine": 772,
                   "endCol": 41,
-                  "offset": 40943,
+                  "offset": 40887,
                   "length": 172
                 }
             },
@@ -13246,7 +13246,7 @@
                   "beginCol": 10,
                   "endLine": 738,
                   "endCol": 28,
-                  "offset": 38695,
+                  "offset": 38639,
                   "length": 136
                 }
             },
@@ -13262,7 +13262,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -13278,7 +13278,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -13293,9 +13293,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -13310,7 +13310,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -13326,7 +13326,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -13342,7 +13342,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -13358,7 +13358,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -13373,9 +13373,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -13390,7 +13390,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -13406,7 +13406,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -13422,7 +13422,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -13438,7 +13438,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -13454,7 +13454,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -13470,7 +13470,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -13486,7 +13486,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -13502,7 +13502,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -13518,7 +13518,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -13534,7 +13534,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -13578,11 +13578,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 295,
+                  "beginLine": 293,
                   "beginCol": 3,
-                  "endLine": 298,
+                  "endLine": 296,
                   "endCol": 3,
-                  "offset": 10647,
+                  "offset": 10577,
                   "length": 128
                 }
             },
@@ -13594,11 +13594,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -13610,11 +13610,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -13628,10 +13628,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -13642,11 +13642,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -13658,11 +13658,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -13674,11 +13674,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -13690,11 +13690,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -13706,12 +13706,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -13722,11 +13722,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -13738,11 +13738,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -13754,11 +13754,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -13770,11 +13770,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -13786,11 +13786,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -13802,11 +13802,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -13818,11 +13818,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -13834,11 +13834,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -13850,11 +13850,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -13866,11 +13866,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             },
@@ -13910,7 +13910,7 @@
                   "beginCol": 9,
                   "endLine": 774,
                   "endCol": 84,
-                  "offset": 41126,
+                  "offset": 41070,
                   "length": 115
                 }
             },
@@ -13950,7 +13950,7 @@
                   "beginCol": 9,
                   "endLine": 778,
                   "endCol": 154,
-                  "offset": 41254,
+                  "offset": 41198,
                   "length": 283
                 }
             },
@@ -13966,7 +13966,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -13982,7 +13982,7 @@
                   "beginCol": 10,
                   "endLine": 730,
                   "endCol": 30,
-                  "offset": 38289,
+                  "offset": 38233,
                   "length": 115
                 }
             },
@@ -13997,9 +13997,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -14014,7 +14014,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -14030,7 +14030,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -14045,9 +14045,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -14062,7 +14062,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -14078,7 +14078,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -14094,7 +14094,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -14110,7 +14110,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -14126,7 +14126,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -14142,7 +14142,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -14158,7 +14158,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -14174,7 +14174,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -14202,11 +14202,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -14218,11 +14218,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 282,
+                  "beginLine": 280,
                   "beginCol": 3,
-                  "endLine": 285,
+                  "endLine": 283,
                   "endCol": 3,
-                  "offset": 10292,
+                  "offset": 10222,
                   "length": 115
                 }
             },
@@ -14236,10 +14236,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -14250,11 +14250,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -14266,11 +14266,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -14282,12 +14282,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -14298,11 +14298,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -14314,11 +14314,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -14330,11 +14330,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -14346,11 +14346,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -14362,11 +14362,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -14378,11 +14378,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -14394,11 +14394,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -14410,11 +14410,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             }
@@ -14438,7 +14438,7 @@
                   "beginCol": 9,
                   "endLine": 781,
                   "endCol": 176,
-                  "offset": 41548,
+                  "offset": 41492,
                   "length": 307
                 }
             },
@@ -14454,7 +14454,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -14470,7 +14470,7 @@
                   "beginCol": 10,
                   "endLine": 734,
                   "endCol": 97,
-                  "offset": 38418,
+                  "offset": 38362,
                   "length": 263
                 }
             },
@@ -14485,9 +14485,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -14502,7 +14502,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -14518,7 +14518,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -14549,9 +14549,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -14566,7 +14566,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -14582,7 +14582,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -14598,7 +14598,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -14614,7 +14614,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -14630,7 +14630,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -14646,7 +14646,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -14674,11 +14674,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -14690,11 +14690,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 287,
+                  "beginLine": 285,
                   "beginCol": 3,
-                  "endLine": 293,
+                  "endLine": 291,
                   "endCol": 3,
-                  "offset": 10412,
+                  "offset": 10342,
                   "length": 230
                 }
             },
@@ -14708,10 +14708,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -14722,11 +14722,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -14738,11 +14738,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -14770,12 +14770,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -14786,11 +14786,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -14802,11 +14802,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -14818,11 +14818,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -14834,11 +14834,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -14850,11 +14850,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -14866,11 +14866,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             }
@@ -14894,7 +14894,7 @@
                   "beginCol": 9,
                   "endLine": 784,
                   "endCol": 41,
-                  "offset": 41866,
+                  "offset": 41810,
                   "length": 172
                 }
             },
@@ -14910,7 +14910,7 @@
                   "beginCol": 10,
                   "endLine": 738,
                   "endCol": 28,
-                  "offset": 38695,
+                  "offset": 38639,
                   "length": 136
                 }
             },
@@ -14926,7 +14926,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -14942,7 +14942,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -14957,9 +14957,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -14974,7 +14974,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -14990,7 +14990,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -15006,7 +15006,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -15022,7 +15022,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -15037,9 +15037,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -15054,7 +15054,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -15070,7 +15070,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -15086,7 +15086,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -15102,7 +15102,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -15118,7 +15118,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -15134,7 +15134,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -15150,7 +15150,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -15166,7 +15166,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -15182,7 +15182,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -15198,7 +15198,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -15242,11 +15242,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 295,
+                  "beginLine": 293,
                   "beginCol": 3,
-                  "endLine": 298,
+                  "endLine": 296,
                   "endCol": 3,
-                  "offset": 10647,
+                  "offset": 10577,
                   "length": 128
                 }
             },
@@ -15258,11 +15258,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -15274,11 +15274,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -15292,10 +15292,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -15306,11 +15306,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -15322,11 +15322,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -15338,11 +15338,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -15354,11 +15354,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -15370,12 +15370,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -15386,11 +15386,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -15402,11 +15402,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -15418,11 +15418,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -15434,11 +15434,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -15450,11 +15450,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -15466,11 +15466,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -15482,11 +15482,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -15498,11 +15498,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -15514,11 +15514,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -15530,11 +15530,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             },
@@ -15574,7 +15574,7 @@
                   "beginCol": 9,
                   "endLine": 786,
                   "endCol": 84,
-                  "offset": 42049,
+                  "offset": 41993,
                   "length": 115
                 }
             },
@@ -15614,7 +15614,7 @@
                   "beginCol": 9,
                   "endLine": 790,
                   "endCol": 154,
-                  "offset": 42177,
+                  "offset": 42121,
                   "length": 283
                 }
             },
@@ -15630,7 +15630,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -15646,7 +15646,7 @@
                   "beginCol": 10,
                   "endLine": 730,
                   "endCol": 30,
-                  "offset": 38289,
+                  "offset": 38233,
                   "length": 115
                 }
             },
@@ -15661,9 +15661,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -15678,7 +15678,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -15694,7 +15694,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -15709,9 +15709,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -15726,7 +15726,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -15742,7 +15742,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -15758,7 +15758,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -15774,7 +15774,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -15790,7 +15790,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -15806,7 +15806,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -15822,7 +15822,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -15838,7 +15838,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -15866,11 +15866,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -15882,11 +15882,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 282,
+                  "beginLine": 280,
                   "beginCol": 3,
-                  "endLine": 285,
+                  "endLine": 283,
                   "endCol": 3,
-                  "offset": 10292,
+                  "offset": 10222,
                   "length": 115
                 }
             },
@@ -15900,10 +15900,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -15914,11 +15914,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -15930,11 +15930,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -15946,12 +15946,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -15962,11 +15962,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -15978,11 +15978,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -15994,11 +15994,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -16010,11 +16010,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -16026,11 +16026,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -16042,11 +16042,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -16058,11 +16058,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -16074,11 +16074,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             }
@@ -16102,7 +16102,7 @@
                   "beginCol": 9,
                   "endLine": 793,
                   "endCol": 176,
-                  "offset": 42471,
+                  "offset": 42415,
                   "length": 307
                 }
             },
@@ -16118,7 +16118,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -16134,7 +16134,7 @@
                   "beginCol": 10,
                   "endLine": 734,
                   "endCol": 97,
-                  "offset": 38418,
+                  "offset": 38362,
                   "length": 263
                 }
             },
@@ -16149,9 +16149,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -16166,7 +16166,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -16182,7 +16182,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -16213,9 +16213,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -16230,7 +16230,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -16246,7 +16246,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -16262,7 +16262,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -16278,7 +16278,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -16294,7 +16294,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -16310,7 +16310,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -16338,11 +16338,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -16354,11 +16354,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 287,
+                  "beginLine": 285,
                   "beginCol": 3,
-                  "endLine": 293,
+                  "endLine": 291,
                   "endCol": 3,
-                  "offset": 10412,
+                  "offset": 10342,
                   "length": 230
                 }
             },
@@ -16372,10 +16372,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -16386,11 +16386,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -16402,11 +16402,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -16434,12 +16434,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -16450,11 +16450,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -16466,11 +16466,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -16482,11 +16482,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -16498,11 +16498,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -16514,11 +16514,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -16530,11 +16530,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             }
@@ -16558,7 +16558,7 @@
                   "beginCol": 9,
                   "endLine": 796,
                   "endCol": 41,
-                  "offset": 42789,
+                  "offset": 42733,
                   "length": 172
                 }
             },
@@ -16574,7 +16574,7 @@
                   "beginCol": 10,
                   "endLine": 738,
                   "endCol": 28,
-                  "offset": 38695,
+                  "offset": 38639,
                   "length": 136
                 }
             },
@@ -16590,7 +16590,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -16606,7 +16606,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -16621,9 +16621,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -16638,7 +16638,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -16654,7 +16654,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -16670,7 +16670,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -16686,7 +16686,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -16701,9 +16701,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -16718,7 +16718,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -16734,7 +16734,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -16750,7 +16750,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -16766,7 +16766,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -16782,7 +16782,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -16798,7 +16798,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -16814,7 +16814,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -16830,7 +16830,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -16846,7 +16846,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -16862,7 +16862,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -16906,11 +16906,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 295,
+                  "beginLine": 293,
                   "beginCol": 3,
-                  "endLine": 298,
+                  "endLine": 296,
                   "endCol": 3,
-                  "offset": 10647,
+                  "offset": 10577,
                   "length": 128
                 }
             },
@@ -16922,11 +16922,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -16938,11 +16938,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -16956,10 +16956,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -16970,11 +16970,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -16986,11 +16986,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -17002,11 +17002,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -17018,11 +17018,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -17034,12 +17034,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -17050,11 +17050,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -17066,11 +17066,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -17082,11 +17082,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -17098,11 +17098,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -17114,11 +17114,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -17130,11 +17130,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -17146,11 +17146,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -17162,11 +17162,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -17178,11 +17178,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -17194,11 +17194,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             },
@@ -17238,7 +17238,7 @@
                   "beginCol": 9,
                   "endLine": 798,
                   "endCol": 84,
-                  "offset": 42972,
+                  "offset": 42916,
                   "length": 115
                 }
             },
@@ -17278,7 +17278,7 @@
                   "beginCol": 9,
                   "endLine": 802,
                   "endCol": 154,
-                  "offset": 43100,
+                  "offset": 43044,
                   "length": 283
                 }
             },
@@ -17294,7 +17294,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -17310,7 +17310,7 @@
                   "beginCol": 10,
                   "endLine": 730,
                   "endCol": 30,
-                  "offset": 38289,
+                  "offset": 38233,
                   "length": 115
                 }
             },
@@ -17325,9 +17325,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -17342,7 +17342,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -17358,7 +17358,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -17373,9 +17373,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -17390,7 +17390,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -17406,7 +17406,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -17422,7 +17422,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -17438,7 +17438,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -17454,7 +17454,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -17470,7 +17470,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -17486,7 +17486,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -17502,7 +17502,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -17530,11 +17530,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -17546,11 +17546,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 282,
+                  "beginLine": 280,
                   "beginCol": 3,
-                  "endLine": 285,
+                  "endLine": 283,
                   "endCol": 3,
-                  "offset": 10292,
+                  "offset": 10222,
                   "length": 115
                 }
             },
@@ -17564,10 +17564,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -17578,11 +17578,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -17594,11 +17594,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -17610,12 +17610,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -17626,11 +17626,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -17642,11 +17642,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -17658,11 +17658,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -17674,11 +17674,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -17690,11 +17690,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -17706,11 +17706,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -17722,11 +17722,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -17738,11 +17738,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             }
@@ -17766,7 +17766,7 @@
                   "beginCol": 9,
                   "endLine": 805,
                   "endCol": 176,
-                  "offset": 43394,
+                  "offset": 43338,
                   "length": 307
                 }
             },
@@ -17782,7 +17782,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -17798,7 +17798,7 @@
                   "beginCol": 10,
                   "endLine": 734,
                   "endCol": 97,
-                  "offset": 38418,
+                  "offset": 38362,
                   "length": 263
                 }
             },
@@ -17813,9 +17813,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -17830,7 +17830,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -17846,7 +17846,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -17877,9 +17877,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -17894,7 +17894,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -17910,7 +17910,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -17926,7 +17926,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -17942,7 +17942,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -17958,7 +17958,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -17974,7 +17974,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -18002,11 +18002,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -18018,11 +18018,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 287,
+                  "beginLine": 285,
                   "beginCol": 3,
-                  "endLine": 293,
+                  "endLine": 291,
                   "endCol": 3,
-                  "offset": 10412,
+                  "offset": 10342,
                   "length": 230
                 }
             },
@@ -18036,10 +18036,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -18050,11 +18050,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -18066,11 +18066,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -18098,12 +18098,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -18114,11 +18114,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -18130,11 +18130,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -18146,11 +18146,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -18162,11 +18162,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -18178,11 +18178,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -18194,11 +18194,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             }
@@ -18222,7 +18222,7 @@
                   "beginCol": 9,
                   "endLine": 808,
                   "endCol": 41,
-                  "offset": 43712,
+                  "offset": 43656,
                   "length": 172
                 }
             },
@@ -18238,7 +18238,7 @@
                   "beginCol": 10,
                   "endLine": 738,
                   "endCol": 28,
-                  "offset": 38695,
+                  "offset": 38639,
                   "length": 136
                 }
             },
@@ -18254,7 +18254,7 @@
                   "beginCol": 10,
                   "endLine": 721,
                   "endCol": 101,
-                  "offset": 37793,
+                  "offset": 37737,
                   "length": 167
                 }
             },
@@ -18270,7 +18270,7 @@
                   "beginCol": 10,
                   "endLine": 724,
                   "endCol": 103,
-                  "offset": 37974,
+                  "offset": 37918,
                   "length": 170
                 }
             },
@@ -18285,9 +18285,9 @@
                   "beginLine": 645,
                   "beginCol": 10,
                   "endLine": 646,
-                  "endCol": 99,
+                  "endCol": 70,
                   "offset": 34064,
-                  "length": 180
+                  "length": 151
                 }
             },
             {
@@ -18302,7 +18302,7 @@
                   "beginCol": 10,
                   "endLine": 669,
                   "endCol": 85,
-                  "offset": 35133,
+                  "offset": 35077,
                   "length": 155
                 }
             },
@@ -18318,7 +18318,7 @@
                   "beginCol": 10,
                   "endLine": 687,
                   "endCol": 89,
-                  "offset": 36149,
+                  "offset": 36093,
                   "length": 166
                 }
             },
@@ -18334,7 +18334,7 @@
                   "beginCol": 10,
                   "endLine": 663,
                   "endCol": 82,
-                  "offset": 34791,
+                  "offset": 34735,
                   "length": 154
                 }
             },
@@ -18350,7 +18350,7 @@
                   "beginCol": 10,
                   "endLine": 711,
                   "endCol": 102,
-                  "offset": 37233,
+                  "offset": 37177,
                   "length": 180
                 }
             },
@@ -18365,9 +18365,9 @@
                   "beginLine": 648,
                   "beginCol": 10,
                   "endLine": 649,
-                  "endCol": 108,
-                  "offset": 34258,
-                  "length": 186
+                  "endCol": 81,
+                  "offset": 34229,
+                  "length": 159
                 }
             },
             {
@@ -18382,7 +18382,7 @@
                   "beginCol": 4,
                   "endLine": 660,
                   "endCol": 5,
-                  "offset": 34457,
+                  "offset": 34401,
                   "length": 320
                 }
             },
@@ -18398,7 +18398,7 @@
                   "beginCol": 10,
                   "endLine": 681,
                   "endCol": 110,
-                  "offset": 35785,
+                  "offset": 35729,
                   "length": 179
                 }
             },
@@ -18414,7 +18414,7 @@
                   "beginCol": 10,
                   "endLine": 684,
                   "endCol": 85,
-                  "offset": 35978,
+                  "offset": 35922,
                   "length": 157
                 }
             },
@@ -18430,7 +18430,7 @@
                   "beginCol": 10,
                   "endLine": 678,
                   "endCol": 56,
-                  "offset": 35643,
+                  "offset": 35587,
                   "length": 128
                 }
             },
@@ -18446,7 +18446,7 @@
                   "beginCol": 10,
                   "endLine": 705,
                   "endCol": 14,
-                  "offset": 36515,
+                  "offset": 36459,
                   "length": 553
                 }
             },
@@ -18462,7 +18462,7 @@
                   "beginCol": 10,
                   "endLine": 690,
                   "endCol": 95,
-                  "offset": 36329,
+                  "offset": 36273,
                   "length": 169
                 }
             },
@@ -18478,7 +18478,7 @@
                   "beginCol": 10,
                   "endLine": 708,
                   "endCol": 61,
-                  "offset": 37082,
+                  "offset": 37026,
                   "length": 137
                 }
             },
@@ -18494,7 +18494,7 @@
                   "beginCol": 10,
                   "endLine": 666,
                   "endCol": 89,
-                  "offset": 34959,
+                  "offset": 34903,
                   "length": 160
                 }
             },
@@ -18510,7 +18510,7 @@
                   "beginCol": 10,
                   "endLine": 672,
                   "endCol": 85,
-                  "offset": 35302,
+                  "offset": 35246,
                   "length": 155
                 }
             },
@@ -18526,7 +18526,7 @@
                   "beginCol": 10,
                   "endLine": 675,
                   "endCol": 89,
-                  "offset": 35471,
+                  "offset": 35415,
                   "length": 158
                 }
             },
@@ -18570,11 +18570,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 295,
+                  "beginLine": 293,
                   "beginCol": 3,
-                  "endLine": 298,
+                  "endLine": 296,
                   "endCol": 3,
-                  "offset": 10647,
+                  "offset": 10577,
                   "length": 128
                 }
             },
@@ -18586,11 +18586,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 265,
+                  "beginLine": 263,
                   "beginCol": 3,
-                  "endLine": 269,
+                  "endLine": 267,
                   "endCol": 3,
-                  "offset": 9805,
+                  "offset": 9735,
                   "length": 175
                 }
             },
@@ -18602,11 +18602,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 271,
+                  "beginLine": 269,
                   "beginCol": 3,
-                  "endLine": 275,
+                  "endLine": 273,
                   "endCol": 3,
-                  "offset": 9985,
+                  "offset": 9915,
                   "length": 178
                 }
             },
@@ -18620,10 +18620,10 @@
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
                   "beginLine": 142,
                   "beginCol": 3,
-                  "endLine": 146,
+                  "endLine": 145,
                   "endCol": 3,
                   "offset": 6353,
-                  "length": 188
+                  "length": 154
                 }
             },
             {
@@ -18634,11 +18634,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 180,
+                  "beginLine": 178,
                   "beginCol": 3,
-                  "endLine": 185,
+                  "endLine": 183,
                   "endCol": 3,
-                  "offset": 7431,
+                  "offset": 7361,
                   "length": 166
                 }
             },
@@ -18650,11 +18650,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 221,
+                  "beginLine": 219,
                   "beginCol": 3,
-                  "endLine": 225,
+                  "endLine": 223,
                   "endCol": 3,
-                  "offset": 8457,
+                  "offset": 8387,
                   "length": 171
                 }
             },
@@ -18666,11 +18666,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 166,
+                  "beginLine": 164,
                   "beginCol": 3,
-                  "endLine": 171,
+                  "endLine": 169,
                   "endCol": 3,
-                  "offset": 7083,
+                  "offset": 7013,
                   "length": 167
                 }
             },
@@ -18682,11 +18682,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 254,
+                  "beginLine": 252,
                   "beginCol": 3,
-                  "endLine": 258,
+                  "endLine": 256,
                   "endCol": 3,
-                  "offset": 9473,
+                  "offset": 9403,
                   "length": 185
                 }
             },
@@ -18698,12 +18698,12 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 148,
+                  "beginLine": 147,
                   "beginCol": 3,
-                  "endLine": 153,
+                  "endLine": 151,
                   "endCol": 3,
-                  "offset": 6546,
-                  "length": 207
+                  "offset": 6512,
+                  "length": 171
                 }
             },
             {
@@ -18714,11 +18714,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 155,
+                  "beginLine": 153,
                   "beginCol": 3,
-                  "endLine": 164,
+                  "endLine": 162,
                   "endCol": 3,
-                  "offset": 6758,
+                  "offset": 6688,
                   "length": 320
                 }
             },
@@ -18730,11 +18730,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 206,
+                  "beginLine": 204,
                   "beginCol": 3,
-                  "endLine": 212,
+                  "endLine": 210,
                   "endCol": 3,
-                  "offset": 8079,
+                  "offset": 8009,
                   "length": 200
                 }
             },
@@ -18746,11 +18746,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 214,
+                  "beginLine": 212,
                   "beginCol": 3,
-                  "endLine": 219,
+                  "endLine": 217,
                   "endCol": 3,
-                  "offset": 8284,
+                  "offset": 8214,
                   "length": 168
                 }
             },
@@ -18762,11 +18762,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 201,
+                  "beginLine": 199,
                   "beginCol": 3,
-                  "endLine": 204,
+                  "endLine": 202,
                   "endCol": 3,
-                  "offset": 7946,
+                  "offset": 7876,
                   "length": 128
                 }
             },
@@ -18778,11 +18778,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 233,
+                  "beginLine": 231,
                   "beginCol": 3,
-                  "endLine": 246,
+                  "endLine": 244,
                   "endCol": 3,
-                  "offset": 8809,
+                  "offset": 8739,
                   "length": 514
                 }
             },
@@ -18794,11 +18794,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 227,
+                  "beginLine": 225,
                   "beginCol": 3,
-                  "endLine": 231,
+                  "endLine": 229,
                   "endCol": 3,
-                  "offset": 8633,
+                  "offset": 8563,
                   "length": 171
                 }
             },
@@ -18810,11 +18810,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 248,
+                  "beginLine": 246,
                   "beginCol": 3,
-                  "endLine": 252,
+                  "endLine": 250,
                   "endCol": 3,
-                  "offset": 9328,
+                  "offset": 9258,
                   "length": 140
                 }
             },
@@ -18826,11 +18826,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 173,
+                  "beginLine": 171,
                   "beginCol": 3,
-                  "endLine": 178,
+                  "endLine": 176,
                   "endCol": 3,
-                  "offset": 7255,
+                  "offset": 7185,
                   "length": 171
                 }
             },
@@ -18842,11 +18842,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 187,
+                  "beginLine": 185,
                   "beginCol": 3,
-                  "endLine": 192,
+                  "endLine": 190,
                   "endCol": 3,
-                  "offset": 7602,
+                  "offset": 7532,
                   "length": 165
                 }
             },
@@ -18858,11 +18858,11 @@
                 {
                   "type": "Position",
                   "uri": "..\/crates\/seL4_TxFirewall_TxFirewall\/src\/component\/seL4_TxFirewall_TxFirewall_app.rs",
-                  "beginLine": 194,
+                  "beginLine": 192,
                   "beginCol": 3,
-                  "endLine": 199,
+                  "endLine": 197,
                   "endCol": 3,
-                  "offset": 7772,
+                  "offset": 7702,
                   "length": 169
                 }
             },
@@ -18902,7 +18902,7 @@
                   "beginCol": 9,
                   "endLine": 810,
                   "endCol": 84,
-                  "offset": 43895,
+                  "offset": 43839,
                   "length": 115
                 }
             },
