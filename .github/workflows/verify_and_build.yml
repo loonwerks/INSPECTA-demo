@@ -24,7 +24,7 @@ jobs:
       attestations: read
 
     outputs:
-      status-code: ${{ steps.verify.outputs.status }}
+      status-code: ${{ steps.verus.outputs.status }}
 
     steps:
     - name: Checkout repository
