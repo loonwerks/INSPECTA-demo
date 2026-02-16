@@ -33,13 +33,15 @@ pub fn two_bytes_to_u16(
 
 pub fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
+  (aframe.len() == 1600) &&
+    valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
 }
 
 pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_has_ipv4(aframe) |
-    (frame_has_arp(aframe) | frame_has_ipv6(aframe))
+  (aframe.len() == 1600) &&
+    frame_has_ipv4(aframe) |
+      (frame_has_arp(aframe) | frame_has_ipv6(aframe))
 }
 
 pub fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
@@ -182,7 +184,7 @@ pub fn valid_output_ipv4_size(
     (output.sz == two_bytes_to_u16(input[16], input[17]) + 14u16)
 }
 
-pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
+pub fn tx_allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
 {
   valid_arp(aframe) | valid_ipv4(aframe)
 }
@@ -240,12 +242,6 @@ pub fn udp_is_valid_direct_dst_port(aframe: SW::RawEthernetMessage) -> bool
     (0..=UDP_ALLOWED_PORTS().len() - 1).any(|i| UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37]))
 }
 
-pub fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
-{
-  frame_is_wellformed_eth2(aframe) &
-    (frame_has_arp(aframe) & wellformed_arp_frame(aframe))
-}
-
 pub fn valid_ipv4_tcp(aframe: SW::RawEthernetMessage) -> bool
 {
   frame_is_wellformed_eth2(aframe) &
@@ -276,7 +272,7 @@ pub fn valid_ipv4_udp_mavlink(aframe: SW::RawEthernetMessage) -> bool
   valid_ipv4_udp(aframe) & udp_is_mavlink(aframe)
 }
 
-pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
+pub fn rx_allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
 {
   valid_arp(aframe) |
     (valid_ipv4_udp_mavlink(aframe) | valid_ipv4_udp_port(aframe))
@@ -316,7 +312,7 @@ pub fn I_Guar_EthernetFramesRx0(EthernetFramesRx0: SW::RawEthernetMessage) -> bo
 {
   valid_arp(EthernetFramesRx0) |
     (valid_ipv4_udp_mavlink(EthernetFramesRx0) |
-      (valid_ipv4_udp_port(EthernetFramesRx0) | !(allow_outbound_frame(EthernetFramesRx0))))
+      (valid_ipv4_udp_port(EthernetFramesRx0) | !(rx_allow_outbound_frame(EthernetFramesRx0))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx0
@@ -341,7 +337,7 @@ pub fn I_Guar_EthernetFramesRx1(EthernetFramesRx1: SW::RawEthernetMessage) -> bo
 {
   valid_arp(EthernetFramesRx1) |
     (valid_ipv4_udp_mavlink(EthernetFramesRx1) |
-      (valid_ipv4_udp_port(EthernetFramesRx1) | !(allow_outbound_frame(EthernetFramesRx1))))
+      (valid_ipv4_udp_port(EthernetFramesRx1) | !(rx_allow_outbound_frame(EthernetFramesRx1))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx1
@@ -366,7 +362,7 @@ pub fn I_Guar_EthernetFramesRx2(EthernetFramesRx2: SW::RawEthernetMessage) -> bo
 {
   valid_arp(EthernetFramesRx2) |
     (valid_ipv4_udp_mavlink(EthernetFramesRx2) |
-      (valid_ipv4_udp_port(EthernetFramesRx2) | !(allow_outbound_frame(EthernetFramesRx2))))
+      (valid_ipv4_udp_port(EthernetFramesRx2) | !(rx_allow_outbound_frame(EthernetFramesRx2))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx2
@@ -391,7 +387,7 @@ pub fn I_Guar_EthernetFramesRx3(EthernetFramesRx3: SW::RawEthernetMessage) -> bo
 {
   valid_arp(EthernetFramesRx3) |
     (valid_ipv4_udp_mavlink(EthernetFramesRx3) |
-      (valid_ipv4_udp_port(EthernetFramesRx3) | !(allow_outbound_frame(EthernetFramesRx3))))
+      (valid_ipv4_udp_port(EthernetFramesRx3) | !(rx_allow_outbound_frame(EthernetFramesRx3))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx3

@@ -127,7 +127,7 @@ verus! {
         //   Only valid messages being sent to the RxFirewall Port 0
         crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
           (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::rx_allow_outbound_frame(value)))),
       ensures
         self.EthernetFramesRx0 == Some(value),
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,
@@ -149,7 +149,7 @@ verus! {
         //   Only valid messages being sent to the RxFirewall Port 1
         crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
           (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::rx_allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         self.EthernetFramesRx1 == Some(value),
@@ -171,7 +171,7 @@ verus! {
         //   Only valid messages being sent to the RxFirewall Port 2
         crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
           (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::rx_allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,
@@ -193,7 +193,7 @@ verus! {
         //   Only valid messages being sent to the RxFirewall Port 3
         crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(value) ||
           (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_mavlink(value) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::allow_outbound_frame(value)))),
+            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4_udp_port(value) || !(crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::rx_allow_outbound_frame(value)))),
       ensures
         old(self).EthernetFramesRx0 == self.EthernetFramesRx0,
         old(self).EthernetFramesRx1 == self.EthernetFramesRx1,

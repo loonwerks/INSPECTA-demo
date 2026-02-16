@@ -83,13 +83,15 @@ verus! {
 
   pub open spec fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
   {
-    valid_frame_ethertype(aframe) && valid_frame_dst_addr(aframe)
+    (aframe.len() == 1600) &&
+      (valid_frame_ethertype(aframe) && valid_frame_dst_addr(aframe))
   }
 
   pub open spec fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
   {
-    frame_has_ipv4(aframe) ||
-      (frame_has_arp(aframe) || frame_has_ipv6(aframe))
+    (aframe.len() == 1600) &&
+      (frame_has_ipv4(aframe) ||
+        (frame_has_arp(aframe) || frame_has_ipv6(aframe)))
   }
 
   pub open spec fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
@@ -232,7 +234,7 @@ verus! {
       (output.sz == two_bytes_to_u16(input[16], input[17]) + 14u16)
   }
 
-  pub open spec fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
+  pub open spec fn tx_allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
   {
     valid_arp(aframe) || valid_ipv4(aframe)
   }
@@ -290,12 +292,6 @@ verus! {
       exists|i:int| 0 <= i <= UDP_ALLOWED_PORTS().len() - 1 && #[trigger] UDP_ALLOWED_PORTS()[i] == two_bytes_to_u16(aframe[36], aframe[37])
   }
 
-  pub open spec fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
-  {
-    frame_is_wellformed_eth2(aframe) &&
-      (frame_has_arp(aframe) && wellformed_arp_frame(aframe))
-  }
-
   pub open spec fn valid_ipv4_tcp(aframe: SW::RawEthernetMessage) -> bool
   {
     frame_is_wellformed_eth2(aframe) &&
@@ -326,7 +322,7 @@ verus! {
     valid_ipv4_udp(aframe) && udp_is_mavlink(aframe)
   }
 
-  pub open spec fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
+  pub open spec fn rx_allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
   {
     valid_arp(aframe) ||
       (valid_ipv4_udp_mavlink(aframe) || valid_ipv4_udp_port(aframe))
