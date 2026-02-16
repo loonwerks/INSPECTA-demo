@@ -83,62 +83,62 @@ verus! {
       ensures
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee hlr_07_tx0_can_send_valid_arp
-        (api.EthernetFramesTxIn0.is_some() && valid_arp(api.EthernetFramesTxIn0.unwrap())) ==>
-          (api.EthernetFramesTxOut0.is_some() &&
+        api.EthernetFramesTxIn0.is_some() && valid_arp(api.EthernetFramesTxIn0.unwrap()) ==>
+          api.EthernetFramesTxOut0.is_some() &&
             ((api.EthernetFramesTxIn0.unwrap() == api.EthernetFramesTxOut0.unwrap().amessage) &&
-              valid_output_arp_size(api.EthernetFramesTxOut0.unwrap()))),
+              valid_output_arp_size(api.EthernetFramesTxOut0.unwrap())),
         // guarantee hlr_12_tx0_can_send_valid_ipv4
-        (api.EthernetFramesTxIn0.is_some() && valid_ipv4(api.EthernetFramesTxIn0.unwrap())) ==>
-          (api.EthernetFramesTxOut0.is_some() &&
+        api.EthernetFramesTxIn0.is_some() && valid_ipv4(api.EthernetFramesTxIn0.unwrap()) ==>
+          api.EthernetFramesTxOut0.is_some() &&
             ((api.EthernetFramesTxIn0.unwrap() == api.EthernetFramesTxOut0.unwrap().amessage) &&
-              valid_output_ipv4_size(api.EthernetFramesTxIn0.unwrap(), api.EthernetFramesTxOut0.unwrap()))),
+              valid_output_ipv4_size(api.EthernetFramesTxIn0.unwrap(), api.EthernetFramesTxOut0.unwrap())),
         // guarantee hlr_14_tx0_disallow
-        (api.EthernetFramesTxIn0.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn0.unwrap()))) ==>
+        api.EthernetFramesTxIn0.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn0.unwrap())) ==>
           api.EthernetFramesTxOut0.is_none(),
         // guarantee hlr_16_tx0_no_input
         !(api.EthernetFramesTxIn0.is_some()) ==> api.EthernetFramesTxOut0.is_none(),
         // guarantee hlr_07_tx1_can_send_valid_arp
-        (api.EthernetFramesTxIn1.is_some() && valid_arp(api.EthernetFramesTxIn1.unwrap())) ==>
-          (api.EthernetFramesTxOut1.is_some() &&
+        api.EthernetFramesTxIn1.is_some() && valid_arp(api.EthernetFramesTxIn1.unwrap()) ==>
+          api.EthernetFramesTxOut1.is_some() &&
             ((api.EthernetFramesTxIn1.unwrap() == api.EthernetFramesTxOut1.unwrap().amessage) &&
-              valid_output_arp_size(api.EthernetFramesTxOut1.unwrap()))),
+              valid_output_arp_size(api.EthernetFramesTxOut1.unwrap())),
         // guarantee hlr_12_tx1_can_send_valid_ipv4
-        (api.EthernetFramesTxIn1.is_some() && valid_ipv4(api.EthernetFramesTxIn1.unwrap())) ==>
-          (api.EthernetFramesTxOut1.is_some() &&
+        api.EthernetFramesTxIn1.is_some() && valid_ipv4(api.EthernetFramesTxIn1.unwrap()) ==>
+          api.EthernetFramesTxOut1.is_some() &&
             ((api.EthernetFramesTxIn1.unwrap() == api.EthernetFramesTxOut1.unwrap().amessage) &&
-              valid_output_ipv4_size(api.EthernetFramesTxIn1.unwrap(), api.EthernetFramesTxOut1.unwrap()))),
+              valid_output_ipv4_size(api.EthernetFramesTxIn1.unwrap(), api.EthernetFramesTxOut1.unwrap())),
         // guarantee hlr_14_tx1_disallow
-        (api.EthernetFramesTxIn1.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn1.unwrap()))) ==>
+        api.EthernetFramesTxIn1.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn1.unwrap())) ==>
           api.EthernetFramesTxOut1.is_none(),
         // guarantee hlr_16_tx1_no_input
         !(api.EthernetFramesTxIn1.is_some()) ==> api.EthernetFramesTxOut1.is_none(),
         // guarantee hlr_07_tx2_can_send_valid_arp
-        (api.EthernetFramesTxIn2.is_some() && valid_arp(api.EthernetFramesTxIn2.unwrap())) ==>
-          (api.EthernetFramesTxOut2.is_some() &&
+        api.EthernetFramesTxIn2.is_some() && valid_arp(api.EthernetFramesTxIn2.unwrap()) ==>
+          api.EthernetFramesTxOut2.is_some() &&
             ((api.EthernetFramesTxIn2.unwrap() == api.EthernetFramesTxOut2.unwrap().amessage) &&
-              valid_output_arp_size(api.EthernetFramesTxOut2.unwrap()))),
+              valid_output_arp_size(api.EthernetFramesTxOut2.unwrap())),
         // guarantee hlr_12_tx2_can_send_valid_ipv4
-        (api.EthernetFramesTxIn2.is_some() && valid_ipv4(api.EthernetFramesTxIn2.unwrap())) ==>
-          (api.EthernetFramesTxOut2.is_some() &&
+        api.EthernetFramesTxIn2.is_some() && valid_ipv4(api.EthernetFramesTxIn2.unwrap()) ==>
+          api.EthernetFramesTxOut2.is_some() &&
             ((api.EthernetFramesTxIn2.unwrap() == api.EthernetFramesTxOut2.unwrap().amessage) &&
-              valid_output_ipv4_size(api.EthernetFramesTxIn2.unwrap(), api.EthernetFramesTxOut2.unwrap()))),
+              valid_output_ipv4_size(api.EthernetFramesTxIn2.unwrap(), api.EthernetFramesTxOut2.unwrap())),
         // guarantee hlr_14_tx2_disallow
-        (api.EthernetFramesTxIn2.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn2.unwrap()))) ==>
+        api.EthernetFramesTxIn2.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn2.unwrap())) ==>
           api.EthernetFramesTxOut2.is_none(),
         // guarantee hlr_16_tx2_no_input
         !(api.EthernetFramesTxIn2.is_some()) ==> api.EthernetFramesTxOut2.is_none(),
         // guarantee hlr_07_tx3_can_send_valid_arp
-        (api.EthernetFramesTxIn3.is_some() && valid_arp(api.EthernetFramesTxIn3.unwrap())) ==>
-          (api.EthernetFramesTxOut3.is_some() &&
+        api.EthernetFramesTxIn3.is_some() && valid_arp(api.EthernetFramesTxIn3.unwrap()) ==>
+          api.EthernetFramesTxOut3.is_some() &&
             ((api.EthernetFramesTxIn3.unwrap() == api.EthernetFramesTxOut3.unwrap().amessage) &&
-              valid_output_arp_size(api.EthernetFramesTxOut3.unwrap()))),
+              valid_output_arp_size(api.EthernetFramesTxOut3.unwrap())),
         // guarantee hlr_12_tx3_can_send_valid_ipv4
-        (api.EthernetFramesTxIn3.is_some() && valid_ipv4(api.EthernetFramesTxIn3.unwrap())) ==>
-          (api.EthernetFramesTxOut3.is_some() &&
+        api.EthernetFramesTxIn3.is_some() && valid_ipv4(api.EthernetFramesTxIn3.unwrap()) ==>
+          api.EthernetFramesTxOut3.is_some() &&
             ((api.EthernetFramesTxIn3.unwrap() == api.EthernetFramesTxOut3.unwrap().amessage) &&
-              valid_output_ipv4_size(api.EthernetFramesTxIn3.unwrap(), api.EthernetFramesTxOut3.unwrap()))),
+              valid_output_ipv4_size(api.EthernetFramesTxIn3.unwrap(), api.EthernetFramesTxOut3.unwrap())),
         // guarantee hlr_14_tx3_disallow
-        (api.EthernetFramesTxIn3.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn3.unwrap()))) ==>
+        api.EthernetFramesTxIn3.is_some() && !(allow_outbound_frame(api.EthernetFramesTxIn3.unwrap())) ==>
           api.EthernetFramesTxOut3.is_none(),
         // guarantee hlr_16_tx3_no_input
         !(api.EthernetFramesTxIn3.is_some()) ==> api.EthernetFramesTxOut3.is_none(),
