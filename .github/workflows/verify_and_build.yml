@@ -196,6 +196,7 @@ jobs:
         name: codetest-report
         path: codetest-report.json
         retention-days: 30
+        
   attestation:
     runs-on: ubuntu-latest
     continue-on-error: false
@@ -310,7 +311,7 @@ jobs:
       with:
         name: codetest-report
         path: public
-     - name: Download resolute report artifact
+    - name: Download resolute report artifact
       continue-on-error: true
       uses: actions/download-artifact@v5
       with:
