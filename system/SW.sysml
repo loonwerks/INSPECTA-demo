@@ -643,10 +643,10 @@ package SW {
 		        	byte0.toU16 * 256[u16] + byte1.toU16;
 
 		        def frame_is_wellformed_eth2(aframe: RawEthernetMessage): Base_Types::Boolean :=
-		        	size(aframe) == 1600 and (valid_frame_ethertype(aframe) and valid_frame_dst_addr(aframe));
+		        	valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe);
 
 		        def valid_frame_ethertype(aframe: RawEthernetMessage): Base_Types::Boolean :=
-		        	size(aframe) == 1600 and (frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe));     
+		        	frame_has_ipv4(aframe) | frame_has_arp(aframe) | frame_has_ipv6(aframe);     
 
 				def valid_frame_dst_addr(aframe: RawEthernetMessage): Base_Types::Boolean :=
 		        	size(aframe) == 1600 and 
