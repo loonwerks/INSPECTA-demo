@@ -65,14 +65,17 @@ public
 			true		
 
 		attest() : string =
-			let project_dir: string = FileAccess.getParent(FileAccess.getAbsolutePath("ardupilot_assurance.aadl"));
-			let run_script_path : string = project_dir + "/run_rodeo.sh";
-			let output_path : string = project_dir + "/appsumm_response.json";
-			let run_command : string = "bash " + run_script_path + " " + output_path;
---			let a : bool = debug("run command = ", run_command);
+			let get_project_dir : ShellCmd.Shell_Return_Type = ShellCmd.exec("printenv ASSURANCE_CASE_ROOT");
+			let project_dir : string = StringLib.trim(ShellCmd.get_output(get_project_dir)) + "/";
+--			let a : bool = debug("ASSURANCE_CASE_ROOT = ", project_dir);
+			let run_script_path : string = project_dir + "run_rodeo.sh";
+			let app_summ_path : string = project_dir + "appsumm_response.json";
+			let run_command : string = "bash " + run_script_path + " " + project_dir;
+--			let b : bool = debug("run command = ", run_command);
 			let result : ShellCmd.Shell_Return_Type = ShellCmd.exec(run_command);
+--			let d : bool = debug("return clode: ", ShellCmd.get_return_code(result));
 --			let e : bool = debug("output: ", ShellCmd.get_output(result));
-			if ShellCmd.get_return_code(result) = 0 then get_appraisal_summary(output_path) else ""
+			if ShellCmd.get_return_code(result) = 0 then get_appraisal_summary(app_summ_path) else ""
 			
 		get_result(contract : Json.Json_Object, kind : string) : bool =
 			Json.getBoolean(contract, "result")

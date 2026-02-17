@@ -177,122 +177,6 @@ pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
   valid_arp(aframe) | valid_ipv4(aframe)
 }
 
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
-  *
-  * guarantee valid_tx_out_message_port0
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-  */
-pub fn I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0: SW::SizedEthernetMessage_Impl) -> bool
-{
-  valid_arp(EthernetFramesTxOut0.amessage) && valid_output_arp_size(EthernetFramesTxOut0) |
-    valid_ipv4(EthernetFramesTxOut0.amessage) && valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
-  *
-  * guarantee valid_tx_out_message_port0
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-  */
-pub fn I_Guar_Guard_EthernetFramesTxOut0(EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
-{
-  implies!(
-    EthernetFramesTxOut0.is_some(),
-    I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0.unwrap())
-  )
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
-  *
-  * guarantee valid_tx_out_message_port1
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-  */
-pub fn I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1: SW::SizedEthernetMessage_Impl) -> bool
-{
-  valid_arp(EthernetFramesTxOut1.amessage) && valid_output_arp_size(EthernetFramesTxOut1) |
-    valid_ipv4(EthernetFramesTxOut1.amessage) && valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
-  *
-  * guarantee valid_tx_out_message_port1
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-  */
-pub fn I_Guar_Guard_EthernetFramesTxOut1(EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
-{
-  implies!(
-    EthernetFramesTxOut1.is_some(),
-    I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1.unwrap())
-  )
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
-  *
-  * guarantee valid_tx_out_message_port2
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-  */
-pub fn I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2: SW::SizedEthernetMessage_Impl) -> bool
-{
-  valid_arp(EthernetFramesTxOut2.amessage) && valid_output_arp_size(EthernetFramesTxOut2) |
-    valid_ipv4(EthernetFramesTxOut2.amessage) && valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
-  *
-  * guarantee valid_tx_out_message_port2
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-  */
-pub fn I_Guar_Guard_EthernetFramesTxOut2(EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
-{
-  implies!(
-    EthernetFramesTxOut2.is_some(),
-    I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2.unwrap())
-  )
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
-  *
-  * guarantee valid_tx_out_message_port3
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-  */
-pub fn I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3: SW::SizedEthernetMessage_Impl) -> bool
-{
-  valid_arp(EthernetFramesTxOut3.amessage) && valid_output_arp_size(EthernetFramesTxOut3) |
-    valid_ipv4(EthernetFramesTxOut3.amessage) && valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
-}
-
-/** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
-  *
-  * guarantee valid_tx_out_message_port3
-  *  Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-  */
-pub fn I_Guar_Guard_EthernetFramesTxOut3(EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
-{
-  implies!(
-    EthernetFramesTxOut3.is_some(),
-    I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3.unwrap())
-  )
-}
-
-/** IEP-Post: Initialize Entrypoint Post-Condition
-  *
-  * @param api_EthernetFramesTxOut0 outgoing event data port
-  * @param api_EthernetFramesTxOut1 outgoing event data port
-  * @param api_EthernetFramesTxOut2 outgoing event data port
-  * @param api_EthernetFramesTxOut3 outgoing event data port
-  */
-pub fn initialize_IEP_Post(
-  api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>,
-  api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>,
-  api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>,
-  api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
-{
-  // I-Guar-Guard: Integration constraints for TxFirewall's outgoing ports"
-  I_Guar_Guard_EthernetFramesTxOut0(api_EthernetFramesTxOut0) &
-  I_Guar_Guard_EthernetFramesTxOut1(api_EthernetFramesTxOut1) &
-  I_Guar_Guard_EthernetFramesTxOut2(api_EthernetFramesTxOut2) &
-  I_Guar_Guard_EthernetFramesTxOut3(api_EthernetFramesTxOut3)
-}
-
 /** Compute Entrypoint Contract
   *
   * guarantee hlr_07_tx0_can_send_valid_arp
@@ -611,14 +495,8 @@ pub fn compute_CEP_Post(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>,
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
-  // I-Guar-Guard: Integration constraints for TxFirewall's outgoing ports
-  let r0: bool = I_Guar_Guard_EthernetFramesTxOut0(api_EthernetFramesTxOut0);
-  let r1: bool = I_Guar_Guard_EthernetFramesTxOut1(api_EthernetFramesTxOut1);
-  let r2: bool = I_Guar_Guard_EthernetFramesTxOut2(api_EthernetFramesTxOut2);
-  let r3: bool = I_Guar_Guard_EthernetFramesTxOut3(api_EthernetFramesTxOut3);
-
   // CEP-Guar: guarantee clauses of TxFirewall's compute entrypoint
-  let r4: bool = compute_CEP_T_Guar(api_EthernetFramesTxIn0, api_EthernetFramesTxIn1, api_EthernetFramesTxIn2, api_EthernetFramesTxIn3, api_EthernetFramesTxOut0, api_EthernetFramesTxOut1, api_EthernetFramesTxOut2, api_EthernetFramesTxOut3);
+  let r0: bool = compute_CEP_T_Guar(api_EthernetFramesTxIn0, api_EthernetFramesTxIn1, api_EthernetFramesTxIn2, api_EthernetFramesTxIn3, api_EthernetFramesTxOut0, api_EthernetFramesTxOut1, api_EthernetFramesTxOut2, api_EthernetFramesTxOut3);
 
-  return r0 && r1 && r2 && r3 && r4;
+  return r0;
 }
