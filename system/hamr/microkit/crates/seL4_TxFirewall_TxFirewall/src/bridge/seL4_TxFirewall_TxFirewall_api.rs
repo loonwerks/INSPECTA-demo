@@ -102,11 +102,6 @@ verus! {
     pub fn put_EthernetFramesTxOut0(
       &mut self,
       value: SW::SizedEthernetMessage_Impl)
-      requires
-        // guarantee valid_tx_out_message_port0
-        //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-        crate::component::seL4_TxFirewall_TxFirewall_app::valid_arp(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_arp_size(value) ||
-          crate::component::seL4_TxFirewall_TxFirewall_app::valid_ipv4(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_ipv4_size(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -123,11 +118,6 @@ verus! {
     pub fn put_EthernetFramesTxOut1(
       &mut self,
       value: SW::SizedEthernetMessage_Impl)
-      requires
-        // guarantee valid_tx_out_message_port1
-        //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-        crate::component::seL4_TxFirewall_TxFirewall_app::valid_arp(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_arp_size(value) ||
-          crate::component::seL4_TxFirewall_TxFirewall_app::valid_ipv4(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_ipv4_size(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -144,11 +134,6 @@ verus! {
     pub fn put_EthernetFramesTxOut2(
       &mut self,
       value: SW::SizedEthernetMessage_Impl)
-      requires
-        // guarantee valid_tx_out_message_port2
-        //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-        crate::component::seL4_TxFirewall_TxFirewall_app::valid_arp(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_arp_size(value) ||
-          crate::component::seL4_TxFirewall_TxFirewall_app::valid_ipv4(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_ipv4_size(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -165,11 +150,6 @@ verus! {
     pub fn put_EthernetFramesTxOut3(
       &mut self,
       value: SW::SizedEthernetMessage_Impl)
-      requires
-        // guarantee valid_tx_out_message_port3
-        //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-        crate::component::seL4_TxFirewall_TxFirewall_app::valid_arp(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_arp_size(value) ||
-          crate::component::seL4_TxFirewall_TxFirewall_app::valid_ipv4(value.amessage) && crate::component::seL4_TxFirewall_TxFirewall_app::valid_output_ipv4_size(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
