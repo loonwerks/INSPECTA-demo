@@ -239,7 +239,7 @@ jobs:
     - name: Get analysis status
       run: echo "Resolute status is ${{ steps.resolute.outputs.status }}"
     - name: Echo status to output
-      run: echo "status=${{ steps.resolute.outputs.status }}" >> "$GITHUB_OUTPUT"
+      run: echo "status=${{ steps.resolute.outputs.status-code }}" >> "$GITHUB_OUTPUT"
     - name: Archive resolute report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
