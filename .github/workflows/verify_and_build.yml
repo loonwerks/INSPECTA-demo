@@ -196,11 +196,62 @@ jobs:
         name: codetest-report
         path: codetest-report.json
         retention-days: 30
+        
+  attestation:
+    runs-on: ubuntu-latest
+    continue-on-error: false
+
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+
+    outputs:
+      status-code: ${{ steps.resolute.outputs.status }}
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+
+    - name: Log in to the Container registry
+      uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+      with:
+        registry: ${{ env.REGISTRY }}
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - uses: actions/checkout@v4
+    - name: Copy Resolute action
+      uses: actions/checkout@v4
+      with:
+        repository: loonwerks/INSPECTA-Resolute-CI-Action
+        path: INSPECTA-Resolute-CI-Action
+    - name: Resolute Analysis
+      id : resolute
+      uses: ./INSPECTA-Resolute-CI-Action
+      with:
+        workspace-location: software/assurance
+        output-path: software/assurance/resolute.json
+        component-to-analyze: ardupilot_assurance::ArduPilot.i
+        attestation-path: software/hamr/microkit/attestation
+    - name: Get analysis timestamp
+      run: echo "Resolute timestamp is ${{ steps.resolute.outputs.timestamp }}"
+    - name: Get analysis status
+      run: echo "Resolute status is ${{ steps.resolute.outputs.status }}"
+    - name: Echo status to output
+      run: echo "status=${{ steps.resolute.outputs.status }}" >> "$GITHUB_OUTPUT"
+    - name: Archive resolute report
+      if: ${{ always() }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: resolute-report
+        path: software/assurance/resolute.json
+        retention-days: 30
 
   reports:
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    needs: [verify, codetest]
+    needs: [verify, codetest, attestation]
     continue-on-error: false
 
     permissions:
@@ -260,6 +311,12 @@ jobs:
       with:
         name: codetest-report
         path: public
+    - name: Download resolute report artifact
+      continue-on-error: true
+      uses: actions/download-artifact@v5
+      with:
+        name: resolute-report
+        path: public
     - name: Upload report to Pages
       uses: actions/upload-pages-artifact@v3
       with:
@@ -270,7 +327,7 @@ jobs:
   status-check:
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    needs: [verify, codebuild, codetest, reports]
+    needs: [verify, codebuild, codetest, attestation, reports]
     continue-on-error: false
 
     steps:
@@ -279,10 +336,13 @@ jobs:
         VERIFY_STATUS: ${{ needs.verify.outputs.status-code }}
         CODEBUILD_STATUS: ${{ needs.codebuild.outputs.status-code }}
         CODETEST_STATUS: ${{ needs.codetest.outputs.status-code }}
+        ATTESTATION_STATUS: ${{ needs.attestation.outputs.status-code }}
       run: |
         echo "needs.verify.outputs.status-code: $VERIFY_STATUS"
         echo "needs.codebuild.outputs.status-code: $CODEBUILD_STATUS"
         echo "needs.codetest.outputs.status-code: $CODETEST_STATUS"
+        echo "needs.attestation.outputs.status-code: $ATTESTATION_STATUS"
         test $VERIFY_STATUS -eq 0 \
           && test $CODEBUILD_STATUS -eq 0 \
-          && test $CODETEST_STATUS -eq 0
+          && test $CODETEST_STATUS -eq 0 \
+          && test $ATTESTATION_STATUS -eq 0

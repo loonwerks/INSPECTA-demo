@@ -23,61 +23,59 @@ pub fn two_bytes_to_u16(
 
 pub fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe.len() == 1600) &&
-    valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
+  valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
 }
 
 pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
 {
-  (aframe.len() == 1600) &&
-    frame_has_ipv4(aframe) |
-      (frame_has_arp(aframe) | frame_has_ipv6(aframe))
+  frame_has_ipv4(aframe) |
+    (frame_has_arp(aframe) | frame_has_ipv6(aframe))
 }
 
 pub fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    !((aframe[0] == 0u8) &
-      ((aframe[1] == 0u8) &
-        ((aframe[2] == 0u8) &
-          ((aframe[3] == 0u8) &
-            ((aframe[4] == 0u8) &
+    !((aframe[0] == 0u8) &&
+      ((aframe[1] == 0u8) &&
+        ((aframe[2] == 0u8) &&
+          ((aframe[3] == 0u8) &&
+            ((aframe[4] == 0u8) &&
               (aframe[5] == 0u8))))))
 }
 
 pub fn frame_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[12] == 8u8) &
-      (aframe[13] == 0u8)
+    ((aframe[12] == 8u8) &&
+      (aframe[13] == 0u8))
 }
 
 pub fn frame_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[12] == 134u8) &
-      (aframe[13] == 221u8)
+    ((aframe[12] == 134u8) &&
+      (aframe[13] == 221u8))
 }
 
 pub fn frame_has_arp(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[12] == 8u8) &
-      (aframe[13] == 6u8)
+    ((aframe[12] == 8u8) &&
+      (aframe[13] == 6u8))
 }
 
 pub fn arp_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[16] == 8u8) &
-      (aframe[17] == 0u8)
+    ((aframe[16] == 8u8) &&
+      (aframe[17] == 0u8))
 }
 
 pub fn arp_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[16] == 134u8) &
-      (aframe[17] == 221u8)
+    ((aframe[16] == 134u8) &&
+      (aframe[17] == 221u8))
 }
 
 pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
@@ -88,22 +86,22 @@ pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
 pub fn valid_arp_op(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[20] == 0u8) &
-      ((aframe[21] == 1u8) |
+    ((aframe[20] == 0u8) &&
+      (aframe[21] == 1u8) |
         (aframe[21] == 2u8))
 }
 
 pub fn valid_arp_htype(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    (aframe[14] == 0u8) &
-      (aframe[15] == 1u8)
+    ((aframe[14] == 0u8) &&
+      (aframe[15] == 1u8))
 }
 
 pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_arp_op(aframe) &
-    (valid_arp_htype(aframe) & valid_arp_ptype(aframe))
+  valid_arp_op(aframe) &&
+    (valid_arp_htype(aframe) && valid_arp_ptype(aframe))
 }
 
 pub fn valid_ipv4_length(aframe: SW::RawEthernetMessage) -> bool
@@ -135,25 +133,25 @@ pub fn valid_ipv4_vers_ihl(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn wellformed_ipv4_frame(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_ipv4_protocol(aframe) &
-    (valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe))
+  valid_ipv4_protocol(aframe) &&
+    (valid_ipv4_length(aframe) && valid_ipv4_vers_ihl(aframe))
 }
 
 pub fn valid_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) & frame_has_ipv6(aframe)
+  frame_is_wellformed_eth2(aframe) && frame_has_ipv6(aframe)
 }
 
 pub fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) &
-    (frame_has_arp(aframe) & wellformed_arp_frame(aframe))
+  frame_is_wellformed_eth2(aframe) &&
+    (frame_has_arp(aframe) && wellformed_arp_frame(aframe))
 }
 
 pub fn valid_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) &
-    (frame_has_ipv4(aframe) & wellformed_ipv4_frame(aframe))
+  frame_is_wellformed_eth2(aframe) &&
+    (frame_has_ipv4(aframe) && wellformed_ipv4_frame(aframe))
 }
 
 pub fn ipv4_length(aframe: SW::RawEthernetMessage) -> u16
@@ -186,8 +184,8 @@ pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
   */
 pub fn I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0: SW::SizedEthernetMessage_Impl) -> bool
 {
-  valid_arp(EthernetFramesTxOut0.amessage) & valid_output_arp_size(EthernetFramesTxOut0) |
-    valid_ipv4(EthernetFramesTxOut0.amessage) & valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
+  valid_arp(EthernetFramesTxOut0.amessage) && valid_output_arp_size(EthernetFramesTxOut0) |
+    valid_ipv4(EthernetFramesTxOut0.amessage) && valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
@@ -210,8 +208,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut0(EthernetFramesTxOut0: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1: SW::SizedEthernetMessage_Impl) -> bool
 {
-  valid_arp(EthernetFramesTxOut1.amessage) & valid_output_arp_size(EthernetFramesTxOut1) |
-    valid_ipv4(EthernetFramesTxOut1.amessage) & valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
+  valid_arp(EthernetFramesTxOut1.amessage) && valid_output_arp_size(EthernetFramesTxOut1) |
+    valid_ipv4(EthernetFramesTxOut1.amessage) && valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
@@ -234,8 +232,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut1(EthernetFramesTxOut1: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2: SW::SizedEthernetMessage_Impl) -> bool
 {
-  valid_arp(EthernetFramesTxOut2.amessage) & valid_output_arp_size(EthernetFramesTxOut2) |
-    valid_ipv4(EthernetFramesTxOut2.amessage) & valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
+  valid_arp(EthernetFramesTxOut2.amessage) && valid_output_arp_size(EthernetFramesTxOut2) |
+    valid_ipv4(EthernetFramesTxOut2.amessage) && valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
@@ -258,8 +256,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut2(EthernetFramesTxOut2: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3: SW::SizedEthernetMessage_Impl) -> bool
 {
-  valid_arp(EthernetFramesTxOut3.amessage) & valid_output_arp_size(EthernetFramesTxOut3) |
-    valid_ipv4(EthernetFramesTxOut3.amessage) & valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
+  valid_arp(EthernetFramesTxOut3.amessage) && valid_output_arp_size(EthernetFramesTxOut3) |
+    valid_ipv4(EthernetFramesTxOut3.amessage) && valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
@@ -306,9 +304,9 @@ pub fn compute_spec_hlr_07_tx0_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & valid_arp(api_EthernetFramesTxIn0.unwrap()),
-    api_EthernetFramesTxOut0.is_some() &
-      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &
+    api_EthernetFramesTxIn0.is_some() && valid_arp(api_EthernetFramesTxIn0.unwrap()),
+    api_EthernetFramesTxOut0.is_some() &&
+      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &&
         valid_output_arp_size(api_EthernetFramesTxOut0.unwrap())))
 }
 
@@ -323,9 +321,9 @@ pub fn compute_spec_hlr_12_tx0_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & valid_ipv4(api_EthernetFramesTxIn0.unwrap()),
-    api_EthernetFramesTxOut0.is_some() &
-      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &
+    api_EthernetFramesTxIn0.is_some() && valid_ipv4(api_EthernetFramesTxIn0.unwrap()),
+    api_EthernetFramesTxOut0.is_some() &&
+      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &&
         valid_output_ipv4_size(api_EthernetFramesTxIn0.unwrap(), api_EthernetFramesTxOut0.unwrap())))
 }
 
@@ -340,7 +338,7 @@ pub fn compute_spec_hlr_14_tx0_disallow_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & !(allow_outbound_frame(api_EthernetFramesTxIn0.unwrap())),
+    api_EthernetFramesTxIn0.is_some() && !(allow_outbound_frame(api_EthernetFramesTxIn0.unwrap())),
     api_EthernetFramesTxOut0.is_none())
 }
 
@@ -370,9 +368,9 @@ pub fn compute_spec_hlr_07_tx1_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & valid_arp(api_EthernetFramesTxIn1.unwrap()),
-    api_EthernetFramesTxOut1.is_some() &
-      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &
+    api_EthernetFramesTxIn1.is_some() && valid_arp(api_EthernetFramesTxIn1.unwrap()),
+    api_EthernetFramesTxOut1.is_some() &&
+      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &&
         valid_output_arp_size(api_EthernetFramesTxOut1.unwrap())))
 }
 
@@ -387,9 +385,9 @@ pub fn compute_spec_hlr_12_tx1_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & valid_ipv4(api_EthernetFramesTxIn1.unwrap()),
-    api_EthernetFramesTxOut1.is_some() &
-      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &
+    api_EthernetFramesTxIn1.is_some() && valid_ipv4(api_EthernetFramesTxIn1.unwrap()),
+    api_EthernetFramesTxOut1.is_some() &&
+      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &&
         valid_output_ipv4_size(api_EthernetFramesTxIn1.unwrap(), api_EthernetFramesTxOut1.unwrap())))
 }
 
@@ -404,7 +402,7 @@ pub fn compute_spec_hlr_14_tx1_disallow_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & !(allow_outbound_frame(api_EthernetFramesTxIn1.unwrap())),
+    api_EthernetFramesTxIn1.is_some() && !(allow_outbound_frame(api_EthernetFramesTxIn1.unwrap())),
     api_EthernetFramesTxOut1.is_none())
 }
 
@@ -434,9 +432,9 @@ pub fn compute_spec_hlr_07_tx2_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & valid_arp(api_EthernetFramesTxIn2.unwrap()),
-    api_EthernetFramesTxOut2.is_some() &
-      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &
+    api_EthernetFramesTxIn2.is_some() && valid_arp(api_EthernetFramesTxIn2.unwrap()),
+    api_EthernetFramesTxOut2.is_some() &&
+      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &&
         valid_output_arp_size(api_EthernetFramesTxOut2.unwrap())))
 }
 
@@ -451,9 +449,9 @@ pub fn compute_spec_hlr_12_tx2_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & valid_ipv4(api_EthernetFramesTxIn2.unwrap()),
-    api_EthernetFramesTxOut2.is_some() &
-      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &
+    api_EthernetFramesTxIn2.is_some() && valid_ipv4(api_EthernetFramesTxIn2.unwrap()),
+    api_EthernetFramesTxOut2.is_some() &&
+      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &&
         valid_output_ipv4_size(api_EthernetFramesTxIn2.unwrap(), api_EthernetFramesTxOut2.unwrap())))
 }
 
@@ -468,7 +466,7 @@ pub fn compute_spec_hlr_14_tx2_disallow_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & !(allow_outbound_frame(api_EthernetFramesTxIn2.unwrap())),
+    api_EthernetFramesTxIn2.is_some() && !(allow_outbound_frame(api_EthernetFramesTxIn2.unwrap())),
     api_EthernetFramesTxOut2.is_none())
 }
 
@@ -498,9 +496,9 @@ pub fn compute_spec_hlr_07_tx3_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & valid_arp(api_EthernetFramesTxIn3.unwrap()),
-    api_EthernetFramesTxOut3.is_some() &
-      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &
+    api_EthernetFramesTxIn3.is_some() && valid_arp(api_EthernetFramesTxIn3.unwrap()),
+    api_EthernetFramesTxOut3.is_some() &&
+      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &&
         valid_output_arp_size(api_EthernetFramesTxOut3.unwrap())))
 }
 
@@ -515,9 +513,9 @@ pub fn compute_spec_hlr_12_tx3_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & valid_ipv4(api_EthernetFramesTxIn3.unwrap()),
-    api_EthernetFramesTxOut3.is_some() &
-      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &
+    api_EthernetFramesTxIn3.is_some() && valid_ipv4(api_EthernetFramesTxIn3.unwrap()),
+    api_EthernetFramesTxOut3.is_some() &&
+      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &&
         valid_output_ipv4_size(api_EthernetFramesTxIn3.unwrap(), api_EthernetFramesTxOut3.unwrap())))
 }
 
@@ -532,7 +530,7 @@ pub fn compute_spec_hlr_14_tx3_disallow_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & !(allow_outbound_frame(api_EthernetFramesTxIn3.unwrap())),
+    api_EthernetFramesTxIn3.is_some() && !(allow_outbound_frame(api_EthernetFramesTxIn3.unwrap())),
     api_EthernetFramesTxOut3.is_none())
 }
 

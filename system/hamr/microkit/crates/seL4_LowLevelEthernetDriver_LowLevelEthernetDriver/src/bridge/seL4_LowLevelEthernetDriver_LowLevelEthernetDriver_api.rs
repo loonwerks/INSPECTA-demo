@@ -51,8 +51,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port0
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx0();
     }
@@ -66,8 +66,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port1
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx1();
     }
@@ -81,8 +81,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port2
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx2();
     }
@@ -96,8 +96,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port3
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx3();
     }
@@ -224,8 +224,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port0
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx0(&Ghost(self.EthernetFramesTx0))
     }
@@ -243,8 +243,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port1
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx1(&Ghost(self.EthernetFramesTx1))
     }
@@ -262,8 +262,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port2
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx2(&Ghost(self.EthernetFramesTx2))
     }
@@ -281,8 +281,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port3
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-          (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap())) ||
-            (crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap()))),
+          crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_arp(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_arp_size(res.unwrap()) ||
+            crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_ipv4(res.unwrap().amessage) && crate::component::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_app::valid_output_ipv4_size(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx3(&Ghost(self.EthernetFramesTx3))
     }
