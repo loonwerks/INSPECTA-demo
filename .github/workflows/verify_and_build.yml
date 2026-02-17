@@ -207,7 +207,7 @@ jobs:
       attestations: read
 
     outputs:
-      status-code: ${{ steps.resolute.outputs.status }}
+      status-code: ${{ steps.resolute.outputs.status-code }}
 
     steps:
     - name: Checkout repository
@@ -237,9 +237,7 @@ jobs:
     - name: Get analysis timestamp
       run: echo "Resolute timestamp is ${{ steps.resolute.outputs.timestamp }}"
     - name: Get analysis status
-      run: echo "Resolute status is ${{ steps.resolute.outputs.status }}"
-    - name: Echo status to output
-      run: echo "status=${{ steps.resolute.outputs.status-code }}" >> "$GITHUB_OUTPUT"
+      run: echo "Resolute status is ${{ steps.resolute.outputs.status }} (${{ steps.resolute.outputs.status-code }})"
     - name: Archive resolute report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
