@@ -258,9 +258,12 @@ jobs:
       run: echo "status=${{ steps.hamr.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Count Lines of Code (cloc)
       if: ${{ always() }}
-      uses: djdefi/cloc-action@main
-      with:
-        options: "$GITHUB_WORKSPACE/system/hamr/microkit --exclude-lang=YAML --exclude-dir=reporting --json --report-file=cloc-report.json"
+      run: |
+        apt update && apt install -y cloc
+        cloc $GITHUB_WORKSPACE/system/hamr/microkit --exclude-lang=YAML --exclude-dir=reporting --json --report-file=cloc-report.json
+#      uses: djdefi/cloc-action@main
+#      with:
+#        options: "$GITHUB_WORKSPACE/system/hamr/microkit --exclude-lang=YAML --exclude-dir=reporting --json --report-file=cloc-report.json"
     - name: Collect codegen report
       if: ${{ always() }}
       run: |
