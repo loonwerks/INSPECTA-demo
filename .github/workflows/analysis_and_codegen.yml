@@ -162,6 +162,7 @@ jobs:
         sourcepaths: "[ \"system\" ]"
         feedback: logika-feedback
         parseable-messages: true
+        report-filename: logika-report.json
     - name: Get analysis timestamp
       if: ${{ always() }}
       run: echo "Analysis timestamp is ${{ steps.logika.outputs.timestamp }}"
