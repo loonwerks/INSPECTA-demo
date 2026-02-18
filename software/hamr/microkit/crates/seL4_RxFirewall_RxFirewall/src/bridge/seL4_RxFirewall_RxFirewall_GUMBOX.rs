@@ -274,9 +274,7 @@ pub fn input_eq_mav_output(
   */
 pub fn I_Assm_EthernetFramesRxIn0(EthernetFramesRxIn0: SW::RawEthernetMessage) -> bool
 {
-  valid_arp(EthernetFramesRxIn0) |
-    (valid_ipv4_udp_mavlink(EthernetFramesRxIn0) |
-      (valid_ipv4_udp_port(EthernetFramesRxIn0) | !(allow_outbound_frame(EthernetFramesRxIn0))))
+  valid_arp(EthernetFramesRxIn0)
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn0
@@ -289,81 +287,6 @@ pub fn I_Assm_Guard_EthernetFramesRxIn0(EthernetFramesRxIn0: Option<SW::RawEther
   implies!(
     EthernetFramesRxIn0.is_some(),
     I_Assm_EthernetFramesRxIn0(EthernetFramesRxIn0.unwrap())
-  )
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn1
-  *
-  * assume valid_message_port1
-  *   Only valid messages being sent to the RxFirewall Port 1
-  */
-pub fn I_Assm_EthernetFramesRxIn1(EthernetFramesRxIn1: SW::RawEthernetMessage) -> bool
-{
-  valid_arp(EthernetFramesRxIn1) |
-    (valid_ipv4_udp_mavlink(EthernetFramesRxIn1) |
-      (valid_ipv4_udp_port(EthernetFramesRxIn1) | !(allow_outbound_frame(EthernetFramesRxIn1))))
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn1
-  *
-  * assume valid_message_port1
-  *   Only valid messages being sent to the RxFirewall Port 1
-  */
-pub fn I_Assm_Guard_EthernetFramesRxIn1(EthernetFramesRxIn1: Option<SW::RawEthernetMessage>) -> bool
-{
-  implies!(
-    EthernetFramesRxIn1.is_some(),
-    I_Assm_EthernetFramesRxIn1(EthernetFramesRxIn1.unwrap())
-  )
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn2
-  *
-  * assume valid_message_port2
-  *   Only valid messages being sent to the RxFirewall Port 2
-  */
-pub fn I_Assm_EthernetFramesRxIn2(EthernetFramesRxIn2: SW::RawEthernetMessage) -> bool
-{
-  valid_arp(EthernetFramesRxIn2) |
-    (valid_ipv4_udp_mavlink(EthernetFramesRxIn2) |
-      (valid_ipv4_udp_port(EthernetFramesRxIn2) | !(allow_outbound_frame(EthernetFramesRxIn2))))
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn2
-  *
-  * assume valid_message_port2
-  *   Only valid messages being sent to the RxFirewall Port 2
-  */
-pub fn I_Assm_Guard_EthernetFramesRxIn2(EthernetFramesRxIn2: Option<SW::RawEthernetMessage>) -> bool
-{
-  implies!(
-    EthernetFramesRxIn2.is_some(),
-    I_Assm_EthernetFramesRxIn2(EthernetFramesRxIn2.unwrap())
-  )
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn3
-  *
-  * assume valid_message_port3
-  *   Only valid messages being sent to the RxFirewall Port 3
-  */
-pub fn I_Assm_EthernetFramesRxIn3(EthernetFramesRxIn3: SW::RawEthernetMessage) -> bool
-{
-  valid_arp(EthernetFramesRxIn3) |
-    (valid_ipv4_udp_mavlink(EthernetFramesRxIn3) |
-      (valid_ipv4_udp_port(EthernetFramesRxIn3) | !(allow_outbound_frame(EthernetFramesRxIn3))))
-}
-
-/** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn3
-  *
-  * assume valid_message_port3
-  *   Only valid messages being sent to the RxFirewall Port 3
-  */
-pub fn I_Assm_Guard_EthernetFramesRxIn3(EthernetFramesRxIn3: Option<SW::RawEthernetMessage>) -> bool
-{
-  implies!(
-    EthernetFramesRxIn3.is_some(),
-    I_Assm_EthernetFramesRxIn3(EthernetFramesRxIn3.unwrap())
   )
 }
 
@@ -382,11 +305,8 @@ pub fn compute_CEP_Pre(
 {
   // I-Assm-Guard: Integration constraints for RxFirewall's incoming ports
   let r0: bool = I_Assm_Guard_EthernetFramesRxIn0(api_EthernetFramesRxIn0);
-  let r1: bool = I_Assm_Guard_EthernetFramesRxIn1(api_EthernetFramesRxIn1);
-  let r2: bool = I_Assm_Guard_EthernetFramesRxIn2(api_EthernetFramesRxIn2);
-  let r3: bool = I_Assm_Guard_EthernetFramesRxIn3(api_EthernetFramesRxIn3);
 
-  return r0 && r1 && r2 && r3;
+  return r0;
 }
 
 /** Compute Entrypoint Contract
