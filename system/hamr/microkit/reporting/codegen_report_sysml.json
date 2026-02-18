@@ -861,7 +861,7 @@
                       "beginColumn" : 2,
                       "endLine" : 1023,
                       "endColumn" : 32,
-                      "offset" : 55091,
+                      "offset" : 54866,
                       "length" : 30
                     }
                   },
@@ -903,7 +903,7 @@
                             "beginColumn" : 2,
                             "endLine" : 983,
                             "endColumn" : 74,
-                            "offset" : 52565,
+                            "offset" : 52340,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -994,7 +994,7 @@
                             "beginColumn" : 2,
                             "endLine" : 984,
                             "endColumn" : 74,
-                            "offset" : 52641,
+                            "offset" : 52416,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1085,7 +1085,7 @@
                             "beginColumn" : 2,
                             "endLine" : 985,
                             "endColumn" : 74,
-                            "offset" : 52717,
+                            "offset" : 52492,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1176,7 +1176,7 @@
                             "beginColumn" : 2,
                             "endLine" : 986,
                             "endColumn" : 74,
-                            "offset" : 52793,
+                            "offset" : 52568,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1267,7 +1267,7 @@
                             "beginColumn" : 2,
                             "endLine" : 987,
                             "endColumn" : 73,
-                            "offset" : 52869,
+                            "offset" : 52644,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1358,7 +1358,7 @@
                             "beginColumn" : 2,
                             "endLine" : 988,
                             "endColumn" : 73,
-                            "offset" : 52944,
+                            "offset" : 52719,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1449,7 +1449,7 @@
                             "beginColumn" : 2,
                             "endLine" : 989,
                             "endColumn" : 73,
-                            "offset" : 53019,
+                            "offset" : 52794,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1540,7 +1540,7 @@
                             "beginColumn" : 2,
                             "endLine" : 990,
                             "endColumn" : 73,
-                            "offset" : 53094,
+                            "offset" : 52869,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1631,7 +1631,7 @@
                             "beginColumn" : 2,
                             "endLine" : 991,
                             "endColumn" : 82,
-                            "offset" : 53169,
+                            "offset" : 52944,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1722,7 +1722,7 @@
                             "beginColumn" : 2,
                             "endLine" : 992,
                             "endColumn" : 82,
-                            "offset" : 53253,
+                            "offset" : 53028,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1813,7 +1813,7 @@
                             "beginColumn" : 2,
                             "endLine" : 993,
                             "endColumn" : 82,
-                            "offset" : 53337,
+                            "offset" : 53112,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1904,7 +1904,7 @@
                             "beginColumn" : 2,
                             "endLine" : 994,
                             "endColumn" : 82,
-                            "offset" : 53421,
+                            "offset" : 53196,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -2009,7 +2009,7 @@
                       "beginColumn" : 2,
                       "endLine" : 959,
                       "endColumn" : 44,
-                      "offset" : 51761,
+                      "offset" : 51536,
                       "length" : 42
                     }
                   },
@@ -2051,7 +2051,7 @@
                             "beginColumn" : 2,
                             "endLine" : 849,
                             "endColumn" : 61,
-                            "offset" : 46011,
+                            "offset" : 45786,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2214,7 +2214,7 @@
                             "beginColumn" : 2,
                             "endLine" : 850,
                             "endColumn" : 61,
-                            "offset" : 46074,
+                            "offset" : 45849,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2377,7 +2377,7 @@
                             "beginColumn" : 2,
                             "endLine" : 851,
                             "endColumn" : 61,
-                            "offset" : 46137,
+                            "offset" : 45912,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2540,7 +2540,7 @@
                             "beginColumn" : 2,
                             "endLine" : 852,
                             "endColumn" : 61,
-                            "offset" : 46200,
+                            "offset" : 45975,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2703,7 +2703,7 @@
                             "beginColumn" : 2,
                             "endLine" : 853,
                             "endColumn" : 69,
-                            "offset" : 46263,
+                            "offset" : 46038,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -2866,7 +2866,7 @@
                             "beginColumn" : 2,
                             "endLine" : 854,
                             "endColumn" : 69,
-                            "offset" : 46334,
+                            "offset" : 46109,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -3029,7 +3029,7 @@
                             "beginColumn" : 2,
                             "endLine" : 855,
                             "endColumn" : 69,
-                            "offset" : 46405,
+                            "offset" : 46180,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -3192,7 +3192,7 @@
                             "beginColumn" : 2,
                             "endLine" : 856,
                             "endColumn" : 69,
-                            "offset" : 46476,
+                            "offset" : 46251,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -4227,7 +4227,7 @@
                       "beginColumn" : 2,
                       "endLine" : 593,
                       "endColumn" : 34,
-                      "offset" : 31709,
+                      "offset" : 31535,
                       "length" : 32
                     }
                   },
@@ -4269,7 +4269,7 @@
                             "beginColumn" : 2,
                             "endLine" : 318,
                             "endColumn" : 80,
-                            "offset" : 16248,
+                            "offset" : 16137,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4283,12 +4283,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 305,
+                                "beginLine" : 325,
                                 "beginColumn" : 5,
-                                "endLine" : 326,
+                                "endLine" : 348,
                                 "endColumn" : 5,
-                                "offset" : 10928,
-                                "length" : 1100
+                                "offset" : 12789,
+                                "length" : 1398
                               }
                             },
                             {
@@ -4303,10 +4303,10 @@
                                 },
                                 "beginLine" : 78,
                                 "beginColumn" : 5,
-                                "endLine" : 89,
+                                "endLine" : 91,
                                 "endColumn" : 5,
                                 "offset" : 1816,
-                                "length" : 480
+                                "length" : 778
                               }
                             },
                             {
@@ -4432,7 +4432,7 @@
                             "beginColumn" : 2,
                             "endLine" : 319,
                             "endColumn" : 80,
-                            "offset" : 16330,
+                            "offset" : 16219,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4446,12 +4446,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 327,
+                                "beginLine" : 349,
                                 "beginColumn" : 5,
-                                "endLine" : 344,
+                                "endLine" : 372,
                                 "endColumn" : 5,
-                                "offset" : 12034,
-                                "length" : 877
+                                "offset" : 14193,
+                                "length" : 1398
                               }
                             },
                             {
@@ -4464,12 +4464,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 92,
+                                "beginLine" : 94,
                                 "beginColumn" : 5,
-                                "endLine" : 99,
+                                "endLine" : 107,
                                 "endColumn" : 5,
-                                "offset" : 2334,
-                                "length" : 257
+                                "offset" : 2632,
+                                "length" : 778
                               }
                             },
                             {
@@ -4595,7 +4595,7 @@
                             "beginColumn" : 2,
                             "endLine" : 320,
                             "endColumn" : 80,
-                            "offset" : 16412,
+                            "offset" : 16301,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4609,12 +4609,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 345,
+                                "beginLine" : 373,
                                 "beginColumn" : 5,
-                                "endLine" : 362,
+                                "endLine" : 396,
                                 "endColumn" : 5,
-                                "offset" : 12917,
-                                "length" : 877
+                                "offset" : 15597,
+                                "length" : 1398
                               }
                             },
                             {
@@ -4627,12 +4627,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 102,
+                                "beginLine" : 110,
                                 "beginColumn" : 5,
-                                "endLine" : 109,
+                                "endLine" : 123,
                                 "endColumn" : 5,
-                                "offset" : 2629,
-                                "length" : 257
+                                "offset" : 3448,
+                                "length" : 778
                               }
                             },
                             {
@@ -4758,7 +4758,7 @@
                             "beginColumn" : 2,
                             "endLine" : 321,
                             "endColumn" : 80,
-                            "offset" : 16495,
+                            "offset" : 16384,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4772,12 +4772,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 363,
+                                "beginLine" : 397,
                                 "beginColumn" : 5,
-                                "endLine" : 380,
+                                "endLine" : 420,
                                 "endColumn" : 5,
-                                "offset" : 13800,
-                                "length" : 877
+                                "offset" : 17001,
+                                "length" : 1398
                               }
                             },
                             {
@@ -4790,12 +4790,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 112,
+                                "beginLine" : 126,
                                 "beginColumn" : 5,
-                                "endLine" : 119,
+                                "endLine" : 139,
                                 "endColumn" : 5,
-                                "offset" : 2924,
-                                "length" : 257
+                                "offset" : 4264,
+                                "length" : 778
                               }
                             },
                             {
@@ -4921,7 +4921,7 @@
                             "beginColumn" : 2,
                             "endLine" : 322,
                             "endColumn" : 72,
-                            "offset" : 16577,
+                            "offset" : 16466,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -4935,11 +4935,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 142,
+                                "beginLine" : 162,
                                 "beginColumn" : 5,
-                                "endLine" : 161,
+                                "endLine" : 181,
                                 "endColumn" : 5,
-                                "offset" : 4237,
+                                "offset" : 6098,
                                 "length" : 816
                               }
                             },
@@ -5084,7 +5084,7 @@
                             "beginColumn" : 2,
                             "endLine" : 323,
                             "endColumn" : 72,
-                            "offset" : 16651,
+                            "offset" : 16540,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -5098,11 +5098,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 162,
+                                "beginLine" : 182,
                                 "beginColumn" : 5,
-                                "endLine" : 181,
+                                "endLine" : 201,
                                 "endColumn" : 5,
-                                "offset" : 5059,
+                                "offset" : 6920,
                                 "length" : 816
                               }
                             },
@@ -5247,7 +5247,7 @@
                             "beginColumn" : 2,
                             "endLine" : 324,
                             "endColumn" : 72,
-                            "offset" : 16725,
+                            "offset" : 16614,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -5261,11 +5261,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 182,
+                                "beginLine" : 202,
                                 "beginColumn" : 5,
-                                "endLine" : 201,
+                                "endLine" : 221,
                                 "endColumn" : 5,
-                                "offset" : 5881,
+                                "offset" : 7742,
                                 "length" : 816
                               }
                             },
@@ -5410,7 +5410,7 @@
                             "beginColumn" : 2,
                             "endLine" : 325,
                             "endColumn" : 72,
-                            "offset" : 16799,
+                            "offset" : 16688,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -5424,11 +5424,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 202,
+                                "beginLine" : 222,
                                 "beginColumn" : 5,
-                                "endLine" : 221,
+                                "endLine" : 241,
                                 "endColumn" : 5,
-                                "offset" : 6703,
+                                "offset" : 8564,
                                 "length" : 816
                               }
                             },
@@ -5573,7 +5573,7 @@
                             "beginColumn" : 2,
                             "endLine" : 326,
                             "endColumn" : 71,
-                            "offset" : 16873,
+                            "offset" : 16762,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5587,11 +5587,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 222,
+                                "beginLine" : 242,
                                 "beginColumn" : 5,
-                                "endLine" : 241,
+                                "endLine" : 261,
                                 "endColumn" : 5,
-                                "offset" : 7525,
+                                "offset" : 9386,
                                 "length" : 819
                               }
                             },
@@ -5736,7 +5736,7 @@
                             "beginColumn" : 2,
                             "endLine" : 327,
                             "endColumn" : 71,
-                            "offset" : 16946,
+                            "offset" : 16835,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5750,11 +5750,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 242,
+                                "beginLine" : 262,
                                 "beginColumn" : 5,
-                                "endLine" : 261,
+                                "endLine" : 281,
                                 "endColumn" : 5,
-                                "offset" : 8350,
+                                "offset" : 10211,
                                 "length" : 819
                               }
                             },
@@ -5899,7 +5899,7 @@
                             "beginColumn" : 2,
                             "endLine" : 328,
                             "endColumn" : 71,
-                            "offset" : 17019,
+                            "offset" : 16908,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5913,11 +5913,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 262,
+                                "beginLine" : 282,
                                 "beginColumn" : 5,
-                                "endLine" : 281,
+                                "endLine" : 301,
                                 "endColumn" : 5,
-                                "offset" : 9175,
+                                "offset" : 11036,
                                 "length" : 819
                               }
                             },
@@ -6062,7 +6062,7 @@
                             "beginColumn" : 2,
                             "endLine" : 329,
                             "endColumn" : 71,
-                            "offset" : 17092,
+                            "offset" : 16981,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -6076,11 +6076,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                 },
-                                "beginLine" : 282,
+                                "beginLine" : 302,
                                 "beginColumn" : 5,
-                                "endLine" : 301,
+                                "endLine" : 321,
                                 "endColumn" : 5,
-                                "offset" : 10000,
+                                "offset" : 11861,
                                 "length" : 819
                               }
                             },
@@ -6892,7 +6892,7 @@
                           "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
                           "assumesReport" : {
                             "type" : "HashSMap",
-                            "size" : 1,
+                            "size" : 4,
                             "entries" : [
                               [
                                 "valid_message_port0",
@@ -6902,12 +6902,60 @@
                                     "type" : "Some",
                                     "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
                                   },
-                                  "beginLine" : 321,
+                                  "beginLine" : 341,
                                   "beginColumn" : 13,
-                                  "endLine" : 323,
-                                  "endColumn" : 84,
-                                  "offset" : 11775,
-                                  "length" : 156
+                                  "endLine" : 345,
+                                  "endColumn" : 192,
+                                  "offset" : 13636,
+                                  "length" : 454
+                                }
+                              ],
+                              [
+                                "valid_message_port1",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 365,
+                                  "beginColumn" : 13,
+                                  "endLine" : 369,
+                                  "endColumn" : 192,
+                                  "offset" : 15040,
+                                  "length" : 454
+                                }
+                              ],
+                              [
+                                "valid_message_port2",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 389,
+                                  "beginColumn" : 13,
+                                  "endLine" : 393,
+                                  "endColumn" : 192,
+                                  "offset" : 16444,
+                                  "length" : 454
+                                }
+                              ],
+                              [
+                                "valid_message_port3",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 413,
+                                  "beginColumn" : 13,
+                                  "endLine" : 417,
+                                  "endColumn" : 192,
+                                  "offset" : 17848,
+                                  "length" : 454
                                 }
                               ]
                             ]
@@ -7284,7 +7332,7 @@
                       "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
                       "gumboxMethods" : {
                         "type" : "HashSMap",
-                        "size" : 63,
+                        "size" : 69,
                         "entries" : [
                           [
                             "TCP_ALLOWED_PORTS",
@@ -7904,10 +7952,10 @@
                               },
                               "beginLine" : 275,
                               "beginColumn" : 1,
-                              "endLine" : 278,
+                              "endLine" : 280,
                               "endColumn" : 1,
                               "offset" : 6916,
-                              "length" : 122
+                              "length" : 272
                             }
                           ],
                           [
@@ -7918,11 +7966,107 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 285,
+                              "beginLine" : 287,
                               "beginColumn" : 1,
-                              "endLine" : 291,
+                              "endLine" : 293,
                               "endColumn" : 1,
-                              "offset" : 7239,
+                              "offset" : 7389,
+                              "length" : 215
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesRxIn1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 300,
+                              "beginColumn" : 1,
+                              "endLine" : 305,
+                              "endColumn" : 1,
+                              "offset" : 7805,
+                              "length" : 272
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesRxIn1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 312,
+                              "beginColumn" : 1,
+                              "endLine" : 318,
+                              "endColumn" : 1,
+                              "offset" : 8278,
+                              "length" : 215
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesRxIn2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 325,
+                              "beginColumn" : 1,
+                              "endLine" : 330,
+                              "endColumn" : 1,
+                              "offset" : 8694,
+                              "length" : 272
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesRxIn2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 337,
+                              "beginColumn" : 1,
+                              "endLine" : 343,
+                              "endColumn" : 1,
+                              "offset" : 9167,
+                              "length" : 215
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesRxIn3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 350,
+                              "beginColumn" : 1,
+                              "endLine" : 355,
+                              "endColumn" : 1,
+                              "offset" : 9583,
+                              "length" : 272
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesRxIn3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 362,
+                              "beginColumn" : 1,
+                              "endLine" : 368,
+                              "endColumn" : 1,
+                              "offset" : 10056,
                               "length" : 215
                             }
                           ],
@@ -7934,12 +8078,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 300,
+                              "beginLine" : 377,
                               "beginColumn" : 1,
-                              "endLine" : 310,
+                              "endLine" : 390,
                               "endColumn" : 1,
-                              "offset" : 7767,
-                              "length" : 435
+                              "offset" : 10584,
+                              "length" : 681
                             }
                           ],
                           [
@@ -7950,11 +8094,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 319,
+                              "beginLine" : 399,
                               "beginColumn" : 1,
-                              "endLine" : 329,
+                              "endLine" : 409,
                               "endColumn" : 1,
-                              "offset" : 8451,
+                              "offset" : 11514,
                               "length" : 456
                             }
                           ],
@@ -7966,11 +8110,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 338,
+                              "beginLine" : 418,
                               "beginColumn" : 1,
-                              "endLine" : 347,
+                              "endLine" : 427,
                               "endColumn" : 1,
-                              "offset" : 9157,
+                              "offset" : 12220,
                               "length" : 483
                             }
                           ],
@@ -7982,11 +8126,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 356,
+                              "beginLine" : 436,
                               "beginColumn" : 1,
-                              "endLine" : 366,
+                              "endLine" : 446,
                               "endColumn" : 1,
-                              "offset" : 9887,
+                              "offset" : 12950,
                               "length" : 464
                             }
                           ],
@@ -7998,11 +8142,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 375,
+                              "beginLine" : 455,
                               "beginColumn" : 1,
-                              "endLine" : 383,
+                              "endLine" : 463,
                               "endColumn" : 1,
-                              "offset" : 10589,
+                              "offset" : 13652,
                               "length" : 381
                             }
                           ],
@@ -8014,11 +8158,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 392,
+                              "beginLine" : 472,
                               "beginColumn" : 1,
-                              "endLine" : 400,
+                              "endLine" : 480,
                               "endColumn" : 1,
-                              "offset" : 11208,
+                              "offset" : 14271,
                               "length" : 323
                             }
                           ],
@@ -8030,11 +8174,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 409,
+                              "beginLine" : 489,
                               "beginColumn" : 1,
-                              "endLine" : 419,
+                              "endLine" : 499,
                               "endColumn" : 1,
-                              "offset" : 11780,
+                              "offset" : 14843,
                               "length" : 456
                             }
                           ],
@@ -8046,11 +8190,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 428,
+                              "beginLine" : 508,
                               "beginColumn" : 1,
-                              "endLine" : 437,
+                              "endLine" : 517,
                               "endColumn" : 1,
-                              "offset" : 12486,
+                              "offset" : 15549,
                               "length" : 483
                             }
                           ],
@@ -8062,11 +8206,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 446,
+                              "beginLine" : 526,
                               "beginColumn" : 1,
-                              "endLine" : 456,
+                              "endLine" : 536,
                               "endColumn" : 1,
-                              "offset" : 13216,
+                              "offset" : 16279,
                               "length" : 464
                             }
                           ],
@@ -8078,11 +8222,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 465,
+                              "beginLine" : 545,
                               "beginColumn" : 1,
-                              "endLine" : 473,
+                              "endLine" : 553,
                               "endColumn" : 1,
-                              "offset" : 13918,
+                              "offset" : 16981,
                               "length" : 381
                             }
                           ],
@@ -8094,11 +8238,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 482,
+                              "beginLine" : 562,
                               "beginColumn" : 1,
-                              "endLine" : 490,
+                              "endLine" : 570,
                               "endColumn" : 1,
-                              "offset" : 14537,
+                              "offset" : 17600,
                               "length" : 323
                             }
                           ],
@@ -8110,11 +8254,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 499,
+                              "beginLine" : 579,
                               "beginColumn" : 1,
-                              "endLine" : 509,
+                              "endLine" : 589,
                               "endColumn" : 1,
-                              "offset" : 15109,
+                              "offset" : 18172,
                               "length" : 456
                             }
                           ],
@@ -8126,11 +8270,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 518,
+                              "beginLine" : 598,
                               "beginColumn" : 1,
-                              "endLine" : 527,
+                              "endLine" : 607,
                               "endColumn" : 1,
-                              "offset" : 15815,
+                              "offset" : 18878,
                               "length" : 483
                             }
                           ],
@@ -8142,11 +8286,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 536,
+                              "beginLine" : 616,
                               "beginColumn" : 1,
-                              "endLine" : 546,
+                              "endLine" : 626,
                               "endColumn" : 1,
-                              "offset" : 16545,
+                              "offset" : 19608,
                               "length" : 464
                             }
                           ],
@@ -8158,11 +8302,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 555,
+                              "beginLine" : 635,
                               "beginColumn" : 1,
-                              "endLine" : 563,
+                              "endLine" : 643,
                               "endColumn" : 1,
-                              "offset" : 17247,
+                              "offset" : 20310,
                               "length" : 381
                             }
                           ],
@@ -8174,11 +8318,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 572,
+                              "beginLine" : 652,
                               "beginColumn" : 1,
-                              "endLine" : 580,
+                              "endLine" : 660,
                               "endColumn" : 1,
-                              "offset" : 17866,
+                              "offset" : 20929,
                               "length" : 323
                             }
                           ],
@@ -8190,11 +8334,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 589,
+                              "beginLine" : 669,
                               "beginColumn" : 1,
-                              "endLine" : 599,
+                              "endLine" : 679,
                               "endColumn" : 1,
-                              "offset" : 18438,
+                              "offset" : 21501,
                               "length" : 456
                             }
                           ],
@@ -8206,11 +8350,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 608,
+                              "beginLine" : 688,
                               "beginColumn" : 1,
-                              "endLine" : 617,
+                              "endLine" : 697,
                               "endColumn" : 1,
-                              "offset" : 19144,
+                              "offset" : 22207,
                               "length" : 483
                             }
                           ],
@@ -8222,11 +8366,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 626,
+                              "beginLine" : 706,
                               "beginColumn" : 1,
-                              "endLine" : 636,
+                              "endLine" : 716,
                               "endColumn" : 1,
-                              "offset" : 19874,
+                              "offset" : 22937,
                               "length" : 464
                             }
                           ],
@@ -8238,11 +8382,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 645,
+                              "beginLine" : 725,
                               "beginColumn" : 1,
-                              "endLine" : 653,
+                              "endLine" : 733,
                               "endColumn" : 1,
-                              "offset" : 20576,
+                              "offset" : 23639,
                               "length" : 381
                             }
                           ],
@@ -8254,11 +8398,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 662,
+                              "beginLine" : 742,
                               "beginColumn" : 1,
-                              "endLine" : 670,
+                              "endLine" : 750,
                               "endColumn" : 1,
-                              "offset" : 21195,
+                              "offset" : 24258,
                               "length" : 323
                             }
                           ],
@@ -8270,11 +8414,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 687,
+                              "beginLine" : 767,
                               "beginColumn" : 1,
-                              "endLine" : 723,
+                              "endLine" : 803,
                               "endColumn" : 1,
-                              "offset" : 22252,
+                              "offset" : 25315,
                               "length" : 3241
                             }
                           ],
@@ -8286,11 +8430,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_RxFirewall_RxFirewall\/src\/bridge\/seL4_RxFirewall_RxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 740,
+                              "beginLine" : 820,
                               "beginColumn" : 1,
-                              "endLine" : 758,
+                              "endLine" : 838,
                               "endColumn" : 1,
-                              "offset" : 26208,
+                              "offset" : 29271,
                               "length" : 982
                             }
                           ]
@@ -8328,7 +8472,7 @@
                       "beginColumn" : 2,
                       "endLine" : 825,
                       "endColumn" : 34,
-                      "offset" : 44963,
+                      "offset" : 44738,
                       "length" : 32
                     }
                   },
@@ -8370,7 +8514,7 @@
                             "beginColumn" : 2,
                             "endLine" : 624,
                             "endColumn" : 82,
-                            "offset" : 32954,
+                            "offset" : 32780,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -8384,11 +8528,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 169,
+                                "beginLine" : 189,
                                 "beginColumn" : 5,
-                                "endLine" : 182,
+                                "endLine" : 202,
                                 "endColumn" : 5,
-                                "offset" : 6421,
+                                "offset" : 8433,
                                 "length" : 777
                               }
                             },
@@ -8533,7 +8677,7 @@
                             "beginColumn" : 2,
                             "endLine" : 625,
                             "endColumn" : 82,
-                            "offset" : 33038,
+                            "offset" : 32864,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -8547,11 +8691,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 183,
+                                "beginLine" : 203,
                                 "beginColumn" : 5,
-                                "endLine" : 196,
+                                "endLine" : 216,
                                 "endColumn" : 5,
-                                "offset" : 7204,
+                                "offset" : 9216,
                                 "length" : 777
                               }
                             },
@@ -8696,7 +8840,7 @@
                             "beginColumn" : 2,
                             "endLine" : 626,
                             "endColumn" : 82,
-                            "offset" : 33122,
+                            "offset" : 32948,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -8710,11 +8854,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 197,
+                                "beginLine" : 217,
                                 "beginColumn" : 5,
-                                "endLine" : 210,
+                                "endLine" : 230,
                                 "endColumn" : 5,
-                                "offset" : 7987,
+                                "offset" : 9999,
                                 "length" : 777
                               }
                             },
@@ -8859,7 +9003,7 @@
                             "beginColumn" : 2,
                             "endLine" : 627,
                             "endColumn" : 82,
-                            "offset" : 33206,
+                            "offset" : 33032,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -8873,11 +9017,11 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 211,
+                                "beginLine" : 231,
                                 "beginColumn" : 5,
-                                "endLine" : 224,
+                                "endLine" : 244,
                                 "endColumn" : 5,
-                                "offset" : 8770,
+                                "offset" : 10782,
                                 "length" : 777
                               }
                             },
@@ -9022,7 +9166,7 @@
                             "beginColumn" : 2,
                             "endLine" : 628,
                             "endColumn" : 92,
-                            "offset" : 33290,
+                            "offset" : 33116,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -9038,10 +9182,10 @@
                                 },
                                 "beginLine" : 102,
                                 "beginColumn" : 5,
-                                "endLine" : 117,
+                                "endLine" : 122,
                                 "endColumn" : 5,
                                 "offset" : 3298,
-                                "length" : 749
+                                "length" : 1252
                               }
                             },
                             {
@@ -9185,7 +9329,7 @@
                             "beginColumn" : 2,
                             "endLine" : 629,
                             "endColumn" : 92,
-                            "offset" : 33384,
+                            "offset" : 33210,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -9199,12 +9343,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 118,
+                                "beginLine" : 123,
                                 "beginColumn" : 5,
-                                "endLine" : 133,
+                                "endLine" : 143,
                                 "endColumn" : 5,
-                                "offset" : 4053,
-                                "length" : 749
+                                "offset" : 4556,
+                                "length" : 1252
                               }
                             },
                             {
@@ -9348,7 +9492,7 @@
                             "beginColumn" : 2,
                             "endLine" : 630,
                             "endColumn" : 92,
-                            "offset" : 33478,
+                            "offset" : 33304,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -9362,12 +9506,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 134,
+                                "beginLine" : 144,
                                 "beginColumn" : 5,
-                                "endLine" : 149,
+                                "endLine" : 164,
                                 "endColumn" : 5,
-                                "offset" : 4808,
-                                "length" : 749
+                                "offset" : 5814,
+                                "length" : 1252
                               }
                             },
                             {
@@ -9511,7 +9655,7 @@
                             "beginColumn" : 2,
                             "endLine" : 631,
                             "endColumn" : 92,
-                            "offset" : 33572,
+                            "offset" : 33398,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -9525,12 +9669,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
                                 },
-                                "beginLine" : 150,
+                                "beginLine" : 165,
                                 "beginColumn" : 5,
-                                "endLine" : 165,
+                                "endLine" : 185,
                                 "endColumn" : 5,
-                                "offset" : 5563,
-                                "length" : 749
+                                "offset" : 7072,
+                                "length" : 1252
                               }
                             },
                             {
@@ -10112,7 +10256,86 @@
                         ]
                       },
                       "integrationReport" : {
-                        "type" : "None"
+                        "type" : "Some",
+                        "value" : {
+                          "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
+                          "assumesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 0,
+                            "entries" : [
+                            ]
+                          },
+                          "guaranteesReport" : {
+                            "type" : "HashSMap",
+                            "size" : 4,
+                            "entries" : [
+                              [
+                                "valid_tx_out_message_port0",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 106,
+                                  "beginColumn" : 11,
+                                  "endLine" : 109,
+                                  "endColumn" : 177,
+                                  "offset" : 3453,
+                                  "length" : 431
+                                }
+                              ],
+                              [
+                                "valid_tx_out_message_port1",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 127,
+                                  "beginColumn" : 11,
+                                  "endLine" : 130,
+                                  "endColumn" : 177,
+                                  "offset" : 4711,
+                                  "length" : 431
+                                }
+                              ],
+                              [
+                                "valid_tx_out_message_port2",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 148,
+                                  "beginColumn" : 11,
+                                  "endLine" : 151,
+                                  "endColumn" : 177,
+                                  "offset" : 5969,
+                                  "length" : 431
+                                }
+                              ],
+                              [
+                                "valid_tx_out_message_port3",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_api.rs"
+                                  },
+                                  "beginLine" : 169,
+                                  "beginColumn" : 11,
+                                  "endLine" : 172,
+                                  "endColumn" : 177,
+                                  "offset" : 7227,
+                                  "length" : 431
+                                }
+                              ]
+                            ]
+                          }
+                        }
                       },
                       "initializeReport" : {
                         "type" : "HashSMap",
@@ -10414,7 +10637,7 @@
                       "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
                       "gumboxMethods" : {
                         "type" : "HashSMap",
-                        "size" : 42,
+                        "size" : 51,
                         "entries" : [
                           [
                             "two_bytes_to_u16",
@@ -10801,6 +11024,150 @@
                             }
                           ],
                           [
+                            "I_Guar_EthernetFramesTxOut0",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 185,
+                              "beginColumn" : 1,
+                              "endLine" : 189,
+                              "endColumn" : 1,
+                              "offset" : 4423,
+                              "length" : 315
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesTxOut0",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 196,
+                              "beginColumn" : 1,
+                              "endLine" : 202,
+                              "endColumn" : 1,
+                              "offset" : 4964,
+                              "length" : 227
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesTxOut1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 209,
+                              "beginColumn" : 1,
+                              "endLine" : 213,
+                              "endColumn" : 1,
+                              "offset" : 5417,
+                              "length" : 315
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesTxOut1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 220,
+                              "beginColumn" : 1,
+                              "endLine" : 226,
+                              "endColumn" : 1,
+                              "offset" : 5958,
+                              "length" : 227
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesTxOut2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 233,
+                              "beginColumn" : 1,
+                              "endLine" : 237,
+                              "endColumn" : 1,
+                              "offset" : 6411,
+                              "length" : 315
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesTxOut2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 244,
+                              "beginColumn" : 1,
+                              "endLine" : 250,
+                              "endColumn" : 1,
+                              "offset" : 6952,
+                              "length" : 227
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesTxOut3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 257,
+                              "beginColumn" : 1,
+                              "endLine" : 261,
+                              "endColumn" : 1,
+                              "offset" : 7405,
+                              "length" : 315
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesTxOut3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 268,
+                              "beginColumn" : 1,
+                              "endLine" : 274,
+                              "endColumn" : 1,
+                              "offset" : 7946,
+                              "length" : 227
+                            }
+                          ],
+                          [
+                            "initialize_IEP_Post",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
+                              },
+                              "beginLine" : 283,
+                              "beginColumn" : 1,
+                              "endLine" : 294,
+                              "endColumn" : 1,
+                              "offset" : 8480,
+                              "length" : 636
+                            }
+                          ],
+                          [
                             "compute_spec_hlr_07_tx0_can_send_valid_arp_guarantee",
                             {
                               "type" : "Position",
@@ -10808,11 +11175,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 186,
+                              "beginLine" : 302,
                               "beginColumn" : 1,
-                              "endLine" : 195,
+                              "endLine" : 311,
                               "endColumn" : 1,
-                              "offset" : 4406,
+                              "offset" : 9325,
                               "length" : 495
                             }
                           ],
@@ -10824,11 +11191,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 203,
+                              "beginLine" : 319,
                               "beginColumn" : 1,
-                              "endLine" : 212,
+                              "endLine" : 328,
                               "endColumn" : 1,
-                              "offset" : 5111,
+                              "offset" : 10030,
                               "length" : 532
                             }
                           ],
@@ -10840,11 +11207,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 220,
+                              "beginLine" : 336,
                               "beginColumn" : 1,
-                              "endLine" : 227,
+                              "endLine" : 343,
                               "endColumn" : 1,
-                              "offset" : 5842,
+                              "offset" : 10761,
                               "length" : 339
                             }
                           ],
@@ -10856,11 +11223,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 235,
+                              "beginLine" : 351,
                               "beginColumn" : 1,
-                              "endLine" : 242,
+                              "endLine" : 358,
                               "endColumn" : 1,
-                              "offset" : 6380,
+                              "offset" : 11299,
                               "length" : 281
                             }
                           ],
@@ -10872,11 +11239,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 250,
+                              "beginLine" : 366,
                               "beginColumn" : 1,
-                              "endLine" : 259,
+                              "endLine" : 375,
                               "endColumn" : 1,
-                              "offset" : 6870,
+                              "offset" : 11789,
                               "length" : 495
                             }
                           ],
@@ -10888,11 +11255,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 267,
+                              "beginLine" : 383,
                               "beginColumn" : 1,
-                              "endLine" : 276,
+                              "endLine" : 392,
                               "endColumn" : 1,
-                              "offset" : 7575,
+                              "offset" : 12494,
                               "length" : 532
                             }
                           ],
@@ -10904,11 +11271,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 284,
+                              "beginLine" : 400,
                               "beginColumn" : 1,
-                              "endLine" : 291,
+                              "endLine" : 407,
                               "endColumn" : 1,
-                              "offset" : 8306,
+                              "offset" : 13225,
                               "length" : 339
                             }
                           ],
@@ -10920,11 +11287,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 299,
+                              "beginLine" : 415,
                               "beginColumn" : 1,
-                              "endLine" : 306,
+                              "endLine" : 422,
                               "endColumn" : 1,
-                              "offset" : 8844,
+                              "offset" : 13763,
                               "length" : 281
                             }
                           ],
@@ -10936,11 +11303,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 314,
+                              "beginLine" : 430,
                               "beginColumn" : 1,
-                              "endLine" : 323,
+                              "endLine" : 439,
                               "endColumn" : 1,
-                              "offset" : 9334,
+                              "offset" : 14253,
                               "length" : 495
                             }
                           ],
@@ -10952,11 +11319,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 331,
+                              "beginLine" : 447,
                               "beginColumn" : 1,
-                              "endLine" : 340,
+                              "endLine" : 456,
                               "endColumn" : 1,
-                              "offset" : 10039,
+                              "offset" : 14958,
                               "length" : 532
                             }
                           ],
@@ -10968,11 +11335,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 348,
+                              "beginLine" : 464,
                               "beginColumn" : 1,
-                              "endLine" : 355,
+                              "endLine" : 471,
                               "endColumn" : 1,
-                              "offset" : 10770,
+                              "offset" : 15689,
                               "length" : 339
                             }
                           ],
@@ -10984,11 +11351,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 363,
+                              "beginLine" : 479,
                               "beginColumn" : 1,
-                              "endLine" : 370,
+                              "endLine" : 486,
                               "endColumn" : 1,
-                              "offset" : 11308,
+                              "offset" : 16227,
                               "length" : 281
                             }
                           ],
@@ -11000,11 +11367,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 378,
+                              "beginLine" : 494,
                               "beginColumn" : 1,
-                              "endLine" : 387,
+                              "endLine" : 503,
                               "endColumn" : 1,
-                              "offset" : 11798,
+                              "offset" : 16717,
                               "length" : 495
                             }
                           ],
@@ -11016,11 +11383,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 395,
+                              "beginLine" : 511,
                               "beginColumn" : 1,
-                              "endLine" : 404,
+                              "endLine" : 520,
                               "endColumn" : 1,
-                              "offset" : 12503,
+                              "offset" : 17422,
                               "length" : 532
                             }
                           ],
@@ -11032,11 +11399,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 412,
+                              "beginLine" : 528,
                               "beginColumn" : 1,
-                              "endLine" : 419,
+                              "endLine" : 535,
                               "endColumn" : 1,
-                              "offset" : 13234,
+                              "offset" : 18153,
                               "length" : 339
                             }
                           ],
@@ -11048,11 +11415,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 427,
+                              "beginLine" : 543,
                               "beginColumn" : 1,
-                              "endLine" : 434,
+                              "endLine" : 550,
                               "endColumn" : 1,
-                              "offset" : 13772,
+                              "offset" : 18691,
                               "length" : 281
                             }
                           ],
@@ -11064,11 +11431,11 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 447,
+                              "beginLine" : 563,
                               "beginColumn" : 1,
-                              "endLine" : 475,
+                              "endLine" : 591,
                               "endColumn" : 1,
-                              "offset" : 14631,
+                              "offset" : 19550,
                               "length" : 2533
                             }
                           ],
@@ -11080,12 +11447,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_TxFirewall_TxFirewall\/src\/bridge\/seL4_TxFirewall_TxFirewall_GUMBOX.rs"
                               },
-                              "beginLine" : 488,
+                              "beginLine" : 604,
                               "beginColumn" : 1,
-                              "endLine" : 502,
+                              "endLine" : 624,
                               "endColumn" : 1,
-                              "offset" : 17723,
-                              "length" : 862
+                              "offset" : 22642,
+                              "length" : 1274
                             }
                           ]
                         ]
@@ -11122,7 +11489,7 @@
                       "beginColumn" : 2,
                       "endLine" : 287,
                       "endColumn" : 58,
-                      "offset" : 14606,
+                      "offset" : 14495,
                       "length" : 56
                     }
                   },
@@ -11178,12 +11545,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 173,
+                                "beginLine" : 213,
                                 "beginColumn" : 5,
-                                "endLine" : 186,
+                                "endLine" : 231,
                                 "endColumn" : 5,
-                                "offset" : 6738,
-                                "length" : 736
+                                "offset" : 11393,
+                                "length" : 1383
                               }
                             },
                             {
@@ -11198,10 +11565,10 @@
                                 },
                                 "beginLine" : 46,
                                 "beginColumn" : 5,
-                                "endLine" : 53,
+                                "endLine" : 58,
                                 "endColumn" : 5,
                                 "offset" : 1304,
-                                "length" : 267
+                                "length" : 914
                               }
                             },
                             {
@@ -11341,12 +11708,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 187,
+                                "beginLine" : 232,
                                 "beginColumn" : 5,
-                                "endLine" : 200,
+                                "endLine" : 250,
                                 "endColumn" : 5,
-                                "offset" : 7480,
-                                "length" : 736
+                                "offset" : 12782,
+                                "length" : 1383
                               }
                             },
                             {
@@ -11359,12 +11726,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 56,
+                                "beginLine" : 61,
                                 "beginColumn" : 5,
-                                "endLine" : 63,
+                                "endLine" : 73,
                                 "endColumn" : 5,
-                                "offset" : 1609,
-                                "length" : 267
+                                "offset" : 2256,
+                                "length" : 914
                               }
                             },
                             {
@@ -11504,12 +11871,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 201,
+                                "beginLine" : 251,
                                 "beginColumn" : 5,
-                                "endLine" : 214,
+                                "endLine" : 269,
                                 "endColumn" : 5,
-                                "offset" : 8222,
-                                "length" : 736
+                                "offset" : 14171,
+                                "length" : 1383
                               }
                             },
                             {
@@ -11522,12 +11889,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 66,
+                                "beginLine" : 76,
                                 "beginColumn" : 5,
-                                "endLine" : 73,
+                                "endLine" : 88,
                                 "endColumn" : 5,
-                                "offset" : 1914,
-                                "length" : 267
+                                "offset" : 3208,
+                                "length" : 914
                               }
                             },
                             {
@@ -11667,12 +12034,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 215,
+                                "beginLine" : 270,
                                 "beginColumn" : 5,
-                                "endLine" : 228,
+                                "endLine" : 288,
                                 "endColumn" : 5,
-                                "offset" : 8964,
-                                "length" : 736
+                                "offset" : 15560,
+                                "length" : 1383
                               }
                             },
                             {
@@ -11685,12 +12052,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 76,
+                                "beginLine" : 91,
                                 "beginColumn" : 5,
-                                "endLine" : 83,
+                                "endLine" : 103,
                                 "endColumn" : 5,
-                                "offset" : 2219,
-                                "length" : 267
+                                "offset" : 4160,
+                                "length" : 914
                               }
                             },
                             {
@@ -11830,12 +12197,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 102,
+                                "beginLine" : 122,
                                 "beginColumn" : 5,
-                                "endLine" : 121,
+                                "endLine" : 143,
                                 "endColumn" : 5,
-                                "offset" : 3554,
-                                "length" : 921
+                                "offset" : 6142,
+                                "length" : 1269
                               }
                             },
                             {
@@ -11993,12 +12360,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 122,
+                                "beginLine" : 144,
                                 "beginColumn" : 5,
-                                "endLine" : 137,
+                                "endLine" : 165,
                                 "endColumn" : 5,
-                                "offset" : 4481,
-                                "length" : 696
+                                "offset" : 7417,
+                                "length" : 1269
                               }
                             },
                             {
@@ -12156,12 +12523,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 138,
+                                "beginLine" : 166,
                                 "beginColumn" : 5,
-                                "endLine" : 153,
+                                "endLine" : 187,
                                 "endColumn" : 5,
-                                "offset" : 5183,
-                                "length" : 696
+                                "offset" : 8692,
+                                "length" : 1269
                               }
                             },
                             {
@@ -12319,12 +12686,12 @@
                                   "type" : "Some",
                                   "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                 },
-                                "beginLine" : 154,
+                                "beginLine" : 188,
                                 "beginColumn" : 5,
-                                "endLine" : 169,
+                                "endLine" : 209,
                                 "endColumn" : 5,
-                                "offset" : 5885,
-                                "length" : 696
+                                "offset" : 9967,
+                                "length" : 1269
                               }
                             },
                             {
@@ -13231,13 +13598,77 @@
                           "type" : "org.sireum.hamr.codegen.microkit.reporting.GubmoIntegrationReport",
                           "assumesReport" : {
                             "type" : "HashSMap",
-                            "size" : 0,
+                            "size" : 4,
                             "entries" : [
+                              [
+                                "valid_tx_message_port0",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 225,
+                                  "beginColumn" : 13,
+                                  "endLine" : 228,
+                                  "endColumn" : 241,
+                                  "offset" : 12106,
+                                  "length" : 561
+                                }
+                              ],
+                              [
+                                "valid_tx_message_port1",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 244,
+                                  "beginColumn" : 13,
+                                  "endLine" : 247,
+                                  "endColumn" : 241,
+                                  "offset" : 13495,
+                                  "length" : 561
+                                }
+                              ],
+                              [
+                                "valid_tx_message_port2",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 263,
+                                  "beginColumn" : 13,
+                                  "endLine" : 266,
+                                  "endColumn" : 241,
+                                  "offset" : 14884,
+                                  "length" : 561
+                                }
+                              ],
+                              [
+                                "valid_tx_message_port3",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 282,
+                                  "beginColumn" : 13,
+                                  "endLine" : 285,
+                                  "endColumn" : 241,
+                                  "offset" : 16273,
+                                  "length" : 561
+                                }
+                              ]
                             ]
                           },
                           "guaranteesReport" : {
                             "type" : "HashSMap",
-                            "size" : 1,
+                            "size" : 4,
                             "entries" : [
                               [
                                 "valid_message_port0",
@@ -13247,12 +13678,60 @@
                                     "type" : "Some",
                                     "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
                                   },
-                                  "beginLine" : 106,
+                                  "beginLine" : 126,
                                   "beginColumn" : 11,
-                                  "endLine" : 108,
-                                  "endColumn" : 98,
-                                  "offset" : 3692,
-                                  "length" : 168
+                                  "endLine" : 130,
+                                  "endColumn" : 226,
+                                  "offset" : 6280,
+                                  "length" : 516
+                                }
+                              ],
+                              [
+                                "valid_message_port1",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 148,
+                                  "beginColumn" : 11,
+                                  "endLine" : 152,
+                                  "endColumn" : 226,
+                                  "offset" : 7555,
+                                  "length" : 516
+                                }
+                              ],
+                              [
+                                "valid_message_port2",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 170,
+                                  "beginColumn" : 11,
+                                  "endLine" : 174,
+                                  "endColumn" : 226,
+                                  "offset" : 8830,
+                                  "length" : 516
+                                }
+                              ],
+                              [
+                                "valid_message_port3",
+                                {
+                                  "type" : "Position",
+                                  "uriOpt" : {
+                                    "type" : "Some",
+                                    "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_api.rs"
+                                  },
+                                  "beginLine" : 192,
+                                  "beginColumn" : 11,
+                                  "endLine" : 196,
+                                  "endColumn" : 226,
+                                  "offset" : 10105,
+                                  "length" : 516
                                 }
                               ]
                             ]
@@ -13276,7 +13755,7 @@
                       "type" : "org.sireum.hamr.codegen.microkit.reporting.GumboXReport",
                       "gumboxMethods" : {
                         "type" : "HashSMap",
-                        "size" : 48,
+                        "size" : 63,
                         "entries" : [
                           [
                             "TCP_ALLOWED_PORTS",
@@ -13992,10 +14471,10 @@
                               },
                               "beginLine" : 309,
                               "beginColumn" : 1,
-                              "endLine" : 312,
+                              "endLine" : 314,
                               "endColumn" : 1,
                               "offset" : 7754,
-                              "length" : 116
+                              "length" : 263
                             }
                           ],
                           [
@@ -14006,12 +14485,236 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
                               },
-                              "beginLine" : 319,
+                              "beginLine" : 321,
                               "beginColumn" : 1,
-                              "endLine" : 325,
+                              "endLine" : 327,
                               "endColumn" : 1,
-                              "offset" : 8083,
+                              "offset" : 8230,
                               "length" : 205
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesRx1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 334,
+                              "beginColumn" : 1,
+                              "endLine" : 339,
+                              "endColumn" : 1,
+                              "offset" : 8648,
+                              "length" : 263
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesRx1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 346,
+                              "beginColumn" : 1,
+                              "endLine" : 352,
+                              "endColumn" : 1,
+                              "offset" : 9124,
+                              "length" : 205
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesRx2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 359,
+                              "beginColumn" : 1,
+                              "endLine" : 364,
+                              "endColumn" : 1,
+                              "offset" : 9542,
+                              "length" : 263
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesRx2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 371,
+                              "beginColumn" : 1,
+                              "endLine" : 377,
+                              "endColumn" : 1,
+                              "offset" : 10018,
+                              "length" : 205
+                            }
+                          ],
+                          [
+                            "I_Guar_EthernetFramesRx3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 384,
+                              "beginColumn" : 1,
+                              "endLine" : 389,
+                              "endColumn" : 1,
+                              "offset" : 10436,
+                              "length" : 263
+                            }
+                          ],
+                          [
+                            "I_Guar_Guard_EthernetFramesRx3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 396,
+                              "beginColumn" : 1,
+                              "endLine" : 402,
+                              "endColumn" : 1,
+                              "offset" : 10912,
+                              "length" : 205
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesTx0",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 409,
+                              "beginColumn" : 1,
+                              "endLine" : 413,
+                              "endColumn" : 1,
+                              "offset" : 11346,
+                              "length" : 294
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesTx0",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 420,
+                              "beginColumn" : 1,
+                              "endLine" : 426,
+                              "endColumn" : 1,
+                              "offset" : 11869,
+                              "length" : 212
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesTx1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 433,
+                              "beginColumn" : 1,
+                              "endLine" : 437,
+                              "endColumn" : 1,
+                              "offset" : 12310,
+                              "length" : 294
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesTx1",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 444,
+                              "beginColumn" : 1,
+                              "endLine" : 450,
+                              "endColumn" : 1,
+                              "offset" : 12833,
+                              "length" : 212
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesTx2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 457,
+                              "beginColumn" : 1,
+                              "endLine" : 461,
+                              "endColumn" : 1,
+                              "offset" : 13274,
+                              "length" : 294
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesTx2",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 468,
+                              "beginColumn" : 1,
+                              "endLine" : 474,
+                              "endColumn" : 1,
+                              "offset" : 13797,
+                              "length" : 212
+                            }
+                          ],
+                          [
+                            "I_Assm_EthernetFramesTx3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 481,
+                              "beginColumn" : 1,
+                              "endLine" : 485,
+                              "endColumn" : 1,
+                              "offset" : 14238,
+                              "length" : 294
+                            }
+                          ],
+                          [
+                            "I_Assm_Guard_EthernetFramesTx3",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 492,
+                              "beginColumn" : 1,
+                              "endLine" : 498,
+                              "endColumn" : 1,
+                              "offset" : 14761,
+                              "length" : 212
                             }
                           ],
                           [
@@ -14022,12 +14725,28 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
                               },
-                              "beginLine" : 334,
+                              "beginLine" : 507,
                               "beginColumn" : 1,
-                              "endLine" : 342,
+                              "endLine" : 518,
                               "endColumn" : 1,
-                              "offset" : 8583,
-                              "length" : 410
+                              "offset" : 15268,
+                              "length" : 584
+                            }
+                          ],
+                          [
+                            "compute_CEP_Pre",
+                            {
+                              "type" : "Position",
+                              "uriOpt" : {
+                                "type" : "Some",
+                                "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
+                              },
+                              "beginLine" : 527,
+                              "beginColumn" : 1,
+                              "endLine" : 540,
+                              "endColumn" : 1,
+                              "offset" : 16169,
+                              "length" : 697
                             }
                           ],
                           [
@@ -14038,12 +14757,12 @@
                                 "type" : "Some",
                                 "value" : "crates\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver\/src\/bridge\/seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_GUMBOX.rs"
                               },
-                              "beginLine" : 355,
+                              "beginLine" : 553,
                               "beginColumn" : 1,
-                              "endLine" : 369,
+                              "endLine" : 570,
                               "endColumn" : 1,
-                              "offset" : 9544,
-                              "length" : 692
+                              "offset" : 17417,
+                              "length" : 926
                             }
                           ]
                         ]

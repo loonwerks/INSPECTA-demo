@@ -308,7 +308,9 @@ pub fn input_eq_mav_output(
   */
 pub fn I_Guar_EthernetFramesRx0(EthernetFramesRx0: SW::RawEthernetMessage) -> bool
 {
-  valid_arp(EthernetFramesRx0)
+  valid_arp(EthernetFramesRx0) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRx0) |
+      (valid_ipv4_udp_port(EthernetFramesRx0) | !(rx_allow_outbound_frame(EthernetFramesRx0))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx0
@@ -321,6 +323,177 @@ pub fn I_Guar_Guard_EthernetFramesRx0(EthernetFramesRx0: Option<SW::RawEthernetM
   implies!(
     EthernetFramesRx0.is_some(),
     I_Guar_EthernetFramesRx0(EthernetFramesRx0.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx1
+  *
+  * guarantee valid_message_port1
+  *  Only valid messages being sent to the RxFirewall Port 1
+  */
+pub fn I_Guar_EthernetFramesRx1(EthernetFramesRx1: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRx1) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRx1) |
+      (valid_ipv4_udp_port(EthernetFramesRx1) | !(rx_allow_outbound_frame(EthernetFramesRx1))))
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx1
+  *
+  * guarantee valid_message_port1
+  *  Only valid messages being sent to the RxFirewall Port 1
+  */
+pub fn I_Guar_Guard_EthernetFramesRx1(EthernetFramesRx1: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRx1.is_some(),
+    I_Guar_EthernetFramesRx1(EthernetFramesRx1.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx2
+  *
+  * guarantee valid_message_port2
+  *  Only valid messages being sent to the RxFirewall Port 2
+  */
+pub fn I_Guar_EthernetFramesRx2(EthernetFramesRx2: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRx2) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRx2) |
+      (valid_ipv4_udp_port(EthernetFramesRx2) | !(rx_allow_outbound_frame(EthernetFramesRx2))))
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx2
+  *
+  * guarantee valid_message_port2
+  *  Only valid messages being sent to the RxFirewall Port 2
+  */
+pub fn I_Guar_Guard_EthernetFramesRx2(EthernetFramesRx2: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRx2.is_some(),
+    I_Guar_EthernetFramesRx2(EthernetFramesRx2.unwrap())
+  )
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx3
+  *
+  * guarantee valid_message_port3
+  *  Only valid messages being sent to the RxFirewall Port 3
+  */
+pub fn I_Guar_EthernetFramesRx3(EthernetFramesRx3: SW::RawEthernetMessage) -> bool
+{
+  valid_arp(EthernetFramesRx3) |
+    (valid_ipv4_udp_mavlink(EthernetFramesRx3) |
+      (valid_ipv4_udp_port(EthernetFramesRx3) | !(rx_allow_outbound_frame(EthernetFramesRx3))))
+}
+
+/** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx3
+  *
+  * guarantee valid_message_port3
+  *  Only valid messages being sent to the RxFirewall Port 3
+  */
+pub fn I_Guar_Guard_EthernetFramesRx3(EthernetFramesRx3: Option<SW::RawEthernetMessage>) -> bool
+{
+  implies!(
+    EthernetFramesRx3.is_some(),
+    I_Guar_EthernetFramesRx3(EthernetFramesRx3.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx0
+  *
+  * assume valid_tx_message_port0
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+  */
+pub fn I_Assm_EthernetFramesTx0(EthernetFramesTx0: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTx0.amessage) && valid_output_arp_size(EthernetFramesTx0) |
+    valid_ipv4(EthernetFramesTx0.amessage) && valid_output_ipv4_size(EthernetFramesTx0.amessage, EthernetFramesTx0)
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx0
+  *
+  * assume valid_tx_message_port0
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
+  */
+pub fn I_Assm_Guard_EthernetFramesTx0(EthernetFramesTx0: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTx0.is_some(),
+    I_Assm_EthernetFramesTx0(EthernetFramesTx0.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx1
+  *
+  * assume valid_tx_message_port1
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+  */
+pub fn I_Assm_EthernetFramesTx1(EthernetFramesTx1: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTx1.amessage) && valid_output_arp_size(EthernetFramesTx1) |
+    valid_ipv4(EthernetFramesTx1.amessage) && valid_output_ipv4_size(EthernetFramesTx1.amessage, EthernetFramesTx1)
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx1
+  *
+  * assume valid_tx_message_port1
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
+  */
+pub fn I_Assm_Guard_EthernetFramesTx1(EthernetFramesTx1: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTx1.is_some(),
+    I_Assm_EthernetFramesTx1(EthernetFramesTx1.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx2
+  *
+  * assume valid_tx_message_port2
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+  */
+pub fn I_Assm_EthernetFramesTx2(EthernetFramesTx2: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTx2.amessage) && valid_output_arp_size(EthernetFramesTx2) |
+    valid_ipv4(EthernetFramesTx2.amessage) && valid_output_ipv4_size(EthernetFramesTx2.amessage, EthernetFramesTx2)
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx2
+  *
+  * assume valid_tx_message_port2
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
+  */
+pub fn I_Assm_Guard_EthernetFramesTx2(EthernetFramesTx2: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTx2.is_some(),
+    I_Assm_EthernetFramesTx2(EthernetFramesTx2.unwrap())
+  )
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx3
+  *
+  * assume valid_tx_message_port3
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+  */
+pub fn I_Assm_EthernetFramesTx3(EthernetFramesTx3: SW::SizedEthernetMessage_Impl) -> bool
+{
+  valid_arp(EthernetFramesTx3.amessage) && valid_output_arp_size(EthernetFramesTx3) |
+    valid_ipv4(EthernetFramesTx3.amessage) && valid_output_ipv4_size(EthernetFramesTx3.amessage, EthernetFramesTx3)
+}
+
+/** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx3
+  *
+  * assume valid_tx_message_port3
+  *   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
+  */
+pub fn I_Assm_Guard_EthernetFramesTx3(EthernetFramesTx3: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  implies!(
+    EthernetFramesTx3.is_some(),
+    I_Assm_EthernetFramesTx3(EthernetFramesTx3.unwrap())
   )
 }
 
@@ -338,7 +511,32 @@ pub fn initialize_IEP_Post(
   api_EthernetFramesRx3: Option<SW::RawEthernetMessage>) -> bool
 {
   // I-Guar-Guard: Integration constraints for LowLevelEthernetDriver's outgoing ports"
-  I_Guar_Guard_EthernetFramesRx0(api_EthernetFramesRx0)
+  I_Guar_Guard_EthernetFramesRx0(api_EthernetFramesRx0) &
+  I_Guar_Guard_EthernetFramesRx1(api_EthernetFramesRx1) &
+  I_Guar_Guard_EthernetFramesRx2(api_EthernetFramesRx2) &
+  I_Guar_Guard_EthernetFramesRx3(api_EthernetFramesRx3)
+}
+
+/** CEP-Pre: Compute Entrypoint Pre-Condition for LowLevelEthernetDriver
+  *
+  * @param api_EthernetFramesTx0 incoming event data port
+  * @param api_EthernetFramesTx1 incoming event data port
+  * @param api_EthernetFramesTx2 incoming event data port
+  * @param api_EthernetFramesTx3 incoming event data port
+  */
+pub fn compute_CEP_Pre(
+  api_EthernetFramesTx0: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTx1: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTx2: Option<SW::SizedEthernetMessage_Impl>,
+  api_EthernetFramesTx3: Option<SW::SizedEthernetMessage_Impl>) -> bool
+{
+  // I-Assm-Guard: Integration constraints for LowLevelEthernetDriver's incoming ports
+  let r0: bool = I_Assm_Guard_EthernetFramesTx0(api_EthernetFramesTx0);
+  let r1: bool = I_Assm_Guard_EthernetFramesTx1(api_EthernetFramesTx1);
+  let r2: bool = I_Assm_Guard_EthernetFramesTx2(api_EthernetFramesTx2);
+  let r3: bool = I_Assm_Guard_EthernetFramesTx3(api_EthernetFramesTx3);
+
+  return r0 && r1 && r2 && r3;
 }
 
 /** CEP-Post: Compute Entrypoint Post-Condition for LowLevelEthernetDriver
@@ -364,6 +562,9 @@ pub fn compute_CEP_Post(
 {
   // I-Guar-Guard: Integration constraints for LowLevelEthernetDriver's outgoing ports
   let r0: bool = I_Guar_Guard_EthernetFramesRx0(api_EthernetFramesRx0);
+  let r1: bool = I_Guar_Guard_EthernetFramesRx1(api_EthernetFramesRx1);
+  let r2: bool = I_Guar_Guard_EthernetFramesRx2(api_EthernetFramesRx2);
+  let r3: bool = I_Guar_Guard_EthernetFramesRx3(api_EthernetFramesRx3);
 
-  return r0;
+  return r0 && r1 && r2 && r3;
 }
