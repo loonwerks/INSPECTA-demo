@@ -248,6 +248,7 @@ jobs:
         slang-options: "{ \"slang-output-dir\" : \"hamr\", \"package-name\" : \"firewall\", \"no-proyek-ive\" : true }"
         transpiler-options: "{ \"run-transpiler\" : true, \"exclude-component-impl\" : true, \"output-c-dir\" : \"hamr/cache\", \"bit-width\" : 32, \"max-string-size\" : 256, \"max-array-size\" : 1 }"
         camkes-microkit-options: "{ \"workspace-root-dir\" : \"system\" }"
+        report-filename: 'codegen-report.json'
     - name: Get codegen timestamp
       if: ${{ always() }}
       run: echo "Codegen timestamp is ${{ steps.hamr.outputs.timestamp }}"
@@ -256,22 +257,6 @@ jobs:
       run: echo "Codegen status is ${{ steps.hamr.outputs.status }}"
     - name: Echo status to output
       run: echo "status=${{ steps.hamr.outputs.status }}" >> "$GITHUB_OUTPUT"
-    - name: Count Lines of Code (cloc)
-      if: ${{ always() }}
-      run: |
-        apt update && apt install -y cloc
-        cloc $GITHUB_WORKSPACE/system/hamr/microkit --exclude-lang=YAML --exclude-dir=reporting --json --report-file=cloc-report.json
-#      uses: djdefi/cloc-action@main
-#      with:
-#        options: "$GITHUB_WORKSPACE/system/hamr/microkit --exclude-lang=YAML --exclude-dir=reporting --json --report-file=cloc-report.json"
-    - name: Collect codegen report
-      if: ${{ always() }}
-      run: |
-        cat codegen.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codegen-messages.json
-        jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
-        jq -s 'add' codegen-messages.json cloc-report-sub.json \
-          | jq --arg timestamp "${{ steps.hamr.outputs.timestamp }}" --arg exitcode ${{ steps.hamr.outputs.status }} '. += $ARGS.named' \
-          > codegen-report.json
     - name: Archive codegen report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
