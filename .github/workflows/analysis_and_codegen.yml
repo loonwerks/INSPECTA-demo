@@ -160,7 +160,6 @@ jobs:
       uses: ./INSPECTA-Logika-CI-Action
       with:
         sourcepaths: "[ \"system\" ]"
-        feedback: logika-feedback
         parseable-messages: true
         report-filename: logika-report.json
     - name: Get analysis timestamp
@@ -171,14 +170,6 @@ jobs:
       run: echo "Analysis status is ${{ steps.logika.outputs.status }}"
     - name: Echo status to output
       run: echo "status=${{ steps.logika.outputs.status }}" >> "$GITHUB_OUTPUT"
-    - name: Collect analysis results report
-      if: ${{ always() }}
-      run: |
-        cat logika.out | jq --raw-input . | jq --slurp '{"messages" : .}' \
-          | jq --arg timestamp "${{ steps.logika.outputs.timestamp }}" \
-          --arg exitcode ${{ steps.logika.outputs.status }} \
-          '. += $ARGS.named' \
-          > logika-report.json
     - name: Archive analysis report
       uses: actions/upload-artifact@v4
       if: ${{ always() }}
@@ -248,7 +239,7 @@ jobs:
         slang-options: "{ \"slang-output-dir\" : \"hamr\", \"package-name\" : \"firewall\", \"no-proyek-ive\" : true }"
         transpiler-options: "{ \"run-transpiler\" : true, \"exclude-component-impl\" : true, \"output-c-dir\" : \"hamr/cache\", \"bit-width\" : 32, \"max-string-size\" : 256, \"max-array-size\" : 1 }"
         camkes-microkit-options: "{ \"workspace-root-dir\" : \"system\" }"
-        report-filename: 'codegen-report.json'
+        report-filename: codegen-report.json
     - name: Get codegen timestamp
       if: ${{ always() }}
       run: echo "Codegen timestamp is ${{ steps.hamr.outputs.timestamp }}"
