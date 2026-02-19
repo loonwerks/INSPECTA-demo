@@ -249,7 +249,7 @@ jobs:
   reports:
     if: ${{ always() }}
     runs-on: ubuntu-latest
-    needs: [verify, codetest, attestation]
+    needs: [verify, codebuild, codetest, attestation]
     continue-on-error: false
 
     permissions:
