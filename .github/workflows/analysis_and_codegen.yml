@@ -160,6 +160,8 @@ jobs:
       uses: ./INSPECTA-Logika-CI-Action
       with:
         sourcepaths: "[ \"system\" ]"
+        feedback: logika-feedback
+        integration-feedback-only: true
         parseable-messages: true
         report-filename: logika-report.json
     - name: Get analysis timestamp
