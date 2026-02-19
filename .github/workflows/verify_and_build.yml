@@ -98,6 +98,7 @@ jobs:
       uses: ./INSPECTA-Codebuild-CI-Action
       with:
         sourcepath: software/hamr/microkit
+        report-filename: codebuild-report.json
     - name: Get codebuild timestamp
       run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
     - name: Get codebuild status
@@ -110,19 +111,6 @@ jobs:
         name: codebuild-built-artifacts
         path: software/hamr/microkit/
         retention-days: 30
-    - name: Count Lines of Code (cloc)
-      if: ${{ always() }}
-      uses: djdefi/cloc-action@main
-      with:
-        options: "--exclude-lang=YAML --json --report-file=cloc-report.json"
-    - name: Collect codegen report
-      if: ${{ always() }}
-      run: |
-        cat codebuild.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codebuild-messages.json
-        jq '{"cloc" : .}' cloc-report.json > cloc-report-sub.json
-        jq -s 'add' codebuild-messages.json cloc-report-sub.json \
-          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codebuild.outputs.status }} '. += $ARGS.named' \
-          > codebuild-report.json
     - name: Archive codebuild report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
