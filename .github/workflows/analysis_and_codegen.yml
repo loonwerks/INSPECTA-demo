@@ -163,7 +163,7 @@ jobs:
         feedback: logika-feedback
         integration-feedback-only: true
         parseable-messages: true
-        parallelization-options: "[ \"parallelization-enable\" : true ]"
+        optimization-options: "[ \"parallelization-enable\" : true ]"
         report-filename: logika-report.json
     - name: Get analysis timestamp
       if: ${{ always() }}
