@@ -79,6 +79,11 @@ pub fn testComputeCB(
   // Initialize the app
   crate::seL4_LowLevelEthernetDriver_LowLevelEthernetDriver_initialize();
 
+  // [CheckPre]: check/filter based on pre-condition.
+  if !GUMBOX::compute_CEP_Pre (api_EthernetFramesTx0, api_EthernetFramesTx1, api_EthernetFramesTx2, api_EthernetFramesTx3) {
+    return HarnessResult::RejectedPrecondition;
+  }
+
   // [PutInPorts]: Set values on the input ports
   put_EthernetFramesTx0(api_EthernetFramesTx0);
   put_EthernetFramesTx1(api_EthernetFramesTx1);

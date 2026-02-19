@@ -42,13 +42,13 @@ verus! {
       ensures
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee hlr_19_mav0_drop_mav_cmd_flash_bootloader
-        api.In0.is_some() && msg_is_mav_cmd_flash_bootloader(api.In0.unwrap().payload) ==>
+        (api.In0.is_some() && msg_is_mav_cmd_flash_bootloader(api.In0.unwrap().payload)) ==>
           api.Out0.is_none(),
         // guarantee hlr_21_mav0_no_input
         !(api.In0.is_some()) ==> api.Out0.is_none(),
         // guarantee hlr_22_mav0_allow
-        api.In0.is_some() && !(msg_is_blacklisted(api.In0.unwrap().payload)) ==>
-          api.Out0.is_some() && mav_input_eq_output(api.In0.unwrap(), api.Out0.unwrap()),
+        (api.In0.is_some() && !(msg_is_blacklisted(api.In0.unwrap().payload))) ==>
+          (api.Out0.is_some() && mav_input_eq_output(api.In0.unwrap(), api.Out0.unwrap())),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");
@@ -148,15 +148,15 @@ verus! {
   pub open spec fn msg_is_mav_v2_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
   {
     msg_is_mavlinkv2(msg) &&
-      (msg_v2_is_command_int(msg) && command_int_msg_v2_is_bootloader_flash(msg) ||
-        msg_v2_is_command_long(msg) && command_long_msg_v2_is_bootloader_flash(msg))
+      ((msg_v2_is_command_int(msg) && command_int_msg_v2_is_bootloader_flash(msg)) ||
+        (msg_v2_is_command_long(msg) && command_long_msg_v2_is_bootloader_flash(msg)))
   }
 
   pub open spec fn msg_is_mav_v1_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
   {
     msg_is_mavlinkv1(msg) &&
-      (msg_v1_is_command_int(msg) && command_int_msg_v1_is_bootloader_flash(msg) ||
-        msg_v1_is_command_long(msg) && command_long_msg_v1_is_bootloader_flash(msg))
+      ((msg_v1_is_command_int(msg) && command_int_msg_v1_is_bootloader_flash(msg)) ||
+        (msg_v1_is_command_long(msg) && command_long_msg_v1_is_bootloader_flash(msg)))
   }
 
   pub open spec fn msg_is_mav_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
