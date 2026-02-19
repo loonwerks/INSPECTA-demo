@@ -46,85 +46,85 @@ verus! {
       ensures
         // BEGIN MARKER TIME TRIGGERED ENSURES
         // guarantee hlr_05_rx0_can_send_arp_to_vmm
-        api.EthernetFramesRxIn0.is_some() && valid_arp(api.EthernetFramesRxIn0.unwrap()) ==>
-          api.VmmOut0.is_some() &&
+        (api.EthernetFramesRxIn0.is_some() && valid_arp(api.EthernetFramesRxIn0.unwrap())) ==>
+          (api.VmmOut0.is_some() &&
             ((api.EthernetFramesRxIn0.unwrap() == api.VmmOut0.unwrap()) &&
-              api.MavlinkOut0.is_none()),
+              api.MavlinkOut0.is_none())),
         // guarantee hlr_18_rx0_can_send_mavlink_udp
-        api.EthernetFramesRxIn0.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn0.unwrap()) ==>
-          api.MavlinkOut0.is_some() &&
-            (input_eq_mav_output(api.EthernetFramesRxIn0.unwrap(), api.MavlinkOut0.unwrap()) && api.VmmOut0.is_none()),
+        (api.EthernetFramesRxIn0.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn0.unwrap())) ==>
+          (api.MavlinkOut0.is_some() &&
+            (input_eq_mav_output(api.EthernetFramesRxIn0.unwrap(), api.MavlinkOut0.unwrap()) && api.VmmOut0.is_none())),
         // guarantee hlr_13_rx0_can_send_ipv4_udp
-        api.EthernetFramesRxIn0.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn0.unwrap()) ==>
-          api.VmmOut0.is_some() &&
+        (api.EthernetFramesRxIn0.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn0.unwrap())) ==>
+          (api.VmmOut0.is_some() &&
             ((api.EthernetFramesRxIn0.unwrap() == api.VmmOut0.unwrap()) &&
-              api.MavlinkOut0.is_none()),
+              api.MavlinkOut0.is_none())),
         // guarantee hlr_15_rx0_disallow
-        api.EthernetFramesRxIn0.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn0.unwrap())) ==>
-          api.VmmOut0.is_none() && api.MavlinkOut0.is_none(),
+        (api.EthernetFramesRxIn0.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn0.unwrap()))) ==>
+          (api.VmmOut0.is_none() && api.MavlinkOut0.is_none()),
         // guarantee hlr_17_rx0_no_input
         !(api.EthernetFramesRxIn0.is_some()) ==>
-          api.VmmOut0.is_none() && api.MavlinkOut0.is_none(),
+          (api.VmmOut0.is_none() && api.MavlinkOut0.is_none()),
         // guarantee hlr_05_rx1_can_send_arp_to_vmm
-        api.EthernetFramesRxIn1.is_some() && valid_arp(api.EthernetFramesRxIn1.unwrap()) ==>
-          api.VmmOut1.is_some() &&
+        (api.EthernetFramesRxIn1.is_some() && valid_arp(api.EthernetFramesRxIn1.unwrap())) ==>
+          (api.VmmOut1.is_some() &&
             ((api.EthernetFramesRxIn1.unwrap() == api.VmmOut1.unwrap()) &&
-              api.MavlinkOut1.is_none()),
+              api.MavlinkOut1.is_none())),
         // guarantee hlr_18_rx1_can_send_mavlink_udp
-        api.EthernetFramesRxIn1.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn1.unwrap()) ==>
-          api.MavlinkOut1.is_some() &&
-            (input_eq_mav_output(api.EthernetFramesRxIn1.unwrap(), api.MavlinkOut1.unwrap()) && api.VmmOut1.is_none()),
+        (api.EthernetFramesRxIn1.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn1.unwrap())) ==>
+          (api.MavlinkOut1.is_some() &&
+            (input_eq_mav_output(api.EthernetFramesRxIn1.unwrap(), api.MavlinkOut1.unwrap()) && api.VmmOut1.is_none())),
         // guarantee hlr_13_rx1_can_send_ipv4_udp
-        api.EthernetFramesRxIn1.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn1.unwrap()) ==>
-          api.VmmOut1.is_some() &&
+        (api.EthernetFramesRxIn1.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn1.unwrap())) ==>
+          (api.VmmOut1.is_some() &&
             ((api.EthernetFramesRxIn1.unwrap() == api.VmmOut1.unwrap()) &&
-              api.MavlinkOut1.is_none()),
+              api.MavlinkOut1.is_none())),
         // guarantee hlr_15_rx1_disallow
-        api.EthernetFramesRxIn1.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn1.unwrap())) ==>
-          api.VmmOut1.is_none() && api.MavlinkOut1.is_none(),
+        (api.EthernetFramesRxIn1.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn1.unwrap()))) ==>
+          (api.VmmOut1.is_none() && api.MavlinkOut1.is_none()),
         // guarantee hlr_17_rx1_no_input
         !(api.EthernetFramesRxIn1.is_some()) ==>
-          api.VmmOut1.is_none() && api.MavlinkOut1.is_none(),
+          (api.VmmOut1.is_none() && api.MavlinkOut1.is_none()),
         // guarantee hlr_05_rx2_can_send_arp_to_vmm
-        api.EthernetFramesRxIn2.is_some() && valid_arp(api.EthernetFramesRxIn2.unwrap()) ==>
-          api.VmmOut2.is_some() &&
+        (api.EthernetFramesRxIn2.is_some() && valid_arp(api.EthernetFramesRxIn2.unwrap())) ==>
+          (api.VmmOut2.is_some() &&
             ((api.EthernetFramesRxIn2.unwrap() == api.VmmOut2.unwrap()) &&
-              api.MavlinkOut2.is_none()),
+              api.MavlinkOut2.is_none())),
         // guarantee hlr_18_rx2_can_send_mavlink_udp
-        api.EthernetFramesRxIn2.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn2.unwrap()) ==>
-          api.MavlinkOut2.is_some() &&
-            (input_eq_mav_output(api.EthernetFramesRxIn2.unwrap(), api.MavlinkOut2.unwrap()) && api.VmmOut2.is_none()),
+        (api.EthernetFramesRxIn2.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn2.unwrap())) ==>
+          (api.MavlinkOut2.is_some() &&
+            (input_eq_mav_output(api.EthernetFramesRxIn2.unwrap(), api.MavlinkOut2.unwrap()) && api.VmmOut2.is_none())),
         // guarantee hlr_13_rx2_can_send_ipv4_udp
-        api.EthernetFramesRxIn2.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn2.unwrap()) ==>
-          api.VmmOut2.is_some() &&
+        (api.EthernetFramesRxIn2.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn2.unwrap())) ==>
+          (api.VmmOut2.is_some() &&
             ((api.EthernetFramesRxIn2.unwrap() == api.VmmOut2.unwrap()) &&
-              api.MavlinkOut2.is_none()),
+              api.MavlinkOut2.is_none())),
         // guarantee hlr_15_rx2_disallow
-        api.EthernetFramesRxIn2.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn2.unwrap())) ==>
-          api.VmmOut2.is_none() && api.MavlinkOut2.is_none(),
+        (api.EthernetFramesRxIn2.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn2.unwrap()))) ==>
+          (api.VmmOut2.is_none() && api.MavlinkOut2.is_none()),
         // guarantee hlr_17_rx2_no_input
         !(api.EthernetFramesRxIn2.is_some()) ==>
-          api.VmmOut2.is_none() && api.MavlinkOut2.is_none(),
+          (api.VmmOut2.is_none() && api.MavlinkOut2.is_none()),
         // guarantee hlr_05_rx3_can_send_arp_to_vmm
-        api.EthernetFramesRxIn3.is_some() && valid_arp(api.EthernetFramesRxIn3.unwrap()) ==>
-          api.VmmOut3.is_some() &&
+        (api.EthernetFramesRxIn3.is_some() && valid_arp(api.EthernetFramesRxIn3.unwrap())) ==>
+          (api.VmmOut3.is_some() &&
             ((api.EthernetFramesRxIn3.unwrap() == api.VmmOut3.unwrap()) &&
-              api.MavlinkOut3.is_none()),
+              api.MavlinkOut3.is_none())),
         // guarantee hlr_18_rx3_can_send_mavlink_udp
-        api.EthernetFramesRxIn3.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn3.unwrap()) ==>
-          api.MavlinkOut3.is_some() &&
-            (input_eq_mav_output(api.EthernetFramesRxIn3.unwrap(), api.MavlinkOut3.unwrap()) && api.VmmOut3.is_none()),
+        (api.EthernetFramesRxIn3.is_some() && valid_ipv4_udp_mavlink(api.EthernetFramesRxIn3.unwrap())) ==>
+          (api.MavlinkOut3.is_some() &&
+            (input_eq_mav_output(api.EthernetFramesRxIn3.unwrap(), api.MavlinkOut3.unwrap()) && api.VmmOut3.is_none())),
         // guarantee hlr_13_rx3_can_send_ipv4_udp
-        api.EthernetFramesRxIn3.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn3.unwrap()) ==>
-          api.VmmOut3.is_some() &&
+        (api.EthernetFramesRxIn3.is_some() && valid_ipv4_udp_port(api.EthernetFramesRxIn3.unwrap())) ==>
+          (api.VmmOut3.is_some() &&
             ((api.EthernetFramesRxIn3.unwrap() == api.VmmOut3.unwrap()) &&
-              api.MavlinkOut3.is_none()),
+              api.MavlinkOut3.is_none())),
         // guarantee hlr_15_rx3_disallow
-        api.EthernetFramesRxIn3.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn3.unwrap())) ==>
-          api.VmmOut3.is_none() && api.MavlinkOut3.is_none(),
+        (api.EthernetFramesRxIn3.is_some() && !(allow_outbound_frame(api.EthernetFramesRxIn3.unwrap()))) ==>
+          (api.VmmOut3.is_none() && api.MavlinkOut3.is_none()),
         // guarantee hlr_17_rx3_no_input
         !(api.EthernetFramesRxIn3.is_some()) ==>
-          api.VmmOut3.is_none() && api.MavlinkOut3.is_none(),
+          (api.VmmOut3.is_none() && api.MavlinkOut3.is_none()),
         // END MARKER TIME TRIGGERED ENSURES
     {
       log_info("compute entrypoint invoked");

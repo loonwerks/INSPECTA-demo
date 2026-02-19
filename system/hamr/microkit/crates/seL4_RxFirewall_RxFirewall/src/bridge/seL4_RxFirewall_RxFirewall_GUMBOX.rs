@@ -33,7 +33,7 @@ pub fn two_bytes_to_u16(
 
 pub fn frame_is_wellformed_eth2(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_frame_ethertype(aframe) && valid_frame_dst_addr(aframe)
+  valid_frame_ethertype(aframe) & valid_frame_dst_addr(aframe)
 }
 
 pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
@@ -45,47 +45,47 @@ pub fn valid_frame_ethertype(aframe: SW::RawEthernetMessage) -> bool
 pub fn valid_frame_dst_addr(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    !((aframe[0] == 0u8) &&
-      ((aframe[1] == 0u8) &&
-        ((aframe[2] == 0u8) &&
-          ((aframe[3] == 0u8) &&
-            ((aframe[4] == 0u8) &&
+    !((aframe[0] == 0u8) &
+      ((aframe[1] == 0u8) &
+        ((aframe[2] == 0u8) &
+          ((aframe[3] == 0u8) &
+            ((aframe[4] == 0u8) &
               (aframe[5] == 0u8))))))
 }
 
 pub fn frame_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[12] == 8u8) &&
-      (aframe[13] == 0u8))
+    (aframe[12] == 8u8) &
+      (aframe[13] == 0u8)
 }
 
 pub fn frame_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[12] == 134u8) &&
-      (aframe[13] == 221u8))
+    (aframe[12] == 134u8) &
+      (aframe[13] == 221u8)
 }
 
 pub fn frame_has_arp(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[12] == 8u8) &&
-      (aframe[13] == 6u8))
+    (aframe[12] == 8u8) &
+      (aframe[13] == 6u8)
 }
 
 pub fn arp_has_ipv4(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[16] == 8u8) &&
-      (aframe[17] == 0u8))
+    (aframe[16] == 8u8) &
+      (aframe[17] == 0u8)
 }
 
 pub fn arp_has_ipv6(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[16] == 134u8) &&
-      (aframe[17] == 221u8))
+    (aframe[16] == 134u8) &
+      (aframe[17] == 221u8)
 }
 
 pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
@@ -96,22 +96,22 @@ pub fn valid_arp_ptype(aframe: SW::RawEthernetMessage) -> bool
 pub fn valid_arp_op(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[20] == 0u8) &&
-      (aframe[21] == 1u8) |
+    (aframe[20] == 0u8) &
+      ((aframe[21] == 1u8) |
         (aframe[21] == 2u8))
 }
 
 pub fn valid_arp_htype(aframe: SW::RawEthernetMessage) -> bool
 {
   (aframe.len() == 1600) &&
-    ((aframe[14] == 0u8) &&
-      (aframe[15] == 1u8))
+    (aframe[14] == 0u8) &
+      (aframe[15] == 1u8)
 }
 
 pub fn wellformed_arp_frame(aframe: SW::RawEthernetMessage) -> bool
 {
   valid_arp_op(aframe) &&
-    (valid_arp_htype(aframe) && valid_arp_ptype(aframe))
+    valid_arp_htype(aframe) & valid_arp_ptype(aframe)
 }
 
 pub fn valid_ipv4_length(aframe: SW::RawEthernetMessage) -> bool
@@ -143,8 +143,8 @@ pub fn valid_ipv4_vers_ihl(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn wellformed_ipv4_frame(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_ipv4_protocol(aframe) &&
-    (valid_ipv4_length(aframe) && valid_ipv4_vers_ihl(aframe))
+  valid_ipv4_protocol(aframe) &
+    (valid_ipv4_length(aframe) & valid_ipv4_vers_ihl(aframe))
 }
 
 pub fn ipv4_is_tcp(aframe: SW::RawEthernetMessage) -> bool
@@ -185,7 +185,7 @@ pub fn udp_is_mavlink_dst_port(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn udp_is_mavlink(aframe: SW::RawEthernetMessage) -> bool
 {
-  udp_is_mavlink_src_port(aframe) && udp_is_mavlink_dst_port(aframe)
+  udp_is_mavlink_src_port(aframe) & udp_is_mavlink_dst_port(aframe)
 }
 
 pub fn frame_has_ipv4_tcp_on_allowed_port_quant(aframe: SW::RawEthernetMessage) -> bool
@@ -202,38 +202,38 @@ pub fn udp_is_valid_direct_dst_port(aframe: SW::RawEthernetMessage) -> bool
 
 pub fn valid_arp(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) &&
-    (frame_has_arp(aframe) && wellformed_arp_frame(aframe))
+  frame_is_wellformed_eth2(aframe) &
+    (frame_has_arp(aframe) & wellformed_arp_frame(aframe))
 }
 
 pub fn valid_ipv4_tcp(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) &&
-    (frame_has_ipv4(aframe) &&
-      (wellformed_ipv4_frame(aframe) && ipv4_is_tcp(aframe)))
+  frame_is_wellformed_eth2(aframe) &
+    (frame_has_ipv4(aframe) &
+      (wellformed_ipv4_frame(aframe) & ipv4_is_tcp(aframe)))
 }
 
 pub fn valid_ipv4_udp(aframe: SW::RawEthernetMessage) -> bool
 {
-  frame_is_wellformed_eth2(aframe) &&
-    (frame_has_ipv4(aframe) &&
-      (wellformed_ipv4_frame(aframe) && ipv4_is_udp(aframe)))
+  frame_is_wellformed_eth2(aframe) &
+    (frame_has_ipv4(aframe) &
+      (wellformed_ipv4_frame(aframe) & ipv4_is_udp(aframe)))
 }
 
 pub fn valid_ipv4_tcp_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_ipv4_tcp(aframe) && frame_has_ipv4_tcp_on_allowed_port_quant(aframe)
+  valid_ipv4_tcp(aframe) & frame_has_ipv4_tcp_on_allowed_port_quant(aframe)
 }
 
 pub fn valid_ipv4_udp_port(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_ipv4_udp(aframe) &&
-    (udp_is_valid_direct_dst_port(aframe) && !(udp_is_mavlink(aframe)))
+  valid_ipv4_udp(aframe) &
+    (udp_is_valid_direct_dst_port(aframe) & !(udp_is_mavlink(aframe)))
 }
 
 pub fn valid_ipv4_udp_mavlink(aframe: SW::RawEthernetMessage) -> bool
 {
-  valid_ipv4_udp(aframe) && udp_is_mavlink(aframe)
+  valid_ipv4_udp(aframe) & udp_is_mavlink(aframe)
 }
 
 pub fn allow_outbound_frame(aframe: SW::RawEthernetMessage) -> bool
@@ -264,7 +264,7 @@ pub fn input_eq_mav_output(
   aframe: SW::RawEthernetMessage,
   output: SW::UdpFrame_Impl) -> bool
 {
-  input_eq_mav_output_headers(aframe, output.headers) && input_eq_mav_output_payload(aframe, output.payload, output.headers)
+  input_eq_mav_output_headers(aframe, output.headers) & input_eq_mav_output_payload(aframe, output.payload, output.headers)
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn0
@@ -402,9 +402,9 @@ pub fn compute_spec_hlr_05_rx0_can_send_arp_to_vmm_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() && valid_arp(api_EthernetFramesRxIn0.unwrap()),
-    api_VmmOut0.is_some() &&
-      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &&
+    api_EthernetFramesRxIn0.is_some() & valid_arp(api_EthernetFramesRxIn0.unwrap()),
+    api_VmmOut0.is_some() &
+      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &
         api_MavlinkOut0.is_none()))
 }
 
@@ -421,9 +421,9 @@ pub fn compute_spec_hlr_18_rx0_can_send_mavlink_udp_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() && valid_ipv4_udp_mavlink(api_EthernetFramesRxIn0.unwrap()),
-    api_MavlinkOut0.is_some() &&
-      (input_eq_mav_output(api_EthernetFramesRxIn0.unwrap(), api_MavlinkOut0.unwrap()) && api_VmmOut0.is_none()))
+    api_EthernetFramesRxIn0.is_some() & valid_ipv4_udp_mavlink(api_EthernetFramesRxIn0.unwrap()),
+    api_MavlinkOut0.is_some() &
+      (input_eq_mav_output(api_EthernetFramesRxIn0.unwrap(), api_MavlinkOut0.unwrap()) & api_VmmOut0.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -439,9 +439,9 @@ pub fn compute_spec_hlr_13_rx0_can_send_ipv4_udp_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() && valid_ipv4_udp_port(api_EthernetFramesRxIn0.unwrap()),
-    api_VmmOut0.is_some() &&
-      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &&
+    api_EthernetFramesRxIn0.is_some() & valid_ipv4_udp_port(api_EthernetFramesRxIn0.unwrap()),
+    api_VmmOut0.is_some() &
+      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &
         api_MavlinkOut0.is_none()))
 }
 
@@ -458,8 +458,8 @@ pub fn compute_spec_hlr_15_rx0_disallow_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() && !(allow_outbound_frame(api_EthernetFramesRxIn0.unwrap())),
-    api_VmmOut0.is_none() && api_MavlinkOut0.is_none())
+    api_EthernetFramesRxIn0.is_some() & !(allow_outbound_frame(api_EthernetFramesRxIn0.unwrap())),
+    api_VmmOut0.is_none() & api_MavlinkOut0.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -476,7 +476,7 @@ pub fn compute_spec_hlr_17_rx0_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn0.is_some()),
-    api_VmmOut0.is_none() && api_MavlinkOut0.is_none())
+    api_VmmOut0.is_none() & api_MavlinkOut0.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -492,9 +492,9 @@ pub fn compute_spec_hlr_05_rx1_can_send_arp_to_vmm_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() && valid_arp(api_EthernetFramesRxIn1.unwrap()),
-    api_VmmOut1.is_some() &&
-      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &&
+    api_EthernetFramesRxIn1.is_some() & valid_arp(api_EthernetFramesRxIn1.unwrap()),
+    api_VmmOut1.is_some() &
+      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &
         api_MavlinkOut1.is_none()))
 }
 
@@ -511,9 +511,9 @@ pub fn compute_spec_hlr_18_rx1_can_send_mavlink_udp_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() && valid_ipv4_udp_mavlink(api_EthernetFramesRxIn1.unwrap()),
-    api_MavlinkOut1.is_some() &&
-      (input_eq_mav_output(api_EthernetFramesRxIn1.unwrap(), api_MavlinkOut1.unwrap()) && api_VmmOut1.is_none()))
+    api_EthernetFramesRxIn1.is_some() & valid_ipv4_udp_mavlink(api_EthernetFramesRxIn1.unwrap()),
+    api_MavlinkOut1.is_some() &
+      (input_eq_mav_output(api_EthernetFramesRxIn1.unwrap(), api_MavlinkOut1.unwrap()) & api_VmmOut1.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -529,9 +529,9 @@ pub fn compute_spec_hlr_13_rx1_can_send_ipv4_udp_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() && valid_ipv4_udp_port(api_EthernetFramesRxIn1.unwrap()),
-    api_VmmOut1.is_some() &&
-      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &&
+    api_EthernetFramesRxIn1.is_some() & valid_ipv4_udp_port(api_EthernetFramesRxIn1.unwrap()),
+    api_VmmOut1.is_some() &
+      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &
         api_MavlinkOut1.is_none()))
 }
 
@@ -548,8 +548,8 @@ pub fn compute_spec_hlr_15_rx1_disallow_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() && !(allow_outbound_frame(api_EthernetFramesRxIn1.unwrap())),
-    api_VmmOut1.is_none() && api_MavlinkOut1.is_none())
+    api_EthernetFramesRxIn1.is_some() & !(allow_outbound_frame(api_EthernetFramesRxIn1.unwrap())),
+    api_VmmOut1.is_none() & api_MavlinkOut1.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -566,7 +566,7 @@ pub fn compute_spec_hlr_17_rx1_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn1.is_some()),
-    api_VmmOut1.is_none() && api_MavlinkOut1.is_none())
+    api_VmmOut1.is_none() & api_MavlinkOut1.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -582,9 +582,9 @@ pub fn compute_spec_hlr_05_rx2_can_send_arp_to_vmm_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() && valid_arp(api_EthernetFramesRxIn2.unwrap()),
-    api_VmmOut2.is_some() &&
-      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &&
+    api_EthernetFramesRxIn2.is_some() & valid_arp(api_EthernetFramesRxIn2.unwrap()),
+    api_VmmOut2.is_some() &
+      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &
         api_MavlinkOut2.is_none()))
 }
 
@@ -601,9 +601,9 @@ pub fn compute_spec_hlr_18_rx2_can_send_mavlink_udp_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() && valid_ipv4_udp_mavlink(api_EthernetFramesRxIn2.unwrap()),
-    api_MavlinkOut2.is_some() &&
-      (input_eq_mav_output(api_EthernetFramesRxIn2.unwrap(), api_MavlinkOut2.unwrap()) && api_VmmOut2.is_none()))
+    api_EthernetFramesRxIn2.is_some() & valid_ipv4_udp_mavlink(api_EthernetFramesRxIn2.unwrap()),
+    api_MavlinkOut2.is_some() &
+      (input_eq_mav_output(api_EthernetFramesRxIn2.unwrap(), api_MavlinkOut2.unwrap()) & api_VmmOut2.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -619,9 +619,9 @@ pub fn compute_spec_hlr_13_rx2_can_send_ipv4_udp_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() && valid_ipv4_udp_port(api_EthernetFramesRxIn2.unwrap()),
-    api_VmmOut2.is_some() &&
-      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &&
+    api_EthernetFramesRxIn2.is_some() & valid_ipv4_udp_port(api_EthernetFramesRxIn2.unwrap()),
+    api_VmmOut2.is_some() &
+      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &
         api_MavlinkOut2.is_none()))
 }
 
@@ -638,8 +638,8 @@ pub fn compute_spec_hlr_15_rx2_disallow_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() && !(allow_outbound_frame(api_EthernetFramesRxIn2.unwrap())),
-    api_VmmOut2.is_none() && api_MavlinkOut2.is_none())
+    api_EthernetFramesRxIn2.is_some() & !(allow_outbound_frame(api_EthernetFramesRxIn2.unwrap())),
+    api_VmmOut2.is_none() & api_MavlinkOut2.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -656,7 +656,7 @@ pub fn compute_spec_hlr_17_rx2_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn2.is_some()),
-    api_VmmOut2.is_none() && api_MavlinkOut2.is_none())
+    api_VmmOut2.is_none() & api_MavlinkOut2.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -672,9 +672,9 @@ pub fn compute_spec_hlr_05_rx3_can_send_arp_to_vmm_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() && valid_arp(api_EthernetFramesRxIn3.unwrap()),
-    api_VmmOut3.is_some() &&
-      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &&
+    api_EthernetFramesRxIn3.is_some() & valid_arp(api_EthernetFramesRxIn3.unwrap()),
+    api_VmmOut3.is_some() &
+      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &
         api_MavlinkOut3.is_none()))
 }
 
@@ -691,9 +691,9 @@ pub fn compute_spec_hlr_18_rx3_can_send_mavlink_udp_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() && valid_ipv4_udp_mavlink(api_EthernetFramesRxIn3.unwrap()),
-    api_MavlinkOut3.is_some() &&
-      (input_eq_mav_output(api_EthernetFramesRxIn3.unwrap(), api_MavlinkOut3.unwrap()) && api_VmmOut3.is_none()))
+    api_EthernetFramesRxIn3.is_some() & valid_ipv4_udp_mavlink(api_EthernetFramesRxIn3.unwrap()),
+    api_MavlinkOut3.is_some() &
+      (input_eq_mav_output(api_EthernetFramesRxIn3.unwrap(), api_MavlinkOut3.unwrap()) & api_VmmOut3.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -709,9 +709,9 @@ pub fn compute_spec_hlr_13_rx3_can_send_ipv4_udp_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() && valid_ipv4_udp_port(api_EthernetFramesRxIn3.unwrap()),
-    api_VmmOut3.is_some() &&
-      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &&
+    api_EthernetFramesRxIn3.is_some() & valid_ipv4_udp_port(api_EthernetFramesRxIn3.unwrap()),
+    api_VmmOut3.is_some() &
+      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &
         api_MavlinkOut3.is_none()))
 }
 
@@ -728,8 +728,8 @@ pub fn compute_spec_hlr_15_rx3_disallow_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() && !(allow_outbound_frame(api_EthernetFramesRxIn3.unwrap())),
-    api_VmmOut3.is_none() && api_MavlinkOut3.is_none())
+    api_EthernetFramesRxIn3.is_some() & !(allow_outbound_frame(api_EthernetFramesRxIn3.unwrap())),
+    api_VmmOut3.is_none() & api_MavlinkOut3.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -746,7 +746,7 @@ pub fn compute_spec_hlr_17_rx3_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn3.is_some()),
-    api_VmmOut3.is_none() && api_MavlinkOut3.is_none())
+    api_VmmOut3.is_none() & api_MavlinkOut3.is_none())
 }
 
 /** CEP-T-Guar: Top-level guarantee contracts for RxFirewall's compute entrypoint

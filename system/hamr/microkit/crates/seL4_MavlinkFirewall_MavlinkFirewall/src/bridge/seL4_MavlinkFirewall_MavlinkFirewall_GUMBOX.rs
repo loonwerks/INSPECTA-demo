@@ -81,16 +81,16 @@ pub fn msg_is_mavlinkv2(msg: SW::UdpPayload) -> bool
 
 pub fn msg_is_mav_v2_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
 {
-  msg_is_mavlinkv2(msg) &&
-    msg_v2_is_command_int(msg) && command_int_msg_v2_is_bootloader_flash(msg) |
-      msg_v2_is_command_long(msg) && command_long_msg_v2_is_bootloader_flash(msg)
+  msg_is_mavlinkv2(msg) &
+    (msg_v2_is_command_int(msg) & command_int_msg_v2_is_bootloader_flash(msg) |
+      msg_v2_is_command_long(msg) & command_long_msg_v2_is_bootloader_flash(msg))
 }
 
 pub fn msg_is_mav_v1_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
 {
-  msg_is_mavlinkv1(msg) &&
-    msg_v1_is_command_int(msg) && command_int_msg_v1_is_bootloader_flash(msg) |
-      msg_v1_is_command_long(msg) && command_long_msg_v1_is_bootloader_flash(msg)
+  msg_is_mavlinkv1(msg) &
+    (msg_v1_is_command_int(msg) & command_int_msg_v1_is_bootloader_flash(msg) |
+      msg_v1_is_command_long(msg) & command_long_msg_v1_is_bootloader_flash(msg))
 }
 
 pub fn msg_is_mav_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
@@ -117,7 +117,7 @@ pub fn mav_input_eq_output(
   input: SW::UdpFrame_Impl,
   aframe: SW::RawEthernetMessage) -> bool
 {
-  mav_input_headers_eq_output(input.headers, aframe) && mav_input_payload_eq_output(input.payload, input.headers, aframe)
+  mav_input_headers_eq_output(input.headers, aframe) & mav_input_payload_eq_output(input.payload, input.headers, aframe)
 }
 
 pub fn msg_is_blacklisted(msg: SW::UdpPayload) -> bool
@@ -136,7 +136,7 @@ pub fn compute_spec_hlr_19_mav0_drop_mav_cmd_flash_bootloader_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() && msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
+    api_In0.is_some() & msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
     api_Out0.is_none())
 }
 
@@ -166,8 +166,8 @@ pub fn compute_spec_hlr_22_mav0_allow_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() && !(msg_is_blacklisted(api_In0.unwrap().payload)),
-    api_Out0.is_some() && mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
+    api_In0.is_some() & !(msg_is_blacklisted(api_In0.unwrap().payload)),
+    api_Out0.is_some() & mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
 }
 
 /** CEP-T-Guar: Top-level guarantee contracts for MavlinkFirewall's compute entrypoint
