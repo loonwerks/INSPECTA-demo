@@ -271,16 +271,6 @@ jobs:
         branch: feb-2026 # Specify the branch of the run, if needed
         github_token: ${{ secrets.GITHUB_TOKEN }}
         path: public
-    - name: Download logika feedback artifact
-      continue-on-error: true
-      uses: dawidd6/action-download-artifact@v3 # Use this community action
-      with:
-        workflow: analysis_and_codegen.yml # The filename of the workflow that uploaded the artifact
-        workflow_conclusion: completed
-        name: logika-feedback
-        branch: feb-2026 # Specify the branch of the run, if needed
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        path: public
     - name: Download codegen report artifact
       continue-on-error: true
       uses: dawidd6/action-download-artifact@v3 # Use this community action

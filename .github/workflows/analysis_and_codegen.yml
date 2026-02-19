@@ -177,13 +177,6 @@ jobs:
         name: logika-analysis-report
         path: logika-report.json
         retention-days: 30
-    - name: Archive feedback
-      uses: actions/upload-artifact@v4
-      if: ${{ always() }}
-      with:
-        name: logika-feedback
-        path: logika-feedback.json
-        retention-days: 30
 
   codegen:
     runs-on: ubuntu-latest
