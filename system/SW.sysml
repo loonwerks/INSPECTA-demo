@@ -1,6 +1,5 @@
 package SW {
 
-	
 	private import HAMR::*;
 	private import CASE_Scheduling::*;
 	private import SequenceFunctions::*;
