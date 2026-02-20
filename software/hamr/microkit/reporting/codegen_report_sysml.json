@@ -872,11 +872,11 @@
                         "type" : "Some",
                         "value" : "file:\/\/\/home\/barclata\/projects\/provers\/INSPECTA-demo\/software\/SW.sysml"
                       },
-                      "beginLine" : 559,
+                      "beginLine" : 560,
                       "beginColumn" : 2,
-                      "endLine" : 559,
+                      "endLine" : 560,
                       "endColumn" : 32,
-                      "offset" : 32290,
+                      "offset" : 32516,
                       "length" : 30
                     }
                   },
@@ -914,11 +914,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 519,
+                            "beginLine" : 520,
                             "beginColumn" : 2,
-                            "endLine" : 519,
+                            "endLine" : 520,
                             "endColumn" : 74,
-                            "offset" : 29764,
+                            "offset" : 29990,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1005,11 +1005,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 520,
+                            "beginLine" : 521,
                             "beginColumn" : 2,
-                            "endLine" : 520,
+                            "endLine" : 521,
                             "endColumn" : 74,
-                            "offset" : 29840,
+                            "offset" : 30066,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1096,11 +1096,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 521,
+                            "beginLine" : 522,
                             "beginColumn" : 2,
-                            "endLine" : 521,
+                            "endLine" : 522,
                             "endColumn" : 74,
-                            "offset" : 29916,
+                            "offset" : 30142,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1187,11 +1187,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 522,
+                            "beginLine" : 523,
                             "beginColumn" : 2,
-                            "endLine" : 522,
+                            "endLine" : 523,
                             "endColumn" : 74,
-                            "offset" : 29992,
+                            "offset" : 30218,
                             "length" : 72
                           },
                           "languageRealizations" : [
@@ -1278,11 +1278,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 523,
+                            "beginLine" : 524,
                             "beginColumn" : 2,
-                            "endLine" : 523,
+                            "endLine" : 524,
                             "endColumn" : 73,
-                            "offset" : 30068,
+                            "offset" : 30294,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1369,11 +1369,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 524,
+                            "beginLine" : 525,
                             "beginColumn" : 2,
-                            "endLine" : 524,
+                            "endLine" : 525,
                             "endColumn" : 73,
-                            "offset" : 30143,
+                            "offset" : 30369,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1460,11 +1460,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 525,
+                            "beginLine" : 526,
                             "beginColumn" : 2,
-                            "endLine" : 525,
+                            "endLine" : 526,
                             "endColumn" : 73,
-                            "offset" : 30218,
+                            "offset" : 30444,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1551,11 +1551,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 526,
+                            "beginLine" : 527,
                             "beginColumn" : 2,
-                            "endLine" : 526,
+                            "endLine" : 527,
                             "endColumn" : 73,
-                            "offset" : 30293,
+                            "offset" : 30519,
                             "length" : 71
                           },
                           "languageRealizations" : [
@@ -1642,11 +1642,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 527,
+                            "beginLine" : 528,
                             "beginColumn" : 2,
-                            "endLine" : 527,
+                            "endLine" : 528,
                             "endColumn" : 82,
-                            "offset" : 30368,
+                            "offset" : 30594,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1733,11 +1733,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 528,
+                            "beginLine" : 529,
                             "beginColumn" : 2,
-                            "endLine" : 528,
+                            "endLine" : 529,
                             "endColumn" : 82,
-                            "offset" : 30452,
+                            "offset" : 30678,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1824,11 +1824,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 529,
+                            "beginLine" : 530,
                             "beginColumn" : 2,
-                            "endLine" : 529,
+                            "endLine" : 530,
                             "endColumn" : 82,
-                            "offset" : 30536,
+                            "offset" : 30762,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -1915,11 +1915,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 530,
+                            "beginLine" : 531,
                             "beginColumn" : 2,
-                            "endLine" : 530,
+                            "endLine" : 531,
                             "endColumn" : 82,
-                            "offset" : 30620,
+                            "offset" : 30846,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -2020,11 +2020,11 @@
                         "type" : "Some",
                         "value" : "file:\/\/\/home\/barclata\/projects\/provers\/INSPECTA-demo\/software\/SW.sysml"
                       },
-                      "beginLine" : 495,
+                      "beginLine" : 496,
                       "beginColumn" : 2,
-                      "endLine" : 495,
+                      "endLine" : 496,
                       "endColumn" : 44,
-                      "offset" : 28960,
+                      "offset" : 29186,
                       "length" : 42
                     }
                   },
@@ -2062,11 +2062,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 448,
+                            "beginLine" : 449,
                             "beginColumn" : 2,
-                            "endLine" : 448,
+                            "endLine" : 449,
                             "endColumn" : 61,
-                            "offset" : 26524,
+                            "offset" : 26744,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2225,11 +2225,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 449,
+                            "beginLine" : 450,
                             "beginColumn" : 2,
-                            "endLine" : 449,
+                            "endLine" : 450,
                             "endColumn" : 61,
-                            "offset" : 26587,
+                            "offset" : 26807,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2388,11 +2388,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 450,
+                            "beginLine" : 451,
                             "beginColumn" : 2,
-                            "endLine" : 450,
+                            "endLine" : 451,
                             "endColumn" : 61,
-                            "offset" : 26650,
+                            "offset" : 26870,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2551,11 +2551,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 451,
+                            "beginLine" : 452,
                             "beginColumn" : 2,
-                            "endLine" : 451,
+                            "endLine" : 452,
                             "endColumn" : 61,
-                            "offset" : 26713,
+                            "offset" : 26933,
                             "length" : 59
                           },
                           "languageRealizations" : [
@@ -2714,11 +2714,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 452,
+                            "beginLine" : 453,
                             "beginColumn" : 2,
-                            "endLine" : 452,
+                            "endLine" : 453,
                             "endColumn" : 69,
-                            "offset" : 26776,
+                            "offset" : 26996,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -2877,11 +2877,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 453,
+                            "beginLine" : 454,
                             "beginColumn" : 2,
-                            "endLine" : 453,
+                            "endLine" : 454,
                             "endColumn" : 69,
-                            "offset" : 26847,
+                            "offset" : 27067,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -3040,11 +3040,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 454,
+                            "beginLine" : 455,
                             "beginColumn" : 2,
-                            "endLine" : 454,
+                            "endLine" : 455,
                             "endColumn" : 69,
-                            "offset" : 26918,
+                            "offset" : 27138,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -3203,11 +3203,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 455,
+                            "beginLine" : 456,
                             "beginColumn" : 2,
-                            "endLine" : 455,
+                            "endLine" : 456,
                             "endColumn" : 69,
-                            "offset" : 26989,
+                            "offset" : 27209,
                             "length" : 67
                           },
                           "languageRealizations" : [
@@ -3365,7 +3365,7 @@
                               "beginColumn" : 5,
                               "endLine" : 107,
                               "endColumn" : 5,
-                              "offset" : 2768,
+                              "offset" : 2771,
                               "length" : 289
                             }
                           ],
@@ -3381,8 +3381,8 @@
                               "beginColumn" : 5,
                               "endLine" : 169,
                               "endColumn" : 5,
-                              "offset" : 3064,
-                              "length" : 2382
+                              "offset" : 3067,
+                              "length" : 2376
                             }
                           ]
                         ]
@@ -3458,8 +3458,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 125,
                                   "endColumn" : 28,
-                                  "offset" : 3681,
-                                  "length" : 137
+                                  "offset" : 3684,
+                                  "length" : 135
                                 }
                               ],
                               [
@@ -3474,7 +3474,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 127,
                                   "endColumn" : 51,
-                                  "offset" : 3861,
+                                  "offset" : 3862,
                                   "length" : 52
                                 }
                               ],
@@ -3489,9 +3489,9 @@
                                   "beginLine" : 128,
                                   "beginColumn" : 11,
                                   "endLine" : 130,
-                                  "endColumn" : 84,
-                                  "offset" : 3953,
-                                  "length" : 183
+                                  "endColumn" : 83,
+                                  "offset" : 3954,
+                                  "length" : 180
                                 }
                               ]
                             ]
@@ -3533,7 +3533,7 @@
                               "endLine" : 30,
                               "endColumn" : 1,
                               "offset" : 434,
-                              "length" : 294
+                              "length" : 295
                             }
                           ],
                           [
@@ -3548,7 +3548,7 @@
                               "beginColumn" : 1,
                               "endLine" : 45,
                               "endColumn" : 1,
-                              "offset" : 896,
+                              "offset" : 897,
                               "length" : 206
                             }
                           ],
@@ -3564,8 +3564,8 @@
                               "beginColumn" : 1,
                               "endLine" : 60,
                               "endColumn" : 1,
-                              "offset" : 1267,
-                              "length" : 329
+                              "offset" : 1268,
+                              "length" : 331
                             }
                           ],
                           [
@@ -3580,7 +3580,7 @@
                               "beginColumn" : 1,
                               "endLine" : 76,
                               "endColumn" : 1,
-                              "offset" : 1784,
+                              "offset" : 1787,
                               "length" : 406
                             }
                           ],
@@ -3596,7 +3596,7 @@
                               "beginColumn" : 1,
                               "endLine" : 103,
                               "endColumn" : 1,
-                              "offset" : 2626,
+                              "offset" : 2629,
                               "length" : 506
                             }
                           ]
@@ -3630,11 +3630,11 @@
                         "type" : "Some",
                         "value" : "file:\/\/\/home\/barclata\/projects\/provers\/INSPECTA-demo\/software\/SW.sysml"
                       },
-                      "beginLine" : 291,
+                      "beginLine" : 292,
                       "beginColumn" : 2,
-                      "endLine" : 291,
+                      "endLine" : 292,
                       "endColumn" : 34,
-                      "offset" : 16290,
+                      "offset" : 16434,
                       "length" : 32
                     }
                   },
@@ -3672,11 +3672,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 159,
+                            "beginLine" : 160,
                             "beginColumn" : 2,
-                            "endLine" : 159,
+                            "endLine" : 160,
                             "endColumn" : 80,
-                            "offset" : 7391,
+                            "offset" : 7427,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -3835,11 +3835,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 160,
+                            "beginLine" : 161,
                             "beginColumn" : 2,
-                            "endLine" : 160,
+                            "endLine" : 161,
                             "endColumn" : 80,
-                            "offset" : 7473,
+                            "offset" : 7509,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -3998,11 +3998,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 161,
+                            "beginLine" : 162,
                             "beginColumn" : 2,
-                            "endLine" : 161,
+                            "endLine" : 162,
                             "endColumn" : 80,
-                            "offset" : 7555,
+                            "offset" : 7591,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4161,11 +4161,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 162,
+                            "beginLine" : 163,
                             "beginColumn" : 2,
-                            "endLine" : 162,
+                            "endLine" : 163,
                             "endColumn" : 80,
-                            "offset" : 7638,
+                            "offset" : 7674,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -4324,11 +4324,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 163,
+                            "beginLine" : 164,
                             "beginColumn" : 2,
-                            "endLine" : 163,
+                            "endLine" : 164,
                             "endColumn" : 72,
-                            "offset" : 7720,
+                            "offset" : 7756,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -4487,11 +4487,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 164,
+                            "beginLine" : 165,
                             "beginColumn" : 2,
-                            "endLine" : 164,
+                            "endLine" : 165,
                             "endColumn" : 72,
-                            "offset" : 7794,
+                            "offset" : 7830,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -4650,11 +4650,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 165,
+                            "beginLine" : 166,
                             "beginColumn" : 2,
-                            "endLine" : 165,
+                            "endLine" : 166,
                             "endColumn" : 72,
-                            "offset" : 7868,
+                            "offset" : 7904,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -4813,11 +4813,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 166,
+                            "beginLine" : 167,
                             "beginColumn" : 2,
-                            "endLine" : 166,
+                            "endLine" : 167,
                             "endColumn" : 72,
-                            "offset" : 7942,
+                            "offset" : 7978,
                             "length" : 70
                           },
                           "languageRealizations" : [
@@ -4976,11 +4976,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 167,
+                            "beginLine" : 168,
                             "beginColumn" : 2,
-                            "endLine" : 167,
+                            "endLine" : 168,
                             "endColumn" : 71,
-                            "offset" : 8016,
+                            "offset" : 8052,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5139,11 +5139,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 168,
+                            "beginLine" : 169,
                             "beginColumn" : 2,
-                            "endLine" : 168,
+                            "endLine" : 169,
                             "endColumn" : 71,
-                            "offset" : 8089,
+                            "offset" : 8125,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5302,11 +5302,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 169,
+                            "beginLine" : 170,
                             "beginColumn" : 2,
-                            "endLine" : 169,
+                            "endLine" : 170,
                             "endColumn" : 71,
-                            "offset" : 8162,
+                            "offset" : 8198,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5465,11 +5465,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 170,
+                            "beginLine" : 171,
                             "beginColumn" : 2,
-                            "endLine" : 170,
+                            "endLine" : 171,
                             "endColumn" : 71,
-                            "offset" : 8235,
+                            "offset" : 8271,
                             "length" : 69
                           },
                           "languageRealizations" : [
@@ -5644,7 +5644,7 @@
                               "endLine" : 382,
                               "endColumn" : 5,
                               "offset" : 7388,
-                              "length" : 8167
+                              "length" : 8095
                             }
                           ]
                         ]
@@ -5798,9 +5798,9 @@
                                   "beginLine" : 251,
                                   "beginColumn" : 11,
                                   "endLine" : 255,
-                                  "endColumn" : 41,
+                                  "endColumn" : 40,
                                   "offset" : 8146,
-                                  "length" : 263
+                                  "length" : 259
                                 }
                               ],
                               [
@@ -5815,8 +5815,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 259,
                                   "endColumn" : 80,
-                                  "offset" : 8463,
-                                  "length" : 244
+                                  "offset" : 8459,
+                                  "length" : 241
                                 }
                               ],
                               [
@@ -5830,9 +5830,9 @@
                                   "beginLine" : 260,
                                   "beginColumn" : 11,
                                   "endLine" : 264,
-                                  "endColumn" : 41,
-                                  "offset" : 8812,
-                                  "length" : 273
+                                  "endColumn" : 40,
+                                  "offset" : 8804,
+                                  "length" : 269
                                 }
                               ],
                               [
@@ -5846,9 +5846,9 @@
                                   "beginLine" : 265,
                                   "beginColumn" : 11,
                                   "endLine" : 267,
-                                  "endColumn" : 62,
-                                  "offset" : 9127,
-                                  "length" : 190
+                                  "endColumn" : 60,
+                                  "offset" : 9115,
+                                  "length" : 186
                                 }
                               ],
                               [
@@ -5862,9 +5862,9 @@
                                   "beginLine" : 268,
                                   "beginColumn" : 11,
                                   "endLine" : 270,
-                                  "endColumn" : 62,
-                                  "offset" : 9359,
-                                  "length" : 112
+                                  "endColumn" : 60,
+                                  "offset" : 9343,
+                                  "length" : 110
                                 }
                               ],
                               [
@@ -5878,9 +5878,9 @@
                                   "beginLine" : 271,
                                   "beginColumn" : 11,
                                   "endLine" : 275,
-                                  "endColumn" : 41,
-                                  "offset" : 9524,
-                                  "length" : 263
+                                  "endColumn" : 40,
+                                  "offset" : 9506,
+                                  "length" : 259
                                 }
                               ],
                               [
@@ -5895,8 +5895,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 279,
                                   "endColumn" : 80,
-                                  "offset" : 9841,
-                                  "length" : 244
+                                  "offset" : 9819,
+                                  "length" : 241
                                 }
                               ],
                               [
@@ -5910,9 +5910,9 @@
                                   "beginLine" : 280,
                                   "beginColumn" : 11,
                                   "endLine" : 284,
-                                  "endColumn" : 41,
-                                  "offset" : 10190,
-                                  "length" : 273
+                                  "endColumn" : 40,
+                                  "offset" : 10164,
+                                  "length" : 269
                                 }
                               ],
                               [
@@ -5926,9 +5926,9 @@
                                   "beginLine" : 285,
                                   "beginColumn" : 11,
                                   "endLine" : 287,
-                                  "endColumn" : 62,
-                                  "offset" : 10505,
-                                  "length" : 190
+                                  "endColumn" : 60,
+                                  "offset" : 10475,
+                                  "length" : 186
                                 }
                               ],
                               [
@@ -5942,9 +5942,9 @@
                                   "beginLine" : 288,
                                   "beginColumn" : 11,
                                   "endLine" : 290,
-                                  "endColumn" : 62,
-                                  "offset" : 10737,
-                                  "length" : 112
+                                  "endColumn" : 60,
+                                  "offset" : 10703,
+                                  "length" : 110
                                 }
                               ],
                               [
@@ -5958,9 +5958,9 @@
                                   "beginLine" : 291,
                                   "beginColumn" : 11,
                                   "endLine" : 295,
-                                  "endColumn" : 41,
-                                  "offset" : 10902,
-                                  "length" : 263
+                                  "endColumn" : 40,
+                                  "offset" : 10866,
+                                  "length" : 259
                                 }
                               ],
                               [
@@ -5975,8 +5975,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 299,
                                   "endColumn" : 80,
-                                  "offset" : 11219,
-                                  "length" : 244
+                                  "offset" : 11179,
+                                  "length" : 241
                                 }
                               ],
                               [
@@ -5990,9 +5990,9 @@
                                   "beginLine" : 300,
                                   "beginColumn" : 11,
                                   "endLine" : 304,
-                                  "endColumn" : 41,
-                                  "offset" : 11568,
-                                  "length" : 273
+                                  "endColumn" : 40,
+                                  "offset" : 11524,
+                                  "length" : 269
                                 }
                               ],
                               [
@@ -6006,9 +6006,9 @@
                                   "beginLine" : 305,
                                   "beginColumn" : 11,
                                   "endLine" : 307,
-                                  "endColumn" : 62,
-                                  "offset" : 11883,
-                                  "length" : 190
+                                  "endColumn" : 60,
+                                  "offset" : 11835,
+                                  "length" : 186
                                 }
                               ],
                               [
@@ -6022,9 +6022,9 @@
                                   "beginLine" : 308,
                                   "beginColumn" : 11,
                                   "endLine" : 310,
-                                  "endColumn" : 62,
-                                  "offset" : 12115,
-                                  "length" : 112
+                                  "endColumn" : 60,
+                                  "offset" : 12063,
+                                  "length" : 110
                                 }
                               ],
                               [
@@ -6038,9 +6038,9 @@
                                   "beginLine" : 311,
                                   "beginColumn" : 11,
                                   "endLine" : 315,
-                                  "endColumn" : 41,
-                                  "offset" : 12280,
-                                  "length" : 263
+                                  "endColumn" : 40,
+                                  "offset" : 12226,
+                                  "length" : 259
                                 }
                               ],
                               [
@@ -6055,8 +6055,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 319,
                                   "endColumn" : 80,
-                                  "offset" : 12597,
-                                  "length" : 244
+                                  "offset" : 12539,
+                                  "length" : 241
                                 }
                               ],
                               [
@@ -6070,9 +6070,9 @@
                                   "beginLine" : 320,
                                   "beginColumn" : 11,
                                   "endLine" : 324,
-                                  "endColumn" : 41,
-                                  "offset" : 12946,
-                                  "length" : 273
+                                  "endColumn" : 40,
+                                  "offset" : 12884,
+                                  "length" : 269
                                 }
                               ],
                               [
@@ -6086,9 +6086,9 @@
                                   "beginLine" : 325,
                                   "beginColumn" : 11,
                                   "endLine" : 327,
-                                  "endColumn" : 62,
-                                  "offset" : 13261,
-                                  "length" : 190
+                                  "endColumn" : 60,
+                                  "offset" : 13195,
+                                  "length" : 186
                                 }
                               ],
                               [
@@ -6102,9 +6102,9 @@
                                   "beginLine" : 328,
                                   "beginColumn" : 11,
                                   "endLine" : 330,
-                                  "endColumn" : 62,
-                                  "offset" : 13493,
-                                  "length" : 112
+                                  "endColumn" : 60,
+                                  "offset" : 13423,
+                                  "length" : 110
                                 }
                               ]
                             ]
@@ -6146,7 +6146,7 @@
                               "endLine" : 27,
                               "endColumn" : 1,
                               "offset" : 446,
-                              "length" : 315
+                              "length" : 318
                             }
                           ],
                           [
@@ -6161,7 +6161,7 @@
                               "beginColumn" : 1,
                               "endLine" : 40,
                               "endColumn" : 1,
-                              "offset" : 962,
+                              "offset" : 965,
                               "length" : 215
                             }
                           ],
@@ -6177,8 +6177,8 @@
                               "beginColumn" : 1,
                               "endLine" : 52,
                               "endColumn" : 1,
-                              "offset" : 1378,
-                              "length" : 315
+                              "offset" : 1381,
+                              "length" : 318
                             }
                           ],
                           [
@@ -6193,7 +6193,7 @@
                               "beginColumn" : 1,
                               "endLine" : 65,
                               "endColumn" : 1,
-                              "offset" : 1894,
+                              "offset" : 1900,
                               "length" : 215
                             }
                           ],
@@ -6209,8 +6209,8 @@
                               "beginColumn" : 1,
                               "endLine" : 77,
                               "endColumn" : 1,
-                              "offset" : 2310,
-                              "length" : 315
+                              "offset" : 2316,
+                              "length" : 318
                             }
                           ],
                           [
@@ -6225,7 +6225,7 @@
                               "beginColumn" : 1,
                               "endLine" : 90,
                               "endColumn" : 1,
-                              "offset" : 2826,
+                              "offset" : 2835,
                               "length" : 215
                             }
                           ],
@@ -6241,8 +6241,8 @@
                               "beginColumn" : 1,
                               "endLine" : 102,
                               "endColumn" : 1,
-                              "offset" : 3242,
-                              "length" : 315
+                              "offset" : 3251,
+                              "length" : 318
                             }
                           ],
                           [
@@ -6257,7 +6257,7 @@
                               "beginColumn" : 1,
                               "endLine" : 115,
                               "endColumn" : 1,
-                              "offset" : 3758,
+                              "offset" : 3770,
                               "length" : 215
                             }
                           ],
@@ -6273,7 +6273,7 @@
                               "beginColumn" : 1,
                               "endLine" : 137,
                               "endColumn" : 1,
-                              "offset" : 4286,
+                              "offset" : 4298,
                               "length" : 681
                             }
                           ],
@@ -6289,8 +6289,8 @@
                               "beginColumn" : 1,
                               "endLine" : 156,
                               "endColumn" : 1,
-                              "offset" : 5216,
-                              "length" : 463
+                              "offset" : 5228,
+                              "length" : 466
                             }
                           ],
                           [
@@ -6305,8 +6305,8 @@
                               "beginColumn" : 1,
                               "endLine" : 174,
                               "endColumn" : 1,
-                              "offset" : 5929,
-                              "length" : 500
+                              "offset" : 5944,
+                              "length" : 503
                             }
                           ],
                           [
@@ -6321,8 +6321,8 @@
                               "beginColumn" : 1,
                               "endLine" : 193,
                               "endColumn" : 1,
-                              "offset" : 6676,
-                              "length" : 471
+                              "offset" : 6694,
+                              "length" : 474
                             }
                           ],
                           [
@@ -6337,8 +6337,8 @@
                               "beginColumn" : 1,
                               "endLine" : 210,
                               "endColumn" : 1,
-                              "offset" : 7385,
-                              "length" : 392
+                              "offset" : 7406,
+                              "length" : 394
                             }
                           ],
                           [
@@ -6353,8 +6353,8 @@
                               "beginColumn" : 1,
                               "endLine" : 227,
                               "endColumn" : 1,
-                              "offset" : 8015,
-                              "length" : 322
+                              "offset" : 8038,
+                              "length" : 323
                             }
                           ],
                           [
@@ -6369,8 +6369,8 @@
                               "beginColumn" : 1,
                               "endLine" : 246,
                               "endColumn" : 1,
-                              "offset" : 8586,
-                              "length" : 463
+                              "offset" : 8610,
+                              "length" : 466
                             }
                           ],
                           [
@@ -6385,8 +6385,8 @@
                               "beginColumn" : 1,
                               "endLine" : 264,
                               "endColumn" : 1,
-                              "offset" : 9299,
-                              "length" : 500
+                              "offset" : 9326,
+                              "length" : 503
                             }
                           ],
                           [
@@ -6401,8 +6401,8 @@
                               "beginColumn" : 1,
                               "endLine" : 283,
                               "endColumn" : 1,
-                              "offset" : 10046,
-                              "length" : 471
+                              "offset" : 10076,
+                              "length" : 474
                             }
                           ],
                           [
@@ -6417,8 +6417,8 @@
                               "beginColumn" : 1,
                               "endLine" : 300,
                               "endColumn" : 1,
-                              "offset" : 10755,
-                              "length" : 392
+                              "offset" : 10788,
+                              "length" : 394
                             }
                           ],
                           [
@@ -6433,8 +6433,8 @@
                               "beginColumn" : 1,
                               "endLine" : 317,
                               "endColumn" : 1,
-                              "offset" : 11385,
-                              "length" : 322
+                              "offset" : 11420,
+                              "length" : 323
                             }
                           ],
                           [
@@ -6449,8 +6449,8 @@
                               "beginColumn" : 1,
                               "endLine" : 336,
                               "endColumn" : 1,
-                              "offset" : 11956,
-                              "length" : 463
+                              "offset" : 11992,
+                              "length" : 466
                             }
                           ],
                           [
@@ -6465,8 +6465,8 @@
                               "beginColumn" : 1,
                               "endLine" : 354,
                               "endColumn" : 1,
-                              "offset" : 12669,
-                              "length" : 500
+                              "offset" : 12708,
+                              "length" : 503
                             }
                           ],
                           [
@@ -6481,8 +6481,8 @@
                               "beginColumn" : 1,
                               "endLine" : 373,
                               "endColumn" : 1,
-                              "offset" : 13416,
-                              "length" : 471
+                              "offset" : 13458,
+                              "length" : 474
                             }
                           ],
                           [
@@ -6497,8 +6497,8 @@
                               "beginColumn" : 1,
                               "endLine" : 390,
                               "endColumn" : 1,
-                              "offset" : 14125,
-                              "length" : 392
+                              "offset" : 14170,
+                              "length" : 394
                             }
                           ],
                           [
@@ -6513,8 +6513,8 @@
                               "beginColumn" : 1,
                               "endLine" : 407,
                               "endColumn" : 1,
-                              "offset" : 14755,
-                              "length" : 322
+                              "offset" : 14802,
+                              "length" : 323
                             }
                           ],
                           [
@@ -6529,8 +6529,8 @@
                               "beginColumn" : 1,
                               "endLine" : 426,
                               "endColumn" : 1,
-                              "offset" : 15326,
-                              "length" : 463
+                              "offset" : 15374,
+                              "length" : 466
                             }
                           ],
                           [
@@ -6545,8 +6545,8 @@
                               "beginColumn" : 1,
                               "endLine" : 444,
                               "endColumn" : 1,
-                              "offset" : 16039,
-                              "length" : 500
+                              "offset" : 16090,
+                              "length" : 503
                             }
                           ],
                           [
@@ -6561,8 +6561,8 @@
                               "beginColumn" : 1,
                               "endLine" : 463,
                               "endColumn" : 1,
-                              "offset" : 16786,
-                              "length" : 471
+                              "offset" : 16840,
+                              "length" : 474
                             }
                           ],
                           [
@@ -6577,8 +6577,8 @@
                               "beginColumn" : 1,
                               "endLine" : 480,
                               "endColumn" : 1,
-                              "offset" : 17495,
-                              "length" : 392
+                              "offset" : 17552,
+                              "length" : 394
                             }
                           ],
                           [
@@ -6593,8 +6593,8 @@
                               "beginColumn" : 1,
                               "endLine" : 497,
                               "endColumn" : 1,
-                              "offset" : 18125,
-                              "length" : 322
+                              "offset" : 18184,
+                              "length" : 323
                             }
                           ],
                           [
@@ -6609,7 +6609,7 @@
                               "beginColumn" : 1,
                               "endLine" : 550,
                               "endColumn" : 1,
-                              "offset" : 19181,
+                              "offset" : 19241,
                               "length" : 3241
                             }
                           ],
@@ -6625,7 +6625,7 @@
                               "beginColumn" : 1,
                               "endLine" : 585,
                               "endColumn" : 1,
-                              "offset" : 23137,
+                              "offset" : 23197,
                               "length" : 982
                             }
                           ]
@@ -6659,11 +6659,11 @@
                         "type" : "Some",
                         "value" : "file:\/\/\/home\/barclata\/projects\/provers\/INSPECTA-demo\/software\/SW.sysml"
                       },
-                      "beginLine" : 424,
+                      "beginLine" : 425,
                       "beginColumn" : 2,
-                      "endLine" : 424,
+                      "endLine" : 425,
                       "endColumn" : 34,
-                      "offset" : 25476,
+                      "offset" : 25696,
                       "length" : 32
                     }
                   },
@@ -6701,11 +6701,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 322,
+                            "beginLine" : 323,
                             "beginColumn" : 2,
-                            "endLine" : 322,
+                            "endLine" : 323,
                             "endColumn" : 82,
-                            "offset" : 17535,
+                            "offset" : 17679,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -6723,7 +6723,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 202,
                                 "endColumn" : 5,
-                                "offset" : 7889,
+                                "offset" : 7873,
                                 "length" : 777
                               }
                             },
@@ -6864,11 +6864,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 323,
+                            "beginLine" : 324,
                             "beginColumn" : 2,
-                            "endLine" : 323,
+                            "endLine" : 324,
                             "endColumn" : 82,
-                            "offset" : 17619,
+                            "offset" : 17763,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -6886,7 +6886,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 216,
                                 "endColumn" : 5,
-                                "offset" : 8672,
+                                "offset" : 8656,
                                 "length" : 777
                               }
                             },
@@ -7027,11 +7027,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 324,
+                            "beginLine" : 325,
                             "beginColumn" : 2,
-                            "endLine" : 324,
+                            "endLine" : 325,
                             "endColumn" : 82,
-                            "offset" : 17703,
+                            "offset" : 17847,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -7049,7 +7049,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 230,
                                 "endColumn" : 5,
-                                "offset" : 9455,
+                                "offset" : 9439,
                                 "length" : 777
                               }
                             },
@@ -7190,11 +7190,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 325,
+                            "beginLine" : 326,
                             "beginColumn" : 2,
-                            "endLine" : 325,
+                            "endLine" : 326,
                             "endColumn" : 82,
-                            "offset" : 17787,
+                            "offset" : 17931,
                             "length" : 80
                           },
                           "languageRealizations" : [
@@ -7212,7 +7212,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 244,
                                 "endColumn" : 5,
-                                "offset" : 10238,
+                                "offset" : 10222,
                                 "length" : 777
                               }
                             },
@@ -7353,11 +7353,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 326,
+                            "beginLine" : 327,
                             "beginColumn" : 2,
-                            "endLine" : 326,
+                            "endLine" : 327,
                             "endColumn" : 92,
-                            "offset" : 17871,
+                            "offset" : 18015,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -7376,7 +7376,7 @@
                                 "endLine" : 122,
                                 "endColumn" : 5,
                                 "offset" : 3298,
-                                "length" : 1116
+                                "length" : 1112
                               }
                             },
                             {
@@ -7516,11 +7516,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 327,
+                            "beginLine" : 328,
                             "beginColumn" : 2,
-                            "endLine" : 327,
+                            "endLine" : 328,
                             "endColumn" : 92,
-                            "offset" : 17965,
+                            "offset" : 18109,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -7538,8 +7538,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 143,
                                 "endColumn" : 5,
-                                "offset" : 4420,
-                                "length" : 1116
+                                "offset" : 4416,
+                                "length" : 1112
                               }
                             },
                             {
@@ -7679,11 +7679,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 328,
+                            "beginLine" : 329,
                             "beginColumn" : 2,
-                            "endLine" : 328,
+                            "endLine" : 329,
                             "endColumn" : 92,
-                            "offset" : 18059,
+                            "offset" : 18203,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -7701,8 +7701,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 164,
                                 "endColumn" : 5,
-                                "offset" : 5542,
-                                "length" : 1116
+                                "offset" : 5534,
+                                "length" : 1112
                               }
                             },
                             {
@@ -7842,11 +7842,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 329,
+                            "beginLine" : 330,
                             "beginColumn" : 2,
-                            "endLine" : 329,
+                            "endLine" : 330,
                             "endColumn" : 92,
-                            "offset" : 18153,
+                            "offset" : 18297,
                             "length" : 90
                           },
                           "languageRealizations" : [
@@ -7864,8 +7864,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 185,
                                 "endColumn" : 5,
-                                "offset" : 6664,
-                                "length" : 1116
+                                "offset" : 6652,
+                                "length" : 1112
                               }
                             },
                             {
@@ -8021,7 +8021,7 @@
                               "endLine" : 201,
                               "endColumn" : 5,
                               "offset" : 2166,
-                              "length" : 7245
+                              "length" : 7205
                             }
                           ]
                         ]
@@ -8087,9 +8087,9 @@
                                   "beginLine" : 106,
                                   "beginColumn" : 11,
                                   "endLine" : 109,
-                                  "endColumn" : 108,
+                                  "endColumn" : 107,
                                   "offset" : 3453,
-                                  "length" : 294
+                                  "length" : 291
                                 }
                               ],
                               [
@@ -8103,9 +8103,9 @@
                                   "beginLine" : 127,
                                   "beginColumn" : 11,
                                   "endLine" : 130,
-                                  "endColumn" : 108,
-                                  "offset" : 4575,
-                                  "length" : 294
+                                  "endColumn" : 107,
+                                  "offset" : 4571,
+                                  "length" : 291
                                 }
                               ],
                               [
@@ -8119,9 +8119,9 @@
                                   "beginLine" : 148,
                                   "beginColumn" : 11,
                                   "endLine" : 151,
-                                  "endColumn" : 108,
-                                  "offset" : 5697,
-                                  "length" : 294
+                                  "endColumn" : 107,
+                                  "offset" : 5689,
+                                  "length" : 291
                                 }
                               ],
                               [
@@ -8135,9 +8135,9 @@
                                   "beginLine" : 169,
                                   "beginColumn" : 11,
                                   "endLine" : 172,
-                                  "endColumn" : 108,
-                                  "offset" : 6819,
-                                  "length" : 294
+                                  "endColumn" : 107,
+                                  "offset" : 6807,
+                                  "length" : 291
                                 }
                               ]
                             ]
@@ -8175,9 +8175,9 @@
                                   "beginLine" : 86,
                                   "beginColumn" : 11,
                                   "endLine" : 90,
-                                  "endColumn" : 87,
+                                  "endColumn" : 86,
                                   "offset" : 2815,
-                                  "length" : 344
+                                  "length" : 340
                                 }
                               ],
                               [
@@ -8192,8 +8192,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 95,
                                   "endColumn" : 84,
-                                  "offset" : 3212,
-                                  "length" : 342
+                                  "offset" : 3208,
+                                  "length" : 339
                                 }
                               ],
                               [
@@ -8208,8 +8208,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 98,
                                   "endColumn" : 44,
-                                  "offset" : 3634,
-                                  "length" : 172
+                                  "offset" : 3626,
+                                  "length" : 170
                                 }
                               ],
                               [
@@ -8224,7 +8224,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 100,
                                   "endColumn" : 83,
-                                  "offset" : 3848,
+                                  "offset" : 3838,
                                   "length" : 84
                                 }
                               ],
@@ -8239,9 +8239,9 @@
                                   "beginLine" : 101,
                                   "beginColumn" : 11,
                                   "endLine" : 105,
-                                  "endColumn" : 87,
-                                  "offset" : 3984,
-                                  "length" : 344
+                                  "endColumn" : 86,
+                                  "offset" : 3974,
+                                  "length" : 340
                                 }
                               ],
                               [
@@ -8256,8 +8256,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 110,
                                   "endColumn" : 84,
-                                  "offset" : 4381,
-                                  "length" : 342
+                                  "offset" : 4367,
+                                  "length" : 339
                                 }
                               ],
                               [
@@ -8272,8 +8272,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 113,
                                   "endColumn" : 44,
-                                  "offset" : 4803,
-                                  "length" : 172
+                                  "offset" : 4785,
+                                  "length" : 170
                                 }
                               ],
                               [
@@ -8288,7 +8288,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 115,
                                   "endColumn" : 83,
-                                  "offset" : 5017,
+                                  "offset" : 4997,
                                   "length" : 84
                                 }
                               ],
@@ -8303,9 +8303,9 @@
                                   "beginLine" : 116,
                                   "beginColumn" : 11,
                                   "endLine" : 120,
-                                  "endColumn" : 87,
-                                  "offset" : 5153,
-                                  "length" : 344
+                                  "endColumn" : 86,
+                                  "offset" : 5133,
+                                  "length" : 340
                                 }
                               ],
                               [
@@ -8320,8 +8320,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 125,
                                   "endColumn" : 84,
-                                  "offset" : 5550,
-                                  "length" : 342
+                                  "offset" : 5526,
+                                  "length" : 339
                                 }
                               ],
                               [
@@ -8336,8 +8336,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 128,
                                   "endColumn" : 44,
-                                  "offset" : 5972,
-                                  "length" : 172
+                                  "offset" : 5944,
+                                  "length" : 170
                                 }
                               ],
                               [
@@ -8352,7 +8352,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 130,
                                   "endColumn" : 83,
-                                  "offset" : 6186,
+                                  "offset" : 6156,
                                   "length" : 84
                                 }
                               ],
@@ -8367,9 +8367,9 @@
                                   "beginLine" : 131,
                                   "beginColumn" : 11,
                                   "endLine" : 135,
-                                  "endColumn" : 87,
-                                  "offset" : 6322,
-                                  "length" : 344
+                                  "endColumn" : 86,
+                                  "offset" : 6292,
+                                  "length" : 340
                                 }
                               ],
                               [
@@ -8384,8 +8384,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 140,
                                   "endColumn" : 84,
-                                  "offset" : 6719,
-                                  "length" : 342
+                                  "offset" : 6685,
+                                  "length" : 339
                                 }
                               ],
                               [
@@ -8400,8 +8400,8 @@
                                   "beginColumn" : 11,
                                   "endLine" : 143,
                                   "endColumn" : 44,
-                                  "offset" : 7141,
-                                  "length" : 172
+                                  "offset" : 7103,
+                                  "length" : 170
                                 }
                               ],
                               [
@@ -8416,7 +8416,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 145,
                                   "endColumn" : 83,
-                                  "offset" : 7355,
+                                  "offset" : 7315,
                                   "length" : 84
                                 }
                               ]
@@ -8459,7 +8459,7 @@
                               "endLine" : 26,
                               "endColumn" : 1,
                               "offset" : 471,
-                              "length" : 353
+                              "length" : 356
                             }
                           ],
                           [
@@ -8474,7 +8474,7 @@
                               "beginColumn" : 1,
                               "endLine" : 39,
                               "endColumn" : 1,
-                              "offset" : 1050,
+                              "offset" : 1053,
                               "length" : 227
                             }
                           ],
@@ -8490,8 +8490,8 @@
                               "beginColumn" : 1,
                               "endLine" : 50,
                               "endColumn" : 1,
-                              "offset" : 1503,
-                              "length" : 353
+                              "offset" : 1506,
+                              "length" : 356
                             }
                           ],
                           [
@@ -8506,7 +8506,7 @@
                               "beginColumn" : 1,
                               "endLine" : 63,
                               "endColumn" : 1,
-                              "offset" : 2082,
+                              "offset" : 2088,
                               "length" : 227
                             }
                           ],
@@ -8522,8 +8522,8 @@
                               "beginColumn" : 1,
                               "endLine" : 74,
                               "endColumn" : 1,
-                              "offset" : 2535,
-                              "length" : 353
+                              "offset" : 2541,
+                              "length" : 356
                             }
                           ],
                           [
@@ -8538,7 +8538,7 @@
                               "beginColumn" : 1,
                               "endLine" : 87,
                               "endColumn" : 1,
-                              "offset" : 3114,
+                              "offset" : 3123,
                               "length" : 227
                             }
                           ],
@@ -8554,8 +8554,8 @@
                               "beginColumn" : 1,
                               "endLine" : 98,
                               "endColumn" : 1,
-                              "offset" : 3567,
-                              "length" : 353
+                              "offset" : 3576,
+                              "length" : 356
                             }
                           ],
                           [
@@ -8570,7 +8570,7 @@
                               "beginColumn" : 1,
                               "endLine" : 111,
                               "endColumn" : 1,
-                              "offset" : 4146,
+                              "offset" : 4158,
                               "length" : 227
                             }
                           ],
@@ -8586,7 +8586,7 @@
                               "beginColumn" : 1,
                               "endLine" : 131,
                               "endColumn" : 1,
-                              "offset" : 4680,
+                              "offset" : 4692,
                               "length" : 636
                             }
                           ],
@@ -8602,8 +8602,8 @@
                               "beginColumn" : 1,
                               "endLine" : 148,
                               "endColumn" : 1,
-                              "offset" : 5525,
-                              "length" : 512
+                              "offset" : 5537,
+                              "length" : 515
                             }
                           ],
                           [
@@ -8618,8 +8618,8 @@
                               "beginColumn" : 1,
                               "endLine" : 165,
                               "endColumn" : 1,
-                              "offset" : 6247,
-                              "length" : 549
+                              "offset" : 6262,
+                              "length" : 552
                             }
                           ],
                           [
@@ -8634,8 +8634,8 @@
                               "beginColumn" : 1,
                               "endLine" : 180,
                               "endColumn" : 1,
-                              "offset" : 6995,
-                              "length" : 351
+                              "offset" : 7013,
+                              "length" : 352
                             }
                           ],
                           [
@@ -8650,7 +8650,7 @@
                               "beginColumn" : 1,
                               "endLine" : 195,
                               "endColumn" : 1,
-                              "offset" : 7545,
+                              "offset" : 7564,
                               "length" : 281
                             }
                           ],
@@ -8666,8 +8666,8 @@
                               "beginColumn" : 1,
                               "endLine" : 212,
                               "endColumn" : 1,
-                              "offset" : 8035,
-                              "length" : 512
+                              "offset" : 8054,
+                              "length" : 515
                             }
                           ],
                           [
@@ -8682,8 +8682,8 @@
                               "beginColumn" : 1,
                               "endLine" : 229,
                               "endColumn" : 1,
-                              "offset" : 8757,
-                              "length" : 549
+                              "offset" : 8779,
+                              "length" : 552
                             }
                           ],
                           [
@@ -8698,8 +8698,8 @@
                               "beginColumn" : 1,
                               "endLine" : 244,
                               "endColumn" : 1,
-                              "offset" : 9505,
-                              "length" : 351
+                              "offset" : 9530,
+                              "length" : 352
                             }
                           ],
                           [
@@ -8714,7 +8714,7 @@
                               "beginColumn" : 1,
                               "endLine" : 259,
                               "endColumn" : 1,
-                              "offset" : 10055,
+                              "offset" : 10081,
                               "length" : 281
                             }
                           ],
@@ -8730,8 +8730,8 @@
                               "beginColumn" : 1,
                               "endLine" : 276,
                               "endColumn" : 1,
-                              "offset" : 10545,
-                              "length" : 512
+                              "offset" : 10571,
+                              "length" : 515
                             }
                           ],
                           [
@@ -8746,8 +8746,8 @@
                               "beginColumn" : 1,
                               "endLine" : 293,
                               "endColumn" : 1,
-                              "offset" : 11267,
-                              "length" : 549
+                              "offset" : 11296,
+                              "length" : 552
                             }
                           ],
                           [
@@ -8762,8 +8762,8 @@
                               "beginColumn" : 1,
                               "endLine" : 308,
                               "endColumn" : 1,
-                              "offset" : 12015,
-                              "length" : 351
+                              "offset" : 12047,
+                              "length" : 352
                             }
                           ],
                           [
@@ -8778,7 +8778,7 @@
                               "beginColumn" : 1,
                               "endLine" : 323,
                               "endColumn" : 1,
-                              "offset" : 12565,
+                              "offset" : 12598,
                               "length" : 281
                             }
                           ],
@@ -8794,8 +8794,8 @@
                               "beginColumn" : 1,
                               "endLine" : 340,
                               "endColumn" : 1,
-                              "offset" : 13055,
-                              "length" : 512
+                              "offset" : 13088,
+                              "length" : 515
                             }
                           ],
                           [
@@ -8810,8 +8810,8 @@
                               "beginColumn" : 1,
                               "endLine" : 357,
                               "endColumn" : 1,
-                              "offset" : 13777,
-                              "length" : 549
+                              "offset" : 13813,
+                              "length" : 552
                             }
                           ],
                           [
@@ -8826,8 +8826,8 @@
                               "beginColumn" : 1,
                               "endLine" : 372,
                               "endColumn" : 1,
-                              "offset" : 14525,
-                              "length" : 351
+                              "offset" : 14564,
+                              "length" : 352
                             }
                           ],
                           [
@@ -8842,7 +8842,7 @@
                               "beginColumn" : 1,
                               "endLine" : 387,
                               "endColumn" : 1,
-                              "offset" : 15075,
+                              "offset" : 15115,
                               "length" : 281
                             }
                           ],
@@ -8858,7 +8858,7 @@
                               "beginColumn" : 1,
                               "endLine" : 428,
                               "endColumn" : 1,
-                              "offset" : 15934,
+                              "offset" : 15974,
                               "length" : 2533
                             }
                           ],
@@ -8874,7 +8874,7 @@
                               "beginColumn" : 1,
                               "endLine" : 461,
                               "endColumn" : 1,
-                              "offset" : 19026,
+                              "offset" : 19066,
                               "length" : 1274
                             }
                           ]
@@ -8908,11 +8908,11 @@
                         "type" : "Some",
                         "value" : "file:\/\/\/home\/barclata\/projects\/provers\/INSPECTA-demo\/software\/SW.sysml"
                       },
-                      "beginLine" : 128,
+                      "beginLine" : 129,
                       "beginColumn" : 2,
-                      "endLine" : 128,
+                      "endLine" : 129,
                       "endColumn" : 58,
-                      "offset" : 5749,
+                      "offset" : 5785,
                       "length" : 56
                     }
                   },
@@ -8950,11 +8950,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 56,
+                            "beginLine" : 57,
                             "beginColumn" : 2,
-                            "endLine" : 56,
+                            "endLine" : 57,
                             "endColumn" : 85,
-                            "offset" : 1856,
+                            "offset" : 1857,
                             "length" : 83
                           },
                           "languageRealizations" : [
@@ -8972,8 +8972,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 231,
                                 "endColumn" : 5,
-                                "offset" : 9521,
-                                "length" : 1151
+                                "offset" : 9507,
+                                "length" : 1147
                               }
                             },
                             {
@@ -8991,7 +8991,7 @@
                                 "endLine" : 58,
                                 "endColumn" : 5,
                                 "offset" : 1304,
-                                "length" : 682
+                                "length" : 678
                               }
                             },
                             {
@@ -9113,11 +9113,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 57,
+                            "beginLine" : 58,
                             "beginColumn" : 2,
-                            "endLine" : 57,
+                            "endLine" : 58,
                             "endColumn" : 85,
-                            "offset" : 1943,
+                            "offset" : 1944,
                             "length" : 83
                           },
                           "languageRealizations" : [
@@ -9135,8 +9135,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 250,
                                 "endColumn" : 5,
-                                "offset" : 10678,
-                                "length" : 1151
+                                "offset" : 10660,
+                                "length" : 1147
                               }
                             },
                             {
@@ -9153,8 +9153,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 73,
                                 "endColumn" : 5,
-                                "offset" : 2024,
-                                "length" : 682
+                                "offset" : 2020,
+                                "length" : 678
                               }
                             },
                             {
@@ -9276,11 +9276,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 58,
+                            "beginLine" : 59,
                             "beginColumn" : 2,
-                            "endLine" : 58,
+                            "endLine" : 59,
                             "endColumn" : 85,
-                            "offset" : 2030,
+                            "offset" : 2031,
                             "length" : 83
                           },
                           "languageRealizations" : [
@@ -9298,8 +9298,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 269,
                                 "endColumn" : 5,
-                                "offset" : 11835,
-                                "length" : 1151
+                                "offset" : 11813,
+                                "length" : 1147
                               }
                             },
                             {
@@ -9316,8 +9316,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 88,
                                 "endColumn" : 5,
-                                "offset" : 2744,
-                                "length" : 682
+                                "offset" : 2736,
+                                "length" : 678
                               }
                             },
                             {
@@ -9439,11 +9439,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 59,
+                            "beginLine" : 60,
                             "beginColumn" : 2,
-                            "endLine" : 59,
+                            "endLine" : 60,
                             "endColumn" : 85,
-                            "offset" : 2117,
+                            "offset" : 2118,
                             "length" : 83
                           },
                           "languageRealizations" : [
@@ -9461,8 +9461,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 288,
                                 "endColumn" : 5,
-                                "offset" : 12992,
-                                "length" : 1151
+                                "offset" : 12966,
+                                "length" : 1149
                               }
                             },
                             {
@@ -9479,8 +9479,8 @@
                                 "beginColumn" : 5,
                                 "endLine" : 103,
                                 "endColumn" : 5,
-                                "offset" : 3464,
-                                "length" : 682
+                                "offset" : 3452,
+                                "length" : 680
                               }
                             },
                             {
@@ -9602,11 +9602,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 52,
+                            "beginLine" : 53,
                             "beginColumn" : 2,
-                            "endLine" : 52,
+                            "endLine" : 53,
                             "endColumn" : 80,
-                            "offset" : 1527,
+                            "offset" : 1528,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -9624,7 +9624,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 143,
                                 "endColumn" : 5,
-                                "offset" : 5214,
+                                "offset" : 5200,
                                 "length" : 1033
                               }
                             },
@@ -9765,11 +9765,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 53,
+                            "beginLine" : 54,
                             "beginColumn" : 2,
-                            "endLine" : 53,
+                            "endLine" : 54,
                             "endColumn" : 80,
-                            "offset" : 1609,
+                            "offset" : 1610,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -9787,7 +9787,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 165,
                                 "endColumn" : 5,
-                                "offset" : 6253,
+                                "offset" : 6239,
                                 "length" : 1033
                               }
                             },
@@ -9928,11 +9928,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 54,
+                            "beginLine" : 55,
                             "beginColumn" : 2,
-                            "endLine" : 54,
+                            "endLine" : 55,
                             "endColumn" : 80,
-                            "offset" : 1691,
+                            "offset" : 1692,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -9950,7 +9950,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 187,
                                 "endColumn" : 5,
-                                "offset" : 7292,
+                                "offset" : 7278,
                                 "length" : 1033
                               }
                             },
@@ -10091,11 +10091,11 @@
                               "type" : "Some",
                               "value" : "..\/..\/SW.sysml"
                             },
-                            "beginLine" : 55,
+                            "beginLine" : 56,
                             "beginColumn" : 2,
-                            "endLine" : 55,
+                            "endLine" : 56,
                             "endColumn" : 80,
-                            "offset" : 1774,
+                            "offset" : 1775,
                             "length" : 78
                           },
                           "languageRealizations" : [
@@ -10113,7 +10113,7 @@
                                 "beginColumn" : 5,
                                 "endLine" : 209,
                                 "endColumn" : 5,
-                                "offset" : 8331,
+                                "offset" : 8317,
                                 "length" : 1033
                               }
                             },
@@ -10330,9 +10330,9 @@
                                   "beginLine" : 225,
                                   "beginColumn" : 13,
                                   "endLine" : 228,
-                                  "endColumn" : 124,
-                                  "offset" : 10234,
-                                  "length" : 328
+                                  "endColumn" : 123,
+                                  "offset" : 10220,
+                                  "length" : 325
                                 }
                               ],
                               [
@@ -10346,9 +10346,9 @@
                                   "beginLine" : 244,
                                   "beginColumn" : 13,
                                   "endLine" : 247,
-                                  "endColumn" : 124,
-                                  "offset" : 11391,
-                                  "length" : 328
+                                  "endColumn" : 123,
+                                  "offset" : 11373,
+                                  "length" : 325
                                 }
                               ],
                               [
@@ -10362,9 +10362,9 @@
                                   "beginLine" : 263,
                                   "beginColumn" : 13,
                                   "endLine" : 266,
-                                  "endColumn" : 124,
-                                  "offset" : 12548,
-                                  "length" : 328
+                                  "endColumn" : 123,
+                                  "offset" : 12526,
+                                  "length" : 325
                                 }
                               ],
                               [
@@ -10379,8 +10379,8 @@
                                   "beginColumn" : 13,
                                   "endLine" : 285,
                                   "endColumn" : 124,
-                                  "offset" : 13705,
-                                  "length" : 328
+                                  "offset" : 13679,
+                                  "length" : 326
                                 }
                               ]
                             ]
@@ -10401,7 +10401,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 130,
                                   "endColumn" : 108,
-                                  "offset" : 5352,
+                                  "offset" : 5338,
                                   "length" : 280
                                 }
                               ],
@@ -10417,7 +10417,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 152,
                                   "endColumn" : 108,
-                                  "offset" : 6391,
+                                  "offset" : 6377,
                                   "length" : 280
                                 }
                               ],
@@ -10433,7 +10433,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 174,
                                   "endColumn" : 108,
-                                  "offset" : 7430,
+                                  "offset" : 7416,
                                   "length" : 280
                                 }
                               ],
@@ -10449,7 +10449,7 @@
                                   "beginColumn" : 11,
                                   "endLine" : 196,
                                   "endColumn" : 108,
-                                  "offset" : 8469,
+                                  "offset" : 8455,
                                   "length" : 280
                                 }
                               ]
@@ -10489,7 +10489,7 @@
                               "endLine" : 27,
                               "endColumn" : 1,
                               "offset" : 458,
-                              "length" : 303
+                              "length" : 306
                             }
                           ],
                           [
@@ -10504,7 +10504,7 @@
                               "beginColumn" : 1,
                               "endLine" : 40,
                               "endColumn" : 1,
-                              "offset" : 974,
+                              "offset" : 977,
                               "length" : 205
                             }
                           ],
@@ -10520,8 +10520,8 @@
                               "beginColumn" : 1,
                               "endLine" : 52,
                               "endColumn" : 1,
-                              "offset" : 1392,
-                              "length" : 303
+                              "offset" : 1395,
+                              "length" : 306
                             }
                           ],
                           [
@@ -10536,7 +10536,7 @@
                               "beginColumn" : 1,
                               "endLine" : 65,
                               "endColumn" : 1,
-                              "offset" : 1908,
+                              "offset" : 1914,
                               "length" : 205
                             }
                           ],
@@ -10552,8 +10552,8 @@
                               "beginColumn" : 1,
                               "endLine" : 77,
                               "endColumn" : 1,
-                              "offset" : 2326,
-                              "length" : 303
+                              "offset" : 2332,
+                              "length" : 306
                             }
                           ],
                           [
@@ -10568,7 +10568,7 @@
                               "beginColumn" : 1,
                               "endLine" : 90,
                               "endColumn" : 1,
-                              "offset" : 2842,
+                              "offset" : 2851,
                               "length" : 205
                             }
                           ],
@@ -10584,8 +10584,8 @@
                               "beginColumn" : 1,
                               "endLine" : 102,
                               "endColumn" : 1,
-                              "offset" : 3260,
-                              "length" : 303
+                              "offset" : 3269,
+                              "length" : 306
                             }
                           ],
                           [
@@ -10600,7 +10600,7 @@
                               "beginColumn" : 1,
                               "endLine" : 115,
                               "endColumn" : 1,
-                              "offset" : 3776,
+                              "offset" : 3788,
                               "length" : 205
                             }
                           ],
@@ -10616,8 +10616,8 @@
                               "beginColumn" : 1,
                               "endLine" : 126,
                               "endColumn" : 1,
-                              "offset" : 4210,
-                              "length" : 332
+                              "offset" : 4222,
+                              "length" : 335
                             }
                           ],
                           [
@@ -10632,7 +10632,7 @@
                               "beginColumn" : 1,
                               "endLine" : 139,
                               "endColumn" : 1,
-                              "offset" : 4771,
+                              "offset" : 4786,
                               "length" : 212
                             }
                           ],
@@ -10648,8 +10648,8 @@
                               "beginColumn" : 1,
                               "endLine" : 150,
                               "endColumn" : 1,
-                              "offset" : 5212,
-                              "length" : 332
+                              "offset" : 5227,
+                              "length" : 335
                             }
                           ],
                           [
@@ -10664,7 +10664,7 @@
                               "beginColumn" : 1,
                               "endLine" : 163,
                               "endColumn" : 1,
-                              "offset" : 5773,
+                              "offset" : 5791,
                               "length" : 212
                             }
                           ],
@@ -10680,8 +10680,8 @@
                               "beginColumn" : 1,
                               "endLine" : 174,
                               "endColumn" : 1,
-                              "offset" : 6214,
-                              "length" : 332
+                              "offset" : 6232,
+                              "length" : 335
                             }
                           ],
                           [
@@ -10696,7 +10696,7 @@
                               "beginColumn" : 1,
                               "endLine" : 187,
                               "endColumn" : 1,
-                              "offset" : 6775,
+                              "offset" : 6796,
                               "length" : 212
                             }
                           ],
@@ -10712,8 +10712,8 @@
                               "beginColumn" : 1,
                               "endLine" : 198,
                               "endColumn" : 1,
-                              "offset" : 7216,
-                              "length" : 332
+                              "offset" : 7237,
+                              "length" : 337
                             }
                           ],
                           [
@@ -10728,7 +10728,7 @@
                               "beginColumn" : 1,
                               "endLine" : 211,
                               "endColumn" : 1,
-                              "offset" : 7777,
+                              "offset" : 7803,
                               "length" : 212
                             }
                           ],
@@ -10744,7 +10744,7 @@
                               "beginColumn" : 1,
                               "endLine" : 231,
                               "endColumn" : 1,
-                              "offset" : 8284,
+                              "offset" : 8310,
                               "length" : 584
                             }
                           ],
@@ -10760,7 +10760,7 @@
                               "beginColumn" : 1,
                               "endLine" : 253,
                               "endColumn" : 1,
-                              "offset" : 9185,
+                              "offset" : 9211,
                               "length" : 697
                             }
                           ],
@@ -10776,7 +10776,7 @@
                               "beginColumn" : 1,
                               "endLine" : 283,
                               "endColumn" : 1,
-                              "offset" : 10433,
+                              "offset" : 10459,
                               "length" : 926
                             }
                           ]
