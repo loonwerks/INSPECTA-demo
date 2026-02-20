@@ -25,7 +25,7 @@ pub fn compute_spec_hlr_19_mav0_drop_mav_cmd_flash_bootloader_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() & GumboLib::msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
+    api_In0.is_some() && GumboLib::msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
     api_Out0.is_none())
 }
 
@@ -55,8 +55,8 @@ pub fn compute_spec_hlr_22_mav0_allow_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() & !(GumboLib::msg_is_blacklisted(api_In0.unwrap().payload)),
-    api_Out0.is_some() & GumboLib::mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
+    api_In0.is_some() && !(GumboLib::msg_is_blacklisted(api_In0.unwrap().payload)),
+    api_Out0.is_some() && GumboLib::mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
 }
 
 /** CEP-T-Guar: Top-level guarantee contracts for MavlinkFirewall's compute entrypoint

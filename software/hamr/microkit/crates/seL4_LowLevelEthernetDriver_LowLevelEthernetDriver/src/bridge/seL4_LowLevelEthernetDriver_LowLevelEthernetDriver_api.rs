@@ -51,8 +51,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port0
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx0();
     }
@@ -66,8 +66,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port1
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx1();
     }
@@ -81,8 +81,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port2
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       return extern_api::unsafe_get_EthernetFramesTx2();
     }
@@ -96,8 +96,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port3
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) || GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
     {
       return extern_api::unsafe_get_EthernetFramesTx3();
     }
@@ -224,8 +224,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port0
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx0(&Ghost(self.EthernetFramesTx0))
     }
@@ -243,8 +243,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port1
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx1(&Ghost(self.EthernetFramesTx1))
     }
@@ -262,8 +262,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port2
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap())),
     {
       self.api.unverified_get_EthernetFramesTx2(&Ghost(self.EthernetFramesTx2))
     }
@@ -281,8 +281,8 @@ verus! {
         (res.is_none() ||
           // assume valid_tx_message_port3
           //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-          (GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap())) ||
-            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) && GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
+          GumboLib::valid_arp_spec(res.unwrap().amessage) && GumboLib::valid_output_arp_size_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_spec(res.unwrap().amessage) || GumboLib::valid_output_ipv4_size_spec(res.unwrap().amessage, res.unwrap()))),
     {
       self.api.unverified_get_EthernetFramesTx3(&Ghost(self.EthernetFramesTx3))
     }

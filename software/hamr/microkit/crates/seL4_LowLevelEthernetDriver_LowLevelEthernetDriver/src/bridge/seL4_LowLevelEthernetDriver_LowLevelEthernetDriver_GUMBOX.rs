@@ -21,9 +21,9 @@ macro_rules! impliesL {
   */
 pub fn I_Guar_EthernetFramesRx0(EthernetFramesRx0: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRx0) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx0) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx0) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx0))))
+  GumboLib::valid_arp(EthernetFramesRx0) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx0) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx0) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx0))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx0
@@ -46,9 +46,9 @@ pub fn I_Guar_Guard_EthernetFramesRx0(EthernetFramesRx0: Option<SW::RawEthernetM
   */
 pub fn I_Guar_EthernetFramesRx1(EthernetFramesRx1: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRx1) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx1) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx1) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx1))))
+  GumboLib::valid_arp(EthernetFramesRx1) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx1) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx1) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx1))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx1
@@ -71,9 +71,9 @@ pub fn I_Guar_Guard_EthernetFramesRx1(EthernetFramesRx1: Option<SW::RawEthernetM
   */
 pub fn I_Guar_EthernetFramesRx2(EthernetFramesRx2: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRx2) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx2) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx2) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx2))))
+  GumboLib::valid_arp(EthernetFramesRx2) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx2) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx2) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx2))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx2
@@ -96,9 +96,9 @@ pub fn I_Guar_Guard_EthernetFramesRx2(EthernetFramesRx2: Option<SW::RawEthernetM
   */
 pub fn I_Guar_EthernetFramesRx3(EthernetFramesRx3: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRx3) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx3) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx3) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx3))))
+  GumboLib::valid_arp(EthernetFramesRx3) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRx3) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRx3) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRx3))))
 }
 
 /** I-Guar: Integration constraint on LowLevelEthernetDriver's outgoing event data port EthernetFramesRx3
@@ -121,8 +121,8 @@ pub fn I_Guar_Guard_EthernetFramesRx3(EthernetFramesRx3: Option<SW::RawEthernetM
   */
 pub fn I_Assm_EthernetFramesTx0(EthernetFramesTx0: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTx0.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTx0) |
-    GumboLib::valid_ipv4(EthernetFramesTx0.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTx0.amessage, EthernetFramesTx0)
+  GumboLib::valid_arp(EthernetFramesTx0.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTx0) ||
+    GumboLib::valid_ipv4(EthernetFramesTx0.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTx0.amessage, EthernetFramesTx0)
 }
 
 /** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx0
@@ -145,8 +145,8 @@ pub fn I_Assm_Guard_EthernetFramesTx0(EthernetFramesTx0: Option<SW::SizedEtherne
   */
 pub fn I_Assm_EthernetFramesTx1(EthernetFramesTx1: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTx1.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTx1) |
-    GumboLib::valid_ipv4(EthernetFramesTx1.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTx1.amessage, EthernetFramesTx1)
+  GumboLib::valid_arp(EthernetFramesTx1.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTx1) ||
+    GumboLib::valid_ipv4(EthernetFramesTx1.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTx1.amessage, EthernetFramesTx1)
 }
 
 /** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx1
@@ -169,8 +169,8 @@ pub fn I_Assm_Guard_EthernetFramesTx1(EthernetFramesTx1: Option<SW::SizedEtherne
   */
 pub fn I_Assm_EthernetFramesTx2(EthernetFramesTx2: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTx2.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTx2) |
-    GumboLib::valid_ipv4(EthernetFramesTx2.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTx2.amessage, EthernetFramesTx2)
+  GumboLib::valid_arp(EthernetFramesTx2.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTx2) ||
+    GumboLib::valid_ipv4(EthernetFramesTx2.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTx2.amessage, EthernetFramesTx2)
 }
 
 /** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx2
@@ -193,8 +193,8 @@ pub fn I_Assm_Guard_EthernetFramesTx2(EthernetFramesTx2: Option<SW::SizedEtherne
   */
 pub fn I_Assm_EthernetFramesTx3(EthernetFramesTx3: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTx3.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTx3) |
-    GumboLib::valid_ipv4(EthernetFramesTx3.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTx3.amessage, EthernetFramesTx3)
+  GumboLib::valid_arp(EthernetFramesTx3.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTx3) ||
+    (GumboLib::valid_ipv4(EthernetFramesTx3.amessage) || GumboLib::valid_output_ipv4_size(EthernetFramesTx3.amessage, EthernetFramesTx3))
 }
 
 /** I-Assm: Integration constraint on LowLevelEthernetDriver's incoming event data port EthernetFramesTx3

@@ -21,9 +21,9 @@ macro_rules! impliesL {
   */
 pub fn I_Assm_EthernetFramesRxIn0(EthernetFramesRxIn0: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRxIn0) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn0) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn0) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn0))))
+  GumboLib::valid_arp(EthernetFramesRxIn0) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn0) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn0) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn0))))
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn0
@@ -46,9 +46,9 @@ pub fn I_Assm_Guard_EthernetFramesRxIn0(EthernetFramesRxIn0: Option<SW::RawEther
   */
 pub fn I_Assm_EthernetFramesRxIn1(EthernetFramesRxIn1: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRxIn1) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn1) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn1) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn1))))
+  GumboLib::valid_arp(EthernetFramesRxIn1) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn1) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn1) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn1))))
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn1
@@ -71,9 +71,9 @@ pub fn I_Assm_Guard_EthernetFramesRxIn1(EthernetFramesRxIn1: Option<SW::RawEther
   */
 pub fn I_Assm_EthernetFramesRxIn2(EthernetFramesRxIn2: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRxIn2) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn2) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn2) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn2))))
+  GumboLib::valid_arp(EthernetFramesRxIn2) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn2) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn2) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn2))))
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn2
@@ -96,9 +96,9 @@ pub fn I_Assm_Guard_EthernetFramesRxIn2(EthernetFramesRxIn2: Option<SW::RawEther
   */
 pub fn I_Assm_EthernetFramesRxIn3(EthernetFramesRxIn3: SW::RawEthernetMessage) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesRxIn3) |
-    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn3) |
-      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn3) | !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn3))))
+  GumboLib::valid_arp(EthernetFramesRxIn3) ||
+    (GumboLib::valid_ipv4_udp_mavlink(EthernetFramesRxIn3) ||
+      (GumboLib::valid_ipv4_udp_port(EthernetFramesRxIn3) || !(GumboLib::rx_allow_outbound_frame(EthernetFramesRxIn3))))
 }
 
 /** I-Assm: Integration constraint on RxFirewall's incoming event data port EthernetFramesRxIn3
@@ -149,9 +149,9 @@ pub fn compute_spec_hlr_05_rx0_can_send_arp_to_vmm_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() & GumboLib::valid_arp(api_EthernetFramesRxIn0.unwrap()),
-    api_VmmOut0.is_some() &
-      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &
+    api_EthernetFramesRxIn0.is_some() && GumboLib::valid_arp(api_EthernetFramesRxIn0.unwrap()),
+    api_VmmOut0.is_some() &&
+      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &&
         api_MavlinkOut0.is_none()))
 }
 
@@ -168,9 +168,9 @@ pub fn compute_spec_hlr_18_rx0_can_send_mavlink_udp_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() & GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn0.unwrap()),
-    api_MavlinkOut0.is_some() &
-      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn0.unwrap(), api_MavlinkOut0.unwrap()) & api_VmmOut0.is_none()))
+    api_EthernetFramesRxIn0.is_some() && GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn0.unwrap()),
+    api_MavlinkOut0.is_some() &&
+      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn0.unwrap(), api_MavlinkOut0.unwrap()) && api_VmmOut0.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -186,9 +186,9 @@ pub fn compute_spec_hlr_13_rx0_can_send_ipv4_udp_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() & GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn0.unwrap()),
-    api_VmmOut0.is_some() &
-      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &
+    api_EthernetFramesRxIn0.is_some() && GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn0.unwrap()),
+    api_VmmOut0.is_some() &&
+      ((api_EthernetFramesRxIn0.unwrap() == api_VmmOut0.unwrap()) &&
         api_MavlinkOut0.is_none()))
 }
 
@@ -205,8 +205,8 @@ pub fn compute_spec_hlr_15_rx0_disallow_guarantee(
   api_VmmOut0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn0.is_some() & !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn0.unwrap())),
-    api_VmmOut0.is_none() & api_MavlinkOut0.is_none())
+    api_EthernetFramesRxIn0.is_some() && !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn0.unwrap())),
+    api_VmmOut0.is_none() && api_MavlinkOut0.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -223,7 +223,7 @@ pub fn compute_spec_hlr_17_rx0_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn0.is_some()),
-    api_VmmOut0.is_none() & api_MavlinkOut0.is_none())
+    api_VmmOut0.is_none() && api_MavlinkOut0.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -239,9 +239,9 @@ pub fn compute_spec_hlr_05_rx1_can_send_arp_to_vmm_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() & GumboLib::valid_arp(api_EthernetFramesRxIn1.unwrap()),
-    api_VmmOut1.is_some() &
-      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &
+    api_EthernetFramesRxIn1.is_some() && GumboLib::valid_arp(api_EthernetFramesRxIn1.unwrap()),
+    api_VmmOut1.is_some() &&
+      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &&
         api_MavlinkOut1.is_none()))
 }
 
@@ -258,9 +258,9 @@ pub fn compute_spec_hlr_18_rx1_can_send_mavlink_udp_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() & GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn1.unwrap()),
-    api_MavlinkOut1.is_some() &
-      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn1.unwrap(), api_MavlinkOut1.unwrap()) & api_VmmOut1.is_none()))
+    api_EthernetFramesRxIn1.is_some() && GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn1.unwrap()),
+    api_MavlinkOut1.is_some() &&
+      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn1.unwrap(), api_MavlinkOut1.unwrap()) && api_VmmOut1.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -276,9 +276,9 @@ pub fn compute_spec_hlr_13_rx1_can_send_ipv4_udp_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() & GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn1.unwrap()),
-    api_VmmOut1.is_some() &
-      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &
+    api_EthernetFramesRxIn1.is_some() && GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn1.unwrap()),
+    api_VmmOut1.is_some() &&
+      ((api_EthernetFramesRxIn1.unwrap() == api_VmmOut1.unwrap()) &&
         api_MavlinkOut1.is_none()))
 }
 
@@ -295,8 +295,8 @@ pub fn compute_spec_hlr_15_rx1_disallow_guarantee(
   api_VmmOut1: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn1.is_some() & !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn1.unwrap())),
-    api_VmmOut1.is_none() & api_MavlinkOut1.is_none())
+    api_EthernetFramesRxIn1.is_some() && !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn1.unwrap())),
+    api_VmmOut1.is_none() && api_MavlinkOut1.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -313,7 +313,7 @@ pub fn compute_spec_hlr_17_rx1_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn1.is_some()),
-    api_VmmOut1.is_none() & api_MavlinkOut1.is_none())
+    api_VmmOut1.is_none() && api_MavlinkOut1.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -329,9 +329,9 @@ pub fn compute_spec_hlr_05_rx2_can_send_arp_to_vmm_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() & GumboLib::valid_arp(api_EthernetFramesRxIn2.unwrap()),
-    api_VmmOut2.is_some() &
-      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &
+    api_EthernetFramesRxIn2.is_some() && GumboLib::valid_arp(api_EthernetFramesRxIn2.unwrap()),
+    api_VmmOut2.is_some() &&
+      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &&
         api_MavlinkOut2.is_none()))
 }
 
@@ -348,9 +348,9 @@ pub fn compute_spec_hlr_18_rx2_can_send_mavlink_udp_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() & GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn2.unwrap()),
-    api_MavlinkOut2.is_some() &
-      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn2.unwrap(), api_MavlinkOut2.unwrap()) & api_VmmOut2.is_none()))
+    api_EthernetFramesRxIn2.is_some() && GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn2.unwrap()),
+    api_MavlinkOut2.is_some() &&
+      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn2.unwrap(), api_MavlinkOut2.unwrap()) && api_VmmOut2.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -366,9 +366,9 @@ pub fn compute_spec_hlr_13_rx2_can_send_ipv4_udp_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() & GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn2.unwrap()),
-    api_VmmOut2.is_some() &
-      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &
+    api_EthernetFramesRxIn2.is_some() && GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn2.unwrap()),
+    api_VmmOut2.is_some() &&
+      ((api_EthernetFramesRxIn2.unwrap() == api_VmmOut2.unwrap()) &&
         api_MavlinkOut2.is_none()))
 }
 
@@ -385,8 +385,8 @@ pub fn compute_spec_hlr_15_rx2_disallow_guarantee(
   api_VmmOut2: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn2.is_some() & !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn2.unwrap())),
-    api_VmmOut2.is_none() & api_MavlinkOut2.is_none())
+    api_EthernetFramesRxIn2.is_some() && !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn2.unwrap())),
+    api_VmmOut2.is_none() && api_MavlinkOut2.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -403,7 +403,7 @@ pub fn compute_spec_hlr_17_rx2_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn2.is_some()),
-    api_VmmOut2.is_none() & api_MavlinkOut2.is_none())
+    api_VmmOut2.is_none() && api_MavlinkOut2.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -419,9 +419,9 @@ pub fn compute_spec_hlr_05_rx3_can_send_arp_to_vmm_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() & GumboLib::valid_arp(api_EthernetFramesRxIn3.unwrap()),
-    api_VmmOut3.is_some() &
-      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &
+    api_EthernetFramesRxIn3.is_some() && GumboLib::valid_arp(api_EthernetFramesRxIn3.unwrap()),
+    api_VmmOut3.is_some() &&
+      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &&
         api_MavlinkOut3.is_none()))
 }
 
@@ -438,9 +438,9 @@ pub fn compute_spec_hlr_18_rx3_can_send_mavlink_udp_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() & GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn3.unwrap()),
-    api_MavlinkOut3.is_some() &
-      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn3.unwrap(), api_MavlinkOut3.unwrap()) & api_VmmOut3.is_none()))
+    api_EthernetFramesRxIn3.is_some() && GumboLib::valid_ipv4_udp_mavlink(api_EthernetFramesRxIn3.unwrap()),
+    api_MavlinkOut3.is_some() &&
+      (GumboLib::input_eq_mav_output(api_EthernetFramesRxIn3.unwrap(), api_MavlinkOut3.unwrap()) && api_VmmOut3.is_none()))
 }
 
 /** Compute Entrypoint Contract
@@ -456,9 +456,9 @@ pub fn compute_spec_hlr_13_rx3_can_send_ipv4_udp_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() & GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn3.unwrap()),
-    api_VmmOut3.is_some() &
-      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &
+    api_EthernetFramesRxIn3.is_some() && GumboLib::valid_ipv4_udp_port(api_EthernetFramesRxIn3.unwrap()),
+    api_VmmOut3.is_some() &&
+      ((api_EthernetFramesRxIn3.unwrap() == api_VmmOut3.unwrap()) &&
         api_MavlinkOut3.is_none()))
 }
 
@@ -475,8 +475,8 @@ pub fn compute_spec_hlr_15_rx3_disallow_guarantee(
   api_VmmOut3: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_EthernetFramesRxIn3.is_some() & !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn3.unwrap())),
-    api_VmmOut3.is_none() & api_MavlinkOut3.is_none())
+    api_EthernetFramesRxIn3.is_some() && !(GumboLib::rx_allow_outbound_frame(api_EthernetFramesRxIn3.unwrap())),
+    api_VmmOut3.is_none() && api_MavlinkOut3.is_none())
 }
 
 /** Compute Entrypoint Contract
@@ -493,7 +493,7 @@ pub fn compute_spec_hlr_17_rx3_no_input_guarantee(
 {
   implies!(
     !(api_EthernetFramesRxIn3.is_some()),
-    api_VmmOut3.is_none() & api_MavlinkOut3.is_none())
+    api_VmmOut3.is_none() && api_MavlinkOut3.is_none())
 }
 
 /** CEP-T-Guar: Top-level guarantee contracts for RxFirewall's compute entrypoint

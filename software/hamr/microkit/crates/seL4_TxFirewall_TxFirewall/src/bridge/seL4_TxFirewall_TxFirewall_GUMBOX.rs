@@ -21,8 +21,8 @@ macro_rules! impliesL {
   */
 pub fn I_Guar_EthernetFramesTxOut0(EthernetFramesTxOut0: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTxOut0.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTxOut0) |
-    GumboLib::valid_ipv4(EthernetFramesTxOut0.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
+  GumboLib::valid_arp(EthernetFramesTxOut0.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTxOut0) ||
+    GumboLib::valid_ipv4(EthernetFramesTxOut0.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTxOut0.amessage, EthernetFramesTxOut0)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut0
@@ -45,8 +45,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut0(EthernetFramesTxOut0: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut1(EthernetFramesTxOut1: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTxOut1.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTxOut1) |
-    GumboLib::valid_ipv4(EthernetFramesTxOut1.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
+  GumboLib::valid_arp(EthernetFramesTxOut1.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTxOut1) ||
+    GumboLib::valid_ipv4(EthernetFramesTxOut1.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTxOut1.amessage, EthernetFramesTxOut1)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut1
@@ -69,8 +69,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut1(EthernetFramesTxOut1: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut2(EthernetFramesTxOut2: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTxOut2.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTxOut2) |
-    GumboLib::valid_ipv4(EthernetFramesTxOut2.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
+  GumboLib::valid_arp(EthernetFramesTxOut2.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTxOut2) ||
+    GumboLib::valid_ipv4(EthernetFramesTxOut2.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTxOut2.amessage, EthernetFramesTxOut2)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut2
@@ -93,8 +93,8 @@ pub fn I_Guar_Guard_EthernetFramesTxOut2(EthernetFramesTxOut2: Option<SW::SizedE
   */
 pub fn I_Guar_EthernetFramesTxOut3(EthernetFramesTxOut3: SW::SizedEthernetMessage_Impl) -> bool
 {
-  GumboLib::valid_arp(EthernetFramesTxOut3.amessage) & GumboLib::valid_output_arp_size(EthernetFramesTxOut3) |
-    GumboLib::valid_ipv4(EthernetFramesTxOut3.amessage) & GumboLib::valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
+  GumboLib::valid_arp(EthernetFramesTxOut3.amessage) && GumboLib::valid_output_arp_size(EthernetFramesTxOut3) ||
+    GumboLib::valid_ipv4(EthernetFramesTxOut3.amessage) && GumboLib::valid_output_ipv4_size(EthernetFramesTxOut3.amessage, EthernetFramesTxOut3)
 }
 
 /** I-Guar: Integration constraint on TxFirewall's outgoing event data port EthernetFramesTxOut3
@@ -141,9 +141,9 @@ pub fn compute_spec_hlr_07_tx0_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & GumboLib::valid_arp(api_EthernetFramesTxIn0.unwrap()),
-    api_EthernetFramesTxOut0.is_some() &
-      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &
+    api_EthernetFramesTxIn0.is_some() && GumboLib::valid_arp(api_EthernetFramesTxIn0.unwrap()),
+    api_EthernetFramesTxOut0.is_some() &&
+      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &&
         GumboLib::valid_output_arp_size(api_EthernetFramesTxOut0.unwrap())))
 }
 
@@ -158,9 +158,9 @@ pub fn compute_spec_hlr_12_tx0_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & GumboLib::valid_ipv4(api_EthernetFramesTxIn0.unwrap()),
-    api_EthernetFramesTxOut0.is_some() &
-      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &
+    api_EthernetFramesTxIn0.is_some() && GumboLib::valid_ipv4(api_EthernetFramesTxIn0.unwrap()),
+    api_EthernetFramesTxOut0.is_some() &&
+      ((api_EthernetFramesTxIn0.unwrap() == api_EthernetFramesTxOut0.unwrap().amessage) &&
         GumboLib::valid_output_ipv4_size(api_EthernetFramesTxIn0.unwrap(), api_EthernetFramesTxOut0.unwrap())))
 }
 
@@ -175,7 +175,7 @@ pub fn compute_spec_hlr_14_tx0_disallow_guarantee(
   api_EthernetFramesTxOut0: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn0.is_some() & !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn0.unwrap())),
+    api_EthernetFramesTxIn0.is_some() && !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn0.unwrap())),
     api_EthernetFramesTxOut0.is_none())
 }
 
@@ -205,9 +205,9 @@ pub fn compute_spec_hlr_07_tx1_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & GumboLib::valid_arp(api_EthernetFramesTxIn1.unwrap()),
-    api_EthernetFramesTxOut1.is_some() &
-      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &
+    api_EthernetFramesTxIn1.is_some() && GumboLib::valid_arp(api_EthernetFramesTxIn1.unwrap()),
+    api_EthernetFramesTxOut1.is_some() &&
+      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &&
         GumboLib::valid_output_arp_size(api_EthernetFramesTxOut1.unwrap())))
 }
 
@@ -222,9 +222,9 @@ pub fn compute_spec_hlr_12_tx1_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & GumboLib::valid_ipv4(api_EthernetFramesTxIn1.unwrap()),
-    api_EthernetFramesTxOut1.is_some() &
-      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &
+    api_EthernetFramesTxIn1.is_some() && GumboLib::valid_ipv4(api_EthernetFramesTxIn1.unwrap()),
+    api_EthernetFramesTxOut1.is_some() &&
+      ((api_EthernetFramesTxIn1.unwrap() == api_EthernetFramesTxOut1.unwrap().amessage) &&
         GumboLib::valid_output_ipv4_size(api_EthernetFramesTxIn1.unwrap(), api_EthernetFramesTxOut1.unwrap())))
 }
 
@@ -239,7 +239,7 @@ pub fn compute_spec_hlr_14_tx1_disallow_guarantee(
   api_EthernetFramesTxOut1: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn1.is_some() & !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn1.unwrap())),
+    api_EthernetFramesTxIn1.is_some() && !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn1.unwrap())),
     api_EthernetFramesTxOut1.is_none())
 }
 
@@ -269,9 +269,9 @@ pub fn compute_spec_hlr_07_tx2_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & GumboLib::valid_arp(api_EthernetFramesTxIn2.unwrap()),
-    api_EthernetFramesTxOut2.is_some() &
-      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &
+    api_EthernetFramesTxIn2.is_some() && GumboLib::valid_arp(api_EthernetFramesTxIn2.unwrap()),
+    api_EthernetFramesTxOut2.is_some() &&
+      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &&
         GumboLib::valid_output_arp_size(api_EthernetFramesTxOut2.unwrap())))
 }
 
@@ -286,9 +286,9 @@ pub fn compute_spec_hlr_12_tx2_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & GumboLib::valid_ipv4(api_EthernetFramesTxIn2.unwrap()),
-    api_EthernetFramesTxOut2.is_some() &
-      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &
+    api_EthernetFramesTxIn2.is_some() && GumboLib::valid_ipv4(api_EthernetFramesTxIn2.unwrap()),
+    api_EthernetFramesTxOut2.is_some() &&
+      ((api_EthernetFramesTxIn2.unwrap() == api_EthernetFramesTxOut2.unwrap().amessage) &&
         GumboLib::valid_output_ipv4_size(api_EthernetFramesTxIn2.unwrap(), api_EthernetFramesTxOut2.unwrap())))
 }
 
@@ -303,7 +303,7 @@ pub fn compute_spec_hlr_14_tx2_disallow_guarantee(
   api_EthernetFramesTxOut2: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn2.is_some() & !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn2.unwrap())),
+    api_EthernetFramesTxIn2.is_some() && !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn2.unwrap())),
     api_EthernetFramesTxOut2.is_none())
 }
 
@@ -333,9 +333,9 @@ pub fn compute_spec_hlr_07_tx3_can_send_valid_arp_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & GumboLib::valid_arp(api_EthernetFramesTxIn3.unwrap()),
-    api_EthernetFramesTxOut3.is_some() &
-      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &
+    api_EthernetFramesTxIn3.is_some() && GumboLib::valid_arp(api_EthernetFramesTxIn3.unwrap()),
+    api_EthernetFramesTxOut3.is_some() &&
+      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &&
         GumboLib::valid_output_arp_size(api_EthernetFramesTxOut3.unwrap())))
 }
 
@@ -350,9 +350,9 @@ pub fn compute_spec_hlr_12_tx3_can_send_valid_ipv4_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & GumboLib::valid_ipv4(api_EthernetFramesTxIn3.unwrap()),
-    api_EthernetFramesTxOut3.is_some() &
-      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &
+    api_EthernetFramesTxIn3.is_some() && GumboLib::valid_ipv4(api_EthernetFramesTxIn3.unwrap()),
+    api_EthernetFramesTxOut3.is_some() &&
+      ((api_EthernetFramesTxIn3.unwrap() == api_EthernetFramesTxOut3.unwrap().amessage) &&
         GumboLib::valid_output_ipv4_size(api_EthernetFramesTxIn3.unwrap(), api_EthernetFramesTxOut3.unwrap())))
 }
 
@@ -367,7 +367,7 @@ pub fn compute_spec_hlr_14_tx3_disallow_guarantee(
   api_EthernetFramesTxOut3: Option<SW::SizedEthernetMessage_Impl>) -> bool
 {
   implies!(
-    api_EthernetFramesTxIn3.is_some() & !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn3.unwrap())),
+    api_EthernetFramesTxIn3.is_some() && !(GumboLib::tx_allow_outbound_frame(api_EthernetFramesTxIn3.unwrap())),
     api_EthernetFramesTxOut3.is_none())
 }
 

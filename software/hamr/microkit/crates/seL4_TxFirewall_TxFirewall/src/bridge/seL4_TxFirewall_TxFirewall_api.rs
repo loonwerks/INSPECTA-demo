@@ -105,8 +105,8 @@ verus! {
       requires
         // guarantee valid_tx_out_message_port0
         //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 0
-        (GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value)) ||
-          (GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value)),
+        GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value) ||
+          GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -126,8 +126,8 @@ verus! {
       requires
         // guarantee valid_tx_out_message_port1
         //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 1
-        (GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value)) ||
-          (GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value)),
+        GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value) ||
+          GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -147,8 +147,8 @@ verus! {
       requires
         // guarantee valid_tx_out_message_port2
         //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 2
-        (GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value)) ||
-          (GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value)),
+        GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value) ||
+          GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
@@ -168,8 +168,8 @@ verus! {
       requires
         // guarantee valid_tx_out_message_port3
         //   Only valid ARP and IPV4 size messages transmitted by TxFirewall Port 3
-        (GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value)) ||
-          (GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value)),
+        GumboLib::valid_arp_spec(value.amessage) && GumboLib::valid_output_arp_size_spec(value) ||
+          GumboLib::valid_ipv4_spec(value.amessage) && GumboLib::valid_output_ipv4_size_spec(value.amessage, value),
       ensures
         old(self).EthernetFramesTxIn0 == self.EthernetFramesTxIn0,
         old(self).EthernetFramesTxIn1 == self.EthernetFramesTxIn1,
