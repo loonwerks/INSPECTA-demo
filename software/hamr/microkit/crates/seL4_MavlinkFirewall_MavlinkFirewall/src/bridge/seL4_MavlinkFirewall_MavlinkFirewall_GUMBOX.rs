@@ -14,117 +14,6 @@ macro_rules! impliesL {
   };
 }
 
-pub fn three_bytes_to_u32(
-  byte0: u8,
-  byte1: u8,
-  byte2: u8) -> u32
-{
-  ((byte2) as u32) * 65536u32 + (((byte1) as u32) * 256u32 + ((byte0) as u32))
-}
-
-pub fn two_bytes_to_u16(
-  byte0: u8,
-  byte1: u8) -> u16
-{
-  ((byte1) as u16) * 256u16 + ((byte0) as u16)
-}
-
-pub fn msg_v1_is_command_int(msg: SW::UdpPayload) -> bool
-{
-  msg[5] == 75u8
-}
-
-pub fn command_int_msg_v1_is_bootloader_flash(msg: SW::UdpPayload) -> bool
-{
-  two_bytes_to_u16(msg[33], msg[34]) == 42650u16
-}
-
-pub fn msg_v1_is_command_long(msg: SW::UdpPayload) -> bool
-{
-  msg[5] == 76u8
-}
-
-pub fn command_long_msg_v1_is_bootloader_flash(msg: SW::UdpPayload) -> bool
-{
-  two_bytes_to_u16(msg[34], msg[35]) == 42650u16
-}
-
-pub fn msg_is_mavlinkv1(msg: SW::UdpPayload) -> bool
-{
-  msg[0] == 254u8
-}
-
-pub fn msg_v2_is_command_int(msg: SW::UdpPayload) -> bool
-{
-  three_bytes_to_u32(msg[7], msg[8], msg[9]) == 75u32
-}
-
-pub fn command_int_msg_v2_is_bootloader_flash(msg: SW::UdpPayload) -> bool
-{
-  two_bytes_to_u16(msg[37], msg[38]) == 42650u16
-}
-
-pub fn msg_v2_is_command_long(msg: SW::UdpPayload) -> bool
-{
-  three_bytes_to_u32(msg[7], msg[8], msg[9]) == 76u32
-}
-
-pub fn command_long_msg_v2_is_bootloader_flash(msg: SW::UdpPayload) -> bool
-{
-  two_bytes_to_u16(msg[38], msg[39]) == 42650u16
-}
-
-pub fn msg_is_mavlinkv2(msg: SW::UdpPayload) -> bool
-{
-  msg[0] == 253u8
-}
-
-pub fn msg_is_mav_v2_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
-{
-  msg_is_mavlinkv2(msg) &&
-    msg_v2_is_command_int(msg) && command_int_msg_v2_is_bootloader_flash(msg) |
-      msg_v2_is_command_long(msg) && command_long_msg_v2_is_bootloader_flash(msg)
-}
-
-pub fn msg_is_mav_v1_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
-{
-  msg_is_mavlinkv1(msg) &&
-    msg_v1_is_command_int(msg) && command_int_msg_v1_is_bootloader_flash(msg) |
-      msg_v1_is_command_long(msg) && command_long_msg_v1_is_bootloader_flash(msg)
-}
-
-pub fn msg_is_mav_cmd_flash_bootloader(msg: SW::UdpPayload) -> bool
-{
-  msg_is_mav_v2_cmd_flash_bootloader(msg) | msg_is_mav_v1_cmd_flash_bootloader(msg)
-}
-
-pub fn mav_input_headers_eq_output(
-  headers: SW::EthIpUdpHeaders,
-  aframe: SW::RawEthernetMessage) -> bool
-{
-  (0..=headers.len() - 1).all(|i| headers[i] == aframe[i])
-}
-
-pub fn mav_input_payload_eq_output(
-  payload: SW::UdpPayload,
-  headers: SW::EthIpUdpHeaders,
-  aframe: SW::RawEthernetMessage) -> bool
-{
-  (0..=payload.len() - 1).all(|i| aframe[i + headers.len()] == payload[i])
-}
-
-pub fn mav_input_eq_output(
-  input: SW::UdpFrame_Impl,
-  aframe: SW::RawEthernetMessage) -> bool
-{
-  mav_input_headers_eq_output(input.headers, aframe) && mav_input_payload_eq_output(input.payload, input.headers, aframe)
-}
-
-pub fn msg_is_blacklisted(msg: SW::UdpPayload) -> bool
-{
-  msg_is_mav_cmd_flash_bootloader(msg)
-}
-
 /** Compute Entrypoint Contract
   *
   * guarantee hlr_19_mav0_drop_mav_cmd_flash_bootloader
@@ -136,7 +25,7 @@ pub fn compute_spec_hlr_19_mav0_drop_mav_cmd_flash_bootloader_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() && msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
+    api_In0.is_some() & GumboLib::msg_is_mav_cmd_flash_bootloader(api_In0.unwrap().payload),
     api_Out0.is_none())
 }
 
@@ -166,8 +55,8 @@ pub fn compute_spec_hlr_22_mav0_allow_guarantee(
   api_Out0: Option<SW::RawEthernetMessage>) -> bool
 {
   implies!(
-    api_In0.is_some() && !(msg_is_blacklisted(api_In0.unwrap().payload)),
-    api_Out0.is_some() && mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
+    api_In0.is_some() & !(GumboLib::msg_is_blacklisted(api_In0.unwrap().payload)),
+    api_Out0.is_some() & GumboLib::mav_input_eq_output(api_In0.unwrap(), api_Out0.unwrap()))
 }
 
 /** CEP-T-Guar: Top-level guarantee contracts for MavlinkFirewall's compute entrypoint
