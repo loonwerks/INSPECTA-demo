@@ -8,7 +8,7 @@ use crate::bridge::seL4_MavlinkFirewall_MavlinkFirewall_api::*;
 use vstd::prelude::*;
 
 use GumboLib::*;
-
+ 
 verus! {
 
   pub struct seL4_MavlinkFirewall_MavlinkFirewall {}
