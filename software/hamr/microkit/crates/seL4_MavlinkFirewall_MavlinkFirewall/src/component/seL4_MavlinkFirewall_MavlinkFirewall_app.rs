@@ -39,7 +39,7 @@ verus! {
         } else {
           frame.set(i, value.payload[i - SW_EthIpUdpHeaders_DIM_0]);
         }
-          i -= 1;
+          i += 1;
       }
       frame
   }
