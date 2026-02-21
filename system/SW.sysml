@@ -43,7 +43,7 @@ package SW {
 		part amessage : RawEthernetMessage;
 		part sz : Base_Types::Unsigned_16;
 	}
-
+ 
 	part def LowLevelEthernetDriver :> Thread {
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms]; 
