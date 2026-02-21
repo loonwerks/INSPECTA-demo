@@ -1,14 +1,12 @@
 // This file will not be overwritten if codegen is rerun
-
 use data::{
     SW::{SW_EthIpUdpHeaders_DIM_0, SW_RawEthernetMessage_DIM_0, SW_UdpPayload_DIM_0},
     *,
 };
 use crate::bridge::seL4_MavlinkFirewall_MavlinkFirewall_api::*;
 use vstd::prelude::*;
-
 use GumboLib::*;
- 
+
 verus! {
 
   pub struct seL4_MavlinkFirewall_MavlinkFirewall {}
@@ -41,7 +39,7 @@ verus! {
         } else {
           frame.set(i, value.payload[i - SW_EthIpUdpHeaders_DIM_0]);
         }
-          i += 1;
+          i -= 1;
       }
       frame
   }
