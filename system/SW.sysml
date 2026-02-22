@@ -173,7 +173,7 @@ package SW {
 		//attribute :>> Compute_Execution_Time = 300 [ms];
 		// attribute :>> Compute_Execution_Time : Time_Range {
 		// 	attribute :>> minimum : Time { :>> num = 300[ms] }; 
-		// 	attribute :>> maximum : Time { :>> num = 300[ms] }; 
+		// 	attribute :>> maximum : Time { :>> num = 300[ms] };  
 		// }
 		attribute :>> Stack_Size : Memory_Properties::Stack_Size = 1048576; //[byte];
 		attribute :>> Implementation_Language = Implementation_Languages::Rust;			
