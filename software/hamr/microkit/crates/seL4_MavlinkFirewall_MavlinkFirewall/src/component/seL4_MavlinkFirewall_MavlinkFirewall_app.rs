@@ -86,7 +86,7 @@ verus! {
       _ => true,
     }
   }
-
+ 
   impl seL4_MavlinkFirewall_MavlinkFirewall {
     pub fn new() -> Self
     {
