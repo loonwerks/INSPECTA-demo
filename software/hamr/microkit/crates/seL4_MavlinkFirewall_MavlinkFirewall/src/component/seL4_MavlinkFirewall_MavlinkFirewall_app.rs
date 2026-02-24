@@ -103,7 +103,7 @@ verus! {
     {
       log_info("initialize entrypoint invoked");
     }
-
+ 
     pub fn timeTriggered<API: seL4_MavlinkFirewall_MavlinkFirewall_Full_Api> (
       &mut self,
       api: &mut seL4_MavlinkFirewall_MavlinkFirewall_Application_Api<API>)
