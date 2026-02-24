@@ -327,7 +327,7 @@ package SW {
 		out port EthernetFramesTxOut1 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
 		out port EthernetFramesTxOut2 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
 		out port EthernetFramesTxOut3 : EventDataPort { out :>> type : SizedEthernetMessage_Impl; }
-	
+	 
 		attribute :>> Dispatch_Protocol = Supported_Dispatch_Protocols::Periodic;
 		attribute :>> Period = 1000 [ms];
 		// attribute :>> Compute_Execution_Time = 300[ms];
