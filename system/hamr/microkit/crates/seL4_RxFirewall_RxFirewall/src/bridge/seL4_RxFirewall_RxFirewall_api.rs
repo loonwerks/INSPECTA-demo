@@ -83,9 +83,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port0
           //   Only valid messages being sent to the RxFirewall Port 0
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       return extern_api::unsafe_get_EthernetFramesRxIn0();
     }
@@ -99,9 +99,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port1
           //   Only valid messages being sent to the RxFirewall Port 1
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       return extern_api::unsafe_get_EthernetFramesRxIn1();
     }
@@ -115,9 +115,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port2
           //   Only valid messages being sent to the RxFirewall Port 2
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       return extern_api::unsafe_get_EthernetFramesRxIn2();
     }
@@ -131,9 +131,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port3
           //   Only valid messages being sent to the RxFirewall Port 3
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       return extern_api::unsafe_get_EthernetFramesRxIn3();
     }
@@ -340,9 +340,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port0
           //   Only valid messages being sent to the RxFirewall Port 0
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       self.api.unverified_get_EthernetFramesRxIn0(&Ghost(self.EthernetFramesRxIn0))
     }
@@ -364,9 +364,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port1
           //   Only valid messages being sent to the RxFirewall Port 1
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       self.api.unverified_get_EthernetFramesRxIn1(&Ghost(self.EthernetFramesRxIn1))
     }
@@ -388,9 +388,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port2
           //   Only valid messages being sent to the RxFirewall Port 2
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       self.api.unverified_get_EthernetFramesRxIn2(&Ghost(self.EthernetFramesRxIn2))
     }
@@ -412,9 +412,9 @@ verus! {
         (res.is_none() ||
           // assume valid_message_port3
           //   Only valid messages being sent to the RxFirewall Port 3
-          crate::component::seL4_RxFirewall_RxFirewall_app::valid_arp(res.unwrap()) ||
-            (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_mavlink(res.unwrap()) ||
-              (crate::component::seL4_RxFirewall_RxFirewall_app::valid_ipv4_udp_port(res.unwrap()) || !(crate::component::seL4_RxFirewall_RxFirewall_app::allow_outbound_frame(res.unwrap()))))),
+          GumboLib::valid_arp_spec(res.unwrap()) ||
+            (GumboLib::valid_ipv4_udp_mavlink_spec(res.unwrap()) ||
+              (GumboLib::valid_ipv4_udp_port_spec(res.unwrap()) || !(GumboLib::rx_allow_outbound_frame_spec(res.unwrap()))))),
     {
       self.api.unverified_get_EthernetFramesRxIn3(&Ghost(self.EthernetFramesRxIn3))
     }

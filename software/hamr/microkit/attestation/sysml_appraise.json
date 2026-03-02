@@ -5,6 +5,7 @@
       "aadl_dir_targ": {
         "env_var": "",
         "paths": [
+          "%%workspace_dir%%/GumboLib.sysml",
           "%%workspace_dir%%/Platform.sysml",
           "%%workspace_dir%%/SW.sysml",
           "%%workspace_dir%%/aadl.library/AADL.sysml",
