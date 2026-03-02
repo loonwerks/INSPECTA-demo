@@ -103,11 +103,11 @@ jobs:
         project-path: isolate-ethernet-simple
         component-to-analyze: platform::ZCU102.Impl
     - name: Get analysis timestamp
-      run: echo "Analysis timestamp is ${{ steps.conformance.outputs.timestamp }}"
+      run: echo "Analysis timestamp is ${{ steps.resolint.outputs.timestamp }}"
     - name: Get analysis status
-      run: echo "Analysis status is ${{ steps.conformance.outputs.status }}"
+      run: echo "Analysis status is ${{ steps.resolint.outputs.status }}"
     - name: Get analysis status-messages
-      run: echo "Analysis status messages are ${{ steps.conformance.outputs.status-messages }}"
+      run: echo "Analysis status messages are ${{ steps.resolint.outputs.status-messages }}"
     - name: Echo status to output
       run: echo "status=${{ steps.resolint.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive analysis results
