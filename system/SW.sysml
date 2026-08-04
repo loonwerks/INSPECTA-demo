@@ -6,6 +6,7 @@ package SW {
 	private import ControlFunctions::*;
 	private import ScalarValues::*;
 
+
 	part def u16Array :> Array {
 		part :>> Base_Type : Base_Types::Unsigned_16;
 		attribute :>> Dimensions = 1;
