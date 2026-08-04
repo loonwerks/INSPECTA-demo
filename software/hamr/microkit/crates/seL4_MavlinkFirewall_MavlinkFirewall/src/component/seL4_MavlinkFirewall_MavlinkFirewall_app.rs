@@ -127,7 +127,7 @@ verus! {
         api.In0.is_some() && !(GumboLib::msg_is_blacklisted_spec(api.In0.unwrap().payload)) ==>
           api.Out0.is_some() && GumboLib::mav_input_eq_output_spec(api.In0.unwrap(), api.Out0.unwrap()),
         // END MARKER TIME TRIGGERED ENSURES
-    {
+    { 
       log_info("compute entrypoint invoked");
       if let Some(udp_frame) = api.get_In0() {
             if can_send(udp_frame) {
