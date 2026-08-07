@@ -102,7 +102,7 @@ jobs:
     - name: Get codebuild timestamp
       run: echo "Codebuild timestamp is ${{ steps.codebuild.outputs.timestamp }}"
     - name: Get codebuild status
-      run: echo "Codebuild status is ${{ steps.build.codebuild.outputs.status }}"
+      run: echo "Codebuild status is ${{ steps.codebuild.outputs.status }}"
     - name: Echo status to output
       run: echo "status=${{ steps.codebuild.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive built artifacts
@@ -161,7 +161,7 @@ jobs:
     - name: Get codetest timestamp
       run: echo "Codetest timestamp is ${{ steps.codetest.outputs.timestamp }}"
     - name: Get codetest status
-      run: echo "Codetest status is ${{ steps.build.codetest.outputs.status }}"
+      run: echo "Codetest status is ${{ steps.codetest.outputs.status }}"
     - name: Echo status to output
       run: echo "status=${{ steps.codetest.outputs.status }}" >> "$GITHUB_OUTPUT"
     - name: Archive built artifacts
@@ -170,13 +170,6 @@ jobs:
         name: codetest-built-artifacts
         path: software/hamr/microkit
         retention-days: 30
-    - name: Collect codetest report
-      if: ${{ always() }}
-      run: |
-        cat codetest.out | jq --raw-input . | jq --slurp '{"messages" : .}' > codetest-messages.json
-        cat codetest-messages.json \
-          | jq --arg timestamp "$(date)" --arg exitcode ${{ steps.codetest.outputs.status }} '. += $ARGS.named' \
-          > codetest-report.json
     - name: Archive codetest report
       if: ${{ always() }}
       uses: actions/upload-artifact@v4
