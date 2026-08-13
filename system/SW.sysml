@@ -15,7 +15,7 @@ package SW {
 	}
 
 	part def RawEthernetMessage :> Array {
-		part :>> Base_Type : Base_Types::Unsigned_8;
+		// part :>> Base_Type : Base_Types::Unsigned_8;
 		attribute :>> Dimensions = 1600;
 		attribute :>> Array_Size_Kind = Array_Size_Kinds::Fixed; 
 		attribute :>> Data_Size = 1600[byte];
@@ -58,6 +58,7 @@ package SW {
 		in port EthernetFramesTx1: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
 		in port EthernetFramesTx2: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
 		in port EthernetFramesTx3: EventDataPort {in :>> type : SizedEthernetMessage_Impl; }
+
 
 		language "GUMBO" /*{
 
